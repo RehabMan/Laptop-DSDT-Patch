@@ -1,0 +1,12 @@
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_Rename-GFX0.txt
+
+# rename GFX0 -> IGPU for better power management
+into_all all code_regex GFX0\. replaceall_matched begin IGPU. end;
+into_all all code_regex \(GFX0 replaceall_matched begin (IGPU end;
+into_all all label GFX0 set_label begin IGPU end;
+
+# and its aliases
+into_all all code_regex VID\. replaceall_matched begin IGPU. end;
+into_all all code_regex \(VID replaceall_matched begin (IGPU end;
+into_all all label VID set_label begin IGPU end;

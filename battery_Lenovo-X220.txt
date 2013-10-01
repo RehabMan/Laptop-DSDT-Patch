@@ -1,0 +1,52 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Lenovo-X220.txt
+
+# created by RehabMan 8/14/2013
+# created originally for fraisdos125
+
+# works for:
+# Lenovo x220
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
+end;
+
+# Change EC register declarations from 16-bit to 8-bit
+
+into device label EC code_regex SBRC,\s+16 replace_matched begin BRC0,8,BRC1,8 end;
+into device label EC code_regex SBFC,\s+16 replace_matched begin BFC0,8,BFC1,8 end;
+into device label EC code_regex SBVO,\s+16 replace_matched begin BVO0,8,BVO1,8 end;
+
+into device label EC code_regex SBDC,\s+16 replace_matched begin BDC0,8,BDC1,8 end;
+into device label EC code_regex SBDV,\s+16 replace_matched begin BDV0,8,BDV1,8 end;
+into device label EC code_regex SBSN,\s+16 replace_matched begin BSN0,8,BSN1,8 end;
+
+into device label EC code_regex SBAC,\s+16 replace_matched begin BAC0,8,BAC1,8 end;
+
+# Change access (reads) to those registers from 16-bit to 8-bit
+into_all method label GBST code_regex \(SBRC, replaceall_matched begin (B1B2 (BRC0, BRC1), end;
+into_all method label GBST code_regex \(SBFC, replaceall_matched begin (B1B2 (BFC0, BFC1), end;
+into_all method label GBST code_regex \(SBVO, replaceall_matched begin (B1B2 (BVO0, BVO1), end;
+
+into_all method label GBST code_regex \(SBDC, replaceall_matched begin (B1B2 (BDC0, BDC1), end;
+into_all method label GBST code_regex \(SBDV, replaceall_matched begin (B1B2 (BDV0, BDV1), end;
+into_all method label GBST code_regex \(SBSN, replaceall_matched begin (B1B2 (BSN0, BSN1), end;
+
+into_all method label GBST code_regex \(SBAC, replaceall_matched begin (B1B2 (BAC0, BAC1), end;
+
+into_all method label GBIF code_regex \(SBRC, replaceall_matched begin (B1B2 (BRC0, BRC1), end;
+into_all method label GBIF code_regex \(SBFC, replaceall_matched begin (B1B2 (BFC0, BFC1), end;
+into_all method label GBIF code_regex \(SBVO, replaceall_matched begin (B1B2 (BVO0, BVO1), end;
+
+into_all method label GBIF code_regex \(SBDC, replaceall_matched begin (B1B2 (BDC0, BDC1), end;
+into_all method label GBIF code_regex \(SBDV, replaceall_matched begin (B1B2 (BDV0, BDV1), end;
+into_all method label GBIF code_regex \(SBSN, replaceall_matched begin (B1B2 (BSN0, BSN1), end;
+
+into_all method label GBIF code_regex \(SBDV\) replaceall_matched begin (B1B2 (BDV0, BDV1)) end;
+into_all method label GBIF code_regex ,\s+SBDV, replaceall_matched begin , B1B2 (BDV0, BDV1), end;
+
+into device label EC code_regex SBBM,\s+16 replace_matched begin BBM0,8,BBM1,8 end;
+into_all method label GBIF code_regex \(SBBM, replaceall_matched begin (B1B2 (BBM0, BBM1), end;
+

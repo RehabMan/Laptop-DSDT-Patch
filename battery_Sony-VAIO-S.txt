@@ -1,0 +1,59 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Sony-VAIO-S.txt
+
+# created by RehabMan 07/26/2013
+# created originally for johnrey
+
+# works for:
+# Sony VAIO S13P (SVS13A2C5E)
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
+end;
+
+# BAT1: Change EC register declarations from 16-bit to 8-bit
+into device label H_EC code_regex B1DC,\s+16 replace_matched begin XDC0, 8, XDC1, 8 end;
+into device label H_EC code_regex B1FC,\s+16 replace_matched begin XFC0, 8, XFC1, 8 end;
+into device label H_EC code_regex B1DV,\s+16 replace_matched begin XDV0, 8, XDV1, 8 end;
+into device label H_EC code_regex B1AI,\s+16 replace_matched begin XAI0, 8, XAI1, 8 end;
+into device label H_EC code_regex B1FV,\s+16 replace_matched begin XFV0, 8, XFV1, 8 end;
+into device label H_EC code_regex B1RC,\s+16 replace_matched begin XRC0, 8, XRC1, 8 end;
+
+# BAT1: Change access (reads) to those registers from 16-bit to 8-bit
+into_all method label _BIF code_regex \(B1DC, replaceall_matched begin (B1B2 (XDC0, XDC1), end;
+into_all method label _BIF code_regex \(B1FC replaceall_matched begin (B1B2 (XFC0, XFC1) end;
+into_all method label _BIF code_regex \(B1DV, replaceall_matched begin (B1B2 (XDV0, XDV1), end;
+into_all method label _BST code_regex \(B1AI, replaceall_matched begin (B1B2 (XAI0, XAI1), end;
+into_all method label _BST code_regex \(B1FV, replaceall_matched begin (B1B2 (XFV0, XFV1), end;
+into_all method label _BST code_regex B1FV\), replaceall_matched begin B1B2 (XFV0, XFV1)\), end;
+into_all method label _BST code_regex \(B1RC, replaceall_matched begin (B1B2 (XRC0, XRC1), end;
+
+
+# BAT2: Change EC register declarations from 16-bit to 8-bit
+into device label H_EC code_regex B2DC,\s+16 replace_matched begin YDC0, 8, YDC1, 8 end;
+into device label H_EC code_regex B2FC,\s+16 replace_matched begin YFC0, 8, YFC1, 8 end;
+into device label H_EC code_regex B2DV,\s+16 replace_matched begin YDV0, 8, YDV1, 8 end;
+into device label H_EC code_regex B2AI,\s+16 replace_matched begin YAI0, 8, YAI1, 8 end;
+into device label H_EC code_regex B2FV,\s+16 replace_matched begin YFV0, 8, YFV1, 8 end;
+into device label H_EC code_regex B2RC,\s+16 replace_matched begin YRC0, 8, YRC1, 8 end;
+
+# BAT2: Change access (reads) to those registers from 16-bit to 8-bit
+into_all method label _BIF code_regex \(B2DC, replaceall_matched begin (B1B2 (YDC0, YDC1), end;
+into_all method label _BIF code_regex \(B2FC replaceall_matched begin (B1B2 (YFC0, YFC1) end;
+into_all method label _BIF code_regex \(B2DV, replaceall_matched begin (B1B2 (YDV0, YDV1), end;
+into_all method label _BST code_regex \(B2AI, replaceall_matched begin (B1B2 (YAI0, YAI1), end;
+into_all method label _BST code_regex \(B2FV, replaceall_matched begin (B1B2 (YFV0, YFV1), end;
+into_all method label _BST code_regex B2FV\), replaceall_matched begin B1B2 (YFV0, YFV1)\), end;
+into_all method label _BST code_regex \(B2RC, replaceall_matched begin (B1B2 (YRC0, YRC1), end;
+
+# Activate BAT1 device
+into method label _STA parent_label BAT1 replace_content begin Return (0x1F) end;
+
+# Disable BAT2 device
+into method label _STA parent_label BAT2 replace_content begin Return (Zero) end;
+
+# Activate H_EC device
+into method label _STA parent_label H_EC replace_content begin Return (0x0F) end;
+

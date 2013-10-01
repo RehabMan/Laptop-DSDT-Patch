@@ -1,0 +1,65 @@
+#Maintained by: RehabMan for: Laptop Patches
+#usb_USB_6-series.txt
+
+# USB property injection for 6-series boards (originally HM65)
+
+#    EHCI fix inject Apple properties for device 0x1C26 into EHC1
+into method label _DSM parent_adr 0x001D0000 remove_entry;
+into device name_adr 0x001D0000 insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "built-in",\n
+        Buffer() { 0x00 },\n
+        "AAPL,clock-id",\n
+        Buffer() { 0x01 },\n
+        "device_type",\n
+        Buffer() { "EHCI" },\n
+        "AAPL,current-available",\n
+        0x0834,\n
+        "AAPL,current-extra",\n
+        0x0898,\n
+        "AAPL,current-extra-in-sleep",\n
+        0x0640,\n
+        "AAPL,device-internal",\n
+        0x02,\n
+        "AAPL,max-port-current-in-sleep",\n
+        0x0834,\n
+        Buffer() { 0x00 },\n
+    })\n
+}\n
+end;
+
+#    EHCI fix inject Apple properties for device 0x1C2D into EHC2
+into method label _DSM parent_adr 0x001A0000 remove_entry;
+into device name_adr 0x001A0000 insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "built-in",\n
+        Buffer() { 0x00 },\n
+        "AAPL,clock-id",\n
+        Buffer() { 0x02 },\n
+        "device_type",\n
+        Buffer() { "EHCI" },\n
+        "AAPL,current-available",\n
+        0x0834,\n
+        "AAPL,current-extra",\n
+        0x0898,\n
+        "AAPL,current-extra-in-sleep",\n
+        0x0640,\n
+        "AAPL,device-internal",\n
+        0x02,\n
+        "AAPL,max-port-current-in-sleep",\n
+        0x0834,\n
+        Buffer() { 0x00 },\n
+    })\n
+}\n
+end;
+
