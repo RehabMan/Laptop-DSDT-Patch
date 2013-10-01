@@ -1,9 +1,13 @@
 This set of patches can be used in DSDT Editor or (preferably) MaciASL to apply
-all required patches to your laptop for running OS X.  These patches are common
+some common patches to your laptop for running OS X.  These patches are common
 for Sandy Bridge or Ivy Bridge laptops.
 
 Many of these patches came from work on the HP ProBook patches and/or work on my
 own Intel DH67GD desktop.
+
+Many of the battery patches were created over time, published as individual posts 
+by me on tonymacx86.com, and collected here in this repository.
+
 
 To add these patches to MaciASL as a repository:
 - Run MaciASL
