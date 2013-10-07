@@ -34,6 +34,7 @@
 		842F532317FB3114001CF33B /* battery_Samsung-Series3-NP300.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Samsung-Series3-NP300.txt"; sourceTree = "<group>"; };
 		842F532417FB3114001CF33B /* battery_Sony-VAIO-S.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Sony-VAIO-S.txt"; sourceTree = "<group>"; };
 		842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Sony-VAIO-SVE1511.txt"; sourceTree = "<group>"; };
+		845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_EDID.txt; sourceTree = "<group>"; };
 		845FE5EF1702639F004601B0 /* .maciasl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .maciasl; sourceTree = "<group>"; usesTabs = 1; };
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_FDE.txt; sourceTree = "<group>"; };
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 				840E6D3817FB287900784B2A /* graphics_HD4K_low.txt */,
 				840E6D3717FB286A00784B2A /* graphics_HD3K_high.txt */,
 				840E6D3917FB288A00784B2A /* graphics_HD4K_high.txt */,
+				845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */,
 				840E6D3A17FB294000784B2A /* graphics_MEI_sandy.txt */,
 				84AAF75B17FE027A0088DB40 /* graphics_MEI_ivy.txt */,
 				84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */,

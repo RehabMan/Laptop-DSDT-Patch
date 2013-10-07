@@ -8,6 +8,7 @@ HD3000 High Resolution	graphics_HD3K_high.txt
 HD4000 Low Resolution	graphics_HD4K_low.txt
 HD4000 High Resolution	graphics_HD4K_high.txt
 HD3000 on 7-series	graphics_MEI_sandy.txt
+Generic with EDID	graphics_EDID.txt
 Brightness fix	graphics_PNLF.txt
 Rename GFX0 to IGPU	graphics_Rename-GFX0.txt
 => USB (ECHI) Patches	NullPatch.txt
