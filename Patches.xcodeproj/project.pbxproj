@@ -38,6 +38,7 @@
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_FDE.txt; sourceTree = "<group>"; };
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
 		8499C9761704B5F70066A5F3 /* NullPatch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NullPatch.txt; sourceTree = "<group>"; };
+		84AAF75B17FE027A0088DB40 /* graphics_MEI_ivy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_MEI_ivy.txt; sourceTree = "<group>"; };
 		84AFCB7417FB2B800089486F /* usb_6-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "usb_6-series.txt"; sourceTree = "<group>"; };
 		84AFCB7517FB2B8F0089486F /* usb_7-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "usb_7-series.txt"; sourceTree = "<group>"; };
 		84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_PNLF.txt; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 				840E6D3717FB286A00784B2A /* graphics_HD3K_high.txt */,
 				840E6D3917FB288A00784B2A /* graphics_HD4K_high.txt */,
 				840E6D3A17FB294000784B2A /* graphics_MEI_sandy.txt */,
+				84AAF75B17FE027A0088DB40 /* graphics_MEI_ivy.txt */,
 				84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */,
 				846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */,
 			);

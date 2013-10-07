@@ -6,6 +6,7 @@
 
 # works for:
 # Dell XPS 13
+# Dell Insprion 14z
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

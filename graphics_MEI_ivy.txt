@@ -1,7 +1,7 @@
 #Maintained by: RehabMan for: Laptop Patches
-#graphics_MEI_sandy.txt
+#graphics_MEI_ivy.txt
 
-# For Sandy Bridge CPU on 7-series board
+# For Ivy Bridge CPU on 6-series board
 
 into device label IMEI parent_label PCI0 remove_entry;
 into device label PCI0 insert
@@ -15,9 +15,9 @@ Device (IMEI)\n
         Return (Package()\n
         {\n
             "device-id",\n 
-            Buffer() { 0x3A, 0x1C, 0x00, 0x00 },\n
+            Buffer() { 0x3A, 0x1E, 0x00, 0x00 },\n
             "name",\n
-            "pci8086,1c3a",\n
+            "pci8086,1e3a",\n
         })\n
     }\n
 }\n

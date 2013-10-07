@@ -6,6 +6,7 @@
 
 # works for:
 # Sony VAIO SVE15117FDB
+# Sony VPEH26EN
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
@@ -32,10 +33,17 @@ begin
 Store (ShiftLeft(Arg3, 8), \\_SB.PCI0.LPCB.EC0.SM01)
 Store (Arg3, \\_SB.PCI0.LPCB.EC0.SM01)
 end;
+into method label SMWR code_regex Store\s+\(Arg3,\s+SMW0\) replaceall_matched
+begin
+Store (ShiftLeft(Arg3, 8), SM01)
+Store (Arg3, SM01)
+end;
+into method label SMRD code_regex \(SMW0, replaceall_matched begin (B1B2(SM00,SM01), end;
 into method label _PSR parent_label ACAD code_regex \(\^\^PCI0\.LPCB\.EC0\.BATD, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTD0,^^PCI0.LPCB.EC0.BTD1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.BT1I, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTI0,^^PCI0.LPCB.EC0.BTI1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.BT1C, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTC0,^^PCI0.LPCB.EC0.BTC1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.BT1V, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTV0,^^PCI0.LPCB.EC0.BTV1), end;
+into method label _STA parent_label BAT0 code_regex \(\^\^PCI0\.LPCB\.EC0\.BATD, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTD0,^^PCI0.LPCB.EC0.BTD1), end;
 
 # deal with 264-bit SMD0
 
@@ -141,3 +149,6 @@ end;
 into method label SMRW code_regex Store\s+\(Arg3,\s+\\_SB\.PCI0\.LPCB\.EC0\.SMD0\) replaceall_matched begin \\_SB.PCI0.LPCB.EC0.WSMD(Arg3) end;
 into method label SMRW code_regex Store\s+\(\\_SB\.PCI0\.LPCB\.EC0\.SMD0,\s+Arg3\) replaceall_matched begin Store(\\_SB.PCI0.LPCB.EC0.RSMD(), Arg3) end;
 
+into method label SMRD code_regex Store\s+\(Arg3,\s+SMD0\) replaceall_matched begin WSMD(Arg3) end;
+into method label SMWR code_regex Store\s+\(Arg3,\s+SMD0\) replaceall_matched begin WSMD(Arg3) end;
+into method label SMRD code_regex Store\s+\(SMD0,\s+Arg3\) replaceall_matched begin Store(RSMD(), Arg3) end;
