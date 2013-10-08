@@ -1,37 +1,39 @@
-=> Various Syntax Error Fixes	NullPatch.txt
-Fix _PLD Buffer/Package Error	fix_PLD.txt
-Fix TNOT Error	fix_TNOT.txt
-Fix FPED Parse Error	fix_FPED.txt
-=> Intel Graphics Patches (HD3000/HD4000)	NullPatch.txt
-HD3000 Low Resolution	graphics_HD3K_low.txt
-HD3000 High Resolution	graphics_HD3K_high.txt
-HD4000 Low Resolution	graphics_HD4K_low.txt
-HD4000 High Resolution	graphics_HD4K_high.txt
-HD3000 on 7-series	graphics_MEI_sandy.txt
-Generic with EDID	graphics_EDID.txt
-Brightness fix	graphics_PNLF.txt
-Rename GFX0 to IGPU	graphics_Rename-GFX0.txt
-=> USB (ECHI) Patches	NullPatch.txt
-6-series USB	usb_6-series.txt
-7-series USB	usb_7-series.txt
-=> Battery Patches	NullPatch.txt
-Acer Aspire 4830T	battery_Acer-Aspire-4830T.txt
-Acer Aspire 5750g	battery_Acer-Aspire-5750g.txt
-ASUS N55SL	battery_ASUS-N55SL.txt
-Compaq CQ60	battery_Compaq-CQ60.txt
-Dell XPS 13	battery_Dell-XPS-13.txt
-HP Envy DV6	battery_HP-Envy-DV6.txt
-HP G6 2221ss	battery_HP-G6-2221ss.txt
-Lenovo Twist	battery_Lenovo-Twist.txt
-Lenovo Ux10-Z580	battery_Lenovo-UX10-Z580.txt
-Lenovo X220	battery_Lenovo-X220.txt
-Lenovo y580	battery_Lenovo-y580.txt
-Samsung RF411	battery_Samsung-RF411.txt
-Samsung Series3	battery_Samsung-Series3-NP300.txt
-Sony VAIO S	battery_Sony-VAIO-S.txt
-Sony VAIO SVE	battery_Sony-VAIO-SVE1511.txt
-=> Atheros WiFi Patches	NullPatch.txt
-AR9285 WiFi RP02-PXSX	wifi_AR9285-RP02-PXSX.txt
-AR9285 WiFi RP02-WLAN	wifi_AR9285-RP02-WLAN.txt
-AR9285 WiFi RP02-WNIC	wifi_AR9285-RP02-WNIC.txt
-AR9285 WiFi RP03-PXSX	wifi_AR9285-RP03-PXSX.txt
+[1.0] == Various Syntax Error Fixes	NullPatch.txt
+[1.1]   Fix _PLD Buffer/Package Error	fix_PLD.txt
+[1.2]   Fix TNOT Error	fix_TNOT.txt
+[1.3]   Fix FPED Parse Error	fix_FPED.txt
+[2.0] == Intel Graphics Patches (HD3000/HD4000)	NullPatch.txt
+[2.1]   HD3000 Low Resolution	graphics_HD3K_low.txt
+[2.2]   HD3000 High Resolution	graphics_HD3K_high.txt
+[2.3]   HD4000 Low Resolution	graphics_HD4K_low.txt
+[2.4]   HD4000 High Resolution	graphics_HD4K_high.txt
+[2.5]   HD3000 on 7-series	graphics_MEI_sandy.txt
+[2.6]   Generic with EDID	graphics_EDID.txt
+[2.7]   Brightness fix	graphics_PNLF.txt
+[2.8]   Rename GFX0 to IGPU	graphics_Rename-GFX0.txt
+[3.0] == USB (ECHI) Patches	NullPatch.txt
+[3.1]   6-series USB	usb_6-series.txt
+[3.2]   7-series USB	usb_7-series.txt
+[4.0] == Battery Patches	NullPatch.txt
+[4.01]  Acer Aspire 4830T	battery_Acer-Aspire-4830T.txt
+[4.02]  Acer Aspire 5750g	battery_Acer-Aspire-5750g.txt
+[4.03]  ASUS N55SL	battery_ASUS-N55SL.txt
+[4.04]  Compaq CQ60	battery_Compaq-CQ60.txt
+[4.05]  Dell XPS 13	battery_Dell-XPS-13.txt
+[4.06]  HP Envy DV6	battery_HP-Envy-DV6.txt
+[4.07]  HP G6 2221ss	battery_HP-G6-2221ss.txt
+[4.08]  Lenovo Twist	battery_Lenovo-Twist.txt
+[4.09]  Lenovo Ux10-Z580	battery_Lenovo-UX10-Z580.txt
+[4.10]  Lenovo X220	battery_Lenovo-X220.txt
+[4.11]  Lenovo y580	battery_Lenovo-y580.txt
+[4.12]  Samsung RF411	battery_Samsung-RF411.txt
+[4.13]  Samsung Series3	battery_Samsung-Series3-NP300.txt
+[4.14]  Sony VAIO S	battery_Sony-VAIO-S.txt
+[4.15]  Sony VAIO SVE	battery_Sony-VAIO-SVE1511.txt
+[5.0] == Atheros WiFi Patches	NullPatch.txt
+[5.1]   AR9285 WiFi RP02-PXSX	wifi_AR9285-RP02-PXSX.txt
+[5.2]   AR9285 WiFi RP02-WLAN	wifi_AR9285-RP02-WLAN.txt
+[5.3]   AR9285 WiFi RP02-WNIC	wifi_AR9285-RP02-WNIC.txt
+[5.4]   AR9285 WiFi RP03-PXSX	wifi_AR9285-RP03-PXSX.txt
+[6.0] == Fan control/temperature status patches	NullPatch.txt
+[6.1]   Acer Aspire fan control	control_AcerFan.txt

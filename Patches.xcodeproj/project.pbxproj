@@ -34,6 +34,7 @@
 		842F532317FB3114001CF33B /* battery_Samsung-Series3-NP300.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Samsung-Series3-NP300.txt"; sourceTree = "<group>"; };
 		842F532417FB3114001CF33B /* battery_Sony-VAIO-S.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Sony-VAIO-S.txt"; sourceTree = "<group>"; };
 		842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Sony-VAIO-SVE1511.txt"; sourceTree = "<group>"; };
+		8437E5C21803BDD4006BB819 /* control_AcerFan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control_AcerFan.txt; sourceTree = "<group>"; };
 		845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_EDID.txt; sourceTree = "<group>"; };
 		845FE5EF1702639F004601B0 /* .maciasl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .maciasl; sourceTree = "<group>"; usesTabs = 1; };
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_FDE.txt; sourceTree = "<group>"; };
@@ -108,6 +109,14 @@
 			name = "Battery Status";
 			sourceTree = "<group>";
 		};
+		8437E5C31803BDDD006BB819 /* Fan Control */ = {
+			isa = PBXGroup;
+			children = (
+				8437E5C21803BDD4006BB819 /* control_AcerFan.txt */,
+			);
+			name = "Fan Control";
+			sourceTree = "<group>";
+		};
 		84AFCB7617FB2C520089486F /* USB (EHCI) */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +138,7 @@
 				84AFCB7617FB2C520089486F /* USB (EHCI) */,
 				842F532117FB302D001CF33B /* Battery Status */,
 				841D311E17FB71DC00EA5675 /* AR9285 WiFi */,
+				8437E5C31803BDDD006BB819 /* Fan Control */,
 			);
 			sourceTree = "<group>";
 		};
