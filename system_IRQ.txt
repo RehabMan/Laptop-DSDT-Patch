@@ -1,0 +1,19 @@
+#Maintained by: RehabMan for: Laptop Patches
+#system_IRQ.txt
+
+#     IRQ fix
+into device name_hid PNP0000 code_regex IRQNoFlags\s\(\)\n\s+\{(\d+)\} remove_matched;
+into device name_hid PNP0100 code_regex IRQNoFlags\s\(\)\n\s+\{(\d+)\} remove_matched;
+into device name_hid PNP0B00 code_regex IRQNoFlags\s\(\)\n\s+\{(\d+)\} remove_matched;
+into device name_hid PNP0103 code_regex IRQNoFlags\s\(\)\n\s+\{(\d+)\} removeall_matched;
+into device name_hid PNP0103 code_regex Name\s\(([^,]+),\sResourceTemplate\s\(\)\n\s+\{((?:.|\n)*)\}\) replace_matched
+begin
+Name (%1, ResourceTemplate()\n
+{\n
+    IRQNoFlags() {0}\n
+    IRQNoFlags() {8}\n
+    IRQNoFlags() {11}\n
+    IRQNoFlags() {15}\n
+%2
+})\n
+end;
