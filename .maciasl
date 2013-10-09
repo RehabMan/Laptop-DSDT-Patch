@@ -23,14 +23,15 @@
 [4.05]  Dell XPS 13	battery_Dell-XPS-13.txt
 [4.06]  HP Envy DV6	battery_HP-Envy-DV6.txt
 [4.07]  HP G6 2221ss	battery_HP-G6-2221ss.txt
-[4.08]  Lenovo Twist	battery_Lenovo-Twist.txt
-[4.09]  Lenovo Ux10-Z580	battery_Lenovo-UX10-Z580.txt
-[4.10]  Lenovo X220	battery_Lenovo-X220.txt
-[4.11]  Lenovo y580	battery_Lenovo-y580.txt
-[4.12]  Samsung RF411	battery_Samsung-RF411.txt
-[4.13]  Samsung Series3	battery_Samsung-Series3-NP300.txt
-[4.14]  Sony VAIO S	battery_Sony-VAIO-S.txt
-[4.15]  Sony VAIO SVE	battery_Sony-VAIO-SVE1511.txt
+[4.08]  HP Spectre XT	battery_HP-Spectre-XT.txt
+[4.09]  Lenovo Twist	battery_Lenovo-Twist.txt
+[4.10]  Lenovo Ux10-Z580	battery_Lenovo-UX10-Z580.txt
+[4.11]  Lenovo X220	battery_Lenovo-X220.txt
+[4.12]  Lenovo y580	battery_Lenovo-y580.txt
+[4.13]  Samsung RF411	battery_Samsung-RF411.txt
+[4.14]  Samsung Series3	battery_Samsung-Series3-NP300.txt
+[4.15]  Sony VAIO S	battery_Sony-VAIO-S.txt
+[4.16]  Sony VAIO SVE	battery_Sony-VAIO-SVE1511.txt
 [5.0] == Atheros WiFi Patches	NullPatch.txt
 [5.1]   AR9285 WiFi RP02-PXSX	wifi_AR9285-RP02-PXSX.txt
 [5.2]   AR9285 WiFi RP02-WLAN	wifi_AR9285-RP02-WLAN.txt

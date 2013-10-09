@@ -40,6 +40,7 @@
 		845FE5EF1702639F004601B0 /* .maciasl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .maciasl; sourceTree = "<group>"; usesTabs = 1; };
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_FDE.txt; sourceTree = "<group>"; };
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
+		8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_HP-Spectre-XT.txt"; sourceTree = "<group>"; };
 		8499C9761704B5F70066A5F3 /* NullPatch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NullPatch.txt; sourceTree = "<group>"; };
 		84A74C271805D3CE009DAAAF /* system_SMBUS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_SMBUS.txt; sourceTree = "<group>"; };
 		84A74C281805D410009DAAAF /* system_RTC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_RTC.txt; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 				842F531A17FB301B001CF33B /* battery_Dell-XPS-13.txt */,
 				842F531B17FB301B001CF33B /* battery_HP-Envy-DV6.txt */,
 				842F531C17FB301B001CF33B /* battery_HP-G6-2221ss.txt */,
+				8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */,
 				841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */,
 				842F531E17FB301B001CF33B /* battery_Lenovo-Ux10-Z580.txt */,
 				842F531D17FB301B001CF33B /* battery_Lenovo-X220.txt */,
