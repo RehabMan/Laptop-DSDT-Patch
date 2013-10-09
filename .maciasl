@@ -8,9 +8,10 @@
 [2.3]   HD4000 Low Resolution	graphics_HD4K_low.txt
 [2.4]   HD4000 High Resolution	graphics_HD4K_high.txt
 [2.5]   HD3000 on 7-series	graphics_MEI_sandy.txt
-[2.6]   Generic with EDID	graphics_EDID.txt
-[2.7]   Brightness fix	graphics_PNLF.txt
-[2.8]   Rename GFX0 to IGPU	graphics_Rename-GFX0.txt
+[2.6]   HD4000 on 6-series	graphics_MEI_ivy.txt
+[2.7]   Generic with EDID	graphics_EDID.txt
+[2.8]   Brightness fix	graphics_PNLF.txt
+[2.9]   Rename GFX0 to IGPU	graphics_Rename-GFX0.txt
 [3.0] == USB (ECHI) Patches	NullPatch.txt
 [3.1]   6-series USB	usb_6-series.txt
 [3.2]   7-series USB	usb_7-series.txt
