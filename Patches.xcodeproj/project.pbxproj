@@ -42,7 +42,7 @@
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
 		8499C9761704B5F70066A5F3 /* NullPatch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NullPatch.txt; sourceTree = "<group>"; };
 		84A74C271805D3CE009DAAAF /* system_SMBUS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_SMBUS.txt; sourceTree = "<group>"; };
-		84A74C281805D410009DAAAF /* system_RTC */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_RTC; sourceTree = "<group>"; };
+		84A74C281805D410009DAAAF /* system_RTC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_RTC.txt; sourceTree = "<group>"; };
 		84A74C291805D49F009DAAAF /* system_Shutdown.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_Shutdown.txt; sourceTree = "<group>"; };
 		84AAF75B17FE027A0088DB40 /* graphics_MEI_ivy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_MEI_ivy.txt; sourceTree = "<group>"; };
 		84AFCB7417FB2B800089486F /* usb_6-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "usb_6-series.txt"; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			children = (
 				841347881805D3180055B67A /* system_IRQ.txt */,
 				84A74C271805D3CE009DAAAF /* system_SMBUS.txt */,
-				84A74C281805D410009DAAAF /* system_RTC */,
+				84A74C281805D410009DAAAF /* system_RTC.txt */,
 				84A74C291805D49F009DAAAF /* system_Shutdown.txt */,
 			);
 			name = System;
