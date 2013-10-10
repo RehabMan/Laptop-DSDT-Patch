@@ -34,26 +34,14 @@ begin
 Store(ShiftLeft(Arg0, 8), ERI1) Store(Arg0, ERI0)
 end;
 
-# deal with 256-bit SMD0
-into device label EC0 code_regex SMD0,\s+256 replace_matched 
-begin
-//SMD0, 256,\n
-SD00,8,SD01,8,SD02,8,SD03,8,\n
-SD04,8,SD05,8,SD06,8,SD07,8,\n
-SD08,8,SD09,8,SD0A,8,SD0B,8,\n
-SD0C,8,SD0D,8,SD0E,8,SD0F,8,\n
-SD10,8,SD11,8,SD12,8,SD13,8,\n
-SD14,8,SD15,8,SD16,8,SD17,8,\n
-SD18,8,SD19,8,SD1A,8,SD1B,8,\n
-SD1C,8,SD1D,8,SD1E,8,SD1F,8
-end;
-
+# utility methods to read/write buffers from/to EC
 into device label EC0 insert
 begin
 Method (RECB, 2, Serialized)\n
 {\n
+    ShiftRight(Arg1, 3, Arg1)\n
     Name(TEMP, Buffer(Arg1) { })\n
-    Add(Arg0, ShiftRight(Arg1,3), Arg1)\n
+    Add(Arg0, Arg1, Arg1)\n
     While (LLess(Arg0, Arg1))\n
     {\n
         OperationRegion(ERAM, EmbeddedControl, Arg0, 0xFF)\n
@@ -69,111 +57,30 @@ into device label EC0 insert
 begin
 Method (WECB, 3, Serialized)\n
 {\n
+    ShiftRight(Arg1, 3, Arg1)\n
     Name(TEMP, Buffer(Arg1) { })\n
     Store(Arg2, TEMP)\n
-    Add(Arg0, ShiftRight(Arg1,3), Arg1)\n
+    Add(Arg0, Arg1, Arg1)\n
     While (LLess(Arg0, Arg1))\n
     {\n
         OperationRegion(ERAM, EmbeddedControl, Arg0, 0xFF)\n
         Field(ERAM, ByteAcc, Lock, Preserve) { BYTE, 8 }\n
-        Store(Index(TEMP, Arg0), BYTE)\n
+        Store(DerefOf(Index(TEMP, Arg0)), BYTE)\n
         Increment(Arg0)\n
     }\n
 }\n
 end;
 
+# deal with 256-bit SMD0
+into device label EC0 code_regex SMD0,\s+256 replace_matched begin SDXX,256 end;
 into device label EC0 insert
 begin
-Method (RSMD, 0, Serialized)\n
-{\n
-If (0) {\n
-    Name (TEMP, Buffer(0x20) { })\n
-    Store (SD00, Index(TEMP, 0x00))\n
-    Store (SD01, Index(TEMP, 0x01))\n
-    Store (SD02, Index(TEMP, 0x02))\n
-    Store (SD03, Index(TEMP, 0x03))\n
-    Store (SD04, Index(TEMP, 0x04))\n
-    Store (SD05, Index(TEMP, 0x05))\n
-    Store (SD06, Index(TEMP, 0x06))\n
-    Store (SD07, Index(TEMP, 0x07))\n
-    Store (SD08, Index(TEMP, 0x08))\n
-    Store (SD09, Index(TEMP, 0x09))\n
-    Store (SD0A, Index(TEMP, 0x0A))\n
-    Store (SD0B, Index(TEMP, 0x0B))\n
-    Store (SD0C, Index(TEMP, 0x0C))\n
-    Store (SD0D, Index(TEMP, 0x0D))\n
-    Store (SD0E, Index(TEMP, 0x0E))\n
-    Store (SD0F, Index(TEMP, 0x0F))\n
-    Store (SD10, Index(TEMP, 0x10))\n
-    Store (SD11, Index(TEMP, 0x11))\n
-    Store (SD12, Index(TEMP, 0x12))\n
-    Store (SD13, Index(TEMP, 0x13))\n
-    Store (SD14, Index(TEMP, 0x14))\n
-    Store (SD15, Index(TEMP, 0x15))\n
-    Store (SD16, Index(TEMP, 0x16))\n
-    Store (SD17, Index(TEMP, 0x17))\n
-    Store (SD18, Index(TEMP, 0x18))\n
-    Store (SD19, Index(TEMP, 0x19))\n
-    Store (SD1A, Index(TEMP, 0x1A))\n
-    Store (SD1B, Index(TEMP, 0x1B))\n
-    Store (SD1C, Index(TEMP, 0x1C))\n
-    Store (SD1D, Index(TEMP, 0x1D))\n
-    Store (SD1E, Index(TEMP, 0x1E))\n
-    Store (SD1F, Index(TEMP, 0x1F))\n
-    Return (TEMP)\n
-} Else\n
-{\n
-    Return (RECB(0x64, 256))\n
-}\n
-}\n
+Method (RSMD, 0, Serialized) { Return (RECB(0x64, 256)) }
 end;
-
 into device label EC0 insert
 begin
-Method (WSMD, 1, Serialized)\n
-{\n
-If (0) {\n
-    Name (TEMP, Buffer(0x20) { })\n
-    Store (Arg0, TEMP)\n
-    Store (DerefOf(Index(TEMP, 0x00)), SD00)\n
-    Store (DerefOf(Index(TEMP, 0x01)), SD01)\n
-    Store (DerefOf(Index(TEMP, 0x02)), SD02)\n
-    Store (DerefOf(Index(TEMP, 0x03)), SD03)\n
-    Store (DerefOf(Index(TEMP, 0x04)), SD04)\n
-    Store (DerefOf(Index(TEMP, 0x05)), SD05)\n
-    Store (DerefOf(Index(TEMP, 0x06)), SD06)\n
-    Store (DerefOf(Index(TEMP, 0x07)), SD07)\n
-    Store (DerefOf(Index(TEMP, 0x08)), SD08)\n
-    Store (DerefOf(Index(TEMP, 0x09)), SD09)\n
-    Store (DerefOf(Index(TEMP, 0x0A)), SD0A)\n
-    Store (DerefOf(Index(TEMP, 0x0B)), SD0B)\n
-    Store (DerefOf(Index(TEMP, 0x0C)), SD0C)\n
-    Store (DerefOf(Index(TEMP, 0x0D)), SD0D)\n
-    Store (DerefOf(Index(TEMP, 0x0E)), SD0E)\n
-    Store (DerefOf(Index(TEMP, 0x0F)), SD0F)\n
-    Store (DerefOf(Index(TEMP, 0x10)), SD10)\n
-    Store (DerefOf(Index(TEMP, 0x11)), SD11)\n
-    Store (DerefOf(Index(TEMP, 0x12)), SD12)\n
-    Store (DerefOf(Index(TEMP, 0x13)), SD13)\n
-    Store (DerefOf(Index(TEMP, 0x14)), SD14)\n
-    Store (DerefOf(Index(TEMP, 0x15)), SD15)\n
-    Store (DerefOf(Index(TEMP, 0x16)), SD16)\n
-    Store (DerefOf(Index(TEMP, 0x17)), SD17)\n
-    Store (DerefOf(Index(TEMP, 0x18)), SD18)\n
-    Store (DerefOf(Index(TEMP, 0x19)), SD19)\n
-    Store (DerefOf(Index(TEMP, 0x1A)), SD1A)\n
-    Store (DerefOf(Index(TEMP, 0x1B)), SD1B)\n
-    Store (DerefOf(Index(TEMP, 0x1C)), SD1C)\n
-    Store (DerefOf(Index(TEMP, 0x1D)), SD1D)\n
-    Store (DerefOf(Index(TEMP, 0x1E)), SD1E)\n
-    Store (DerefOf(Index(TEMP, 0x1F)), SD1F)\n
-} Else\n
-{\n
-    WECB(0x64, 256, Arg0)\n
-}\n
-}\n
+Method (WSMD, 1, Serialized) { WECB(0x64, 256, Arg0) }
 end;
-
 into method label ESMR code_regex Store\s+\((.*),\s+\^\^LPCB\.EC0\.SMD0\) replaceall_matched begin ^^LPCB.EC0.WSMD(%1) end;
 into method label ESMR code_regex \(\^\^LPCB\.EC0\.SMD0\, replaceall_matched begin (^^LPCB.EC0.RSMD(), end;
 into method label ESMW code_regex Store\s+\((.*),\s+\^\^LPCB\.EC0\.SMD0\) replaceall_matched begin ^^LPCB.EC0.WSMD(%1) end;
@@ -181,98 +88,25 @@ into method label CFUN code_regex Store\s+\((.*),\s+SMD0\) replaceall_matched be
 into method label CFUN code_regex \(SMD0\, replaceall_matched begin (RSMD(), end;
 
 # deal with 64-bit BTDC
-into device label EC0 code_regex BTDC,\s+64 replace_matched 
-begin
-//BTDC, 64,\n
-TDC0,8,TDC1,8,TDC2,8,TDC3,8,\n
-TDC4,8,TDC5,8,TDC6,8,TDC7,8\n
-end;
-
+into device label EC0 code_regex BTDC,\s+64 replace_matched begin TDCX,4 end;
 into device label EC0 insert
 begin
-Method (RTDC, 0, Serialized)\n
-{\n
-If (0) {\n
-    Name (TEMP, Buffer(0x08) { })\n
-    Store (TDC0, Index(TEMP, 0x00))\n
-    Store (TDC1, Index(TEMP, 0x01))\n
-    Store (TDC2, Index(TEMP, 0x02))\n
-    Store (TDC3, Index(TEMP, 0x03))\n
-    Store (TDC4, Index(TEMP, 0x04))\n
-    Store (TDC5, Index(TEMP, 0x05))\n
-    Store (TDC6, Index(TEMP, 0x06))\n
-    Store (TDC7, Index(TEMP, 0x07))\n
-    Return (TEMP)\n
-} Else\n
-{\n
-    Return (RECB(0x88, 64))\n
-}\n
-}\n
+Method (RTDC, 0, Serialized) { Return (RECB(0x88, 64)) }
 end;
-
 into method label GUBT code_regex \(BTDC, replaceall_matched begin (RTDC(), end;
 
 # deal with 72-bit BMNN
-into device label EC0 code_regex BMNN,\s+72 replace_matched 
-begin
-//BMNN, 72,\n
-MNN0,8,MNN1,8,MNN2,8,MNN3,8,\n
-MNN4,8,MNN5,8,MNN6,8,MNN7,8,\n
-MNN8,8
-end;
-
+into device label EC0 code_regex BMNN,\s+72 replace_matched begin MNNX,72 end;
 into device label EC0 insert
 begin
-Method (RMNN, 0, Serialized)\n
-{\n
-If (0) {\n
-    Name (TEMP, Buffer(0x09) { })\n
-    Store (MNN0, Index(TEMP, 0x00))\n
-    Store (MNN1, Index(TEMP, 0x01))\n
-    Store (MNN2, Index(TEMP, 0x02))\n
-    Store (MNN3, Index(TEMP, 0x03))\n
-    Store (MNN4, Index(TEMP, 0x04))\n
-    Store (MNN5, Index(TEMP, 0x05))\n
-    Store (MNN6, Index(TEMP, 0x06))\n
-    Store (MNN7, Index(TEMP, 0x07))\n
-    Store (MNN8, Index(TEMP, 0x08))\n
-    Return (TEMP)\n
-} Else\n
-{\n
-    Return (RECB(0x90, 72))\n
-}\n
-}\n
+Method (RMNN, 0, Serialized) { Return (RECB(0x90, 72)) }
 end;
-
 into method label GUBI code_regex \(BMNN, replaceall_matched begin (RMNN(), end;
 
 # deal with 56-bit BDVN
-into device label EC0 code_regex BDVN,\s+56 replace_matched 
-begin
-//BDVN, 56,\n
-DVN0,8,DVN1,8,DVN2,8,DVN3,8,\n
-DVN4,8,DVN5,8,DVN6,8
-end;
-
+into device label EC0 code_regex BDVN,\s+56 replace_matched begin DVNX,56 end;
 into device label EC0 insert
 begin
-Method (RDVN, 0, Serialized)\n
-{\n
-If (0) {\n
-    Name (TEMP, Buffer(0x07) { })\n
-    Store (DVN0, Index(TEMP, 0x00))\n
-    Store (DVN1, Index(TEMP, 0x01))\n
-    Store (DVN2, Index(TEMP, 0x02))\n
-    Store (DVN3, Index(TEMP, 0x03))\n
-    Store (DVN4, Index(TEMP, 0x04))\n
-    Store (DVN5, Index(TEMP, 0x05))\n
-    Store (DVN6, Index(TEMP, 0x06))\n
-    Return (TEMP)\n
-} Else\n
-{\n
-    Return (RECB(0x99, 56))\n
-}\n
-}\n
+Method (RDVN, 0, Serialized) { Return (RECB(0x99, 56)) }
 end;
-
 into method label GBMN code_regex \(BDVN, replaceall_matched begin (RDVN(), end;
