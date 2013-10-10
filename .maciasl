@@ -45,6 +45,7 @@
 [7.3]   RTC Fix	system_RTC.txt
 [7.4]   Shutdown Fix	system_Shutdown.txt
 [7.5]   HPET Fix	system_HPET.txt
+[7.6]   OS Check Fix	system_OSYS.txt
 [8.0] == Audio	NullPatch.txt
 [8.1]   Audio Layout 12	audio_HDEF-layout12.txt
 

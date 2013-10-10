@@ -52,6 +52,7 @@
 		84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_PNLF.txt; sourceTree = "<group>"; };
 		84B9D52516FFE684002CD441 /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
 		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		84F5D32C1806FCC90013F884 /* system_OSYS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_OSYS.txt; sourceTree = "<group>"; };
 		84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "audio_HDEF-layout12.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +92,7 @@
 				84A74C281805D410009DAAAF /* system_RTC.txt */,
 				84A74C291805D49F009DAAAF /* system_Shutdown.txt */,
 				846576DA1806D6DC00AB21B7 /* system_HPET.txt */,
+				84F5D32C1806FCC90013F884 /* system_OSYS.txt */,
 			);
 			name = System;
 			sourceTree = "<group>";
