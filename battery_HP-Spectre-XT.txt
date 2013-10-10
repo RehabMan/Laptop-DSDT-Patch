@@ -73,14 +73,8 @@ end;
 
 # deal with 256-bit SMD0
 into device label EC0 code_regex SMD0,\s+256 replace_matched begin SDXX,256 end;
-into device label EC0 insert
-begin
-Method (RSMD, 0, Serialized) { Return (RECB(0x64, 256)) }
-end;
-into device label EC0 insert
-begin
-Method (WSMD, 1, Serialized) { WECB(0x64, 256, Arg0) }
-end;
+into device label EC0 insert begin Method (RSMD, 0, Serialized) { Return (RECB(0x64, 256)) } end;
+into device label EC0 insert begin Method (WSMD, 1, Serialized) { WECB(0x64, 256, Arg0) } end;
 into method label ESMR code_regex Store\s+\((.*),\s+\^\^LPCB\.EC0\.SMD0\) replaceall_matched begin ^^LPCB.EC0.WSMD(%1) end;
 into method label ESMR code_regex \(\^\^LPCB\.EC0\.SMD0\, replaceall_matched begin (^^LPCB.EC0.RSMD(), end;
 into method label ESMW code_regex Store\s+\((.*),\s+\^\^LPCB\.EC0\.SMD0\) replaceall_matched begin ^^LPCB.EC0.WSMD(%1) end;
@@ -88,25 +82,16 @@ into method label CFUN code_regex Store\s+\((.*),\s+SMD0\) replaceall_matched be
 into method label CFUN code_regex \(SMD0\, replaceall_matched begin (RSMD(), end;
 
 # deal with 64-bit BTDC
-into device label EC0 code_regex BTDC,\s+64 replace_matched begin TDCX,4 end;
-into device label EC0 insert
-begin
-Method (RTDC, 0, Serialized) { Return (RECB(0x88, 64)) }
-end;
+into device label EC0 code_regex BTDC,\s+64 replace_matched begin TDCX,64 end;
+into device label EC0 insert begin Method (RTDC, 0, Serialized) { Return(RECB(0x88, 64)) } end;
 into method label GUBT code_regex \(BTDC, replaceall_matched begin (RTDC(), end;
 
 # deal with 72-bit BMNN
 into device label EC0 code_regex BMNN,\s+72 replace_matched begin MNNX,72 end;
-into device label EC0 insert
-begin
-Method (RMNN, 0, Serialized) { Return (RECB(0x90, 72)) }
-end;
+into device label EC0 insert begin Method (RMNN, 0, Serialized) { Return(RECB(0x90, 72)) } end;
 into method label GUBI code_regex \(BMNN, replaceall_matched begin (RMNN(), end;
 
 # deal with 56-bit BDVN
 into device label EC0 code_regex BDVN,\s+56 replace_matched begin DVNX,56 end;
-into device label EC0 insert
-begin
-Method (RDVN, 0, Serialized) { Return (RECB(0x99, 56)) }
-end;
+into device label EC0 insert begin Method (RDVN, 0, Serialized) { Return(RECB(0x99, 56)) } end;
 into method label GBMN code_regex \(BDVN, replaceall_matched begin (RDVN(), end;
