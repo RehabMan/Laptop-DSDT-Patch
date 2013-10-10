@@ -1,0 +1,25 @@
+#Maintained by: RehabMan for: Laptop Patches
+#audio_HDEF-layout12.txt
+
+# Note: Change your layout ID if you need something different
+
+#   Inject Audio info
+into method label _DSM parent_label HDEF remove_entry;
+into device label HDEF insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "hda-gfx",\n
+        Buffer() { "onboard-1" },\n
+        "layout-id",\n
+        Buffer() { 12, 0x00, 0x00, 0x00 },\n
+        "PinConfigurations",\n
+        Buffer() { },\n
+    })\n
+}\n
+end;
+
+

@@ -38,6 +38,7 @@
 		8437E5C21803BDD4006BB819 /* control_AcerFan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control_AcerFan.txt; sourceTree = "<group>"; };
 		845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_EDID.txt; sourceTree = "<group>"; };
 		845FE5EF1702639F004601B0 /* .maciasl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .maciasl; sourceTree = "<group>"; usesTabs = 1; };
+		846576DA1806D6DC00AB21B7 /* system_HPET.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_HPET.txt; sourceTree = "<group>"; };
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_FDE.txt; sourceTree = "<group>"; };
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
 		8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_HP-Spectre-XT.txt"; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_PNLF.txt; sourceTree = "<group>"; };
 		84B9D52516FFE684002CD441 /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
 		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "audio_HDEF-layout12.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -88,6 +90,7 @@
 				84A74C271805D3CE009DAAAF /* system_SMBUS.txt */,
 				84A74C281805D410009DAAAF /* system_RTC.txt */,
 				84A74C291805D49F009DAAAF /* system_Shutdown.txt */,
+				846576DA1806D6DC00AB21B7 /* system_HPET.txt */,
 			);
 			name = System;
 			sourceTree = "<group>";
@@ -157,7 +160,16 @@
 				841D311E17FB71DC00EA5675 /* AR9285 WiFi */,
 				8437E5C31803BDDD006BB819 /* Fan Control */,
 				841347891805D31F0055B67A /* System */,
+				84F8BB9E1806D51000BD0774 /* Audio */,
 			);
+			sourceTree = "<group>";
+		};
+		84F8BB9E1806D51000BD0774 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */,
+			);
+			name = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -50,8 +50,43 @@ end;
 
 into device label EC0 insert
 begin
+Method (RECB, 2, Serialized)\n
+{\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, ShiftRight(Arg1,3), Arg1)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        OperationRegion(ERAM, EmbeddedControl, Arg0, 0xFF)\n
+        Field(ERAM, ByteAcc, Lock, Preserve) { BYTE, 8 }\n
+        Store(BYTE, Index(TEMP, Arg0))\n
+        Increment(Arg0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+into device label EC0 insert
+begin
+Method (WECB, 3, Serialized)\n
+{\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Store(Arg2, TEMP)\n
+    Add(Arg0, ShiftRight(Arg1,3), Arg1)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        OperationRegion(ERAM, EmbeddedControl, Arg0, 0xFF)\n
+        Field(ERAM, ByteAcc, Lock, Preserve) { BYTE, 8 }\n
+        Store(Index(TEMP, Arg0), BYTE)\n
+        Increment(Arg0)\n
+    }\n
+}\n
+end;
+
+into device label EC0 insert
+begin
 Method (RSMD, 0, Serialized)\n
 {\n
+If (0) {\n
     Name (TEMP, Buffer(0x20) { })\n
     Store (SD00, Index(TEMP, 0x00))\n
     Store (SD01, Index(TEMP, 0x01))\n
@@ -86,6 +121,10 @@ Method (RSMD, 0, Serialized)\n
     Store (SD1E, Index(TEMP, 0x1E))\n
     Store (SD1F, Index(TEMP, 0x1F))\n
     Return (TEMP)\n
+} Else\n
+{\n
+    Return (RECB(0x64, 256))\n
+}\n
 }\n
 end;
 
@@ -93,6 +132,7 @@ into device label EC0 insert
 begin
 Method (WSMD, 1, Serialized)\n
 {\n
+If (0) {\n
     Name (TEMP, Buffer(0x20) { })\n
     Store (Arg0, TEMP)\n
     Store (DerefOf(Index(TEMP, 0x00)), SD00)\n
@@ -127,6 +167,10 @@ Method (WSMD, 1, Serialized)\n
     Store (DerefOf(Index(TEMP, 0x1D)), SD1D)\n
     Store (DerefOf(Index(TEMP, 0x1E)), SD1E)\n
     Store (DerefOf(Index(TEMP, 0x1F)), SD1F)\n
+} Else\n
+{\n
+    WECB(0x64, 256, Arg0)\n
+}\n
 }\n
 end;
 
@@ -148,6 +192,7 @@ into device label EC0 insert
 begin
 Method (RTDC, 0, Serialized)\n
 {\n
+If (0) {\n
     Name (TEMP, Buffer(0x08) { })\n
     Store (TDC0, Index(TEMP, 0x00))\n
     Store (TDC1, Index(TEMP, 0x01))\n
@@ -158,6 +203,10 @@ Method (RTDC, 0, Serialized)\n
     Store (TDC6, Index(TEMP, 0x06))\n
     Store (TDC7, Index(TEMP, 0x07))\n
     Return (TEMP)\n
+} Else\n
+{\n
+    Return (RECB(0x88, 64))\n
+}\n
 }\n
 end;
 
@@ -176,6 +225,7 @@ into device label EC0 insert
 begin
 Method (RMNN, 0, Serialized)\n
 {\n
+If (0) {\n
     Name (TEMP, Buffer(0x09) { })\n
     Store (MNN0, Index(TEMP, 0x00))\n
     Store (MNN1, Index(TEMP, 0x01))\n
@@ -187,6 +237,10 @@ Method (RMNN, 0, Serialized)\n
     Store (MNN7, Index(TEMP, 0x07))\n
     Store (MNN8, Index(TEMP, 0x08))\n
     Return (TEMP)\n
+} Else\n
+{\n
+    Return (RECB(0x90, 72))\n
+}\n
 }\n
 end;
 
@@ -204,6 +258,7 @@ into device label EC0 insert
 begin
 Method (RDVN, 0, Serialized)\n
 {\n
+If (0) {\n
     Name (TEMP, Buffer(0x07) { })\n
     Store (DVN0, Index(TEMP, 0x00))\n
     Store (DVN1, Index(TEMP, 0x01))\n
@@ -213,6 +268,10 @@ Method (RDVN, 0, Serialized)\n
     Store (DVN5, Index(TEMP, 0x05))\n
     Store (DVN6, Index(TEMP, 0x06))\n
     Return (TEMP)\n
+} Else\n
+{\n
+    Return (RECB(0x99, 56))\n
+}\n
 }\n
 end;
 
