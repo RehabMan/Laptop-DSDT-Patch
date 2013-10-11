@@ -48,4 +48,4 @@
 [7.6]   OS Check Fix	system_OSYS.txt
 [8.0] == Audio	NullPatch.txt
 [8.1]   Audio Layout 12	audio_HDEF-layout12.txt
-
+[8.2]   Audio Layout 12 (advanced)	audio_HDEF-layout12a.txt

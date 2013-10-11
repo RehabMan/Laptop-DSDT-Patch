@@ -50,6 +50,7 @@
 		84AFCB7417FB2B800089486F /* usb_6-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "usb_6-series.txt"; sourceTree = "<group>"; };
 		84AFCB7517FB2B8F0089486F /* usb_7-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "usb_7-series.txt"; sourceTree = "<group>"; };
 		84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_PNLF.txt; sourceTree = "<group>"; };
+		84B7DC531808792C00CAA692 /* audio_HDEF-layout12a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "audio_HDEF-layout12a.txt"; sourceTree = "<group>"; };
 		84B9D52516FFE684002CD441 /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
 		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		84F5D32C1806FCC90013F884 /* system_OSYS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_OSYS.txt; sourceTree = "<group>"; };
@@ -170,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */,
+				84B7DC531808792C00CAA692 /* audio_HDEF-layout12a.txt */,
 			);
 			name = Audio;
 			sourceTree = "<group>";

@@ -1,0 +1,44 @@
+#Maintained by: RehabMan for: Laptop Patches
+#audio_HDEF-layout12a.txt
+
+# Note: Change your layout-id if you need something different
+#
+# Also, this version of the patch allows you to set a few more 
+# properties than the normal layout12 patch does.
+#
+# You will need to research to find the correct values for your
+# patched AppleHDA/codec
+
+#   Inject Audio info
+into method label _DSM parent_label HDEF remove_entry;
+into device label HDEF insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "layout-id",\n
+        Buffer() { 12, 0x00, 0x00, 0x00 },\n
+        "device-id",\n
+        Buffer() { 0x6E, 0x50, 0xF1, 0x14 },\n
+        "Codec-id",\n
+        Buffer() { 0x3E, 0x3A, 0xEC, 0x10 },\n
+        "model",\n
+        Buffer() { "Conexant 20672 SmartAudio HD" },\n
+        "name",\n
+        Buffer() { "Conexant Cx20590" },\n
+        "device_type",\n
+        Buffer() { "Audio Controller" },\n
+        "AAPL,slot-name",\n
+        Buffer() { "Built in" },\n
+        "built-in",\n
+        Buffer() { 0x01 },\n
+        "hda-gfx",\n
+        Buffer() { "onboard-1" },\n
+        "PinConfigurations",\n
+        Buffer() { },\n
+    })\n
+}\n
+end;
+
