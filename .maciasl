@@ -2,6 +2,7 @@
 [1.1]   Fix _PLD Buffer/Package Error	fix_PLD.txt
 [1.2]   Fix TNOT Error	fix_TNOT.txt
 [1.3]   Fix FPED Parse Error	fix_FPED.txt
+[1.4]   Fix _IRC Error	fix_IRC.txt
 [2.0] == Intel Graphics Patches (HD3000/HD4000)	NullPatch.txt
 [2.1]   HD3000 Low Resolution	graphics_HD3K_low.txt
 [2.2]   HD3000 High Resolution	graphics_HD3K_high.txt

@@ -36,6 +36,7 @@
 		842F532417FB3114001CF33B /* battery_Sony-VAIO-S.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Sony-VAIO-S.txt"; sourceTree = "<group>"; };
 		842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Sony-VAIO-SVE1511.txt"; sourceTree = "<group>"; };
 		8437E5C21803BDD4006BB819 /* control_AcerFan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control_AcerFan.txt; sourceTree = "<group>"; };
+		8455C5E01809953B00F919D7 /* fix_IRC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_IRC.txt; sourceTree = "<group>"; };
 		845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_EDID.txt; sourceTree = "<group>"; };
 		845FE5EF1702639F004601B0 /* .maciasl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .maciasl; sourceTree = "<group>"; usesTabs = 1; };
 		846576DA1806D6DC00AB21B7 /* system_HPET.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_HPET.txt; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 				840E6D3217FB266300784B2A /* fix_FPED.txt */,
 				840E6D3117FB255B00784B2A /* fix_PLD.txt */,
 				840E6D3317FB26C300784B2A /* fix_TNOT.txt */,
+				8455C5E01809953B00F919D7 /* fix_IRC.txt */,
 			);
 			name = "Syntax Errors";
 			sourceTree = "<group>";
