@@ -1,6 +1,9 @@
 #Maintained by: RehabMan for: Laptop Patches
 #graphics_Rename-GFX0.txt
 
+# sometimes there is already IGPU used for other things
+into_all all code_regex IGPU, replaceall_matched begin IGFX, end;
+
 # rename GFX0 -> IGPU for better power management
 into_all all code_regex GFX0\. replaceall_matched begin IGPU. end;
 into_all all code_regex \(GFX0 replaceall_matched begin (IGPU end;
