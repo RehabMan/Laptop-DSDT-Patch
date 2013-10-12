@@ -1,4 +1,5 @@
 #Maintained by: RehabMan for: Laptop Patches
 #system_OSYS.txt
 
-into method label _INI parent_label _SB.PCI0 code_regex If\s+\(_OSI\s+\(\"Windows\s2006\"\)\) replace_matched begin If(One) end;
+into method label _INI parent_label _SB.PCI0 code_regex If\s+\(_OSI\s+\(\"Windows\s2006\"\)\) replace_matched 
+begin If(LOr(_OSI("Darwin"),_OSI("Windows 2006"))) end;
