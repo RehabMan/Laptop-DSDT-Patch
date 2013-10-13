@@ -1,9 +1,14 @@
 #Maintained by: RehabMan for: Laptop Patches
 #system_ADP1.txt
 
-#    Replace all instances of AC with ADP1
+# Replace all instances of AC with ADP1
 into_all all code_regex \.AC, replaceall_matched begin .ADP1, end;
 into_all all code_regex \(AC, replaceall_matched begin (ADP1, end;
+into all label AC set_label begin ADP1 end;
+
+# Replace all instances of ACAD with ADP1
+into_all all code_regex \.ACAD, replaceall_matched begin .ADP1, end;
+into_all all code_regex \(ACAD, replaceall_matched begin (ADP1, end;
 into all label AC set_label begin ADP1 end;
 
 #   Power fix - cause AppleACPIACAdapter to be loaded
