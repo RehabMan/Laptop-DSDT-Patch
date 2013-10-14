@@ -14,10 +14,8 @@ Device (IMEI)\n
         If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
         Return (Package()\n
         {\n
-            "device-id",\n 
-            Buffer() { 0x3A, 0x1E, 0x00, 0x00 },\n
-            "name",\n
-            "pci8086,1e3a",\n
+            "device-id", Buffer() { 0x3A, 0x1E, 0x00, 0x00 },\n
+            "name", "pci8086,1e3a",\n
         })\n
     }\n
 }\n

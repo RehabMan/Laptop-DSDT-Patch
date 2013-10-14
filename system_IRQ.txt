@@ -10,10 +10,7 @@ into device name_hid PNP0103 code_regex Name\s\(([^,]+),\sResourceTemplate\s\(\)
 begin
 Name (%1, ResourceTemplate()\n
 {\n
-    IRQNoFlags() {0}\n
-    IRQNoFlags() {8}\n
-    IRQNoFlags() {11}\n
-    IRQNoFlags() {15}\n
+    IRQNoFlags() { 0, 8, 11, 15 }\n
 %2
 })\n
 end;

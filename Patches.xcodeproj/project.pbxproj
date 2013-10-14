@@ -44,6 +44,7 @@
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
 		8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_HP-Spectre-XT.txt"; sourceTree = "<group>"; };
 		8499C9761704B5F70066A5F3 /* NullPatch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NullPatch.txt; sourceTree = "<group>"; };
+		849B7B29180B859900B76D3C /* usb_7-series-multiplex.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "usb_7-series-multiplex.txt"; sourceTree = "<group>"; };
 		84A74C271805D3CE009DAAAF /* system_SMBUS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_SMBUS.txt; sourceTree = "<group>"; };
 		84A74C281805D410009DAAAF /* system_RTC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_RTC.txt; sourceTree = "<group>"; };
 		84A74C291805D49F009DAAAF /* system_Shutdown.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_Shutdown.txt; sourceTree = "<group>"; };
@@ -55,6 +56,8 @@
 		84B9D52516FFE684002CD441 /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
 		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		84D170BD180971C500A4C748 /* system_ADP1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_ADP1.txt; sourceTree = "<group>"; };
+		84F42CD51809F576003AE042 /* usb_6-series-id.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "usb_6-series-id.txt"; sourceTree = "<group>"; };
+		84F42CD61809F585003AE042 /* usb_7-series-id.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "usb_7-series-id.txt"; sourceTree = "<group>"; };
 		84F5D32C1806FCC90013F884 /* system_OSYS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_OSYS.txt; sourceTree = "<group>"; };
 		84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "audio_HDEF-layout12.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,13 +147,16 @@
 			name = "Fan Control";
 			sourceTree = "<group>";
 		};
-		84AFCB7617FB2C520089486F /* USB (EHCI) */ = {
+		84AFCB7617FB2C520089486F /* USB (EHCI-XHCI) */ = {
 			isa = PBXGroup;
 			children = (
 				84AFCB7417FB2B800089486F /* usb_6-series.txt */,
 				84AFCB7517FB2B8F0089486F /* usb_7-series.txt */,
+				84F42CD51809F576003AE042 /* usb_6-series-id.txt */,
+				84F42CD61809F585003AE042 /* usb_7-series-id.txt */,
+				849B7B29180B859900B76D3C /* usb_7-series-multiplex.txt */,
 			);
-			name = "USB (EHCI)";
+			name = "USB (EHCI-XHCI)";
 			sourceTree = "<group>";
 		};
 		84B9D50E16FFE58F002CD441 = {
@@ -162,7 +168,7 @@
 				84B9D52716FFE684002CD441 /* README.txt */,
 				840E6D3517FB271C00784B2A /* Syntax Errors */,
 				840E6D3B17FB297000784B2A /* Intel Graphics */,
-				84AFCB7617FB2C520089486F /* USB (EHCI) */,
+				84AFCB7617FB2C520089486F /* USB (EHCI-XHCI) */,
 				842F532117FB302D001CF33B /* Battery Status */,
 				841D311E17FB71DC00EA5675 /* AR9285 WiFi */,
 				8437E5C31803BDDD006BB819 /* Fan Control */,

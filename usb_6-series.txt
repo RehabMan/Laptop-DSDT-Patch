@@ -12,23 +12,14 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "built-in",\n
-        Buffer() { 0x00 },\n
-        "AAPL,clock-id",\n
-        Buffer() { 0x01 },\n
-        "device_type",\n
-        Buffer() { "EHCI" },\n
-        "AAPL,current-available",\n
-        0x0834,\n
-        "AAPL,current-extra",\n
-        0x0898,\n
-        "AAPL,current-extra-in-sleep",\n
-        0x0640,\n
-        "AAPL,device-internal",\n
-        0x02,\n
-        "AAPL,max-port-current-in-sleep",\n
-        0x0834,\n
-        Buffer() { 0x00 },\n
+        "AAPL,clock-id", Buffer() { 0x01 },\n
+        "built-in", Buffer() { 0x00 },\n
+        "device_type", Buffer() { "EHCI" },\n
+        "AAPL,current-available", 2100,\n
+        "AAPL,current-extra", 2200,\n
+        "AAPL,current-extra-in-sleep", 1600,\n
+        "AAPL,device-internal", 0x02,\n
+        "AAPL,max-port-current-in-sleep", 2100,\n
     })\n
 }\n
 end;
@@ -42,24 +33,35 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "built-in",\n
-        Buffer() { 0x00 },\n
-        "AAPL,clock-id",\n
-        Buffer() { 0x02 },\n
-        "device_type",\n
-        Buffer() { "EHCI" },\n
-        "AAPL,current-available",\n
-        0x0834,\n
-        "AAPL,current-extra",\n
-        0x0898,\n
-        "AAPL,current-extra-in-sleep",\n
-        0x0640,\n
-        "AAPL,device-internal",\n
-        0x02,\n
-        "AAPL,max-port-current-in-sleep",\n
-        0x0834,\n
-        Buffer() { 0x00 },\n
+        "AAPL,clock-id", Buffer() { 0x01 },\n
+        "built-in", Buffer() { 0x00 },\n
+        "device_type", Buffer() { "EHCI" },\n
+        "AAPL,current-available", 2100,\n
+        "AAPL,current-extra", 2200,\n
+        "AAPL,current-extra-in-sleep", 1600,\n
+        "AAPL,device-internal", 0x02,\n
+        "AAPL,max-port-current-in-sleep", 2100,\n
     })\n
 }\n
 end;
 
+# Insert Apple USB properties into USB 3.0 XHC
+into method label _DSM parent_adr 0x00140000 remove_entry;
+into device name_adr 0x00140000 insert
+begin
+Method (_DSM, 4, NotSerialized)\n
+{\n
+    If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
+    Return (Package()\n
+    {\n
+        "AAPL,clock-id", Buffer() { 0x01 },\n
+        "built-in", Buffer() { 0x00 },\n
+        "device_type", Buffer() { "EHCI" },\n
+        "AAPL,current-available", 2100,\n
+        "AAPL,current-extra", 2200,\n
+        "AAPL,current-extra-in-sleep", 1600,\n
+        "AAPL,device-internal", 0x02,\n
+        "AAPL,max-port-current-in-sleep", 2100,\n
+    })\n
+}\n
+end;

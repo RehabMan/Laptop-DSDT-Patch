@@ -3,7 +3,7 @@
 
 #   Brightness control fix
 into device label PNLF remove_entry;
-into scope label \_SB insert
+into scope label _SB insert
 begin
 Device (PNLF)\n
 {\n

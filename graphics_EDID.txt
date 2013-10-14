@@ -15,16 +15,20 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "AAPL,snb-platform-id",\n               //IMPORTANT: edit for actual snb-platform-id\n
-        Buffer() { 0x00, 0x00, 0x01, 0x00 },\n
-        "AAPL,ig-platform-id",\n                //IMPORTANT: edit for actual ig-platform-id\n
-        Buffer() { 0x04, 0x00, 0x66, 0x01 },\n
-        "AAPL00,DualLink",\n                    //IMPORTANT: remove this line and next if not dual-link\n
-        Buffer() { 0x01, 0x00, 0x00, 0x00 },\n
-        "hda-gfx",\n                            //for HDMI-audio\n
-        Buffer() { "onboard-1" },\n
-        "AAPL00,override-no-edid",\n            //EDID section: Fill in with your actual 128 bytes of EDID data\n
-        Buffer (0x80)\n
+        //IMPORTANT: edit for actual snb-platform-id\n
+        "AAPL,snb-platform-id", Buffer() { 0x00, 0x00, 0x01, 0x00 },\n
+
+        //IMPORTANT: edit for actual ig-platform-id\n
+        "AAPL,ig-platform-id", Buffer() { 0x04, 0x00, 0x66, 0x01 },\n
+
+        //IMPORTANT: remove this line if not dual-link\n
+        "AAPL00,DualLink", Buffer() { 0x01, 0x00, 0x00, 0x00 },\n
+
+        //for HDMI-audio\n
+        "hda-gfx", Buffer() { "onboard-1" },\n
+
+        //EDID section: Fill in with your actual 128 bytes of EDID data\n
+        "AAPL00,override-no-edid", Buffer (0x80)\n
         {\n
             0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00, 0x06, 0xaf, 0xec, 0x23,\n
             0x00, 0x00, 0x00, 0x00, 0x0f, 0x15, 0x01, 0x04, 0x90, 0x22, 0x13, 0x78,\n

@@ -12,12 +12,9 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "layout-id",\n
-        Buffer() { 12, 0x00, 0x00, 0x00 },\n
-        "hda-gfx",\n
-        Buffer() { "onboard-1" },\n
-        "PinConfigurations",\n
-        Buffer() { },\n
+        "layout-id", Buffer() { 12, 0x00, 0x00, 0x00 },\n
+        "hda-gfx", Buffer() { "onboard-1" },\n
+        "PinConfigurations", Buffer() { },\n
     })\n
 }\n
 end;

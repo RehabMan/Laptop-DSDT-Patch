@@ -3,7 +3,7 @@
 
 # USB property injection for 7-series boards (originally HM76)
 
-#   Insert Apple USB properties into EHC1
+# Insert Apple USB properties into EHC1
 into method label _DSM parent_adr 0x001D0000 remove_entry;
 into device name_adr 0x001D0000 insert
 begin
@@ -12,21 +12,14 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "subsystem-id",\n 
-        Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
-        "subsystem-vendor-id",\n 
-        Buffer() { 0x86, 0x80, 0x00, 0x00 },\n
-        "AAPL,current-available",\n
-        0x0834,\n
-        "AAPL,current-extra",\n
-        0x0898,\n
-        "AAPL,current-extra-in-sleep",\n
-        0x0640,\n
-        "AAPL,device-internal",\n
-        0x02,\n
-        "AAPL,max-port-current-in-sleep",\n
-        0x0834,\n
-        Buffer() { 0x00 },\n
+        "built-in", Buffer() { 0x00 },\n
+        "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
+        "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },\n
+        "AAPL,current-available", 2100,\n
+        "AAPL,current-extra", 2200,\n
+        "AAPL,current-extra-in-sleep", 1600,\n
+        "AAPL,device-internal", 0x02,\n
+        "AAPL,max-port-current-in-sleep", 2100,\n
     })\n
 }\n
 end;
@@ -40,21 +33,14 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "subsystem-id",\n 
-        Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
-        "subsystem-vendor-id",\n 
-        Buffer() { 0x86, 0x80, 0x00, 0x00 },\n
-        "AAPL,current-available",\n
-        0x0834,\n
-        "AAPL,current-extra",\n
-        0x0898,\n
-        "AAPL,current-extra-in-sleep",\n
-        0x0640,\n
-        "AAPL,device-internal",\n
-        0x02,\n
-        "AAPL,max-port-current-in-sleep",\n
-        0x0834,\n
-        Buffer() { 0x00 },\n
+        "built-in", Buffer() { 0x00 },\n
+        "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
+        "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },\n
+        "AAPL,current-available", 2100,\n
+        "AAPL,current-extra", 2200,\n
+        "AAPL,current-extra-in-sleep", 1600,\n
+        "AAPL,device-internal", 0x02,\n
+        "AAPL,max-port-current-in-sleep", 2100,\n
     })\n
 }\n
 end;
@@ -68,21 +54,14 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "subsystem-id",\n 
-        Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
-        "subsystem-vendor-id",\n 
-        Buffer() { 0x86, 0x80, 0x00, 0x00 },\n
-        "AAPL,current-available",\n
-        0x0834,\n
-        "AAPL,current-extra",\n
-        0x0898,\n
-        "AAPL,current-extra-in-sleep",\n
-        0x0640,\n
-        "AAPL,device-internal",\n
-        0x02,\n
-        "AAPL,max-port-current-in-sleep",\n
-        0x0834,\n
-        Buffer() { 0x00 },\n
+        "built-in", Buffer() { 0x00 },\n
+        "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
+        "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },\n
+        "AAPL,current-available", 2100,\n
+        "AAPL,current-extra", 2200,\n
+        "AAPL,current-extra-in-sleep", 1600,\n
+        "AAPL,device-internal", 0x02,\n
+        "AAPL,max-port-current-in-sleep", 2100,\n
     })\n
 }\n
 end;

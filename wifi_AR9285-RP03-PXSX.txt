@@ -10,20 +10,13 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "device-id",\n
-        Buffer() { 0x30, 0x00, 0x00, 0x00 },\n
-        "name",\n
-        "pci168c,30",\n
-        "AAPL,slot-name",\n
-        Buffer() { "AirPort" },\n
-        "device_type",\n
-        Buffer() { "AirPort" },\n
-        "model",\n
-        Buffer() { "Atheros 9285 802.11 b/g/n Wireless Network Adapter" },\n
-        "subsystem-id",\n
-        Buffer() { 0x8F, 0x00, 0x00, 0x00 },\n
-        "subsystem-vendor-id",\n
-        Buffer() { 0x6B, 0x10, 0x00, 0x00 },\n
+        "device-id", Buffer() { 0x30, 0x00, 0x00, 0x00 },\n
+        "name", "pci168c,30",\n
+        "AAPL,slot-name", Buffer() { "AirPort" },\n
+        "device_type", Buffer() { "AirPort" },\n
+        "model", Buffer() { "Atheros 9285 802.11 b/g/n Wireless Network Adapter" },\n
+        "subsystem-id", Buffer() { 0x8F, 0x00, 0x00, 0x00 },\n
+        "subsystem-vendor-id", Buffer() { 0x6B, 0x10, 0x00, 0x00 },\n
     })\n
 }\n
 end;
