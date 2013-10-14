@@ -12,8 +12,8 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "AAPL,clock-id", Buffer() { 0x01 },\n
         "built-in", Buffer() { 0x00 },\n
+        "AAPL,clock-id", Buffer() { 0x01 },\n
         "device_type", Buffer() { "EHCI" },\n
         "AAPL,current-available", 2100,\n
         "AAPL,current-extra", 2200,\n
@@ -33,8 +33,8 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "AAPL,clock-id", Buffer() { 0x01 },\n
         "built-in", Buffer() { 0x00 },\n
+        "AAPL,clock-id", Buffer() { 0x01 },\n
         "device_type", Buffer() { "EHCI" },\n
         "AAPL,current-available", 2100,\n
         "AAPL,current-extra", 2200,\n
@@ -54,9 +54,9 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "AAPL,clock-id", Buffer() { 0x01 },\n
         "built-in", Buffer() { 0x00 },\n
-        "device_type", Buffer() { "EHCI" },\n
+        "AAPL,clock-id", Buffer() { 0x02 },\n
+        "device_type", Buffer() { "XHCI" },\n
         "AAPL,current-available", 2100,\n
         "AAPL,current-extra", 2200,\n
         "AAPL,current-extra-in-sleep", 1600,\n
