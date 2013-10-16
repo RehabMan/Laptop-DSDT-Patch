@@ -21,6 +21,7 @@
 		841D311B17FB71C600EA5675 /* wifi_AR9285-RP02-WNIC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wifi_AR9285-RP02-WNIC.txt"; sourceTree = "<group>"; };
 		841D311C17FB71C600EA5675 /* wifi_AR9285-RP03-PXSX.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "wifi_AR9285-RP03-PXSX.txt"; sourceTree = "<group>"; };
 		841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Lenovo-Twist.txt"; sourceTree = "<group>"; };
+		842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_HP-Envy-17t.txt"; sourceTree = "<group>"; };
 		842F531617FB301B001CF33B /* battery_Acer-Aspire-4830T.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Acer-Aspire-4830T.txt"; sourceTree = "<group>"; };
 		842F531717FB301B001CF33B /* battery_Acer-Aspire-5750g.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Acer-Aspire-5750g.txt"; sourceTree = "<group>"; };
 		842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_ASUS-N55SL.txt"; sourceTree = "<group>"; };
@@ -128,6 +129,7 @@
 				842F531917FB301B001CF33B /* battery_Compaq-CQ60.txt */,
 				842F531A17FB301B001CF33B /* battery_Dell-XPS-13.txt */,
 				8484672A180F0C3600DD3D99 /* battery_HP-DV7-7xxx.txt */,
+				842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */,
 				842F531B17FB301B001CF33B /* battery_HP-Envy-DV6.txt */,
 				842F531C17FB301B001CF33B /* battery_HP-G6-2221ss.txt */,
 				8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */,
