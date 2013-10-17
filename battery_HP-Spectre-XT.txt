@@ -44,7 +44,7 @@ Method (RECB, 2, Serialized)\n
     Add(Arg0, Arg1, Arg1)\n
     While (LLess(Arg0, Arg1))\n
     {\n
-        OperationRegion(ERAM, EmbeddedControl, Arg0, 0xFF)\n
+        OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
         Field(ERAM, ByteAcc, Lock, Preserve) { BYTE, 8 }\n
         Store(BYTE, Index(TEMP, Arg0))\n
         Increment(Arg0)\n
@@ -63,7 +63,7 @@ Method (WECB, 3, Serialized)\n
     Add(Arg0, Arg1, Arg1)\n
     While (LLess(Arg0, Arg1))\n
     {\n
-        OperationRegion(ERAM, EmbeddedControl, Arg0, 0xFF)\n
+        OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
         Field(ERAM, ByteAcc, Lock, Preserve) { BYTE, 8 }\n
         Store(DerefOf(Index(TEMP, Arg0)), BYTE)\n
         Increment(Arg0)\n
