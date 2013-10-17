@@ -45,7 +45,15 @@ Method (RECB, 2, Serialized)\n
 }\n
 end;
 
-# offsets for RECB based on EmbeddedControl fields
+#
+# Note: Offsets below into EC are based on the following data in the native DSDT
+#
+#                    OperationRegion (ECF2, EmbeddedControl, Zero, 0xFF)
+#                    Field (ECF2, ByteAcc, Lock, Preserve)
+#                    {
+#                        MBVR,   8,
+#                                Offset (0x06),
+#                        KBLL,   8,
 #                                Offset (0x10),
 #                        BDN0,   56,//10
 #                                Offset (0x18),
@@ -58,6 +66,15 @@ end;
 #                        BMNC,   8,//20
 #                        BMN0,   120,//21
 #                        BCT0,   128,//30
+#
+# If the native DSDT has any such data re-organized such that the fields
+# being read with RECB are at a different offset, the offsets below
+# (first param to WECB/RECB) would need to be changed for the DSDT.
+#
+# This is something to watch out for when adapting this patch to another 
+# computer and maybe even after updating to a new BIOS.
+#
+
 
 # deal with 56-bit BDN0
 into device label H_EC code_regex (BDN0,)\s+(56) replace_matched begin BDNX,%2,//%1%2 end;

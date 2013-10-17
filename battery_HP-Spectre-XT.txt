@@ -71,6 +71,52 @@ Method (WECB, 3, Serialized)\n
 }\n
 end;
 
+#
+# Note: Offsets below into EC are based on the following data in the native DSDT
+#
+#            OperationRegion (ERAM, EmbeddedControl, Zero, 0xFF)
+#            Field (ERAM, ByteAcc, Lock, Preserve)
+#            {
+#                        Offset (0x5A),
+#                        Offset (0x5B),
+#                        Offset (0x5C),
+#                        Offset (0x5D),
+#                ENIB,   16,//5d
+#                ENDD,   8,//5f
+#                SMPR,   8,//60
+#                SMST,   8,//61
+#                SMAD,   8,//62
+#                SMCM,   8,//63
+#                SMD0,   256,//64
+#                BCNT,   8,
+#                SMAA,   24,
+#                        Offset (0x89)
+#            }
+#
+#            OperationRegion (ECPR, EmbeddedControl, Zero, 0xFF)
+#            Field (ECPR, ByteAcc, Lock, Preserve)
+#            {
+#                        Offset (0x06),
+#                    ,   4,
+#                GSPN,   1,
+#                        Offset (0x0E),
+#                SADP,   8,
+#                        Offset (0x2D),
+#                BCTL,   128,
+#                        Offset (0x88),
+#                BTDC,   64,//88
+#                BMNN,   72,//90
+#                BDVN,   56,//99
+#
+# If the native DSDT has any such data re-organized such that the fields
+# being read with RECB are at a different offset, the offsets below
+# (first param to WECB/RECB) would need to be changed for the DSDT.
+#
+# This is something to watch out for when adapting this patch to another 
+# computer and maybe even after updating to a new BIOS.
+#
+
+
 # deal with 256-bit SMD0
 into device label EC0 code_regex SMD0,\s+256 replace_matched begin SDXX,256 end;
 into device label EC0 insert begin Method (RSMD, 0, Serialized) { Return (RECB(0x64, 256)) } end;
