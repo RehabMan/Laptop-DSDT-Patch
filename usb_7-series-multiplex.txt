@@ -218,6 +218,8 @@ Method (_DSM, 4, NotSerialized)\n
 }\n
 \n
 Method (_PRW, 0, NotSerialized) { Return (GPRW (0x0D, 0x04)) }\n
+// alternate for above\n
+//Method (_PRW, 0, NotSerialized) { Return (Package() { 0x0D, 0x04 }) }\n
 Method (XHCA, 0, NotSerialized) { Store (One, PAHC) }\n
 Method (XHCB, 0, NotSerialized) { Store (One, PBHC) }\n
 Method (XHCC, 0, NotSerialized) { Store (One, PCHC) }\n
