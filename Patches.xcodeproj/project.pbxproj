@@ -46,6 +46,7 @@
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_FDE.txt; sourceTree = "<group>"; };
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
 		8484672A180F0C3600DD3D99 /* battery_HP-DV7-7xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_HP-DV7-7xxx.txt"; sourceTree = "<group>"; };
+		8498961A1811D4A80086DF6C /* system_Mutex.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_Mutex.txt; sourceTree = "<group>"; };
 		8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_HP-Spectre-XT.txt"; sourceTree = "<group>"; };
 		8499C9761704B5F70066A5F3 /* NullPatch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NullPatch.txt; sourceTree = "<group>"; };
 		849B7B29180B859900B76D3C /* usb_7-series-multiplex.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "usb_7-series-multiplex.txt"; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 				84AE72BE180DBA4700E29861 /* system_MCHC.txt */,
 				8410973618108F8000829904 /* system_WAK1.txt */,
 				84109737181090AE00829904 /* system_WAK2.txt */,
+				8498961A1811D4A80086DF6C /* system_Mutex.txt */,
 			);
 			name = System;
 			sourceTree = "<group>";

@@ -56,6 +56,7 @@
 [7.08]  Add MCHC	system_MCHC.txt
 [7.09]  Fix _WAK Arg0 v1	system_WAK1.txt
 [7.10]  Fix _WAK Arg0 v2	system_WAK2.txt
+[7.11]  Fix Mutex with non-zero SyncLevel	system_Mutex.txt
 [8.0] == Audio	NullPatch.txt
 [8.1]   Audio Layout 12	audio_HDEF-layout12.txt
 [8.2]   Audio Layout 12 (advanced)	audio_HDEF-layout12a.txt
