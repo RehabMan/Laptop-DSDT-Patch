@@ -46,14 +46,16 @@
 [6.0] == Fan control/temperature status patches	NullPatch.txt
 [6.1]   Acer Aspire fan control	control_AcerFan.txt
 [7.0] == System Patches	NullPatch.txt
-[7.1]   IRQ Fix	system_IRQ.txt
-[7.2]   SMBUS Fix	system_SMBUS.txt
-[7.3]   RTC Fix	system_RTC.txt
-[7.4]   Shutdown Fix	system_Shutdown.txt
-[7.5]   HPET Fix	system_HPET.txt
-[7.6]   OS Check Fix	system_OSYS.txt
-[7.7]   AC Adapter Fix	system_ADP1.txt
-[7.8]   Add MCHC	system_MCHC.txt
+[7.01]  IRQ Fix	system_IRQ.txt
+[7.02]  SMBUS Fix	system_SMBUS.txt
+[7.03]  RTC Fix	system_RTC.txt
+[7.04]  Shutdown Fix	system_Shutdown.txt
+[7.05]  HPET Fix	system_HPET.txt
+[7.06]  OS Check Fix	system_OSYS.txt
+[7.07]  AC Adapter Fix	system_ADP1.txt
+[7.08]  Add MCHC	system_MCHC.txt
+[7.09]  Fix _WAK Arg0 v1	system_WAK1.txt
+[7.10]  Fix _WAK Arg0 v2	system_WAK2.txt
 [8.0] == Audio	NullPatch.txt
 [8.1]   Audio Layout 12	audio_HDEF-layout12.txt
 [8.2]   Audio Layout 12 (advanced)	audio_HDEF-layout12a.txt
