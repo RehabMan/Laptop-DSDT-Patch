@@ -13,6 +13,38 @@ begin
 Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
 end;
 
+into method label B1B4 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B4, 4, NotSerialized)\n
+{\n
+    Store(Arg3, Local0)\n
+    Or(Arg2, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg1, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg0, ShiftLeft(Local0, 8), Local0)\n
+    Return(Local0)\n
+}\n
+end;
+
+# utility method to read buffers from EC
+into device label EC insert
+begin
+Method (RECB, 2, Serialized)\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+        Field(ERAM, ByteAcc, Lock, Preserve) { BYTE, 8 }\n
+        Store(BYTE, Index(TEMP, Arg0))\n
+        Increment(Arg0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
 # Change EC register declarations from 16-bit to 8-bit
 
 into device label EC code_regex SBRC,\s+16 replace_matched begin BRC0,8,BRC1,8 end;
@@ -24,6 +56,51 @@ into device label EC code_regex SBDV,\s+16 replace_matched begin BDV0,8,BDV1,8 e
 into device label EC code_regex SBSN,\s+16 replace_matched begin BSN0,8,BSN1,8 end;
 
 into device label EC code_regex SBAC,\s+16 replace_matched begin BAC0,8,BAC1,8 end;
+
+# this one is fan related
+into device label EC code_regex HFN1,\s+16 replace_matched begin FN10,8,FN11,8 end;
+# might also be fan related
+into device label EC code_regex HSPD,\s+16 replace_matched begin SPD0,8,SPD1,8 end;
+
+# this one is sleep related
+into device label EC code_regex HWAK,\s+16 replace_matched begin WAK0,8,WAK1,8 end;
+
+# 32-bit
+into device label EC code_regex SBCH,\s+32 replace_matched begin BCH0,8,BCH1,8,BCH2,8,BCH3,8 end;
+
+# 128-bit
+#
+# Note: Offsets below into EC are based on the following data in the native DSDT
+#
+#                    Field (ECOR, ByteAcc, NoLock, Preserve)
+#                    {
+#                                Offset (0xA0),
+#                        SBMN,   128
+#                    }
+#
+#                    Field (ECOR, ByteAcc, NoLock, Preserve)
+#                    {
+#                                Offset (0xA0),
+#                        SBDN,   128
+#                    }
+# If the native DSDT has any such data re-organized such that the fields
+# being read with RECB are at a different offset, the offsets below
+# (first param to WECB/RECB) would need to be changed for the DSDT.
+#
+# This is something to watch out for when adapting this patch to another 
+# computer and maybe even after updating to a new BIOS.
+#
+
+# deal with 128-bit SBMN
+into device label EC code_regex (SBMN,)\s+(128) replace_matched begin BMNX,%2,//%1%2 end;
+into device label EC insert begin Method (RBMN, 0, Serialized) { Return(RECB(0xA0,128)) } end;
+into method label GBIF code_regex \(SBMN, replaceall_matched begin (RBMN(), end;
+
+# deal with 128-bit SBDN
+into device label EC code_regex (SBDN,)\s+(128) replace_matched begin BDNX,%2,//%1%2 end;
+into device label EC insert begin Method (RBDN, 0, Serialized) { Return(RECB(0xA0,128)) } end;
+into method label GBIF code_regex \(SBDN, replaceall_matched begin (RBDN(), end;
+
 
 # Change access (reads) to those registers from 16-bit to 8-bit
 into_all method label GBST code_regex \(SBRC, replaceall_matched begin (B1B2 (BRC0, BRC1), end;
@@ -45,8 +122,16 @@ into_all method label GBIF code_regex \(SBDV, replaceall_matched begin (B1B2 (BD
 into_all method label GBIF code_regex \(SBSN, replaceall_matched begin (B1B2 (BSN0, BSN1), end;
 
 into_all method label GBIF code_regex \(SBDV\) replaceall_matched begin (B1B2 (BDV0, BDV1)) end;
-into_all method label GBIF code_regex ,\s+SBDV, replaceall_matched begin , B1B2 (BDV0, BDV1), end;
+into_all method label GBIF code_regex ,\s+SBDV, replaceall_matched begin ,B1B2(BDV0, BDV1), end;
 
 into device label EC code_regex SBBM,\s+16 replace_matched begin BBM0,8,BBM1,8 end;
-into_all method label GBIF code_regex \(SBBM, replaceall_matched begin (B1B2 (BBM0, BBM1), end;
+into_all method label GBIF code_regex \(SBBM, replaceall_matched begin (B1B2(BBM0,BBM1), end;
 
+into_all method label GBIF code_regex \(SBCH, replaceall_matched begin (B1B4(BCH0,BCH1,BCH2,BCH3), end;
+
+# this one is added in a patched DSDT to return fan speed
+into method label FAN0 parent_label SMCD code_regex \(\^\^EC\.HFN1, replaceall_matched begin (B1B2(^^EC.FN10,^^EC.FN11), end;
+into method label MHST code_regex \(HSPD, replaceall_matched begin (B1B2(SPD0,SPD1), end;
+
+# sleep related
+into method label _L1D parent_label _GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;

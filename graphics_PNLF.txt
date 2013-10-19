@@ -1,6 +1,10 @@
 #Maintained by: RehabMan for: Laptop Patches
 #graphics_PNLF.txt
 
+# This patch enables the brightness slider in SysPrefs->Displays
+# and will also enable activation of sleep mode by closing
+# the laptop lid.
+
 #   Brightness control fix
 into device label PNLF remove_entry;
 into scope label _SB insert
