@@ -19,7 +19,7 @@
 
 into method label _WAK code_regex ([\s\S]*) replace_matched
 begin
-if (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }\n
+If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }\n
 %1
 end;
 
