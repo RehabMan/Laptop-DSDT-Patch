@@ -5,7 +5,8 @@
 # created originally for LilaQ
 
 # works for:
-# for HP Spectre XT Touchsmart 15-4000EG
+#  HP Spectre XT Touchsmart 15-4000EG
+#  HP Envy 6T Ultrabook
 
 # remove WMI related items; makes it easier to patch battery EC
 into device label WMID remove_entry;
