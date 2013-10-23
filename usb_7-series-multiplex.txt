@@ -1,11 +1,19 @@
-# Maintained by: PJALM for: PJALM Intel7 at: Thu Aug 15 09:07:46 UTC 2013
-# Patch Name   : USB Multiplex
+#Maintained by: RehabMan for: Laptop Patches
+#usb_7-series-multiplex.txt
 
+# Originally Maintained by: PJALM for: PJALM Intel7 at: Thu Aug 15 09:07:46 UTC 2013
 # Intel z77 USB2/USB3 Multiplexing Fix
 # USB3 patches in thanks to SJ_Underwater and Mieze
 # Code optimizations thanks to RehabMan and PikeRAlpha
 
 # Further optimizations by RehabMan 2013-10-14
+
+#
+# Note: These patches are often not universal.  If your DSDT is substantially
+# different, you may need to tweak them or refer to the various
+# guides for XHC patching to implement it correctly for your
+# board.
+#
 
 # Fix method _OSC
 into method label _OSC parent_label PCI0 remove_entry;
