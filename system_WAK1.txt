@@ -20,7 +20,7 @@
 # See system_WAK2.txt for an alternate patch
 #
 
-into method label _WAK code_regex \s(.?WAK\s+\([^)]*\)) replace_matched
+into method label _WAK code_regex \s*(.?WAK\s+\([^)]*\)) replace_matched
 begin
 If (LOr(LLess(Arg0,1),LGreater(Arg0,5))) { Store(3,Arg0) }\n
 %1
