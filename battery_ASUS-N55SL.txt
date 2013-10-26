@@ -5,7 +5,8 @@
 # created originally for jesselid
 
 # works for:
-# Asus N55SL, BIOS rev. 204
+# ASUS N55SL, BIOS rev. 204
+# ASUS VivoBook series
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -24,6 +25,12 @@ into device label EC0 code_regex B0SN,\s+16 replace_matched begin B0S0,8,B0S1,8 
 into device label EC0 code_regex B1SN,\s+16 replace_matched begin B1S0,8,B1S1,8 end;
 into method label BIFA code_regex \(B0SN, replace_matched begin (B1B2(B0S0,B0S1), end;
 into method label BIFA code_regex \(B1SN, replace_matched begin (B1B2(B1S0,B1S1), end;
+into device label EC0 code_regex DT2B,\s+16 replace_matched begin T2B0,8,T2B1,8 end;
+into method label SMBR code_regex \(DT2B, replace_matched begin (B1B2(T2B0,T2B1), end;
+into method label SMBW code_regex Store\s+\(([^,]*),\s+DT2B\) replace_matched
+begin
+Store(ShiftRight(%1,8),T2B1) Store(%1,T2B0)
+end;
 
 into device label EC0 insert
 begin
@@ -110,14 +117,14 @@ end;
 into device label EC0 code_regex BDAT,\s+256 replace_matched 
 begin
 //BDAT, 256,\n
-BA00,8,BA01,8,BA02,8,BA03,8,
-BA04,8,BA05,8,BA06,8,BA07,8,
-BA08,8,BA09,8,BA0A,8,BA0B,8,
-BA0C,8,BA0D,8,BA0E,8,BA0F,8,
-BA10,8,BA11,8,BA12,8,BA13,8,
-BA14,8,BA15,8,BA16,8,BA17,8,
-BA18,8,BA19,8,BA1A,8,BA1B,8,
-BA1C,8,BA1D,8,BA1E,8,BA1F,8
+BA00,8,BA01,8,BA02,8,BA03,8,\n
+BA04,8,BA05,8,BA06,8,BA07,8,\n
+BA08,8,BA09,8,BA0A,8,BA0B,8,\n
+BA0C,8,BA0D,8,BA0E,8,BA0F,8,\n
+BA10,8,BA11,8,BA12,8,BA13,8,\n
+BA14,8,BA15,8,BA16,8,BA17,8,\n
+BA18,8,BA19,8,BA1A,8,BA1B,8,\n
+BA1C,8,BA1D,8,BA1E,8,BA1F,8\n
 end;
 
 into method label SMBR code_regex \(BDAT, replaceall_matched begin (RDBA(), end;
@@ -212,14 +219,14 @@ end;
 into device label EC0 code_regex BDA2,\s+256 replace_matched 
 begin
 //BDA2, 256,\n
-BB00,8,BB01,8,BB02,8,BB03,8,
-BB04,8,BB05,8,BB06,8,BB07,8,
-BB08,8,BB09,8,BB0A,8,BB0B,8,
-BB0C,8,BB0D,8,BB0E,8,BB0F,8,
-BB10,8,BB11,8,BB12,8,BB13,8,
-BB14,8,BB15,8,BB16,8,BB17,8,
-BB18,8,BB19,8,BB1A,8,BB1B,8,
-BB1C,8,BB1D,8,BB1E,8,BB1F,8
+BB00,8,BB01,8,BB02,8,BB03,8,\n
+BB04,8,BB05,8,BB06,8,BB07,8,\n
+BB08,8,BB09,8,BB0A,8,BB0B,8,\n
+BB0C,8,BB0D,8,BB0E,8,BB0F,8,\n
+BB10,8,BB11,8,BB12,8,BB13,8,\n
+BB14,8,BB15,8,BB16,8,BB17,8,\n
+BB18,8,BB19,8,BB1A,8,BB1B,8,\n
+BB1C,8,BB1D,8,BB1E,8,BB1F,8\n
 end;
 
 into method label SMBR code_regex \(BDA2, replaceall_matched begin (RDBB(), end;

@@ -22,7 +22,7 @@
 [4.0] == Battery Patches	NullPatch.txt
 [4.01]  Acer Aspire 4830T	battery_Acer-Aspire-4830T.txt
 [4.02]  Acer Aspire 5750g	battery_Acer-Aspire-5750g.txt
-[4.03]  ASUS N55SL	battery_ASUS-N55SL.txt
+[4.03]  ASUS N55SL/VivoBook	battery_ASUS-N55SL.txt
 [4.04]  Compaq CQ60	battery_Compaq-CQ60.txt
 [4.05]  Dell XPS 13	battery_Dell-XPS-13.txt
 [4.06]  HP DV7-7xxx	battery_HP-DV7-7xxx.txt
