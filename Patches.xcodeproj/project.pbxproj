@@ -42,6 +42,7 @@
 		8455C5E01809953B00F919D7 /* fix_IRC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_IRC.txt; sourceTree = "<group>"; };
 		845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_EDID.txt; sourceTree = "<group>"; };
 		845FE5EF1702639F004601B0 /* .maciasl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .maciasl; sourceTree = "<group>"; usesTabs = 1; };
+		84624C9818219322004C34DA /* battery_HP-DV7-6xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_HP-DV7-6xxx.txt"; sourceTree = "<group>"; };
 		846576DA1806D6DC00AB21B7 /* system_HPET.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_HPET.txt; sourceTree = "<group>"; };
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_FDE.txt; sourceTree = "<group>"; };
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 				842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */,
 				842F531917FB301B001CF33B /* battery_Compaq-CQ60.txt */,
 				842F531A17FB301B001CF33B /* battery_Dell-XPS-13.txt */,
+				84624C9818219322004C34DA /* battery_HP-DV7-6xxx.txt */,
 				8484672A180F0C3600DD3D99 /* battery_HP-DV7-7xxx.txt */,
 				842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */,
 				842F531B17FB301B001CF33B /* battery_HP-Envy-DV6.txt */,

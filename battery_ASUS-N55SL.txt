@@ -7,6 +7,7 @@
 # works for:
 # ASUS N55SL, BIOS rev. 204
 # ASUS VivoBook series
+# ASUS Zenbook UX31A
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
