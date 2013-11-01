@@ -28,6 +28,7 @@ Method (_DSM, 4, NotSerialized)\n
         "built-in", Buffer() { 0x00 },\n
         "PinConfigurations", Buffer() { },\n
         "hda-gfx", Buffer() { "onboard-1" },\n
+        "MaximumBootBeepVolume", 77,
     })\n
 }\n
 end;

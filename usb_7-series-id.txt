@@ -13,6 +13,7 @@ Method (_DSM, 4, NotSerialized)\n
     Return (Package()\n
     {\n
         "device-id", Buffer() { 0x26, 0x1e, 0x00, 0x00 },\n
+        "AAPL,clock-id", Buffer() { 0x01 },\n
         "built-in", Buffer() { 0x00 },\n
         "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
         "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },\n
@@ -35,6 +36,7 @@ Method (_DSM, 4, NotSerialized)\n
     Return (Package()\n
     {\n
         "device-id", Buffer() { 0x2d, 0x1e, 0x00, 0x00 },\n
+        "AAPL,clock-id", Buffer() { 0x01 },\n
         "built-in", Buffer() { 0x00 },\n
         "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
         "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },\n

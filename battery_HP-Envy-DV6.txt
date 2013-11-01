@@ -5,7 +5,8 @@
 # created originally for ginchenko
 
 # works for:
-# HP Envy dv6
+#  HP Envy dv6
+#  HP dv6t-7000
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

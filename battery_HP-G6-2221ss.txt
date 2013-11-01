@@ -5,7 +5,10 @@
 # created originally for damnit_boy
 
 # works for:
-# for HP G6 2221ss
+#  HP G6 2221ss
+#  HP dv7t-4100
+#  HP Envy 14 Spectre 14t-3000
+
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
