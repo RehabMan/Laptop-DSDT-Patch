@@ -28,3 +28,25 @@ After that you can use the repo just like a remote repo.
 
 I recommend you use my version of MaciASL: 
 https://github.com/RehabMan/OS-X-MaciASL-patchmatic
+
+
+To apply a patch to your DSDT with MaciASL:
+- run MaciASL
+- if you already have a patched DSDT in /Extra, MaciASL will load it 
+  (caption will say DSDT.AML)
+- if you don't have a patched DSDT yet, caption will show "System DSDT"
+- click Compile to verify you have an error free compile
+  (only errors matter)
+- if it has errors, you must fix them
+- there are a few common error patches in the repo (first group)
+- ok... back to how to apply a patch...
+- click Patch (logical, right)
+- select a patch from the repo that appears on the left
+- MaciASL will show you a preview of the changes
+- click Apply
+- when you're done applying patches, click Close
+
+To use your DSDT, you must save it to /Extra/dsdt.aml, format: ACPI Machine Language Binary
+
+After saving it, reboot and test.  Boot with DSDT=null if there is an issue with
+your DSDT that prevents you from booting.

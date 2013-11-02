@@ -12,9 +12,18 @@ into_all all label GFX0 set_label begin IGPU end;
 into_all all label _SB.PCI0.GFX0 set_label begin _SB.PCI0.IGPU end;
 into_all all label _SB.PCI0.GFX0.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
 
-# and its aliases
+# and its aliases: VID
 into_all all code_regex VID\. replaceall_matched begin IGPU. end;
+into_all all code_regex VID, replaceall_matched begin IGPU, end;
 into_all all code_regex \(VID replaceall_matched begin (IGPU end;
 into_all all label VID set_label begin IGPU end;
 into_all all label _SB.PCI0.VID set_label begin _SB.PCI0.IGPU end;
 into_all all label _SB.PCI0.VID.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
+
+# and another: AGP1
+into_all all code_regex AGP1\. replaceall_matched begin IGPU. end;
+into_all all code_regex AGP1, replaceall_matched begin IGPU, end;
+into_all all code_regex \(AGP1 replaceall_matched begin (IGPU end;
+into_all all label AGP1 set_label begin IGPU end;
+into_all all label _SB.PCI0.AGP1 set_label begin _SB.PCI0.IGPU end;
+into_all all label _SB.PCI0.AGP1.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
