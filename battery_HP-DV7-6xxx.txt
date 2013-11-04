@@ -16,14 +16,14 @@ Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
 end;
 
 # remove WMI related items; makes it easier to patch battery EC
-into device label WMID remove_entry;
-into method label _Q06 parent_label EC remove_entry;
-into method label _Q08 parent_label EC remove_entry;
-into method label _Q1F parent_label EC remove_entry;
-into method label _Q3A parent_label EC remove_entry;
-into method label _Q43 parent_label EC remove_entry;
-into method label _Q20 parent_label EC remove_entry;
-into method label _QCC parent_label EC remove_entry;
+#into device label WMID remove_entry;
+#into method label _Q06 parent_label EC remove_entry;
+#into method label _Q08 parent_label EC remove_entry;
+#into method label _Q1F parent_label EC remove_entry;
+#into method label _Q3A parent_label EC remove_entry;
+#into method label _Q43 parent_label EC remove_entry;
+#into method label _Q20 parent_label EC remove_entry;
+#into method label _QCC parent_label EC remove_entry;
 
 
 # 16-bit EC registers
@@ -69,3 +69,23 @@ into method label UBST code_regex \(\^\^PCI0\.LPCB\.EC\.BPR, replaceall_matched 
 into method label UBST code_regex \(\^\^PCI0\.LPCB\.EC\.BDV, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BDV0,^^PCI0.LPCB.EC.BDV1), end;
 into method label UBST code_regex \(\^\^PCI0\.LPCB\.EC\.BFC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BFC0,^^PCI0.LPCB.EC.BFC1), end;
 into method label UBST code_regex \(\^\^PCI0\.LPCB\.EC\.BPV, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BPV0,^^PCI0.LPCB.EC.BPV1), end;
+
+# GTBI method
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BDC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BDC0,^^PCI0.LPCB.EC.BDC1), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BFC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BFC0,^^PCI0.LPCB.EC.BFC1), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BTT, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BTT0,^^PCI0.LPCB.EC.BTT1), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BPV, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BPV0,^^PCI0.LPCB.EC.BPV1), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BPR, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BPR0,^^PCI0.LPCB.EC.BPR1), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BST, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BST0,^^PCI0.LPCB.EC.BST1), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BC1, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BC10,^^PCI0.LPCB.EC.BC11), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BC2, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BC20,^^PCI0.LPCB.EC.BC21), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BC3, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BC30,^^PCI0.LPCB.EC.BC31), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BC4, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BC40,^^PCI0.LPCB.EC.BC41), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BMN, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BMN0,^^PCI0.LPCB.EC.BMN1), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BSN\), replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BSN0,^^PCI0.LPCB.EC.BSN1)), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BDV, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BDV0,^^PCI0.LPCB.EC.BDV1), end;
+into method label GTBI code_regex \(\^\^PCI0\.LPCB\.EC\.BMD, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BMD0,^^PCI0.LPCB.EC.BMD1), end;
+into method label GTBI code_regex Store\s+\(\^\^PCI0\.LPCB\.EC\.BTN,\s+Local3\) removeall_matched;
+
+# WMBG method
+into method label WMBG code_regex \(\^\^PCI0\.LPCB\.EC\.BST, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC.BST0,^^PCI0.LPCB.EC.BST1), end;
