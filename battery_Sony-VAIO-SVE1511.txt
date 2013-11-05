@@ -30,12 +30,12 @@ into method label SELE code_regex \(BATD, replaceall_matched begin (B1B2(BTD0,BT
 into method label SMRW code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.SMW0, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SM00,\\_SB.PCI0.LPCB.EC0.SM01), end;
 into method label SMRW code_regex Store\s+\(Arg3,\s+\\_SB\.PCI0\.LPCB\.EC0\.SMW0\) replaceall_matched
 begin
-Store (ShiftLeft(Arg3, 8), \\_SB.PCI0.LPCB.EC0.SM01)
+Store (ShiftRight(Arg3, 8), \\_SB.PCI0.LPCB.EC0.SM01)
 Store (Arg3, \\_SB.PCI0.LPCB.EC0.SM01)
 end;
 into method label SMWR code_regex Store\s+\(Arg3,\s+SMW0\) replaceall_matched
 begin
-Store (ShiftLeft(Arg3, 8), SM01)
+Store (ShiftRight(Arg3, 8), SM01)
 Store (Arg3, SM01)
 end;
 into method label SMRD code_regex \(SMW0, replaceall_matched begin (B1B2(SM00,SM01), end;

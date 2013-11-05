@@ -27,12 +27,12 @@ end;
 
 into method label FANG code_regex Store\s+\(Arg0,\s+ERIB\) replace_matched 
 begin
-Store(ShiftLeft(Arg0, 8), ERI1) Store(Arg0, ERI0)
+Store(ShiftRight(Arg0, 8), ERI1) Store(Arg0, ERI0)
 end;
 
 into method label FANW code_regex Store\s+\(Arg0,\s+ERIB\) replace_matched
 begin
-Store(ShiftLeft(Arg0, 8), ERI1) Store(Arg0, ERI0)
+Store(ShiftRight(Arg0, 8), ERI1) Store(Arg0, ERI0)
 end;
 
 
