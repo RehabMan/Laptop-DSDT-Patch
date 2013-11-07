@@ -10,14 +10,14 @@
 #  HP Envy 6T 1000
 
 # remove WMI related items; makes it easier to patch battery EC
-into device label WMID remove_entry;
-into device label WLBU remove_entry;
-into method label CHWL code_regex \(\^WMID\.[^\)].*\) replaceall_matched begin (Zero) end;
-into method label _PTS code_regex \\_SB\.WMID\.ESDT\s+\(\) remove_matched;
-into method label PFUN code_regex \^\^\^\^WMID\.SWDS\s+\(0x01FF0000\) remove_matched;
-into method label _Q40 remove_entry;
-into method label _Q41 remove_entry;
-into method label _Q42 remove_entry;
+#into device label WMID remove_entry;
+#into device label WLBU remove_entry;
+#into method label CHWL code_regex \(\^WMID\.[^\)].*\) replaceall_matched begin (Zero) end;
+#into method label _PTS code_regex \\_SB\.WMID\.ESDT\s+\(\) remove_matched;
+#into method label PFUN code_regex \^\^\^\^WMID\.SWDS\s+\(0x01FF0000\) remove_matched;
+#into method label _Q40 remove_entry;
+#into method label _Q41 remove_entry;
+#into method label _Q42 remove_entry;
 
 #                SMD0,   256, 
 #                BTDC,   64, 
@@ -133,13 +133,16 @@ into method label CFUN code_regex \(SMD0\, replaceall_matched begin (RSMD(), end
 into device label EC0 code_regex BTDC,\s+64 replace_matched begin TDCX,64 end;
 into device label EC0 insert begin Method (RTDC, 0, Serialized) { Return(RECB(0x88, 64)) } end;
 into method label GUBT code_regex \(BTDC, replaceall_matched begin (RTDC(), end;
+into method label BATT code_regex \(\^\^PCI0\.LPCB\.EC0\.BTDC, replaceall_matched begin (^^PCI0.LPCB.EC0.RTDC(), end;
 
 # deal with 72-bit BMNN
 into device label EC0 code_regex BMNN,\s+72 replace_matched begin MNNX,72 end;
 into device label EC0 insert begin Method (RMNN, 0, Serialized) { Return(RECB(0x90, 72)) } end;
 into method label GUBI code_regex \(BMNN, replaceall_matched begin (RMNN(), end;
+into method label BATT code_regex \(\^\^PCI0\.LPCB\.EC0\.BMNN, replaceall_matched begin (^^PCI0.LPCB.EC0.RMNN(), end;
 
 # deal with 56-bit BDVN
 into device label EC0 code_regex BDVN,\s+56 replace_matched begin DVNX,56 end;
 into device label EC0 insert begin Method (RDVN, 0, Serialized) { Return(RECB(0x99, 56)) } end;
 into method label GBMN code_regex \(BDVN, replaceall_matched begin (RDVN(), end;
+into method label BATT code_regex \(\^\^PCI0\.LPCB\.EC0\.BDVN, replaceall_matched begin (^^PCI0.LPCB.EC0.RDVN(), end;
