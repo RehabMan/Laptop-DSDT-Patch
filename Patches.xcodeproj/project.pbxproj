@@ -40,6 +40,7 @@
 		842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Sony-VAIO-SVE1511.txt"; sourceTree = "<group>"; };
 		8437E5C21803BDD4006BB819 /* control_AcerFan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control_AcerFan.txt; sourceTree = "<group>"; };
 		8455C5E01809953B00F919D7 /* fix_IRC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_IRC.txt; sourceTree = "<group>"; };
+		845B33B8182C17A1000F2476 /* battery_HP-Envy-14.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_HP-Envy-14.txt"; sourceTree = "<group>"; };
 		845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_EDID.txt; sourceTree = "<group>"; };
 		845FE5EF1702639F004601B0 /* .maciasl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .maciasl; sourceTree = "<group>"; usesTabs = 1; };
 		84624C9818219322004C34DA /* battery_HP-DV7-6xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_HP-DV7-6xxx.txt"; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 				842F531A17FB301B001CF33B /* battery_Dell-XPS-13.txt */,
 				84624C9818219322004C34DA /* battery_HP-DV7-6xxx.txt */,
 				8484672A180F0C3600DD3D99 /* battery_HP-DV7-7xxx.txt */,
+				845B33B8182C17A1000F2476 /* battery_HP-Envy-14.txt */,
 				842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */,
 				842F531B17FB301B001CF33B /* battery_HP-Envy-DV6.txt */,
 				842F531C17FB301B001CF33B /* battery_HP-G6-2221ss.txt */,

@@ -1,11 +1,11 @@
 #Maintained by: RehabMan for: Laptop Patches
-#battery_HP-Envy-17t.txt
+#battery_HP-Envy-14.txt
 
-# created by RehabMan 2013-10-16
-# for gygabyte666
+# created by RehabMan 2013-11-07
+# for ddoryoo
 
 # works for:
-# HP Envy 17t-j000
+#  HP Envy 14-2166se
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -48,24 +48,25 @@ end;
 #
 # Note: Offsets below into EC are based on the following data in the native DSDT
 #
-#                    OperationRegion (ECF2, EmbeddedControl, Zero, 0xFF)
 #                    Field (ECF2, ByteAcc, Lock, Preserve)
 #                    {
-#                        MBVR,   8,
-#                                Offset (0x06),
-#                        KBLL,   8,
 #                                Offset (0x10),
-#                        BDN0,   56,//10
+#                        BDN0,   56, 	//!!0x10
 #                                Offset (0x18),
 #                        BME0,   8,
-#                                Offset (0x1C),
-#                        DAY0,   8,//1c
-#                        HUR0,   8,//1d
-#                        MIN0,   8,//1e
-#                        SEC0,   8,//1f
-#                        BMNC,   8,//20
-#                        BMN0,   120,//21
-#                        BCT0,   128,//30
+#                                Offset (0x20),
+#                        BMN0,   32, 	//0x20
+#                        BMN2,   8, 	//0x24
+#                        BMN4,   88,	//0x25
+#                        BCT0,   128, 	//!! 0x30
+#                        BDN1,   56, 	//!! 0x40
+#                                Offset (0x48),
+#                        BME1,   8,
+#                                Offset (0x50),
+#                        BMN1,   32, 	//0x50
+#                        BMN3,   8, 	//0x54
+#                        BMN5,   88, 	//0x55
+#                        BCT1,   128, 	//!!0x60
 #
 # If the native DSDT has any such data re-organized such that the fields
 # being read with RECB are at a different offset, the offsets below
@@ -75,25 +76,15 @@ end;
 # computer and maybe even after updating to a new BIOS.
 #
 
-
-# deal with 56-bit BDN0
+# deal with buffer fields above
 into device label H_EC code_regex (BDN0,)\s+(56) replace_matched begin BDNX,%2,//%1%2 end;
-into device label H_EC insert begin Method (RDN0, 0, Serialized) { Return(RECB(0x10,56)) } end;
-into method label GBTI code_regex \(BDN0, replaceall_matched begin (RDN0(), end;
-
-# deal with 120-bit BMN0
-into device label H_EC code_regex (BMN0,)\s+(120) replace_matched begin BMNX,%2,//%1%2 end;
-into device label H_EC insert begin Method (RMN0, 0, Serialized) { Return(RECB(0x21,120)) } end;
-into method label GBTI code_regex \(BMN0, replaceall_matched begin (RDN0(), end;
-
-# deal with 128-bit BCT0
+into device label H_EC code_regex (BDN1,)\s+(56) replace_matched begin BDNY,%2,//%1%2 end;
 into device label H_EC code_regex (BCT0,)\s+(128) replace_matched begin BCTX,%2,//%1%2 end;
-into device label H_EC insert begin Method (RCT0, 0, Serialized) { Return(RECB(0x30,128)) } end;
-into method label GBTI code_regex \(BCT0, replaceall_matched begin (RCT0(), end;
-
-# not battery related, but in case you want to read the fan
-into device label H_EC code_regex FANR,\s+16 replace_matched begin FNR0,8,FNR1,8 end;
-into method label FRSP parent_label TZ00 code_regex \(\\_SB\.PCI0\.LPCB\.H_EC\.FANR, replace_matched begin (B1B2(\\_SB.PCI0.LPCB.H_EC.FNR0,\\_SB.PCI0.LPCB.H_EC.FNR1), end;
+into device label H_EC code_regex (BCT1,)\s+(128) replace_matched begin BCTY,%2,//%1%2 end;
+into method label GBTI code_regex \(BCT0, replaceall_matched begin (RECB(0x30,128), end;
+into method label GBTI code_regex \(BCT1, replaceall_matched begin (RECB(0x60,128), end;
+into method label GBTI code_regex \(BDN0, replaceall_matched begin (RECB(0x10,56), end;
+into method label GBTI code_regex \(BDN1, replaceall_matched begin (RECB(0x40,56), end;
 
 # 16-bit registers
 into device label H_EC code_regex BDC0,\s+16 replace_matched begin DC00,8,DC01,8 end;
