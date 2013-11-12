@@ -24,23 +24,24 @@
 [4.02]  Acer Aspire 5750g	battery_Acer-Aspire-5750g.txt
 [4.03]  ASUS N55SL/VivoBook	battery_ASUS-N55SL.txt
 [4.04]  Compaq CQ60	battery_Compaq-CQ60.txt
-[4.05]  Dell XPS 13	battery_Dell-XPS-13.txt
-[4.06]  HP DV7-6xxx	battery_HP-DV7-6xxx.txt
-[4.07]  HP DV7-7xxx	battery_HP-DV7-7xxx.txt
-[4.08]  HP Envy 14	battery_HP-Envy-14.txt
-[4.09]  HP Envy 17t	battery_HP-Envy-17t.txt
-[4.10]  HP Envy DV6	battery_HP-Envy-DV6.txt
-[4.11]  HP G6 2221ss	battery_HP-G6-2221ss.txt
-[4.12]  HP ProBook Generic	battery_HP-ProBook-Generic.txt
-[4.13]  HP Spectre XT	battery_HP-Spectre-XT.txt
-[4.14]  Lenovo Twist	battery_Lenovo-Twist.txt
-[4.15]  Lenovo Ux10-Z580	battery_Lenovo-Ux10-Z580.txt
-[4.16]  Lenovo X220	battery_Lenovo-X220.txt
-[4.17]  Lenovo y580	battery_Lenovo-y580.txt
-[4.18]  Samsung RF411	battery_Samsung-RF411.txt
-[4.19]  Samsung Series3	battery_Samsung-Series3-NP300.txt
-[4.20]  Sony VAIO S	battery_Sony-VAIO-S.txt
-[4.21]  Sony VAIO SVE	battery_Sony-VAIO-SVE1511.txt
+[4.05]  Dell Vostro 15xx	battery_Dell-Vostro-15xx.txt
+[4.06]  Dell XPS 13	battery_Dell-XPS-13.txt
+[4.07]  HP DV7-6xxx	battery_HP-DV7-6xxx.txt
+[4.08]  HP DV7-7xxx	battery_HP-DV7-7xxx.txt
+[4.09]  HP Envy 14	battery_HP-Envy-14.txt
+[4.10]  HP Envy 17t	battery_HP-Envy-17t.txt
+[4.11]  HP Envy DV6	battery_HP-Envy-DV6.txt
+[4.12]  HP G6 2221ss	battery_HP-G6-2221ss.txt
+[4.13]  HP ProBook Generic	battery_HP-ProBook-Generic.txt
+[4.14]  HP Spectre XT	battery_HP-Spectre-XT.txt
+[4.15]  Lenovo Twist	battery_Lenovo-Twist.txt
+[4.16]  Lenovo Ux10-Z580	battery_Lenovo-Ux10-Z580.txt
+[4.17]  Lenovo X220	battery_Lenovo-X220.txt
+[4.18]  Lenovo y580	battery_Lenovo-y580.txt
+[4.19]  Samsung RF411	battery_Samsung-RF411.txt
+[4.20]  Samsung Series3	battery_Samsung-Series3-NP300.txt
+[4.21]  Sony VAIO S	battery_Sony-VAIO-S.txt
+[4.22]  Sony VAIO SVE	battery_Sony-VAIO-SVE1511.txt
 [5.0] == Atheros WiFi Patches	NullPatch.txt
 [5.1]   AR9285 WiFi RP02-PXSX	wifi_AR9285-RP02-PXSX.txt
 [5.2]   AR9285 WiFi RP02-WLAN	wifi_AR9285-RP02-WLAN.txt

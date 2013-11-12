@@ -1,0 +1,47 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Dell-Vostro-15xx.txt
+
+# created by RehabMan 2013-11-12
+# created originally for rocrazypl
+
+# works for:
+#  Dell Vostro 1510
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
+end;
+
+# 16-bit EC
+into device label EC0 code_regex BRC0,\s+16 replace_matched begin RC00,8,RC01,8 end;
+into device label EC0 code_regex BSN0,\s+16 replace_matched begin SN00,8,SN01,8 end;
+into device label EC0 code_regex BPV0,\s+16 replace_matched begin PV00,8,PV01,8 end;
+into device label EC0 code_regex BDV0,\s+16 replace_matched begin DV00,8,DV01,8 end;
+into device label EC0 code_regex BDC0,\s+16 replace_matched begin DC00,8,DC01,8 end;
+into device label EC0 code_regex BFC0,\s+16 replace_matched begin FC00,8,FC01,8 end;
+into device label EC0 code_regex BPC0,\s+16 replace_matched begin PC00,8,PC01,8 end;
+into device label EC0 code_regex BAC0,\s+16 replace_matched begin AC00,8,AC01,8 end;
+
+# 16-bit EC (fan related)
+into device label EC0 code_regex ERIB,\s+16 replace_matched begin ERI0,8,ERI1,8 end;
+into method label FANG code_regex Store\s+\(Arg0,\s+ERIB\) replace_matched 
+begin
+Store(ShiftRight(Arg0, 8), ERI1) Store(Arg0, ERI0)
+end;
+into method label FANW code_regex Store\s+\(Arg0,\s+ERIB\) replace_matched
+begin
+Store(ShiftRight(Arg0, 8), ERI1) Store(Arg0, ERI0)
+end;
+
+# _BIF method
+into method label _BIF code_regex \(\^\^EC0\.BDC0, replaceall_matched begin (B1B2(^^EC0.DC00,^^EC0.DC01), end;
+into method label _BIF code_regex \(\^\^EC0\.BFC0, replaceall_matched begin (B1B2(^^EC0.FC00,^^EC0.FC01), end;
+into method label _BIF code_regex \(\^\^EC0\.BDV0, replaceall_matched begin (B1B2(^^EC0.DV00,^^EC0.DV01), end;
+into method label _BIF code_regex \(\^\^EC0\.BSN0, replaceall_matched begin (B1B2(^^EC0.SN00,^^EC0.SN01), end;
+
+# _BST method
+into method label _BST code_regex \(\^\^EC0\.BAC0, replaceall_matched begin (B1B2(^^EC0.AC00,^^EC0.AC01), end;
+into method label _BST code_regex \(\^\^EC0\.BRC0, replaceall_matched begin (B1B2(^^EC0.RC00,^^EC0.RC01), end;
+into method label _BST code_regex \(\^\^EC0\.BPV0, replaceall_matched begin (B1B2(^^EC0.PV00,^^EC0.PV01), end;
+
