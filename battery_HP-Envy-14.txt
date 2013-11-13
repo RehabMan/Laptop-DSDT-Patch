@@ -34,12 +34,14 @@ Method (RECB, 2, Serialized)\n
     ShiftRight(Arg1, 3, Arg1)\n
     Name(TEMP, Buffer(Arg1) { })\n
     Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
     While (LLess(Arg0, Arg1))\n
     {\n
         OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
         Field(ERAM, ByteAcc, Lock, Preserve) { BYTE, 8 }\n
-        Store(BYTE, Index(TEMP, Arg0))\n
+        Store(BYTE, Index(TEMP, Local0))\n
         Increment(Arg0)\n
+        Increment(Local0)\n
     }\n
     Return(TEMP)\n
 }\n
