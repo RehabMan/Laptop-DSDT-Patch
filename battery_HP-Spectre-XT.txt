@@ -157,8 +157,8 @@ into method label BATT code_regex \(\^\^PCI0\.LPCB\.EC0\.BDVN, replaceall_matche
 #                Store (^^EC0.GUBT (), Index (STAT, 0x0B))
 #                Store (^^EC0.GUBI (), Index (STAT, 0x0C))
 
-into method label _BIF code_regex (Store\s\(\^\^EC0\.GBMN\s\(\),\sIndex\s\(STAT,\s0x09\)\)) replace_matched begin if(0){%1} end;
-into method label _BIF code_regex (Store\s\(\^\^EC0\.GUBS\s\(\),\sIndex\s\(STAT,\s0x0A\)\)) replace_matched begin if(0){%1} end;
-into method label _BIF code_regex (Store\s\(\^\^EC0\.GUBT\s\(\),\sIndex\s\(STAT,\s0x0B\)\)) replace_matched begin if(0){%1} end;
-into method label _BIF code_regex (Store\s\(\^\^EC0\.GUBI\s\(\),\sIndex\s\(STAT,\s0x0C\)\)) replace_matched begin if(0){%1} end;
+#into method label _BIF code_regex (Store\s\(\^\^EC0\.GBMN\s\(\),\sIndex\s\(STAT,\s0x09\)\)) replace_matched begin if(0){%1} end;
+#into method label _BIF code_regex (Store\s\(\^\^EC0\.GUBS\s\(\),\sIndex\s\(STAT,\s0x0A\)\)) replace_matched begin if(0){%1} end;
+#into method label _BIF code_regex (Store\s\(\^\^EC0\.GUBT\s\(\),\sIndex\s\(STAT,\s0x0B\)\)) replace_matched begin if(0){%1} end;
+#into method label _BIF code_regex (Store\s\(\^\^EC0\.GUBI\s\(\),\sIndex\s\(STAT,\s0x0C\)\)) replace_matched begin if(0){%1} end;
 
