@@ -26,9 +26,17 @@ Method (B1B4, 4, NotSerialized)\n
 }\n
 end;
 
-# utility method to read buffers from EC
+# utility methods to read/write buffers from/to EC
+into method label RE1B parent_label H_EC remove_entry;
+into method label RECB parent_label H_EC remove_entry;
 into device label H_EC insert
 begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
 Method (RECB, 2, Serialized)\n
 {\n
     ShiftRight(Arg1, 3, Arg1)\n
@@ -37,9 +45,7 @@ Method (RECB, 2, Serialized)\n
     Store(0, Local0)\n
     While (LLess(Arg0, Arg1))\n
     {\n
-        OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
-        Field(ERAM, ByteAcc, Lock, Preserve) { BYTE, 8 }\n
-        Store(BYTE, Index(TEMP, Local0))\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
         Increment(Arg0)\n
         Increment(Local0)\n
     }\n
