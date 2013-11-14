@@ -5,7 +5,7 @@
 # created by RehabMan 9/13/2013
 
 # works for:
-# Acer Aspire 5750g
+#  Acer Aspire 5750g
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

@@ -5,7 +5,7 @@
 # created originally for dmkelley6812
 
 # works for:
-# Lenovo Twist
+#  Lenovo Twist
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

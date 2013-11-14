@@ -5,7 +5,7 @@
 # created originally for pain1993
 
 # works for:
-# HP dv7-7302eg
+#  HP dv7-7302eg
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

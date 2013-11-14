@@ -5,7 +5,7 @@
 # created originally for korapi
 
 # works for:
-# Lenovo y580
+#  Lenovo y580
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 

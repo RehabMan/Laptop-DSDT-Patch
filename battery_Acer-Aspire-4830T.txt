@@ -5,9 +5,9 @@
 # created originally for GoobyPls
 
 # works for:
-# Acer Aspire 5750g
-# Acer 4830T
-# Packard Bell Easynote TS44hr-035UK.
+#  Acer Aspire 5750g
+#  Acer 4830T
+#  Packard Bell Easynote TS44hr-035UK.
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

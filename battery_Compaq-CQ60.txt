@@ -6,7 +6,7 @@
 # created originally for xmen1
 
 # works for:
-# Compaq Presario CQ60
+#  Compaq Presario CQ60
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

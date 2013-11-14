@@ -5,10 +5,10 @@
 # created originally for jack7676
 
 # works for:
-# Samsung Series 3 NP300E5E laptop
-# Samsung NP700Z5C-S02UB
-# Samsung Q430
-# Samsung R480 (NP-R480-JS04AR)
+#  Samsung Series 3 NP300E5E laptop
+#  Samsung NP700Z5C-S02UB
+#  Samsung Q430
+#  Samsung R480 (NP-R480-JS04AR)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

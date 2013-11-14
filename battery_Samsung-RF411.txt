@@ -5,7 +5,7 @@
 # created originally for srsr333
 
 # works for:
-# Samsung RF411-S03SG
+#  Samsung RF411-S03SG
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 

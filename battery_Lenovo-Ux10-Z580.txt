@@ -5,10 +5,10 @@
 # created originally for mkk
 
 # works for:
-# Lenovo U310
-# Lenovo U410
-# Lenovo U510?
-# Lenovo Z580
+#  Lenovo U310
+#  Lenovo U410
+#  Lenovo U510?
+#  Lenovo Z580
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

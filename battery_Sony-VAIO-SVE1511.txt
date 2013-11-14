@@ -5,8 +5,8 @@
 # created originally for boy_iran_64
 
 # works for:
-# Sony VAIO SVE15117FDB
-# Sony VPEH26EN
+#  Sony VAIO SVE15117FDB
+#  Sony VPEH26EN
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 

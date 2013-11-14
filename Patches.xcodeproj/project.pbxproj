@@ -38,6 +38,7 @@
 		842F532317FB3114001CF33B /* battery_Samsung-Series3-NP300.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Samsung-Series3-NP300.txt"; sourceTree = "<group>"; };
 		842F532417FB3114001CF33B /* battery_Sony-VAIO-S.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Sony-VAIO-S.txt"; sourceTree = "<group>"; };
 		842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Sony-VAIO-SVE1511.txt"; sourceTree = "<group>"; };
+		8436750118359126000618D0 /* battery_Acer-S7-391.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Acer-S7-391.txt"; sourceTree = "<group>"; };
 		8437E5C21803BDD4006BB819 /* control_AcerFan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = control_AcerFan.txt; sourceTree = "<group>"; };
 		843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Dell-Vostro-15xx.txt"; sourceTree = "<group>"; };
 		8455C5E01809953B00F919D7 /* fix_IRC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fix_IRC.txt; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 			children = (
 				842F531617FB301B001CF33B /* battery_Acer-Aspire-4830T.txt */,
 				842F531717FB301B001CF33B /* battery_Acer-Aspire-5750g.txt */,
+				8436750118359126000618D0 /* battery_Acer-S7-391.txt */,
 				842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */,
 				842F531917FB301B001CF33B /* battery_Compaq-CQ60.txt */,
 				843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */,
