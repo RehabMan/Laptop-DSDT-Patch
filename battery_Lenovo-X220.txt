@@ -6,6 +6,7 @@
 
 # works for:
 #  Lenovo x220
+#  Lenovo t431s
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
