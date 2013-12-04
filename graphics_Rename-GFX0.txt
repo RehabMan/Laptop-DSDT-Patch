@@ -1,6 +1,12 @@
 #Maintained by: RehabMan for: Laptop Patches
 #graphics_Rename-GFX0.txt
 
+# Note: Applying all of the patches contained herein can cause 
+#  problems.  Most of the time, you need only one of the main 
+#  groups.  Use the MaciASL preview window to determine which
+#  patches you actually need, and remove the ones you don't need
+#  or are incorrect for your DSDT before applying the patch.
+
 # sometimes there is already IGPU used for other things
 into_all all code_regex IGPU, replaceall_matched begin IGFX, end;
 
@@ -12,6 +18,8 @@ into_all all code_regex \(GFX0 replaceall_matched begin (IGPU end;
 into_all all label GFX0 set_label begin IGPU end;
 into_all all label _SB.PCI0.GFX0 set_label begin _SB.PCI0.IGPU end;
 into_all all label _SB.PCI0.GFX0.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
+into_all all label ^^GFX0 set_label begin ^^IGPU end;
+into_all all label ^GFX0 set_label begin ^IGPU end;
 
 # and its aliases: VID
 into_all all code_regex VID\. replaceall_matched begin IGPU. end;
@@ -21,6 +29,8 @@ into_all all code_regex \(VID replaceall_matched begin (IGPU end;
 into_all all label VID set_label begin IGPU end;
 into_all all label _SB.PCI0.VID set_label begin _SB.PCI0.IGPU end;
 into_all all label _SB.PCI0.VID.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
+into_all all label ^^VID set_label begin ^^IGPU end;
+into_all all label ^VID set_label begin ^IGPU end;
 
 # and another: AGP1
 into_all all code_regex AGP1\. replaceall_matched begin IGPU. end;
@@ -30,3 +40,5 @@ into_all all code_regex \(AGP1 replaceall_matched begin (IGPU end;
 into_all all label AGP1 set_label begin IGPU end;
 into_all all label _SB.PCI0.AGP1 set_label begin _SB.PCI0.IGPU end;
 into_all all label _SB.PCI0.AGP1.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
+into_all all label ^^VID set_label begin ^^IGPU end;
+into_all all label ^VID set_label begin ^IGPU end;

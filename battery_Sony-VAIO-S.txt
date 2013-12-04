@@ -6,6 +6,7 @@
 
 # works for:
 #  Sony VAIO S13P (SVS13A2C5E)
+#  Sony VAIO VPCEH390x
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
