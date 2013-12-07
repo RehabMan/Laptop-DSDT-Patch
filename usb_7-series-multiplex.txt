@@ -212,16 +212,15 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
 	Return (Package()\n
     {\n
-        "AAPL,slot-name", "Built In",\n
-        "name", "Intel xHCI Controller",\n
-        "model", "Intel 7 Series Chipset Family USB xHCI Host Controller",\n
-        "device_type", Buffer() { "XHCI" },\n
+        "AAPL,clock-id", Buffer() { 0x02 },\n
+        "built-in", Buffer() { 0x00 },\n
+        "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
+        "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },\n
         "AAPL,current-available", 2100,\n
-        "AAPL,current-extra", 2700,\n
-        "AAPL,current-in-sleep", 1000,\n
-        "AAPL,current-extra-in-sleep", 2100,\n
-        "AAPL,max-port-current-in-sleep", 2700,\n
+        "AAPL,current-extra", 2200,\n
+        "AAPL,current-extra-in-sleep", 1600,\n
         "AAPL,device-internal", 0x02,\n
+        "AAPL,max-port-current-in-sleep", 2100,\n
     })\n
 }\n
 \n

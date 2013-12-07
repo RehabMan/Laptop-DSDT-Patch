@@ -56,6 +56,7 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
+        "AAPL,clock-id", Buffer() { 0x02 },\n
         "built-in", Buffer() { 0x00 },\n
         "subsystem-id", Buffer() { 0x70, 0x72, 0x00, 0x00 },\n
         "subsystem-vendor-id", Buffer() { 0x86, 0x80, 0x00, 0x00 },\n
