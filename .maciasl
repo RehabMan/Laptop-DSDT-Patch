@@ -44,9 +44,10 @@
 [4.22]  Lenovo X220	battery/battery_Lenovo-X220.txt
 [4.23]  Lenovo y580	battery/battery_Lenovo-y580.txt
 [4.24]  Samsung RF411	battery/battery_Samsung-RF411.txt
-[4.25]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
-[4.26]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
-[4.27]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
+[4.25]  Samsung R528	battery/battery_Samsung-r528.txt
+[4.26]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
+[4.27]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
+[4.28]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
 [5.0] == Atheros WiFi Patches	NullPatch.txt
 [5.1]   AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
 [5.2]   AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
