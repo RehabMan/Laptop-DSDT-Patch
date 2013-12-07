@@ -141,3 +141,6 @@ end;
 
 # Disable BAT1 device
 into method label _STA parent_label BAT1 replace_content begin Return (Zero) end;
+
+# Fix method PPNT, called from AC adapter device (AC/ADP1)
+into method label PPNT parent_label EC0 replace_content begin // nothing end;
