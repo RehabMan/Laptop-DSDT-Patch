@@ -194,3 +194,6 @@ into method label GBTI code_regex \(CBT1, replaceall_matched begin (B1B2(BT10,BT
 # fix 32-bit methods
 into method label GBTI code_regex \(BTY0, replaceall_matched begin (B1B4(TY00,TY01,TY02,TY03), end;
 into method label GBTI code_regex \(BTY1, replaceall_matched begin (B1B4(TY10,TY11,TY12,TY13), end;
+
+# disable BAT1 device
+into method label _STA parent_label BAT1 replace_content begin Return (Zero) end;
