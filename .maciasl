@@ -20,6 +20,7 @@
 [3.4]   7-series USB (with ID)	usb/usb_7-series-id.txt
 [3.5]   7-series USB3 Multiplex	usb/usb_7-series-multiplex.txt
 [4.0] == Battery Patches	NullPatch.txt
+[4.00]  Acer 3820tg.txt	battery/battery_Acer-3820tg.txt
 [4.01]  Acer Aspire 4830T	battery/battery_Acer-Aspire-4830T.txt
 [4.02]  Acer Aspire 5750g	battery/battery_Acer-Aspire-5750g.txt
 [4.03]  Acer S7 391	battery/battery_Acer-S7-391.txt
