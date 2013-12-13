@@ -55,6 +55,7 @@
 		8470F3081854BA400053FBF1 /* battery_Acer-3820tg.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-3820tg.txt"; path = "battery/battery_Acer-3820tg.txt"; sourceTree = "<group>"; };
 		8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Samsung-NP470R5E.txt"; sourceTree = "<group>"; };
 		8484672A180F0C3600DD3D99 /* battery_HP-DV7-7xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV7-7xxx.txt"; path = "battery/battery_HP-DV7-7xxx.txt"; sourceTree = "<group>"; };
+		84894762185B6A4E004727C0 /* misc_LidPoll.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = misc_LidPoll.txt; path = misc/misc_LidPoll.txt; sourceTree = "<group>"; };
 		8498961A1811D4A80086DF6C /* system_Mutex.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_Mutex.txt; path = system/system_Mutex.txt; sourceTree = "<group>"; };
 		8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Spectre-XT.txt"; path = "battery/battery_HP-Spectre-XT.txt"; sourceTree = "<group>"; };
 		8499C9761704B5F70066A5F3 /* NullPatch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NullPatch.txt; sourceTree = "<group>"; };
@@ -175,12 +176,13 @@
 			name = "Battery Status";
 			sourceTree = "<group>";
 		};
-		8437E5C31803BDDD006BB819 /* Fan Control */ = {
+		8437E5C31803BDDD006BB819 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				84894762185B6A4E004727C0 /* misc_LidPoll.txt */,
 				8437E5C21803BDD4006BB819 /* control_AcerFan.txt */,
 			);
-			name = "Fan Control";
+			name = Misc;
 			sourceTree = "<group>";
 		};
 		84AFCB7617FB2C520089486F /* USB (EHCI-XHCI) */ = {
@@ -207,7 +209,7 @@
 				84AFCB7617FB2C520089486F /* USB (EHCI-XHCI) */,
 				842F532117FB302D001CF33B /* Battery Status */,
 				841D311E17FB71DC00EA5675 /* AR9285 WiFi */,
-				8437E5C31803BDDD006BB819 /* Fan Control */,
+				8437E5C31803BDDD006BB819 /* Misc */,
 				841347891805D31F0055B67A /* System */,
 				84F8BB9E1806D51000BD0774 /* Audio */,
 			);

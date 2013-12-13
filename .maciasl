@@ -57,6 +57,7 @@
 [5.4]   AR9285 WiFi RP03-PXSX	wifi/wifi_AR9285-RP03-PXSX.txt
 [6.0] == Fan control/temperature status patches	NullPatch.txt
 [6.1]   Acer Aspire fan control	misc/control_AcerFan.txt
+[6.2]   Poll for LID changes	misc/misc_LidPoll.txt
 [7.0] == System Patches	NullPatch.txt
 [7.01]  IRQ Fix	system/system_IRQ.txt
 [7.02]  SMBUS Fix	system/system_SMBUS.txt
