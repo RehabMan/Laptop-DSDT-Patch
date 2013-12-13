@@ -53,7 +53,7 @@
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_FDE.txt; path = syntax/fix_FDE.txt; sourceTree = "<group>"; };
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-GFX0.txt"; path = "graphics/graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
 		8470F3081854BA400053FBF1 /* battery_Acer-3820tg.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-3820tg.txt"; path = "battery/battery_Acer-3820tg.txt"; sourceTree = "<group>"; };
-		8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "battery_Samsung-NP470R5E.txt"; sourceTree = "<group>"; };
+		8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Samsung-NP470R5E.txt"; path = "battery/battery_Samsung-NP470R5E.txt"; sourceTree = "<group>"; };
 		8484672A180F0C3600DD3D99 /* battery_HP-DV7-7xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV7-7xxx.txt"; path = "battery/battery_HP-DV7-7xxx.txt"; sourceTree = "<group>"; };
 		84894762185B6A4E004727C0 /* misc_LidPoll.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = misc_LidPoll.txt; path = misc/misc_LidPoll.txt; sourceTree = "<group>"; };
 		8498961A1811D4A80086DF6C /* system_Mutex.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_Mutex.txt; path = system/system_Mutex.txt; sourceTree = "<group>"; };
