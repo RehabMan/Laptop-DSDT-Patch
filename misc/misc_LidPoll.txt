@@ -14,7 +14,7 @@ into definitionblock code_regex . insert
 begin
 Device (LIDP)\n
 {\n
-    Name (_HID, “FAN00000")\n
+    Name (_HID, "FAN00000")\n
     Name (PLID, 0xFFFF)\n
 // Poll for _LID status changes, notify if different\n
     Method (FCPU, 0, Serialized)\n
