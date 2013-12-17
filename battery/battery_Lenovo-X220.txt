@@ -144,3 +144,7 @@ into method label MHST code_regex \(HSPD, replaceall_matched begin (B1B2(SPD0,SP
 
 # sleep related
 into method label _L1D parent_label _GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;
+
+# disable secondary battery
+into method label _STA parent_label BAT1 replace_content begin Return(0) end;
+

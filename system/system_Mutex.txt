@@ -1,5 +1,5 @@
 #Maintained by: RehabMan for: Laptop Patches
-#system_Mutext.txt
+#system_Mutex.txt
 
 #
 # Some DSDTs use Mutex objects with non-zero a SyncLevel.  Evidently,
