@@ -178,12 +178,13 @@ Method (WSMD, 1, Serialized)\n
 }\n
 end;
 
-into method label SMRD code_regex \(SMW0, replaceall_matched begin (RSMD(), end;
+into method label SMRD code_regex \(SMW0 replaceall_matched begin (B1B2(SMWX,SMWY) end;
 into method label SMWR code_regex Store\s+\((.*),\s+SMW0\) replaceall_matched
 begin
 // Store(%1, SMW0)\n
 Store(%1, SMWX) Store(ShiftRight(%1, 8), SMWY) 
 end;
+into method label SMRD code_regex \(SMD0, replaceall_matched begin (RSMD(), end;
 into method label SMWR code_regex Store\s+\((.*),\s+SMD0\) replaceall_matched begin WSMD(%1) end;
 
 # deal with FLD3
