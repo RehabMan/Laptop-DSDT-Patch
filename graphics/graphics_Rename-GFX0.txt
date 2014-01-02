@@ -35,6 +35,7 @@ into_all all label _SB.PCI0.VID.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
 into_all all label \_SB.PCI0.VID.DD02 set_label begin \_SB.PCI0.IGPU.DD02 end;
 into_all all label ^^VID set_label begin ^^IGPU end;
 into_all all label ^VID set_label begin ^IGPU end;
+into_all all label PCI0.PEG.VID set_label begin PCI0.PEG.IGPU end;
 
 # and another: AGP1
 into_all all code_regex AGP1\. replaceall_matched begin IGPU. end;
