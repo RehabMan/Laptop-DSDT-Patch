@@ -3,11 +3,13 @@
 
 # created by RehabMan 2013-09-26
 # created originally for damnit_boy
+# additional patches for dv6-3165sf provided by chihab222
 
 # works for:
 #  HP G6 2221ss
 #  HP dv7t-4100
 #  HP Envy 14 Spectre 14t-3000
+#  HP Pavilion dv6-3165sf
 
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
@@ -43,6 +45,7 @@ SD1C,8,SD1D,8,SD1E,8,SD1F,8
 end;
 
 # 16-bit EC registers
+into device label EC0 code_regex MFCA,\s+16 replace_matched begin FCA0,8,FCA1,8 end;
 into device label EC0 code_regex BFCC,\s+16 replace_matched begin FCC0,8,FCC1,8 end;
 into device label EC0 code_regex MCUR,\s+16 replace_matched begin CUR0,8,CUR1,8 end;
 into device label EC0 code_regex MBRM,\s+16 replace_matched begin BRM0,8,BRM1,8 end;
@@ -86,6 +89,7 @@ F31C,8,F31D,8,F31E,8,F31F,8
 end;
 
 # 16-bit method access
+into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.MFCA, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FCA0,^^PCI0.LPCB.EC0.FCA1), end;
 into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.BFCC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FCC0,^^PCI0.LPCB.EC0.FCC1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.MCUR, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.CUR0,^^PCI0.LPCB.EC0.CUR1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.MBRM, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BRM0,^^PCI0.LPCB.EC0.BRM1), end;
