@@ -115,14 +115,14 @@ Scope (\_SB)\n
         {\n
             // store new backlight level\n
             If (LGreater(Arg0, XRGH)) { Store(XRGH, Arg0) }\n
-            If (LAnd(LNot(Arg0), LLess(Arg0, XRGL))) { Store(XRGL, Arg0) }\n
+            If (LAnd(Arg0, LLess(Arg0, XRGL))) { Store(XRGL, Arg0) }\n
             Store(Or(Arg0,And(LEVX,0xFFFF0000)), LEVX)\n
         }\n
         Method (XBQC, 0, NotSerialized)\n
         {\n
             Store(And(LEVX,0xFFFF), Local0)\n
             If (LGreater(Local0, XRGH)) { Store(XRGH, Local0) }\n
-            If (LAnd(LNot(Local0), LLess(Local0, XRGL))) { Store(XRGL, Local0) }\n
+            If (LAnd(Local0, LLess(Local0, XRGL))) { Store(XRGL, Local0) }\n
             Return(Local0)\n
         }\n
     }\n
