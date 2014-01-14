@@ -4,16 +4,17 @@
 [1.3]   Fix FPED Parse Error	syntax/fix_FPED.txt
 [1.4]   Fix _IRC Error	syntax/fix_IRC.txt
 [2.0] == Intel Graphics Patches (HD3000/HD4000)	NullPatch.txt
-[2.1]   HD3000 Low Resolution	graphics/graphics_HD3K_low.txt
-[2.2]   HD3000 High Resolution	graphics/graphics_HD3K_high.txt
-[2.3]   HD4000 Low Resolution	graphics/graphics_HD4K_low.txt
-[2.4]   HD4000 High Resolution	graphics/graphics_HD4K_high.txt
-[2.5]   HD3000 on 7-series	graphics/graphics_MEI_sandy.txt
-[2.6]   HD4000 on 6-series	graphics/graphics_MEI_ivy.txt
-[2.7]   Generic with EDID	graphics/graphics_EDID.txt
-[2.8]   Brightness fix	graphics/graphics_PNLF.txt
-[2.9]   Brightness fix (HD3000/HD4000)	graphics/graphics_PNLF_ivy_sandy.txt
-[3.0]   Rename GFX0 to IGPU	graphics/graphics_Rename-GFX0.txt
+[2.01]   HD3000 Low Resolution	graphics/graphics_HD3K_low.txt
+[2.02]   HD3000 High Resolution	graphics/graphics_HD3K_high.txt
+[2.03]   HD4000 Low Resolution	graphics/graphics_HD4K_low.txt
+[2.04]   HD4000 High Resolution	graphics/graphics_HD4K_high.txt
+[2.05]   HD3000 on 7-series	graphics/graphics_MEI_sandy.txt
+[2.06]   HD4000 on 6-series	graphics/graphics_MEI_ivy.txt
+[2.07]   Generic with EDID	graphics/graphics_EDID.txt
+[2.08]   Brightness fix	graphics/graphics_PNLF.txt
+[2.09]   Brightness fix (HD3000/HD4000)	graphics/graphics_PNLF_ivy_sandy.txt
+[2.10]   Brightness fix (Haswell)	graphics/graphics_PNLF_haswell.txt
+[2.11]   Rename GFX0 to IGPU	graphics/graphics_Rename-GFX0.txt
 [3.0] == USB (ECHI) Patches	NullPatch.txt
 [3.1]   6-series USB	usb/usb_6-series.txt
 [3.2]   7-series USB	usb/usb_7-series.txt

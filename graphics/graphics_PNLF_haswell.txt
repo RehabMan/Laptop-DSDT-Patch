@@ -1,0 +1,167 @@
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_PNLF_haswell.txt
+
+# This patch enables the brightness slider in SysPrefs->Displays
+# and will also enable activation of sleep mode by closing
+# the laptop lid.
+#
+# This particular version is intended to be used with ACPIBacklight.kext
+# although it can also be used with AppleBacklight.kext,
+# provided AppleBacklight.kext is patched to recognize your 
+# display or an injector is used to set brightness levels.
+#
+#
+# See this thread for more information:
+#     http://www.tonymacx86.com/hp-probook-mavericks/121031-native-brightness-working-without-blinkscreen-using-patched-applebacklight-kext.html
+# (also read any linked threads)
+#
+
+#
+# Note: This patch assumes you have already applied "Rename GFX0 to IGPU"
+# and that the IGPU device is accessible.  For some computers this should
+# be applied to one of the SSDTs, not DSDT.
+#
+
+into device label IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
+into device label IGPU code_regex (OperationRegion\s\(IGDP,\sPCI_Config[^\}]*\}) replace_matched
+begin
+%1\n
+OperationRegion (IGD2, PCI_Config, 0x10, 4)\n
+Field (IGD2, AnyAcc, NoLock, Preserve)\n
+{\n
+	BAR1,32,\n
+}\n
+end;
+
+into device label PNLF remove_entry;
+into definitionblock code_regex . insert
+begin
+Scope (\_SB)\n
+{\n
+    Device (PNLF)\n
+    {\n
+        // normal PNLF declares (note some of this probably not necessary)\n
+        Name (_ADR, Zero)\n
+        Name (_HID, EisaId ("APP0002"))\n
+        Name (_CID, "backlight")\n
+        Name (_UID, 10)\n
+        Name (_STA, 0x0B)\n
+        //define hardware register access for brightness\n
+        // you can see BAR1 value in RW-Everything under Bus00,02 Intel VGA controler PCI\n
+        OperationRegion (BRIT, SystemMemory, \_SB.PCI0.IGPU.BAR1, 0xc8254)\n
+        Field (BRIT, AnyAcc, Lock, Preserve)\n
+        {\n
+            Offset(0x4824c),\n
+            LEV2, 32,\n
+            LEVL, 32,\n
+            Offset (0x7003C),\n
+            P0BL, 32,\n
+            Offset(0xc824c),\n
+            LEVW, 32,\n
+            LEVX, 32,\n
+        }\n
+        Method (_INI, 0, NotSerialized)\n
+        {\n
+            // If the BIOS actually sets the values prior to boot, this would be\n
+            // how (maybe) to capture them.  My Envy does not have the capability\n
+            // to set brightness and I find these values are not set.\n
+            // The current value could also be in LEVL, and probably is even\n
+            // though OS X seems to manipulate only the low 16-bits of LEVX to\n
+            // change brightness.\n
+            // Because the low-order 16-bits are set to zero on the Envy, enabling\n
+            // this code causes a blank screen before the login screena appears.\n
+            //\n
+            //Store(LEVX, Local0)\n
+            //Store(ShiftRight(Local0,16), Local1)\n
+            //Store(And(Local0,0xFFFF), Local2)\n
+            //Divide(Multiply(Local2, 0xad9), Local1, Local0)\n
+            //Or(Local0, 0xad90000, Local0)\n
+            //\n
+            //REVIEW: wait for vblank to change things\n
+            //While(LEqual (P0BL, Local1)) {}\n
+            //\n
+            // This is part of the "keep startup level"...\n
+            // see comment above.\n
+            //Store(Local0, LEVX)\n
+            //\n
+            // This 0xC value comes from looking what OS X initializes this\n
+            // register to after display sleep (using ACPIDebug/ACPIPoller)\n
+            Store(0xC0000000, LEVW)\n
+            // Because this laptop starts at full brightness, I just set it right\n
+            // here.  This is to insure _BQC and XBQC return the correct level\n
+            // at startup.\n
+            Store(0xad90ad9, LEVX)\n
+        }\n
+        // _BCM/_BQC: set/get for brightness level\n
+        Method (_BCM, 1, NotSerialized)\n
+        {\n
+            // store new backlight level\n
+            Store(Match(_BCL, MGE, Arg0, MTR, 0, 2), Local0)\n
+            If (LEqual(Local0, Ones)) { Subtract(SizeOf(_BCL), 1, Local0) }\n
+            Store(Or(DerefOf(Index(_BCL,Local0)),And(LEVX,0xFFFF0000)), LEVX)\n
+        }\n
+        Method (_BQC, 0, NotSerialized)\n
+        {\n
+            Store(Match(_BCL, MGE, And(LEVX, 0xFFFF), MTR, 0, 2), Local0)\n
+            If (LEqual(Local0, Ones)) { Subtract(SizeOf(_BCL), 1, Local0) }\n
+            Return(DerefOf(Index(_BCL, Local0)))\n
+        }\n
+        Method (_DOS, 1, NotSerialized)\n
+        {\n
+            ^^PCI0.IGPU._DOS(Arg0)\n
+        }\n
+        // extended _BCM/_BQC for setting "in between" levels\n
+        Method (XBCM, 1, NotSerialized)\n
+        {\n
+            // store new backlight level\n
+            If (LGreater(Arg0, XRGH)) { Store(XRGH, Arg0) }\n
+            If (LAnd(LNot(Arg0), LLess(Arg0, XRGL))) { Store(XRGL, Arg0) }\n
+            Store(Or(Arg0,And(LEVX,0xFFFF0000)), LEVX)\n
+        }\n
+        Method (XBQC, 0, NotSerialized)\n
+        {\n
+            Store(And(LEVX,0xFFFF), Local0)\n
+            If (LGreater(Local0, XRGH)) { Store(XRGH, Local0) }\n
+            If (LAnd(LNot(Local0), LLess(Local0, XRGL))) { Store(XRGL, Local0) }\n
+            Return(Local0)\n
+        }\n
+    }\n
+}\n
+end;
+
+into device label PNLF code_regex Name\s\(_BCL,\sPackage[^\}]*\}\) remove_matched;
+into device label PNLF code_regex Name\s\(XRGL,.*\)\n removeall_matched;
+into device label PNLF code_regex Name\s\(XRGH,.*\)\n removeall_matched;
+into device label PNLF code_regex Name\s\(KLVX,.*\)\n removeall_matched;
+into device label PNLF code_regex . insert
+begin
+    // Use XOPT=1 to disable smooth transitions\n
+    Name (XOPT, Zero)\n
+    // XRGL/XRGH: defines the valid range\n
+    Name (XRGL, Zero)\n
+    Name (XRGH, 2777)\n
+    // _BCL: returns list of valid brightness levels\n
+    // first two entries describe ac/battery power levels\n
+    Name (_BCL, Package()\n
+    {\n
+        2777,\n
+        748,\n
+        0,\n
+        35, 39, 44, 50,\n
+        58, 67, 77, 88,\n
+        101, 115, 130, 147,\n
+        165, 184, 204, 226,\n
+        249, 273, 299, 326,\n
+        354, 383, 414, 446,\n
+        479, 514, 549, 587,\n
+        625, 665, 706, 748,\n
+        791, 836, 882, 930,\n
+        978, 1028, 1079, 1132,\n
+        1186, 1241, 1297, 1355,\n
+        1414, 1474, 1535, 1598,\n
+        1662, 1728, 1794, 1862,\n
+        1931, 2002, 2074, 2147,\n
+        2221, 2296, 2373, 2452,\n
+        2531, 2612, 2694, 2777,\n
+    })\n
+end;

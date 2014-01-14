@@ -26,6 +26,7 @@
 		841D311C17FB71C600EA5675 /* wifi_AR9285-RP03-PXSX.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP03-PXSX.txt"; path = "wifi/wifi_AR9285-RP03-PXSX.txt"; sourceTree = "<group>"; };
 		841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Twist.txt"; path = "battery/battery_Lenovo-Twist.txt"; sourceTree = "<group>"; };
 		842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Envy-17t.txt"; path = "battery/battery_HP-Envy-17t.txt"; sourceTree = "<group>"; };
+		8428802A1884C20900F8DE3A /* graphics_PNLF_haswell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_PNLF_haswell.txt; path = graphics/graphics_PNLF_haswell.txt; sourceTree = "<group>"; };
 		842F531617FB301B001CF33B /* battery_Acer-Aspire-4830T.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-4830T.txt"; path = "battery/battery_Acer-Aspire-4830T.txt"; sourceTree = "<group>"; };
 		842F531717FB301B001CF33B /* battery_Acer-Aspire-5750g.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-5750g.txt"; path = "battery/battery_Acer-Aspire-5750g.txt"; sourceTree = "<group>"; };
 		842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_ASUS-N55SL.txt"; path = "battery/battery_ASUS-N55SL.txt"; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 				84AAF75B17FE027A0088DB40 /* graphics_MEI_ivy.txt */,
 				84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */,
 				8430FB4D1884B97E0042D275 /* graphics_PNLF_ivy_sandy.txt */,
+				8428802A1884C20900F8DE3A /* graphics_PNLF_haswell.txt */,
 				846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */,
 			);
 			name = "Intel Graphics";
