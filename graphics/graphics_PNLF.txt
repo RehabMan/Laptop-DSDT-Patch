@@ -5,16 +5,26 @@
 # and will also enable activation of sleep mode by closing
 # the laptop lid.
 
-#   Brightness control fix
+# This patch is a "basic" PNLF patch and doesn't attempt 
+# to fix various common problems with the backlight control.
+# 
+# For advanced patches, see:
+#   graphics_PNLF_ivy_sandy.txt
+#   graphics_PNLF_haswell.txt
+#
+
 into device label PNLF remove_entry;
-into scope label _SB insert
+into definitionblock code_regex . insert
 begin
-Device (PNLF)\n
+Scope (\_SB)\n
 {\n
-	Name (_HID, EisaId ("APP0002"))\n
-	Name (_CID, "backlight")\n
-	Name (_UID, 0x0A)\n
-	Name (_STA, 0x0B)\n
+    Device (PNLF)\n
+    {\n
+        Name (_HID, EisaId ("APP0002"))\n
+        Name (_CID, "backlight")\n
+        Name (_UID, 0x0A)\n
+        Name (_STA, 0x0B)\n
+    }\n
 }\n
 end;
 

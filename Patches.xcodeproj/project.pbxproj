@@ -40,6 +40,7 @@
 		842F532317FB3114001CF33B /* battery_Samsung-Series3-NP300.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Samsung-Series3-NP300.txt"; path = "battery/battery_Samsung-Series3-NP300.txt"; sourceTree = "<group>"; };
 		842F532417FB3114001CF33B /* battery_Sony-VAIO-S.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Sony-VAIO-S.txt"; path = "battery/battery_Sony-VAIO-S.txt"; sourceTree = "<group>"; };
 		842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Sony-VAIO-SVE1511.txt"; path = "battery/battery_Sony-VAIO-SVE1511.txt"; sourceTree = "<group>"; };
+		8430FB4D1884B97E0042D275 /* graphics_PNLF_ivy_sandy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_PNLF_ivy_sandy.txt; path = graphics/graphics_PNLF_ivy_sandy.txt; sourceTree = "<group>"; };
 		8436750118359126000618D0 /* battery_Acer-S7-391.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-S7-391.txt"; path = "battery/battery_Acer-S7-391.txt"; sourceTree = "<group>"; };
 		8437E5C21803BDD4006BB819 /* control_AcerFan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = control_AcerFan.txt; path = misc/control_AcerFan.txt; sourceTree = "<group>"; };
 		843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Vostro-15xx.txt"; path = "battery/battery_Dell-Vostro-15xx.txt"; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 				840E6D3A17FB294000784B2A /* graphics_MEI_sandy.txt */,
 				84AAF75B17FE027A0088DB40 /* graphics_MEI_ivy.txt */,
 				84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */,
+				8430FB4D1884B97E0042D275 /* graphics_PNLF_ivy_sandy.txt */,
 				846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */,
 			);
 			name = "Intel Graphics";

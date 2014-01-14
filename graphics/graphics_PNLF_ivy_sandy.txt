@@ -1,0 +1,167 @@
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_PNLF_ivy_sandy.txt
+
+# This patch enables the brightness slider in SysPrefs->Displays
+# and will also enable activation of sleep mode by closing
+# the laptop lid.
+#
+# This particular version is intended to be used with ACPIBacklight.kext
+# although it can also be used with AppleBacklight.kext,
+# provided AppleBacklight.kext is patched to recognize your 
+# display or an injector is used to set brightness levels.
+#
+#
+# See this thread for more information:
+#     http://www.tonymacx86.com/hp-probook-mavericks/121031-native-brightness-working-without-blinkscreen-using-patched-applebacklight-kext.html
+# (also read any linked threads)
+#
+
+#
+# Note: This patch assumes you have already applied "Rename GFX0 to IGPU"
+# and that the IGPU device is accessible.  For some computers this should
+# be applied to one of the SSDTs, not DSDT.
+#
+
+into device label IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
+into device label IGPU code_regex (OperationRegion\s\(IGDP,\sPCI_Config[^\}]*\}) replace_matched
+begin
+%1\n
+OperationRegion (IGD2, PCI_Config, 0x10, 4)\n
+Field (IGD2, AnyAcc, NoLock, Preserve)\n
+{\n
+	BAR1,32,\n
+}\n
+end;
+
+into device label PNLF remove_entry;
+into definitionblock code_regex . insert
+begin
+Scope (\_SB)\n
+{\n
+    Device (PNLF)\n
+    {\n
+        // normal PNLF declares (note some of this probably not necessary)\n
+        Name (_HID, EisaId ("APP0002"))\n
+        Name (_CID, "backlight")\n
+        Name (_UID, 10)\n
+        Name (_STA, 0x0B)\n
+        //define hardware register access for brightness\n
+        // you can see BAR1 value in RW-Everything under Bus00,02 Intel VGA controler PCI\n
+        OperationRegion (BRIT, SystemMemory, \_SB.PCI0.IGPU.BAR1, 0xc8254)\n
+        Field (BRIT, AnyAcc, Lock, Preserve)\n
+        {\n
+            Offset(0x4824c),\n
+            LEV2, 32,\n
+            LEVL, 32,\n
+            Offset(0x7003C),\n
+            P0BL, 32,\n
+            Offset(0xc824c),\n
+            LEVW, 32,\n
+            LEVX, 32,\n
+        }\n
+        // DEB1 special for setting KLVX at runtime...\n
+        //Method (DEB1, 1, NotSerialized)\n
+        //{\n
+        //    Store(Arg0, KLVX)\n
+        //}\n
+        // _INI deals with differences between native setting and desired\n
+        Method (_INI, 0, NotSerialized)\n
+        {\n
+            Store(ShiftRight(KLVX,16), Local0)\n
+            Store(ShiftRight(LEVX,16), Local1)\n
+            if (LNotEqual(Local0, Local1))\n
+            {\n
+                Divide(Multiply(LEVL, Local0), Local1,, Local0)\n
+                //Store(P0BL, Local1)\n
+                //While(LEqual (P0BL, Local1)) {}\n
+                Store(Local0, LEVL)\n
+                Store(KLVX, LEVX)\n
+            }\n
+        }\n
+        // _BCM/_BQC: set/get for brightness level\n
+        Method (_BCM, 1, NotSerialized)\n
+        {\n
+            // initialize for consistent backlight level before/after sleep\n
+            If (LNotEqual(LEVW, 0x80000000)) { Store (0x80000000, LEVW) }\n
+            If (LNotEqual(LEVX, KLVX)) { Store (KLVX, LEVX) }\n
+            // store new backlight level\n
+            Store(Match(_BCL, MGE, Arg0, MTR, 0, 2), Local0)\n
+            If (LEqual(Local0, Ones)) { Subtract(SizeOf(_BCL), 1, Local0) }\n
+            If (LNotEqual(LEV2, 0x80000000)) { Store(0x80000000, LEV2) }\n
+            Store(DerefOf(Index(_BCL, Local0)), LEVL)\n
+        }\n
+        Method (_BQC, 0, NotSerialized)\n
+        {\n
+            Store(Match(_BCL, MGE, LEVL, MTR, 0, 2), Local0)\n
+            If (LEqual(Local0, Ones)) { Subtract(SizeOf(_BCL), 1, Local0) }\n
+            Return(DerefOf(Index(_BCL, Local0)))\n
+        }\n
+        Method (_DOS, 1, NotSerialized)\n
+        {\n
+            ^^PCI0.IGPU._DOS(Arg0)\n
+        }\n
+        // extended _BCM/_BQC for setting "in between" levels\n
+        Method (XBCM, 1, NotSerialized)\n
+        {\n
+            // initialize for consistent backlight level before/after sleep\n
+            If (LNotEqual(LEVW, 0x80000000)) { Store (0x80000000, LEVW) }\n
+            If (LNotEqual(LEVX, KLVX)) { Store (KLVX, LEVX) }\n
+            // store new backlight level\n
+            If (LGreater(Arg0, XRGH)) { Store(XRGH, Arg0) }\n
+            If (LAnd(LNot(Arg0), LLess(Arg0, XRGL))) { Store(XRGL, Arg0) }\n
+            If (LNotEqual(LEV2, 0x80000000)) { Store(0x80000000, LEV2) } \n
+            Store(Arg0, LEVL)\n
+        }\n
+        Method (XBQC, 0, NotSerialized)\n
+        {\n
+            Store(LEVL, Local0)\n
+            If (LGreater(Local0, XRGH)) { Store(XRGH, Local0) }\n
+            If (LAnd(LNot(Local0), LLess(Local0, XRGL))) { Store(XRGL, Local0) }\n
+            Return(Local0)\n
+        }\n
+    }\n
+}\n
+end;
+
+into device label PNLF code_regex Name\s\(_BCL,\sPackage[^\}]*\}\) remove_matched;
+into device label PNLF code_regex Name\s\(XRGL,.*\)\n removeall_matched;
+into device label PNLF code_regex Name\s\(XRGH,.*\)\n removeall_matched;
+into device label PNLF code_regex Name\s\(KLVX,.*\)\n removeall_matched;
+into device label PNLF code_regex . insert
+begin
+    // Use XOPT=1 to disable smooth transitions\n
+    Name (XOPT, Zero)\n
+    // XRGL/XRGH: defines the valid range\n
+    Name (XRGL, 1)\n
+    Name (XRGH, 1808)\n
+    // KLVX is initialization value for LEVX\n
+    Name (KLVX, 0x7100000)\n
+    // _BCL: returns list of valid brightness levels\n
+    // first two entries describe ac/battery power levels\n
+    Name (_BCL, Package()\n
+    {\n
+        1808,\n
+        479,\n
+        0,\n
+        55, 55, 57, 59,\n
+        62, 66, 71, 77,\n
+        83, 91, 99, 108,\n
+        119, 130, 142, 154,\n
+        168, 183, 198, 214,\n
+        232, 250, 269, 289,\n
+        309, 331, 354, 377,\n
+        401, 426, 453, 479,\n
+        507, 536, 566, 596,\n
+        627, 660, 693, 727,\n
+        762, 797, 834, 872,\n
+        910, 949, 990, 1031,\n
+        1073, 1115, 1159, 1204,\n
+        1249, 1296, 1343, 1391,\n
+        1440, 1490, 1541, 1592,\n
+        1645, 1698, 1753, 1808,\n
+    })\n
+end;
+
+
+
+
