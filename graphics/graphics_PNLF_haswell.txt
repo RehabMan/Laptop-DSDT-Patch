@@ -130,6 +130,7 @@ Scope (\_SB)\n
 end;
 
 into device label PNLF code_regex Name\s\(_BCL,\sPackage[^\}]*\}\) remove_matched;
+into device label PNLF code_regex Name\s\(XOPT,.*\)\n removeall_matched;
 into device label PNLF code_regex Name\s\(XRGL,.*\)\n removeall_matched;
 into device label PNLF code_regex Name\s\(XRGH,.*\)\n removeall_matched;
 into device label PNLF code_regex Name\s\(KLVX,.*\)\n removeall_matched;
@@ -138,7 +139,7 @@ begin
     // Use XOPT=1 to disable smooth transitions\n
     Name (XOPT, Zero)\n
     // XRGL/XRGH: defines the valid range\n
-    Name (XRGL, Zero)\n
+    Name (XRGL, 1)\n
     Name (XRGH, 2777)\n
     // _BCL: returns list of valid brightness levels\n
     // first two entries describe ac/battery power levels\n
