@@ -139,7 +139,7 @@ begin
     // Use XOPT=1 to disable smooth transitions\n
     Name (XOPT, Zero)\n
     // XRGL/XRGH: defines the valid range\n
-    Name (XRGL, 1)\n
+    Name (XRGL, 25)\n
     Name (XRGH, 2777)\n
     // _BCL: returns list of valid brightness levels\n
     // first two entries describe ac/battery power levels\n
