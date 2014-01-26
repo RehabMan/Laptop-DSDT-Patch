@@ -57,7 +57,6 @@
 [5.1]   AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
 [5.2]   AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
 [5.3]   AR9285 WiFi RP02-WNIC	wifi/wifi_AR9285-RP02-WNIC.txt
-[5.4]   AR9285 WiFi RP03-PXSX	wifi/wifi_AR9285-RP03-PXSX.txt
 [6.0] == Fan control/temperature status patches	NullPatch.txt
 [6.1]   Acer Aspire fan control	misc/control_AcerFan.txt
 [6.2]   Poll for LID changes	misc/misc_LidPoll.txt

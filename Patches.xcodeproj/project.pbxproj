@@ -23,7 +23,6 @@
 		841D311917FB71C600EA5675 /* wifi_AR9285-RP02-PXSX.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP02-PXSX.txt"; path = "wifi/wifi_AR9285-RP02-PXSX.txt"; sourceTree = "<group>"; };
 		841D311A17FB71C600EA5675 /* wifi_AR9285-RP02-WLAN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP02-WLAN.txt"; path = "wifi/wifi_AR9285-RP02-WLAN.txt"; sourceTree = "<group>"; };
 		841D311B17FB71C600EA5675 /* wifi_AR9285-RP02-WNIC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP02-WNIC.txt"; path = "wifi/wifi_AR9285-RP02-WNIC.txt"; sourceTree = "<group>"; };
-		841D311C17FB71C600EA5675 /* wifi_AR9285-RP03-PXSX.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP03-PXSX.txt"; path = "wifi/wifi_AR9285-RP03-PXSX.txt"; sourceTree = "<group>"; };
 		841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Twist.txt"; path = "battery/battery_Lenovo-Twist.txt"; sourceTree = "<group>"; };
 		842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Envy-17t.txt"; path = "battery/battery_HP-Envy-17t.txt"; sourceTree = "<group>"; };
 		8428802A1884C20900F8DE3A /* graphics_PNLF_haswell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_PNLF_haswell.txt; path = graphics/graphics_PNLF_haswell.txt; sourceTree = "<group>"; };
@@ -139,7 +138,6 @@
 				841D311917FB71C600EA5675 /* wifi_AR9285-RP02-PXSX.txt */,
 				841D311A17FB71C600EA5675 /* wifi_AR9285-RP02-WLAN.txt */,
 				841D311B17FB71C600EA5675 /* wifi_AR9285-RP02-WNIC.txt */,
-				841D311C17FB71C600EA5675 /* wifi_AR9285-RP03-PXSX.txt */,
 			);
 			name = "AR9285 WiFi";
 			sourceTree = "<group>";
