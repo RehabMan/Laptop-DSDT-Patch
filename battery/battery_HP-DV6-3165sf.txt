@@ -7,6 +7,7 @@
 
 # works for:
 #  HP Pavilion dv6-3165sf
+#  HP Pavilion dv6661ev, courtesy angelol
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
@@ -47,6 +48,18 @@ into device label EC0 code_regex MCUR,\s+16 replace_matched begin CUR0,8,CUR1,8 
 into device label EC0 code_regex MBRM,\s+16 replace_matched begin BRM0,8,BRM1,8 end;
 into device label EC0 code_regex MBCV,\s+16 replace_matched begin BCV0,8,BCV1,8 end;
 into device label EC0 code_regex SMW0,\s+16 replace_matched begin SMWX,8,SMWY,8 end;
+
+# added for dv6661ev
+into device label EC0 code_regex BADC,\s+16 replace_matched begin ADC0,8,ADC1,8 end;
+into device label EC0 code_regex BADV,\s+16 replace_matched begin ADV0,8,ADV1,8 end;
+
+# deal with 65-bit FLD0
+into device label EC0 code_regex FLD0,\s+64 replace_matched 
+begin
+//FLD0, 64,\n
+F000,8,F001,8,F002,8,F003,8,\n
+F004,8,F005,8,F006,8,F007,8,\n
+end;
 
 # deal with 128-bit FLD1
 into device label EC0 code_regex FLD1,\s+128 replace_matched 
@@ -90,6 +103,11 @@ into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.BFCC, replaceall_matche
 into method label CLRI code_regex \(\^\^LPCB\.EC0\.MBRM, replaceall_matched begin (B1B2(^^LPCB.EC0.BRM0,^^LPCB.EC0.BRM1), end;
 into method label GBIF code_regex \(\^\^PCI0\.LPCB\.EC0\.BFCC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FCC0,^^PCI0.LPCB.EC0.FCC1), end;
 into method label GBCO code_regex \(\^\^PCI0\.LPCB\.EC0\.MCUR, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.CUR0,^^PCI0.LPCB.EC0.CUR1), end;
+
+# added for dv6661ev
+into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.BADC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.ADC0,^^PCI0.LPCB.EC0.ADC1), end;
+into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.BADV, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.ADV0,^^PCI0.LPCB.EC0.ADV1), end;
+
 
 # rewrite buggy UPBS method, provided by chihab222, credit gsly
 into method label UPBS remove_entry;
@@ -412,5 +430,43 @@ Method (WFL1, 1, Serialized)\n
 */\n
 end;
 
-into method label SMRD code_regex \(FLD([1-3]), replaceall_matched begin (RFL%1(), end;
+# deal with FLD0
+
+into device label EC0 insert
+begin
+Method (RFL0, 0, Serialized)\n
+{\n
+    Name (TEMP, Buffer(0x10) { })\n
+    Store (F000, Index(TEMP, 0x00))\n
+    Store (F001, Index(TEMP, 0x01))\n
+    Store (F002, Index(TEMP, 0x02))\n
+    Store (F003, Index(TEMP, 0x03))\n
+    Store (F004, Index(TEMP, 0x04))\n
+    Store (F005, Index(TEMP, 0x05))\n
+    Store (F006, Index(TEMP, 0x06))\n
+    Store (F007, Index(TEMP, 0x07))\n
+    Return (TEMP)\n
+}\n
+end;
+
+into device label EC0 insert
+begin
+/*\n
+Method (WFL0, 1, Serialized)\n
+{\n
+    Name (TEMP, Buffer(0x10) { })\n
+    Store (Arg0, TEMP)\n
+    Store (DerefOf(Index(TEMP, 0x00)), F000)\n
+    Store (DerefOf(Index(TEMP, 0x01)), F001)\n
+    Store (DerefOf(Index(TEMP, 0x02)), F002)\n
+    Store (DerefOf(Index(TEMP, 0x03)), F003)\n
+    Store (DerefOf(Index(TEMP, 0x04)), F004)\n
+    Store (DerefOf(Index(TEMP, 0x05)), F005)\n
+    Store (DerefOf(Index(TEMP, 0x06)), F006)\n
+    Store (DerefOf(Index(TEMP, 0x07)), F007)\n
+}\n
+*/\n
+end;
+
+into method label SMRD code_regex \(FLD([0-3]), replaceall_matched begin (RFL%1(), end;
 

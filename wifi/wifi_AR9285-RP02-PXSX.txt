@@ -2,7 +2,7 @@
 #wifi_AR9285-RP02-PXSX.txt
 
 #   Airport fix works with vanilla IO80211 kext
-into method label _DSM parent_label PXSX parent_label RP02 remove_entry;
+into method label _DSM parent_label PXSX remove_entry;
 into device label PXSX parent_label RP02 insert
 begin
 Method (_DSM, 4, NotSerialized)\n

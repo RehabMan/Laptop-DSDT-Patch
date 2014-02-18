@@ -47,26 +47,32 @@ Scope (\_SB)\n
         Name (_STA, 0x0B)\n
         //define hardware register access for brightness\n
         // you can see BAR1 value in RW-Everything under Bus00,02 Intel VGA controler PCI\n
-        OperationRegion (BRIT, SystemMemory, \_SB.PCI0.IGPU.BAR1, 0xc8254)\n
+        // Note: Not sure which one is right here... for now, going with BAR1 minus 4\n
+        OperationRegion (BRIT, SystemMemory, Subtract(\_SB.PCI0.IGPU.BAR1, 4), 0xe1184)\n
+        //OperationRegion (BRIT, SystemMemory, And(\_SB.PCI0.IGPU.BAR1, Not(0xF)), 0xe1184)\n
         Field (BRIT, AnyAcc, Lock, Preserve)\n
         {\n
-            Offset(0x4824c),\n
+            Offset(0x48250),\n
             LEV2, 32,\n
             LEVL, 32,\n
-            Offset(0x7003C),\n
+            Offset(0x70040),\n
             P0BL, 32,\n
-            Offset(0xc824c),\n
+            Offset(0xc8250),\n
             LEVW, 32,\n
             LEVX, 32,\n
+            Offset(0xe1180),\n
+            PCHL, 32,\n
         }\n
         // DEB1 special for setting KLVX at runtime...\n
         //Method (DEB1, 1, NotSerialized)\n
         //{\n
         //    Store(Arg0, KLVX)\n
         //}\n
+        Name(KPCH, 0)\n
         // _INI deals with differences between native setting and desired\n
         Method (_INI, 0, NotSerialized)\n
         {\n
+            Store(PCHL, KPCH)\n
             Store(ShiftRight(KLVX,16), Local0)\n
             Store(ShiftRight(LEVX,16), Local1)\n
             if (LNotEqual(Local0, Local1))\n
@@ -82,6 +88,7 @@ Scope (\_SB)\n
         Method (_BCM, 1, NotSerialized)\n
         {\n
             // initialize for consistent backlight level before/after sleep\n
+            if (LNotEqual(PCHL, KPCH)) { Store(KPCH, PCHL) }\n
             If (LNotEqual(LEVW, 0x80000000)) { Store (0x80000000, LEVW) }\n
             If (LNotEqual(LEVX, KLVX)) { Store (KLVX, LEVX) }\n
             // store new backlight level\n
@@ -104,6 +111,7 @@ Scope (\_SB)\n
         Method (XBCM, 1, NotSerialized)\n
         {\n
             // initialize for consistent backlight level before/after sleep\n
+            if (LNotEqual(PCHL, KPCH)) { Store(KPCH, PCHL) }\n
             If (LNotEqual(LEVW, 0x80000000)) { Store (0x80000000, LEVW) }\n
             If (LNotEqual(LEVX, KLVX)) { Store (KLVX, LEVX) }\n
             // store new backlight level\n
