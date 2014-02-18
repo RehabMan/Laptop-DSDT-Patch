@@ -10,6 +10,8 @@
 #  ASUS Zenbook UX31A
 #  ASUS UX301LA
 #  ASUS X553E-SX399V
+#  ASUS F501A
+#  ASUS K55VM
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
