@@ -1,0 +1,143 @@
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_PNLF-Lenovo-Ux10.txt
+
+# This patch enables the brightness slider in SysPrefs->Displays
+# and will also enable activation of sleep mode by closing
+# the laptop lid.
+
+#
+# This patch is specifically for the Lenovo Ux10 series
+# laptops.
+#
+# Based on information from the normal laptop DSDT methods,
+# optimized for use with ACPIBacklight.kext
+#
+
+#
+# Note: This patch assumes you have already applied "Rename GFX0 to IGPU"
+# and that the IGPU device is accessible.  For some computers this should
+# be applied to one of the SSDTs, not DSDT.
+#
+
+into device label IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
+into device label IGPU code_regex (OperationRegion\s\(IGDP,\sPCI_Config[^\}]*\}) replace_matched
+begin
+%1\n
+OperationRegion (IGD2, PCI_Config, 0x10, 4)\n
+Field (IGD2, AnyAcc, NoLock, Preserve)\n
+{\n
+	BAR1,32,\n
+}\n
+end;
+
+into device label PNLF remove_entry;
+into definitionblock code_regex . insert
+begin
+Scope (\_SB)\n
+{\n
+    Device (PNLF)\n
+    {\n
+        // normal PNLF declares (note some of this probably not necessary)\n
+        Name (_HID, EisaId ("APP0002"))\n
+        Name (_CID, "backlight")\n
+        Name (_UID, 10)\n
+        Name (_STA, 0x0B)\n
+        //define hardware register access for brightness\n
+        // you can see BAR1 value in RW-Everything under Bus00,02 Intel VGA controler PCI\n
+        OperationRegion (BRIT, SystemMemory, \_SB.PCI0.IGPU.BAR1, 0xc8254)\n
+        Field (BRIT, AnyAcc, Lock, Preserve)\n
+        {\n
+            Offset(0x4824c),\n
+            LEV2, 32,\n
+            LEVL, 32,\n
+            Offset(0x7003C),\n
+            P0BL, 32,\n
+            Offset(0xc824c),\n
+            LEVW, 32,\n
+            LEVX, 32,\n
+        }\n
+        // DEB1 special for setting KLVX at runtime...\n
+        //Method (DEB1, 1, NotSerialized)\n
+        //{\n
+        //    Store(Arg0, KLVX)\n
+        //}\n
+        // _INI deals with differences between native setting and desired\n
+        Name (BRTL, 15)\n
+        Method (_INI, 0, NotSerialized)\n
+        {\n
+            /*\n
+            Store(ShiftRight(KLVX,16), Local0)\n
+            Store(ShiftRight(LEVX,16), Local1)\n
+            if (LNotEqual(Local0, Local1))\n
+            {\n
+                Divide(Multiply(LEVL, Local0), Local1,, Local0)\n
+                //Store(P0BL, Local1)\n
+                //While(LEqual (P0BL, Local1)) {}\n
+                Store(Local0, LEVL)\n
+                Store(KLVX, LEVX)\n
+            }\n
+            */\n
+            // Note: Not sure if ECLV is read/write (may be write only)\n
+            // comment this line out if reading is unreliable\n
+            Store(\_SB.PCI0.LPCB.EC0.ECLV, BRTL)\n
+        }\n
+        // _BCM/_BQC: set/get for brightness level\n
+        Method (_BCM, 1, NotSerialized)\n
+        {\n
+            /*\n
+            // initialize for consistent backlight level before/after sleep\n
+            If (LNotEqual(LEVW, 0x80000000)) { Store (0x80000000, LEVW) }\n
+            If (LNotEqual(LEVX, KLVX)) { Store (KLVX, LEVX) }\n
+            */\n
+            // Update backlight via EC\n
+            Store(Match(_BCL, MGE, Arg0, MTR, 0, 2), Local0)\n
+            If (LEqual(Local0, Ones)) { Subtract(SizeOf(_BCL), 1, Local0) }\n
+            Store(Local0, \_SB.PCI0.LPCB.EC0.ECLV)\n
+            UCMS(0x14)\n
+            Store(Local0, BRTL)\n
+        }\n
+        Method (_BQC, 0, NotSerialized)\n
+        {\n
+            /*\n
+            Store(Match(_BCL, MGE, \_SB.PCI0.LPCB.EC0.ECLV, MTR, 0, 2), Local0)\n
+            If (LEqual(Local0, Ones)) { Subtract(SizeOf(_BCL), 1, Local0) }\n
+            Return(DerefOf(Index(_BCL, Local0)))\n
+            */\n
+            Return(BRTL)\n
+        }\n
+        Method (_DOS, 1, NotSerialized)\n
+        {\n
+            ^^PCI0.IGPU._DOS(Arg0)\n
+        }\n
+    }\n
+}\n
+end;
+
+into device label PNLF code_regex Name\s\(_BCL,\sPackage[^\}]*\}\) remove_matched;
+into device label PNLF code_regex Name\s\(XOPT,.*\)\n removeall_matched;
+into device label PNLF code_regex Name\s\(XRGL,.*\)\n removeall_matched;
+into device label PNLF code_regex Name\s\(XRGH,.*\)\n removeall_matched;
+into device label PNLF code_regex Name\s\(KLVX,.*\)\n removeall_matched;
+into device label PNLF code_regex . insert
+begin
+    // Use XOPT=1 to disable smooth transitions\n
+    Name (XOPT, Zero)\n
+    // XRGL/XRGH: defines the valid range\n
+    Name (XRGL, 1)\n
+    Name (XRGH, 15)\n
+    // KLVX is initialization value for LEVX\n
+    Name (KLVX, 0x7100000)\n
+    // _BCL: returns list of valid brightness levels\n
+    // first two entries describe ac/battery power levels\n
+    Name (_BCL, Package()\n
+    {\n
+        15,\n
+        4,\n
+        0,\n
+        1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,15\n
+    })\n
+end;
+
+
+
+
