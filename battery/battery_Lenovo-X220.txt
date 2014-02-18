@@ -7,6 +7,27 @@
 # works for:
 #  Lenovo x220
 #  Lenovo t431s
+#  Lenovo T410 model 2518-F5U
+#  Lenovo W510 model 4319RU
+
+# syntax fixes
+into_all all code_regex Name\s+\(_HID,\s+\"\*(.*)\"\) replaceall_matched begin Name (_HID, "%1") end;
+
+# some of these laptops need to fix _IRC error
+into device label VID parent_label PEG code_regex Name\s+\(_IRC,\s+([^\)].*)\) replace_matched
+begin
+Method(_IRC, 0, NotSerialized) { Return(%1) }
+end;
+
+# _PLD is supposed to return a variable length Package of Buffers
+into_all all code_regex (Name\s*\(_PLD,\s*)Buffer(\s\([^\)].*\)[^\)]*) replaceall_matched
+begin
+%1Package() { Buffer%2 }
+end;
+
+# requires mutex fix too (2x to work around MaciASL bug...)
+into_all all code_regex_not Mutex\s+\([^,]*,\s+0x00\) code_regex Mutex\s+\(([^,]*),\s+[^)]*\) replaceall_matched begin Mutex(%1, 0) end;
+into_all all code_regex_not Mutex\s+\([^,]*,\s+0x00\) code_regex Mutex\s+\(([^,]*),\s+[^)]*\) replaceall_matched begin Mutex(%1, 0) end;
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -141,9 +162,11 @@ into_all method label GBIF code_regex \(SBCH, replaceall_matched begin (B1B4(BCH
 # this one is added in a patched DSDT to return fan speed
 into method label FAN0 parent_label SMCD code_regex \(\^\^EC\.HFN1, replaceall_matched begin (B1B2(^^EC.FN10,^^EC.FN11), end;
 into method label MHST code_regex \(HSPD, replaceall_matched begin (B1B2(SPD0,SPD1), end;
+into method label MHST code_regex \(\\_SB.PCI0.LPC.EC.HSPD, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.SPD0,\\_SB.PCI0.LPC.EC.SPD1), end;
 
 # sleep related
 into method label _L1D parent_label _GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;
+into method label _L1D parent_label \_GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;
 
 # disable secondary battery
 into method label _STA parent_label BAT1 replace_content begin Return(0) end;
