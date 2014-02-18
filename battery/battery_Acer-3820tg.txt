@@ -6,7 +6,9 @@
 # works for:
 #  Acer 3820tg
 
-# Note: This DSDT also requires "Fix Mutex with non-zero SyncLevel"
+# requires mutex fix too (2x to work around MaciASL bug...)
+into_all all code_regex_not Mutex\s+\([^,]*,\s+0x00\) code_regex Mutex\s+\(([^,]*),\s+[^)]*\) replaceall_matched begin Mutex(%1, 0) end;
+into_all all code_regex_not Mutex\s+\([^,]*,\s+0x00\) code_regex Mutex\s+\(([^,]*),\s+[^)]*\) replaceall_matched begin Mutex(%1, 0) end;
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
