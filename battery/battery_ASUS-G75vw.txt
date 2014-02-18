@@ -1,0 +1,114 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_ASUS-G75vw.txt
+
+# created by Zackptg5 1/2014
+
+# works for:
+#  ASUS G75vw
+
+#Convert 16 bit to 8 bit registers
+into device label EC0 code_regex TAH0,\s+16, replace_matched begin AH00,8,AH01,8, end;
+into device label EC0 code_regex TAH1,\s+16, replace_matched begin AH10,8,AH11,8, end;
+into device label EC0 code_regex B0PN,\s+16, replace_matched begin B0P0,8,B0P1,8, end;
+into device label EC0 code_regex B0TM,\s+16, replace_matched begin B0T0,8,B0T1,8, end;
+into device label EC0 code_regex B0C1,\s+16, replace_matched begin B010,8,B011,8, end;
+into device label EC0 code_regex B0C2,\s+16, replace_matched begin B020,8,B021,8, end;
+into device label EC0 code_regex B0C3,\s+16, replace_matched begin B030,8,B031,8, end;
+into device label EC0 code_regex B0C4,\s+16, replace_matched begin B040,8,B041,8, end;
+into device label EC0 code_regex B1PN,\s+16, replace_matched begin B1N0,8,B1N1,8, end;
+into device label EC0 code_regex B1TM,\s+16, replace_matched begin B1M0,8,B1M1,8, end;
+into device label EC0 code_regex B1C1,\s+16, replace_matched begin B110,8,B111,8, end;
+into device label EC0 code_regex B1C2,\s+16, replace_matched begin B120,8,B121,8, end;
+into device label EC0 code_regex B1C3,\s+16, replace_matched begin B130,8,B131,8, end;
+into device label EC0 code_regex B1C4,\s+16, replace_matched begin B140,8,B141,8, end;
+into device label EC0 code_regex B0SN,\s+16, replace_matched begin B0S0,8,B0S1,8, end;
+into device label EC0 code_regex B1SN,\s+16 replace_matched begin B1S0,8,B1S1,8, end;
+into device label EC0 code_regex DT2B,\s+16 replace_matched begin T2B0,8,T2B1,8, end;
+
+#Create B1B2 Method
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+#Fix 16 bit registers
+into method label TACH code_regex \(TAH0, replaceall_matched begin (B1B2(AH00,AH01), end;
+into method label TACH code_regex \(TAH1, replaceall_matched begin (B1B2(AH10,AH11), end;
+into method label BIFA code_regex \(B0SN, replaceall_matched begin (B1B2(B0S0,B0S1), end;
+into method label BIFA code_regex \(B1SN, replaceall_matched begin (B1B2(B1S0,B1S1), end;
+into method label SMBR code_regex \(DT2B, replaceall_matched begin (B1B2(T2B0,T2B1), end;
+into method label SMBW code_regex Store\s+\((.*),\s+DT2B\) replace_matched 
+begin
+Store(ShiftRight(%1,8), T2B1) Store(%1, T2B0)
+end;
+
+#Change name of 256 bit registers
+into device label EC0 code_regex BDAT,\s+256, replace_matched begin BDAX,	256, end;
+into device label EC0 code_regex BDA2,\s+256, replace_matched begin BDAY,	256, end;
+
+# utility methods to read/write buffers from/to EC
+into method label RE1B parent_label EC0 remove_entry;
+into method label RECB parent_label EC0 remove_entry;
+into device label EC0 insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+#utility method to write to EC buffers
+into method label WE1B parent_label EC0 remove_entry;
+into method label WECB parent_label EC0 remove_entry;
+into device label EC0 insert
+begin
+Method (WE1B, 2, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Store(Arg1, BYTE)\n
+}\n
+Method (WECB, 3, Serialized)\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Store(Arg2, TEMP)\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        WE1B(Arg0, DerefOf(Index(TEMP, Local0)))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+}\n
+end;
+
+#Note: offsets are based on actual DSDT.  Please verify if you have a different model.
+
+#fix 256 bit registers
+into method label SMBR code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+into method label SMBW code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+into method label ECSB code_regex Store\s+\((.*),\s+BDAT\) replaceall_matched begin WECB(0x1c,256,%1) end;
+into method label ECSB code_regex Store\s+\((.*),\s+BDA2\) replaceall_matched begin WECB(0x44,256,%1) end;
+into method label ECSB code_regex \(BDAT, replaceall_matched begin (RECB(0x1c,256), end;
+into method label ECSB code_regex \(BDA2, replaceall_matched begin (RECB(0x44,256), end;
+into method label SMBR code_regex \(BDAT, replaceall_matched begin (RECB(0x1c,256), end;
+
