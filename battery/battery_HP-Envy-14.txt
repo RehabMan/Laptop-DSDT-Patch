@@ -6,6 +6,7 @@
 
 # works for:
 #  HP Envy 14-2166se
+#  HP Envy 14-2050SE
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -190,6 +191,20 @@ into method label GBTI code_regex \(CRG0, replaceall_matched begin (B1B2(RG00,RG
 into method label GBTI code_regex \(CRG1, replaceall_matched begin (B1B2(RG10,RG11), end;
 into method label GBTI code_regex \(CBT0, replaceall_matched begin (B1B2(BT00,BT01), end;
 into method label GBTI code_regex \(CBT1, replaceall_matched begin (B1B2(BT10,BT11), end;
+into_all method label _BIF code_regex \(\^\^PCI0\.LPCB\.H_EC\.BFC0, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.FC00,^^PCI0.LPCB.H_EC.FC01), end;
+into_all method label _BIF code_regex \(\^\^PCI0\.LPCB\.H_EC\.BFC1, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.FC10,^^PCI0.LPCB.H_EC.FC11), end;
+into_all method label _BIF code_regex \(\^\^PCI0\.LPCB\.H_EC\.BDV0, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.DV00,^^PCI0.LPCB.H_EC.DV01), end;
+into_all method label _BIF code_regex \(\^\^PCI0\.LPCB\.H_EC\.BDV1, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.DV10,^^PCI0.LPCB.H_EC.DV11), end;
+into_all method label _BIF code_regex \(\^\^PCI0\.LPCB\.H_EC\.BSN0, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.SN00,^^PCI0.LPCB.H_EC.SN01), end;
+into_all method label _BIF code_regex \(\^\^PCI0\.LPCB\.H_EC\.BSN1, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.SN10,^^PCI0.LPCB.H_EC.SN11), end;
+into_all method label _BIF code_regex \(\^\^PCI0\.LPCB\.H_EC\.BMD0, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.MD00,^^PCI0.LPCB.H_EC.MD01), end;
+into_all method label _BIF code_regex \(\^\^PCI0\.LPCB\.H_EC\.BMD1, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.MD10,^^PCI0.LPCB.H_EC.MD11), end;
+into_all method label _BST code_regex \(\^\^PCI0\.LPCB\.H_EC\.BPR0, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.PR00,^^PCI0.LPCB.H_EC.PR01), end;
+into_all method label _BST code_regex \(\^\^PCI0\.LPCB\.H_EC\.BPR1, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.PR10,^^PCI0.LPCB.H_EC.PR11), end;
+into_all method label _BST code_regex \(\^\^PCI0\.LPCB\.H_EC\.BRC0, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.RC00,^^PCI0.LPCB.H_EC.RC01), end;
+into_all method label _BST code_regex \(\^\^PCI0\.LPCB\.H_EC\.BRC1, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.RC10,^^PCI0.LPCB.H_EC.RC11), end;
+into_all method label _BST code_regex \(\^\^PCI0\.LPCB\.H_EC\.BPV0, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.PV00,^^PCI0.LPCB.H_EC.PV01), end;
+into_all method label _BST code_regex \(\^\^PCI0\.LPCB\.H_EC\.BPV1, replaceall_matched begin (B1B2(^^PCI0.LPCB.H_EC.PV10,^^PCI0.LPCB.H_EC.PV11), end;
 
 # fix 32-bit methods
 into method label GBTI code_regex \(BTY0, replaceall_matched begin (B1B4(TY00,TY01,TY02,TY03), end;
