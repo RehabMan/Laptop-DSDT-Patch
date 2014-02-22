@@ -35,30 +35,31 @@
 [4.10]  Dell XPS 18	battery/battery_Dell-XPS-18.txt
 [4.11]  Dell XPX L502x	battery/battery_Dell-XPS-L502x.txt
 [4.12]  Gigabyte u2442N	battery/battery_Gigabyte-u2442N.txt
-[4.13]  HP DV6-3165sf	battery/battery_HP-DV6-3165sf.txt
-[4.14]  HP DV7-1120	battery/battery_HP-DV7-1120.txt
-[4.15]  HP DV7-6xxx	battery/battery_HP-DV7-6xxx.txt
-[4.16]  HP DV7-7xxx	battery/battery_HP-DV7-7xxx.txt
-[4.17]  HP Envy 14	battery/battery_HP-Envy-14.txt
-[4.18]  HP Envy 17t	battery/battery_HP-Envy-17t.txt
-[4.19]  HP Envy DV6	battery/battery_HP-Envy-DV6.txt
-[4.20]  HP G6 2221ss	battery/battery_HP-G6-2221ss.txt
-[4.21]  HP G6 B13SL	battery/battery_HP-G62-B13SL.txt
-[4.22]  HP ProBook 4x0s G1	battery/battery_HP-ProBook-4x0s-G1.txt
-[4.23]  HP ProBook Generic	battery/battery_HP-ProBook-Generic.txt
-[4.24]  HP Spectre XT	battery/battery_HP-Spectre-XT.txt
-[4.25]  Lenovo Twist	battery/battery_Lenovo-Twist.txt
-[4.26]  Lenovo Ux10-Z580	battery/battery_Lenovo-Ux10-Z580.txt
-[4.27]  Lenovo X220	battery/battery_Lenovo-X220.txt
-[4.28]  Lenovo y580	battery/battery_Lenovo-y580.txt
-[4.29]  Samsung NP470R5E	battery/battery_Samsung-NP470R5E.txt
-[4.30]  Samsung RF411	battery/battery_Samsung-RF411.txt
-[4.31]  Samsung R528	battery/battery_Samsung-r528.txt
-[4.32]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
-[4.33]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
-[4.34]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
-[4.35]  Surface v1	battery/battery_Surface-Pro-v1.txt
-[4.36]  TabletKiosk	battery/battery_TabletKiosk-i575.txt
+[4.13]  HP DM4T-1000	battery/battery_HP-DM4T-1000.txt
+[4.14]  HP DV6-3165sf	battery/battery_HP-DV6-3165sf.txt
+[4.15]  HP DV7-1120	battery/battery_HP-DV7-1120.txt
+[4.16]  HP DV7-6xxx	battery/battery_HP-DV7-6xxx.txt
+[4.17]  HP DV7-7xxx	battery/battery_HP-DV7-7xxx.txt
+[4.18]  HP Envy 14	battery/battery_HP-Envy-14.txt
+[4.19]  HP Envy 17t	battery/battery_HP-Envy-17t.txt
+[4.20]  HP Envy DV6	battery/battery_HP-Envy-DV6.txt
+[4.21]  HP G6 2221ss	battery/battery_HP-G6-2221ss.txt
+[4.22]  HP G6 B13SL	battery/battery_HP-G62-B13SL.txt
+[4.23]  HP ProBook 4x0s G1	battery/battery_HP-ProBook-4x0s-G1.txt
+[4.24]  HP ProBook Generic	battery/battery_HP-ProBook-Generic.txt
+[4.25]  HP Spectre XT	battery/battery_HP-Spectre-XT.txt
+[4.26]  Lenovo Twist	battery/battery_Lenovo-Twist.txt
+[4.27]  Lenovo Ux10-Z580	battery/battery_Lenovo-Ux10-Z580.txt
+[4.28]  Lenovo X220	battery/battery_Lenovo-X220.txt
+[4.29]  Lenovo y580	battery/battery_Lenovo-y580.txt
+[4.30]  Samsung NP470R5E	battery/battery_Samsung-NP470R5E.txt
+[4.31]  Samsung RF411	battery/battery_Samsung-RF411.txt
+[4.32]  Samsung R528	battery/battery_Samsung-r528.txt
+[4.33]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
+[4.34]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
+[4.35]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
+[4.36]  Surface v1	battery/battery_Surface-Pro-v1.txt
+[4.37]  TabletKiosk	battery/battery_TabletKiosk-i575.txt
 [5.0] == Atheros WiFi Patches	NullPatch.txt
 [5.1]   AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
 [5.2]   AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
