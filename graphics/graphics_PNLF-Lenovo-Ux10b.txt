@@ -136,7 +136,7 @@ begin
             0x50,\n
             0x55,\n
             0x5A,\n
-            0x64,\n
+            0x5A,\n
             0x64,\n
     })\n
 end;
