@@ -24,6 +24,7 @@ into device label EC0 code_regex TAH0,\s+16 replace_matched begin TH00,8,TH01,8 
 into device label EC0 code_regex TAH1,\s+16 replace_matched begin TH10,8,TH11,8 end;
 into method label TACH code_regex \(TAH0, replace_matched begin (B1B2(TH00,TH01), end;
 into method label TACH code_regex \(TAH1, replace_matched begin (B1B2(TH10,TH11), end;
+into method label GFAN code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.TAH0, replace_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.TH00,\\_SB.PCI0.LPCB.EC0.TH01), end;
 
 # battery EC
 into device label EC0 code_regex B0SN,\s+16 replace_matched begin B0S0,8,B0S1,8 end;
