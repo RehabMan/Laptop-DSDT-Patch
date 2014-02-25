@@ -54,6 +54,7 @@
 		845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_EDID.txt; path = graphics/graphics_EDID.txt; sourceTree = "<group>"; };
 		845E02D21846FE8000208D98 /* battery_HP-DV7-1120.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV7-1120.txt"; path = "battery/battery_HP-DV7-1120.txt"; sourceTree = "<group>"; };
 		845FE5EF1702639F004601B0 /* .maciasl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .maciasl; sourceTree = "<group>"; usesTabs = 1; };
+		84601EA818BCF6790014BF12 /* graphics_Haswell_0a260006.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_Haswell_0a260006.txt; path = graphics/graphics_Haswell_0a260006.txt; sourceTree = "<group>"; };
 		84624C9818219322004C34DA /* battery_HP-DV7-6xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV7-6xxx.txt"; path = "battery/battery_HP-DV7-6xxx.txt"; sourceTree = "<group>"; };
 		846576DA1806D6DC00AB21B7 /* system_HPET.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_HPET.txt; path = system/system_HPET.txt; sourceTree = "<group>"; };
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_FDE.txt; path = syntax/fix_FDE.txt; sourceTree = "<group>"; };
@@ -115,6 +116,7 @@
 				840E6D3817FB287900784B2A /* graphics_HD4K_low.txt */,
 				840E6D3717FB286A00784B2A /* graphics_HD3K_high.txt */,
 				840E6D3917FB288A00784B2A /* graphics_HD4K_high.txt */,
+				84601EA818BCF6790014BF12 /* graphics_Haswell_0a260006.txt */,
 				845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */,
 				840E6D3A17FB294000784B2A /* graphics_MEI_sandy.txt */,
 				84AAF75B17FE027A0088DB40 /* graphics_MEI_ivy.txt */,
