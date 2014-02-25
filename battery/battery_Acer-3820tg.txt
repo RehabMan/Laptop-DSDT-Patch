@@ -5,6 +5,7 @@
 
 # works for:
 #  Acer 3820tg
+#  Acer 4738z (per dhnguyen92)
 
 # requires mutex fix too (2x to work around MaciASL bug...)
 into_all all code_regex_not Mutex\s+\([^,]*,\s+0x00\) code_regex Mutex\s+\(([^,]*),\s+[^)]*\) replaceall_matched begin Mutex(%1, 0) end;
