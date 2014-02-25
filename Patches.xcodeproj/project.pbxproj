@@ -71,6 +71,7 @@
 		84A74C291805D49F009DAAAF /* system_Shutdown.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_Shutdown.txt; path = system/system_Shutdown.txt; sourceTree = "<group>"; };
 		84AA4E051846A6750048423C /* battery_Dell-XPS-L502x.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-XPS-L502x.txt"; path = "battery/battery_Dell-XPS-L502x.txt"; sourceTree = "<group>"; };
 		84AAF75B17FE027A0088DB40 /* graphics_MEI_ivy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_MEI_ivy.txt; path = graphics/graphics_MEI_ivy.txt; sourceTree = "<group>"; };
+		84ACC1B118BAD88B001B61D8 /* battery_Toshiba-A660-16Z.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Toshiba-A660-16Z.txt"; path = "battery/battery_Toshiba-A660-16Z.txt"; sourceTree = "<group>"; };
 		84AE72BE180DBA4700E29861 /* system_MCHC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_MCHC.txt; path = system/system_MCHC.txt; sourceTree = "<group>"; };
 		84AFCB7417FB2B800089486F /* usb_6-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "usb_6-series.txt"; path = "usb/usb_6-series.txt"; sourceTree = "<group>"; };
 		84AFCB7517FB2B8F0089486F /* usb_7-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "usb_7-series.txt"; path = "usb/usb_7-series.txt"; sourceTree = "<group>"; };
@@ -196,6 +197,7 @@
 				842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */,
 				84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */,
 				843936A218ABC24200E32386 /* battery_TabletKiosk-i575.txt */,
+				84ACC1B118BAD88B001B61D8 /* battery_Toshiba-A660-16Z.txt */,
 			);
 			name = "Battery Status";
 			sourceTree = "<group>";

@@ -60,6 +60,7 @@
 [4.35]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
 [4.36]  Surface v1	battery/battery_Surface-Pro-v1.txt
 [4.37]  TabletKiosk	battery/battery_TabletKiosk-i575.txt
+[4.38]  Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
 [5.0] == Atheros WiFi Patches	NullPatch.txt
 [5.1]   AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
 [5.2]   AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
