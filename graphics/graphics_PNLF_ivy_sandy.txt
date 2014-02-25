@@ -59,9 +59,9 @@ Scope (\_SB)\n
         Name (_STA, 0x0B)\n
         //define hardware register access for brightness\n
         // you can see BAR1 value in RW-Everything under Bus00,02 Intel VGA controler PCI\n
-        // Note: Not sure which one is right here... for now, going with BAR1 minus 4\n
-        OperationRegion (BRIT, SystemMemory, Subtract(\_SB.PCI0.IGPU.BAR1, 4), 0xe1184)\n
-        //OperationRegion (BRIT, SystemMemory, And(\_SB.PCI0.IGPU.BAR1, Not(0xF)), 0xe1184)\n
+        // Note: Not sure which one is right here... for now, going with BAR1 masked\n
+        //OperationRegion (BRIT, SystemMemory, Subtract(\_SB.PCI0.IGPU.BAR1, 4), 0xe1184)\n
+        OperationRegion (BRIT, SystemMemory, And(\_SB.PCI0.IGPU.BAR1, Not(0xF)), 0xe1184)\n
         Field (BRIT, AnyAcc, Lock, Preserve)\n
         {\n
             Offset(0x48250),\n
