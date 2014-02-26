@@ -12,6 +12,7 @@
 #  ASUS X553E-SX399V
 #  ASUS F501A
 #  ASUS K55VM
+#  ASUS U46SV, BIOS rev. 2.04
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
