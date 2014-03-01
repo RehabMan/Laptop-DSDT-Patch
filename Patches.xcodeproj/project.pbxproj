@@ -77,6 +77,7 @@
 		84AFCB7417FB2B800089486F /* usb_6-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "usb_6-series.txt"; path = "usb/usb_6-series.txt"; sourceTree = "<group>"; };
 		84AFCB7517FB2B8F0089486F /* usb_7-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "usb_7-series.txt"; path = "usb/usb_7-series.txt"; sourceTree = "<group>"; };
 		84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_PNLF.txt; path = graphics/graphics_PNLF.txt; sourceTree = "<group>"; };
+		84B6F74818BFCCC8000015F3 /* battery_Acer-Aspire-E1-571.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-E1-571.txt"; path = "battery/battery_Acer-Aspire-E1-571.txt"; sourceTree = "<group>"; };
 		84B7DC531808792C00CAA692 /* audio_HDEF-layout12a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout12a.txt"; path = "audio/audio_HDEF-layout12a.txt"; sourceTree = "<group>"; };
 		84B9D52516FFE684002CD441 /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
 		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		842F532117FB302D001CF33B /* Battery Status */ = {
 			isa = PBXGroup;
 			children = (
+				84B6F74818BFCCC8000015F3 /* battery_Acer-Aspire-E1-571.txt */,
 				8470F3081854BA400053FBF1 /* battery_Acer-3820tg.txt */,
 				842F531617FB301B001CF33B /* battery_Acer-Aspire-4830T.txt */,
 				842F531717FB301B001CF33B /* battery_Acer-Aspire-5750g.txt */,
