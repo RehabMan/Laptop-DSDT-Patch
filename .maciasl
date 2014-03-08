@@ -83,6 +83,7 @@
 [7.10]  Fix _WAK Arg0 v1	system/system_WAK1.txt
 [7.11]  Fix _WAK Arg0 v2	system/system_WAK2.txt
 [7.12]  Fix Mutex with non-zero SyncLevel	system/system_Mutex.txt
+[7.13]  Fix PNOT/PPNT	system/system_PNOT.txt
 [8.0] == Audio	NullPatch.txt
 [8.1]   Audio Layout 12	audio/audio_HDEF-layout12.txt
 [8.2]   Audio Layout 12 (advanced)	audio/audio_HDEF-layout12a.txt

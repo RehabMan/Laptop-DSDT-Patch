@@ -9,6 +9,7 @@
 #  Lenovo U410
 #  Lenovo U510?
 #  Lenovo Z580
+#  Lenovo U430 Touch (probably U330/U530, etc)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

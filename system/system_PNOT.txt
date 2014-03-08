@@ -1,0 +1,12 @@
+#Maintained by: RehabMan for: Laptop Patches
+#system_PNOT.txt
+
+# PNOT or PPNT are commonly called from EC/AC adapter related code
+# and often access identifiers that are present in SSDTs generally
+# dropped (CPU SSDTs)
+#
+# Because of this, it is best to make these methods do nothing.
+
+# make PNOT/PPNT a no-op
+into method label PNOT replace_content begin // nothing end;
+into method label PPNT replace_content begin // nothing end;

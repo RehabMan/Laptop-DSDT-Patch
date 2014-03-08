@@ -28,6 +28,9 @@ Method (_DSM, 4, NotSerialized)\n
         "hda-gfx", Buffer() { "onboard-1" },\n
 
         //EDID section: Fill in with your actual 128 bytes of EDID data\n
+        //Note: Clover uses override-no-connect, but I've also seen\n
+        //  override-no-edid.  Not sure what the difference is.\n
+        //"AAPL00,override-no-connect", Buffer (0x80)\n
         "AAPL00,override-no-edid", Buffer (0x80)\n
         {\n
             0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00, 0x06, 0xaf, 0xec, 0x23,\n
