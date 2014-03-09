@@ -6,6 +6,8 @@
 
 # works for:
 #  HP Envy 17t-j000
+#  HP Envy 15-j063cl
+#  HP Envy 15-j040el
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

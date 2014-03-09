@@ -5,6 +5,14 @@
 
 # works for:
 #  Toshiba Satellite A660-16Z
+#  Toshiba Satellite P755-1004XT
+
+# B1B2 utility method
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
 
 # 16-bit fields
 into device label EC0 code_regex CECE,\s+16, replace_matched begin ECE0,8,ECE1,8, end;
