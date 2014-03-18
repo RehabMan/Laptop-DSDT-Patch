@@ -163,6 +163,7 @@ into_all method label GBIF code_regex \(SBCH, replaceall_matched begin (B1B4(BCH
 into method label FAN0 parent_label SMCD code_regex \(\^\^EC\.HFN1, replaceall_matched begin (B1B2(^^EC.FN10,^^EC.FN11), end;
 into method label MHST code_regex \(HSPD, replaceall_matched begin (B1B2(SPD0,SPD1), end;
 into method label MHST code_regex \(\\_SB.PCI0.LPC.EC.HSPD, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.SPD0,\\_SB.PCI0.LPC.EC.SPD1), end;
+into method label RPM4 code_regex \(\^\^EC\.HSPD, replaceall_matched begin (B1B2(^^EC.SPD0,^^EC.SPD1), end;
 
 # sleep related
 into method label _L1D parent_label _GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;
