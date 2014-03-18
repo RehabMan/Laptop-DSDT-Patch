@@ -1,5 +1,5 @@
 #Maintained by: RehabMan for: Laptop Patches
-#graphics_HD3K_high.txt
+#graphics_HD4K_high.txt
 
 #
 # Use this patch if your laptop has 1600x900 or higher
