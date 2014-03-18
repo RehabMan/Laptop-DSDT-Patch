@@ -6,11 +6,60 @@
 
 # works for:
 #  Dell Vostro 1510
+#  Alienware m14xr1
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
 begin
 Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
+end;
+
+# utility methods to read/write buffers from/to EC
+into method label RE1B remove_entry;
+into method label RECB remove_entry;
+into device label EC0 insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+#
+# BATN handling is based on original DSDT
+# make sure your BATN is at offset 0x10
+#
+#                    OperationRegion (ERAM, EmbeddedControl, Zero, 0xFF)
+#                    Field (ERAM, ByteAcc, Lock, Preserve)
+#                    {
+#                                Offset (0x09),
+#                        HSID,   8,
+#                                Offset (0x10),
+#                        BATN,   128,
+#
+
+into device label EC0 code_regex BATN,\s+128 replace_matched begin BATX,128 end;
+
+# Store (^^EC0.BATN, Index (STAT, 0x09))
+into method label _BIF code_regex Store\s+\(\^\^EC0\.BATN,(.*)\) replace_matched
+begin
+Store(^^EC0.RECB(0x10,128),%1)
 end;
 
 # 16-bit EC
