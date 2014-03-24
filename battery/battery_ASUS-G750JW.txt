@@ -44,7 +44,7 @@ begin
 Store(ShiftRight(%1,8), T2B1) Store(%1, T2B0)
 end;
 
-//G750JW requires this fix to compile
+#G750JW requires this fix to compile
 method label _BIX code_regex \(\^\^LPCB.EC0.B0C3, replaceall_matched begin (B1B2(^^LPCB.EC0.B030,^^LPCB.EC0.B031), end;
 
 
