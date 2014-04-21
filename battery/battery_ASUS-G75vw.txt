@@ -6,6 +6,7 @@
 # works for:
 #  ASUS G75vw
 #  ASUS S400
+#  ASUS G750 JW (probably works for Asus G750 JX and JH also)
 
 #Convert 16 bit to 8 bit registers
 into device label EC0 code_regex TAH0,\s+16, replace_matched begin AH00,8,AH01,8, end;
@@ -43,6 +44,9 @@ into method label SMBW code_regex Store\s+\((.*),\s+DT2B\) replace_matched
 begin
 Store(ShiftRight(%1,8), T2B1) Store(%1, T2B0)
 end;
+
+#G750JW requires this fix to compile
+method label _BIX code_regex \(\^\^LPCB.EC0.B0C3, replaceall_matched begin (B1B2(^^LPCB.EC0.B030,^^LPCB.EC0.B031), end;
 
 #Change name of 256 bit registers
 into device label EC0 code_regex BDAT,\s+256, replace_matched begin BDAX,	256, end;
