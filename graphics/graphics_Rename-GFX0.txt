@@ -23,9 +23,23 @@ into_all all label \_SB.PCI0.GFX0.DD02 set_label begin \_SB.PCI0.IGPU.DD02 end;
 into_all all label ^^GFX0 set_label begin ^^IGPU end;
 into_all all label ^GFX0 set_label begin ^IGPU end;
 
-# and its aliases: VID
+# and its aliases: VID_/VID
+# do VID_ rename first
+into_all all code_regex VID_\. replaceall_matched begin IGPU. end;
+into_all all code_regex \.VID_ replaceall_matched begin .IGPU end;
+into_all all code_regex \sVID_, replaceall_matched begin IGPU, end;
+into_all all code_regex \(VID_ replaceall_matched begin (IGPU end;
+into_all all label VID_ set_label begin IGPU end;
+into_all all label _SB.PCI0.VID_ set_label begin _SB.PCI0.IGPU end;
+into_all all label \_SB.PCI0.VID_ set_label begin \_SB.PCI0.IGPU end;
+into_all all label _SB.PCI0.VID_.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
+into_all all label \_SB.PCI0.VID_.DD02 set_label begin \_SB.PCI0.IGPU.DD02 end;
+into_all all label ^^VID_ set_label begin ^^IGPU end;
+into_all all label ^VID_ set_label begin ^IGPU end;
+into_all all label PCI0.PEG.VID_ set_label begin PCI0.PEG.IGPU end;
+# then VID rename...
 into_all all code_regex VID\. replaceall_matched begin IGPU. end;
-into_all all code_regex \.VID replaceall_matched begin .IGPU end;
+into_all all code_regex \.VID\s replaceall_matched begin .IGPU end;
 into_all all code_regex \sVID, replaceall_matched begin IGPU, end;
 into_all all code_regex \(VID replaceall_matched begin (IGPU end;
 into_all all label VID set_label begin IGPU end;
@@ -47,5 +61,5 @@ into_all all label _SB.PCI0.AGP1 set_label begin _SB.PCI0.IGPU end;
 into_all all label \_SB.PCI0.AGP1 set_label begin \_SB.PCI0.IGPU end;
 into_all all label _SB.PCI0.AGP1.DD02 set_label begin _SB.PCI0.IGPU.DD02 end;
 into_all all label \_SB.PCI0.AGP1.DD02 set_label begin \_SB.PCI0.IGPU.DD02 end;
-into_all all label ^^VID set_label begin ^^IGPU end;
-into_all all label ^VID set_label begin ^IGPU end;
+into_all all label ^^AGP1 set_label begin ^^IGPU end;
+into_all all label ^AGP1 set_label begin ^IGPU end;
