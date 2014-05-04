@@ -1,4 +1,5 @@
 # Maintained by: RehabMan for: Laptop Patches
+#battery_HP-DV6t-6b00.txt
 
 # created by jtp_redson using RehabMan's guide
 

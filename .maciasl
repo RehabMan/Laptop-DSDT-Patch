@@ -17,7 +17,7 @@
 [2.10]   Brightness fix (HD3000/HD4000)	graphics/graphics_PNLF_ivy_sandy.txt
 [2.11]   Brightness fix (Haswell)	graphics/graphics_PNLF_haswell.txt
 [2.12]   Rename GFX0 to IGPU	graphics/graphics_Rename-GFX0.txt
-[2.13]   Rename VID/ADP1 to IGPU	graphics/graphics_graphics_Rename-VID_AGP1.txt
+[2.13]   Rename VID/ADP1 to IGPU	graphics/graphics_Rename-VID_AGP1.txt
 [3.0] == USB (ECHI) Patches	NullPatch.txt
 [3.1]   6-series USB	usb/usb_6-series.txt
 [3.2]   7-series USB	usb/usb_7-series.txt
@@ -38,7 +38,7 @@
 [4.13]  Gigabyte u2442N	battery/battery_Gigabyte-u2442N.txt
 [4.14]  HP DM4t-1000	battery/battery_HP-DM4T-1000.txt
 [4.15]  HP DV6-3165sf	battery/battery_HP-DV6-3165sf.txt
-[4.16]  HP DV6t-6b00	battery_HP-DV6t-6b00.txt
+[4.16]  HP DV6t-6b00	battery/battery_HP-DV6t-6b00.txt
 [4.17]  HP DV7-1120	battery/battery_HP-DV7-1120.txt
 [4.18]  HP DV7-6xxx	battery/battery_HP-DV7-6xxx.txt
 [4.19]  HP DV7-7xxx	battery/battery_HP-DV7-7xxx.txt
