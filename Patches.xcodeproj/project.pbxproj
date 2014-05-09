@@ -20,6 +20,7 @@
 		84109737181090AE00829904 /* system_WAK2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_WAK2.txt; path = system/system_WAK2.txt; sourceTree = "<group>"; };
 		841347881805D3180055B67A /* system_IRQ.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_IRQ.txt; path = system/system_IRQ.txt; sourceTree = "<group>"; };
 		841796F018539E4C00E987F2 /* battery_Samsung-r528.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Samsung-r528.txt"; path = "battery/battery_Samsung-r528.txt"; sourceTree = "<group>"; };
+		841978D1191C77880045C15B /* system_IMEI.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_IMEI.txt; path = system/system_IMEI.txt; sourceTree = "<group>"; };
 		841D311917FB71C600EA5675 /* wifi_AR9285-RP02-PXSX.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP02-PXSX.txt"; path = "wifi/wifi_AR9285-RP02-PXSX.txt"; sourceTree = "<group>"; };
 		841D311A17FB71C600EA5675 /* wifi_AR9285-RP02-WLAN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP02-WLAN.txt"; path = "wifi/wifi_AR9285-RP02-WLAN.txt"; sourceTree = "<group>"; };
 		841D311B17FB71C600EA5675 /* wifi_AR9285-RP02-WNIC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP02-WNIC.txt"; path = "wifi/wifi_AR9285-RP02-WNIC.txt"; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 				84109737181090AE00829904 /* system_WAK2.txt */,
 				8498961A1811D4A80086DF6C /* system_Mutex.txt */,
 				843F7BE518B901CB00567F87 /* system_PNOT.txt */,
+				841978D1191C77880045C15B /* system_IMEI.txt */,
 			);
 			name = System;
 			sourceTree = "<group>";
