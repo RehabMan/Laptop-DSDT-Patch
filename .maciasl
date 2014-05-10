@@ -20,7 +20,7 @@
 [2.13]   Rename VID/ADP1 to IGPU	graphics/graphics_Rename-VID_AGP1.txt
 [3.0] == USB (ECHI) Patches	NullPatch.txt
 [3.1]   6-series USB	usb/usb_6-series.txt
-[3.2]   7-series USB	usb/usb_7-series.txt
+[3.2]   7-series/8-series USB	usb/usb_7-series.txt
 [3.5]   7-series USB3 Multiplex	usb/usb_7-series-multiplex.txt
 [4.0] == Battery Patches	NullPatch.txt
 [4.01]  Acer Aspire E1-571	battery/battery_Acer-Aspire-E1-571.txt

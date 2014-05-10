@@ -23,6 +23,7 @@ into device label EC0 code_regex BT1I,\s+16 replace_matched begin BTI0,8,BTI1,8 
 into device label EC0 code_regex BT1C,\s+16 replace_matched begin BTC0,8,BTC1,8 end;
 into device label EC0 code_regex BT1V,\s+16 replace_matched begin BTV0,8,BTV1,8 end;
 into device label EC0 code_regex BATD,\s+16 replace_matched begin BTD0,8,BTD1,8 end;
+into device label EC0 code_regex ENCR,\s+16 replace_matched begin ENC0,8,ENC1,8 end;
 
 # method fixes
 
@@ -31,19 +32,33 @@ into method label SMRW code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.SMW0, replaceall_mat
 into method label SMRW code_regex Store\s+\(Arg3,\s+\\_SB\.PCI0\.LPCB\.EC0\.SMW0\) replaceall_matched
 begin
 Store (ShiftRight(Arg3, 8), \\_SB.PCI0.LPCB.EC0.SM01)
-Store (Arg3, \\_SB.PCI0.LPCB.EC0.SM01)
+Store (Arg3, \\_SB.PCI0.LPCB.EC0.SM00)
 end;
+
 into method label SMWR code_regex Store\s+\(Arg3,\s+SMW0\) replaceall_matched
 begin
 Store (ShiftRight(Arg3, 8), SM01)
-Store (Arg3, SM01)
+Store (Arg3, SM00)
 end;
+
 into method label SMRD code_regex \(SMW0, replaceall_matched begin (B1B2(SM00,SM01), end;
 into method label _PSR parent_label ACAD code_regex \(\^\^PCI0\.LPCB\.EC0\.BATD, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTD0,^^PCI0.LPCB.EC0.BTD1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.BT1I, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTI0,^^PCI0.LPCB.EC0.BTI1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.BT1C, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTC0,^^PCI0.LPCB.EC0.BTC1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.BT1V, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTV0,^^PCI0.LPCB.EC0.BTV1), end;
 into method label _STA parent_label BAT0 code_regex \(\^\^PCI0\.LPCB\.EC0\.BATD, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BTD0,^^PCI0.LPCB.EC0.BTD1), end;
+
+into method label SN02 code_regex Store\s+\(Local1,\s+\^\^EC0\.ENCR\) replaceall_matched
+begin
+Store (ShiftRight(Local1, 8), ^^EC0.ENC1)
+Store (Local1, ^^EC0.ENC0)
+end;
+
+into method label SN03 code_regex Store\s+\(Local1,\s+\^\^EC0\.ENCR\) replaceall_matched
+begin
+Store (ShiftRight(Local1, 8), ^^EC0.ENC1)
+Store (Local1, ^^EC0.ENC0)
+end;
 
 # deal with 264-bit SMD0
 
