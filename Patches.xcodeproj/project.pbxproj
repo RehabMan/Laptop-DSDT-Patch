@@ -89,6 +89,7 @@
 		84CD226F18246E1B0076EF62 /* battery_HP-ProBook-Generic.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-ProBook-Generic.txt"; path = "battery/battery_HP-ProBook-Generic.txt"; sourceTree = "<group>"; };
 		84D170BD180971C500A4C748 /* system_ADP1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_ADP1.txt; path = system/system_ADP1.txt; sourceTree = "<group>"; };
 		84D447031836DA1B006B6FEA /* battery_Dell-XPS-18.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-XPS-18.txt"; path = "battery/battery_Dell-XPS-18.txt"; sourceTree = "<group>"; };
+		84E8B501191EB2D2004E7862 /* fix_MMTB.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_MMTB.txt; path = syntax/fix_MMTB.txt; sourceTree = "<group>"; };
 		84EF939D18916DED0027D192 /* graphics_PNLF-Lenovo-Ux10a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_PNLF-Lenovo-Ux10a.txt"; path = "graphics/graphics_PNLF-Lenovo-Ux10a.txt"; sourceTree = "<group>"; };
 		84EF939E189175440027D192 /* graphics_PNLF-Lenovo-Ux10b.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_PNLF-Lenovo-Ux10b.txt"; path = "graphics/graphics_PNLF-Lenovo-Ux10b.txt"; sourceTree = "<group>"; };
 		84F1901A187F66A700254761 /* battery_HP-DV6-3165sf.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV6-3165sf.txt"; path = "battery/battery_HP-DV6-3165sf.txt"; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 				840E6D3317FB26C300784B2A /* fix_TNOT.txt */,
 				8455C5E01809953B00F919D7 /* fix_IRC.txt */,
 				844FAA1318A680B4001F2C6C /* fix_ADBG.txt */,
+				84E8B501191EB2D2004E7862 /* fix_MMTB.txt */,
 			);
 			name = "Syntax Errors";
 			sourceTree = "<group>";

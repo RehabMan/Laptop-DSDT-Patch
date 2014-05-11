@@ -20,7 +20,6 @@ Method (_DSM, 4, NotSerialized)\n
     {\n
         "AAPL,ig-platform-id", Buffer() { 0x04, 0x00, 0x66, 0x01 },\n
         "hda-gfx", Buffer() { "onboard-1" },\n
-        "AAPL00,DualLink", Buffer() { 0x01, 0x00, 0x00, 0x00 },\n
     })\n
 }\n
 end;

@@ -4,6 +4,7 @@
 [1.3]   Fix FPED Parse Error	syntax/fix_FPED.txt
 [1.4]   Fix _IRC Error	syntax/fix_IRC.txt
 [1.5]   Fix ADBG Error	syntax/fix_ADBG.txt
+[1.6]   Fix PARSEOP_STORE/MMTB Error	syntax/fix_MMTB.txt
 [2.0] == Intel Graphics Patches (HD3000/HD4000)	NullPatch.txt
 [2.01]   HD3000 Low Resolution	graphics/graphics_HD3K_low.txt
 [2.02]   HD3000 High Resolution	graphics/graphics_HD3K_high.txt
