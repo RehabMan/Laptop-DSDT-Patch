@@ -86,6 +86,7 @@
 		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v1.txt"; path = "battery/battery_Surface-Pro-v1.txt"; sourceTree = "<group>"; };
 		84C489F118B93BA200061EA3 /* battery_HP-DM4T-1000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DM4T-1000.txt"; path = "battery/battery_HP-DM4T-1000.txt"; sourceTree = "<group>"; };
+		84CAF68C1926C305000EF232 /* fix_HID_pnp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_HID_pnp.txt; path = syntax/fix_HID_pnp.txt; sourceTree = "<group>"; };
 		84CD226F18246E1B0076EF62 /* battery_HP-ProBook-Generic.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-ProBook-Generic.txt"; path = "battery/battery_HP-ProBook-Generic.txt"; sourceTree = "<group>"; };
 		84D170BD180971C500A4C748 /* system_ADP1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_ADP1.txt; path = system/system_ADP1.txt; sourceTree = "<group>"; };
 		84D447031836DA1B006B6FEA /* battery_Dell-XPS-18.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-XPS-18.txt"; path = "battery/battery_Dell-XPS-18.txt"; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 				8455C5E01809953B00F919D7 /* fix_IRC.txt */,
 				844FAA1318A680B4001F2C6C /* fix_ADBG.txt */,
 				84E8B501191EB2D2004E7862 /* fix_MMTB.txt */,
+				84CAF68C1926C305000EF232 /* fix_HID_pnp.txt */,
 			);
 			name = "Syntax Errors";
 			sourceTree = "<group>";
