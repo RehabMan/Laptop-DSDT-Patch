@@ -14,6 +14,7 @@
 #  ASUS K55VM
 #  ASUS U46SV, BIOS rev. 2.04
 #  ASUS N43
+#  ASUS PU500CA (90NB00F1-M01120)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
