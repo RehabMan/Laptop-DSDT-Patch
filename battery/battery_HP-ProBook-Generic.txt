@@ -12,6 +12,9 @@
 # (this one will work, but there is more features available with
 #  the ProBook repo: temperature)
 
+# Fix FPED parse error
+into device label GFX0 code_regex If\s\(CondRefOf\s\(FPED\)\)\s*\n\s*\{\s*\n\s*FPED\s\(\)\s*\n\s*\} remove_matched;
+
 # Add cycle count and temperature to battery info method
 
 # 16-bit version
@@ -51,7 +54,6 @@ begin
 	//Zero,\n
 }\n
 end;
-
 
 # Convert battery EC info from 16-bit to 8-bit fields...
 
