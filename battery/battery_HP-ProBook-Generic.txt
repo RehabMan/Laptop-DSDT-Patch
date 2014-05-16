@@ -55,11 +55,14 @@ end;
 
 # Convert battery EC info from 16-bit to 8-bit fields...
 
+# Note: leading backslash in \B1B2 is workaround for apparent MaciASL bug with certain
+#  ProBook DSDTs.
+
 # Need this utility method B1B2(lowbyte, hibyte)... returns ((hibyte << 8) | lowbyte)
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
 begin
-Method (B1B2, 2, NotSerialized)\n
+Method (\B1B2, 2, NotSerialized)\n
 {\n
 	ShiftLeft (Arg1, 8, Local0)\n
 	Or (Arg0, Local0, Local0)\n
@@ -124,6 +127,9 @@ into_all method label GBTC code_regex \(MAXC, replaceall_matched begin (B1B2 (AX
 # Added for ProBook 4x10s
 into_all method label GTTP code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.CBT, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.CBT0,\\_SB.PCI0.LPCB.EC0.CBT1), end;
 into_all method label BTIF code_regex \(BDC, replaceall_matched begin (B1B2 (BDC0, BDC1), end;
+
+# Added for ProBook 4x20s
+into_all method label _TMP code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.CBT, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.CBT0,\\_SB.PCI0.LPCB.EC0.CBT1), end;
 
 # Now deal with the writes to those registers
 # Store (0xFA, MAXC)
