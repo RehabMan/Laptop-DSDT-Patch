@@ -62,6 +62,7 @@
 		846576DA1806D6DC00AB21B7 /* system_HPET.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_HPET.txt; path = system/system_HPET.txt; sourceTree = "<group>"; };
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_FDE.txt; path = syntax/fix_FDE.txt; sourceTree = "<group>"; };
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-GFX0.txt"; path = "graphics/graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
+		846FE889192AB7C6000AFDDE /* battery_Acer-Aspire-5737z.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-5737z.txt"; path = "battery/battery_Acer-Aspire-5737z.txt"; sourceTree = "<group>"; };
 		8470F3081854BA400053FBF1 /* battery_Acer-3820tg.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-3820tg.txt"; path = "battery/battery_Acer-3820tg.txt"; sourceTree = "<group>"; };
 		8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Samsung-NP470R5E.txt"; path = "battery/battery_Samsung-NP470R5E.txt"; sourceTree = "<group>"; };
 		8484672A180F0C3600DD3D99 /* battery_HP-DV7-7xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV7-7xxx.txt"; path = "battery/battery_HP-DV7-7xxx.txt"; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 				84B6F74818BFCCC8000015F3 /* battery_Acer-Aspire-E1-571.txt */,
 				8470F3081854BA400053FBF1 /* battery_Acer-3820tg.txt */,
 				842F531617FB301B001CF33B /* battery_Acer-Aspire-4830T.txt */,
+				846FE889192AB7C6000AFDDE /* battery_Acer-Aspire-5737z.txt */,
 				842F531717FB301B001CF33B /* battery_Acer-Aspire-5750g.txt */,
 				8436750118359126000618D0 /* battery_Acer-S7-391.txt */,
 				843A1C9518A52A4C00DB6154 /* battery_ASUS-G75vw.txt */,
