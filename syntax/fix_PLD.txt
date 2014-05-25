@@ -7,3 +7,9 @@ begin
 %1Package() { Buffer%2 }
 end;
 
+# _PLD return case, courtesy stargazer418
+into_all all code_regex (Return\s)\(Buffer(\s\(0x10\)[^\)]*) replaceall_matched
+begin
+%1(Package() { Buffer%2}
+end;
+
