@@ -52,6 +52,7 @@
 		843F7BE518B901CB00567F87 /* system_PNOT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_PNOT.txt; path = system/system_PNOT.txt; sourceTree = "<group>"; };
 		844FAA1318A680B4001F2C6C /* fix_ADBG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_ADBG.txt; path = syntax/fix_ADBG.txt; sourceTree = "<group>"; };
 		8455C5E01809953B00F919D7 /* fix_IRC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_IRC.txt; path = syntax/fix_IRC.txt; sourceTree = "<group>"; };
+		845A0C2419322B0F005001DE /* battery_Gateway-ID49C07u.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Gateway-ID49C07u.txt"; path = "battery/battery_Gateway-ID49C07u.txt"; sourceTree = "<group>"; };
 		845AA66318871888007B305B /* battery_HP-ProBook-4x0s-G1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-ProBook-4x0s-G1.txt"; path = "battery/battery_HP-ProBook-4x0s-G1.txt"; sourceTree = "<group>"; };
 		845B33B8182C17A1000F2476 /* battery_HP-Envy-14.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Envy-14.txt"; path = "battery/battery_HP-Envy-14.txt"; sourceTree = "<group>"; };
 		845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_EDID.txt; path = graphics/graphics_EDID.txt; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 				842F531A17FB301B001CF33B /* battery_Dell-XPS-13.txt */,
 				84D447031836DA1B006B6FEA /* battery_Dell-XPS-18.txt */,
 				84AA4E051846A6750048423C /* battery_Dell-XPS-L502x.txt */,
+				845A0C2419322B0F005001DE /* battery_Gateway-ID49C07u.txt */,
 				840D7594184398D500160A94 /* battery_Gigabyte-u2442N.txt */,
 				84C489F118B93BA200061EA3 /* battery_HP-DM4T-1000.txt */,
 				84F1901A187F66A700254761 /* battery_HP-DV6-3165sf.txt */,
