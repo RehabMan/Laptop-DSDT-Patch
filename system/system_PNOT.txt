@@ -7,6 +7,7 @@
 #
 # Because of this, it is best to make these methods do nothing.
 
-# make PNOT/PPNT a no-op
+# make PNOT/PPNT/PNTF a no-op
 into method label PNOT replace_content begin // nothing end;
 into method label PPNT replace_content begin // nothing end;
+into method label PNTF replace_content begin // nothing end;
