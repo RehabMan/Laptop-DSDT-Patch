@@ -28,14 +28,3 @@ Device (LIDP)\n
     }\n
 }\n
 end;
-
-
-#
-# Note: Some people report that adding just this patch fixes
-#  their lid problems.  Try this patch without the above or
-#  use both together.
-#
-# Also note with this patch, wakeup via lid will be disabled.
-#
-
-into device label LID0 code_regex Name\s+\(_PRW,[\s\S]*\}\) remove_matched;

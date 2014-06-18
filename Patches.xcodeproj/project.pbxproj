@@ -62,6 +62,7 @@
 		84624C9818219322004C34DA /* battery_HP-DV7-6xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV7-6xxx.txt"; path = "battery/battery_HP-DV7-6xxx.txt"; sourceTree = "<group>"; };
 		846576DA1806D6DC00AB21B7 /* system_HPET.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_HPET.txt; path = system/system_HPET.txt; sourceTree = "<group>"; };
 		846658C817FB81FB000FBC62 /* fix_FDE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_FDE.txt; path = syntax/fix_FDE.txt; sourceTree = "<group>"; };
+		84676CEA1952093C0065C1CE /* misc_Lid_PRW.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = misc_Lid_PRW.txt; path = misc/misc_Lid_PRW.txt; sourceTree = "<group>"; };
 		846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-GFX0.txt"; path = "graphics/graphics_Rename-GFX0.txt"; sourceTree = "<group>"; };
 		846FE889192AB7C6000AFDDE /* battery_Acer-Aspire-5737z.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-5737z.txt"; path = "battery/battery_Acer-Aspire-5737z.txt"; sourceTree = "<group>"; };
 		8470F3081854BA400053FBF1 /* battery_Acer-3820tg.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-3820tg.txt"; path = "battery/battery_Acer-3820tg.txt"; sourceTree = "<group>"; };
@@ -73,6 +74,8 @@
 		8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Spectre-XT.txt"; path = "battery/battery_HP-Spectre-XT.txt"; sourceTree = "<group>"; };
 		8499C9761704B5F70066A5F3 /* NullPatch.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NullPatch.txt; sourceTree = "<group>"; };
 		849B7B29180B859900B76D3C /* usb_7-series-multiplex.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "usb_7-series-multiplex.txt"; path = "usb/usb_7-series-multiplex.txt"; sourceTree = "<group>"; };
+		84A21711195204BE004751F3 /* battery_Lenovo-T430u.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-T430u.txt"; path = "battery/battery_Lenovo-T430u.txt"; sourceTree = "<group>"; };
+		84A7391A19464C0E000B4B6E /* graphics_PNLF-ACPI100.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_PNLF-ACPI100.txt"; path = "graphics/graphics_PNLF-ACPI100.txt"; sourceTree = "<group>"; };
 		84A74C271805D3CE009DAAAF /* system_SMBUS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_SMBUS.txt; path = system/system_SMBUS.txt; sourceTree = "<group>"; };
 		84A74C281805D410009DAAAF /* system_RTC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_RTC.txt; path = system/system_RTC.txt; sourceTree = "<group>"; };
 		84A74C291805D49F009DAAAF /* system_Shutdown.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_Shutdown.txt; path = system/system_Shutdown.txt; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 				84F782711916F08B0096E38E /* graphics_Rename-VID_AGP1.txt */,
 				84EF939D18916DED0027D192 /* graphics_PNLF-Lenovo-Ux10a.txt */,
 				84EF939E189175440027D192 /* graphics_PNLF-Lenovo-Ux10b.txt */,
+				84A7391A19464C0E000B4B6E /* graphics_PNLF-ACPI100.txt */,
 			);
 			name = "Intel Graphics";
 			sourceTree = "<group>";
@@ -207,6 +211,7 @@
 				845AA66318871888007B305B /* battery_HP-ProBook-4x0s-G1.txt */,
 				84CD226F18246E1B0076EF62 /* battery_HP-ProBook-Generic.txt */,
 				8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */,
+				84A21711195204BE004751F3 /* battery_Lenovo-T430u.txt */,
 				841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */,
 				842F531E17FB301B001CF33B /* battery_Lenovo-Ux10-Z580.txt */,
 				842F531D17FB301B001CF33B /* battery_Lenovo-X220.txt */,
@@ -228,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				84894762185B6A4E004727C0 /* misc_LidPoll.txt */,
+				84676CEA1952093C0065C1CE /* misc_Lid_PRW.txt */,
 				8437E5C21803BDD4006BB819 /* control_AcerFan.txt */,
 			);
 			name = Misc;
