@@ -21,7 +21,7 @@
 [2.11]   Brightness fix (Haswell)	graphics/graphics_PNLF_haswell.txt
 [2.12]   Rename GFX0 to IGPU	graphics/graphics_Rename-GFX0.txt
 [2.13]   Rename VID/ADP1 to IGPU	graphics/graphics_Rename-VID_AGP1.txt
-[2.14]   Brightness fix (ACPI 100)	graphcis/graphics_PNLF-ACPI100.txt
+[2.14]   Brightness fix (ACPI 100)	graphics/graphics_PNLF-ACPI100.txt
 [3.0] == USB (ECHI) Patches	NullPatch.txt
 [3.1]   6-series USB	usb/usb_6-series.txt
 [3.2]   7-series/8-series USB	usb/usb_7-series.txt
