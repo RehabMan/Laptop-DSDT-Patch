@@ -13,3 +13,14 @@ begin
 %1(Package() { Buffer%2}
 end;
 
+# 
+
+into_all all code_regex (Name\s*\(_PLD,\s*)Package(\s\([^\)].*\)[^\)]*) replaceall_matched
+begin
+%1Package() { Buffer%2 }
+end;
+
+into_all all code_regex (Return\s)\(Package(\s\(0x10\)[^\)]*) replaceall_matched
+begin
+%1(Package() { Buffer%2}
+end;
