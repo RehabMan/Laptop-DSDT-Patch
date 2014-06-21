@@ -92,6 +92,7 @@
 		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v1.txt"; path = "battery/battery_Surface-Pro-v1.txt"; sourceTree = "<group>"; };
 		84C489F118B93BA200061EA3 /* battery_HP-DM4T-1000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DM4T-1000.txt"; path = "battery/battery_HP-DM4T-1000.txt"; sourceTree = "<group>"; };
+		84C4E6821954F237009476EB /* battery_Vizio-Ultrabook-CT14.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Vizio-Ultrabook-CT14.txt"; path = "battery/battery_Vizio-Ultrabook-CT14.txt"; sourceTree = "<group>"; };
 		84CAF68C1926C305000EF232 /* fix_HID_pnp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_HID_pnp.txt; path = syntax/fix_HID_pnp.txt; sourceTree = "<group>"; };
 		84CD226F18246E1B0076EF62 /* battery_HP-ProBook-Generic.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-ProBook-Generic.txt"; path = "battery/battery_HP-ProBook-Generic.txt"; sourceTree = "<group>"; };
 		84D170BD180971C500A4C748 /* system_ADP1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_ADP1.txt; path = system/system_ADP1.txt; sourceTree = "<group>"; };
@@ -225,6 +226,7 @@
 				84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */,
 				843936A218ABC24200E32386 /* battery_TabletKiosk-i575.txt */,
 				84ACC1B118BAD88B001B61D8 /* battery_Toshiba-A660-16Z.txt */,
+				84C4E6821954F237009476EB /* battery_Vizio-Ultrabook-CT14.txt */,
 			);
 			name = "Battery Status";
 			sourceTree = "<group>";
