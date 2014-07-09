@@ -6,7 +6,8 @@
 [1.5]   Fix ADBG Error	syntax/fix_ADBG.txt
 [1.6]   Fix PARSEOP_STORE/MMTB Error	syntax/fix_MMTB.txt
 [1.7]   Fix *pnp/pnp lower case Error	syntax/fix_HID_pnp.txt
-[1.8]   Remove _DSM methods	syntax/remove_DSM.txt
+[1.8]   Fix PARSEOP_ZERO Error	syntax/fix_PARSEOP_ZERO.txt
+[1.9]   Remove _DSM methods	syntax/remove_DSM.txt
 [2.0] == Intel Graphics Patches (HD3000/HD4000)	NullPatch.txt
 [2.01]   HD3000 Low Resolution	graphics/graphics_HD3K_low.txt
 [2.02]   HD3000 High Resolution	graphics/graphics_HD3K_high.txt

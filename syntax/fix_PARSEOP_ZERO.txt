@@ -1,0 +1,7 @@
+#Maintained by: RehabMan for: Laptop Patches
+#fix_PARSEOP_ZERO.txt
+
+# credit toleda: http://www.tonymacx86.com/dsdt/89727-maciasl-patch-repository-thread.html#post574047
+
+into device label PCI0 code_regex (\s+Zero){2,} remove_matched;
+

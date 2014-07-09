@@ -107,6 +107,7 @@
 		84F6F0F718ADD011007F5EF7 /* system_Shutdown2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_Shutdown2.txt; path = system/system_Shutdown2.txt; sourceTree = "<group>"; };
 		84F782711916F08B0096E38E /* graphics_Rename-VID_AGP1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-VID_AGP1.txt"; path = "graphics/graphics_Rename-VID_AGP1.txt"; sourceTree = "<group>"; };
 		84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout12.txt"; path = "audio/audio_HDEF-layout12.txt"; sourceTree = "<group>"; };
+		84FEF29C196D8B7D0061DF5A /* fix_PARSEOP_ZERO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PARSEOP_ZERO.txt; path = syntax/fix_PARSEOP_ZERO.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -122,6 +123,7 @@
 				84E8B501191EB2D2004E7862 /* fix_MMTB.txt */,
 				84CAF68C1926C305000EF232 /* fix_HID_pnp.txt */,
 				8475976F1943A347009F3026 /* remove_DSM.txt */,
+				84FEF29C196D8B7D0061DF5A /* fix_PARSEOP_ZERO.txt */,
 			);
 			name = "Syntax Errors";
 			sourceTree = "<group>";
