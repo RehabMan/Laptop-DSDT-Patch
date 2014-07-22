@@ -8,6 +8,7 @@
 # works for:
 #  HP Pavilion dv6-3165sf
 #  HP Pavilion dv6661ev, courtesy angelol
+#  HP N050
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 

@@ -86,6 +86,7 @@
 		84AFCB7417FB2B800089486F /* usb_6-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "usb_6-series.txt"; path = "usb/usb_6-series.txt"; sourceTree = "<group>"; };
 		84AFCB7517FB2B8F0089486F /* usb_7-series.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "usb_7-series.txt"; path = "usb/usb_7-series.txt"; sourceTree = "<group>"; };
 		84AFCB7717FB2C7A0089486F /* graphics_PNLF.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_PNLF.txt; path = graphics/graphics_PNLF.txt; sourceTree = "<group>"; };
+		84B5A8BE1976BCA4005EE4D7 /* battery_Clevo-P15SM.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-P15SM.txt"; path = "battery/battery_Clevo-P15SM.txt"; sourceTree = "<group>"; };
 		84B6F74818BFCCC8000015F3 /* battery_Acer-Aspire-E1-571.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-E1-571.txt"; path = "battery/battery_Acer-Aspire-E1-571.txt"; sourceTree = "<group>"; };
 		84B7DC531808792C00CAA692 /* audio_HDEF-layout12a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout12a.txt"; path = "audio/audio_HDEF-layout12a.txt"; sourceTree = "<group>"; };
 		84B9D52516FFE684002CD441 /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
@@ -193,6 +194,7 @@
 				8436750118359126000618D0 /* battery_Acer-S7-391.txt */,
 				843A1C9518A52A4C00DB6154 /* battery_ASUS-G75vw.txt */,
 				842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */,
+				84B5A8BE1976BCA4005EE4D7 /* battery_Clevo-P15SM.txt */,
 				842F531917FB301B001CF33B /* battery_Compaq-CQ60.txt */,
 				843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */,
 				842F531A17FB301B001CF33B /* battery_Dell-XPS-13.txt */,
