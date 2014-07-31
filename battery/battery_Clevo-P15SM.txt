@@ -5,6 +5,7 @@
 
 # works for:
 #  Clevo P15SM
+#  Clevo P150SM
 
 # Use this patch if your _BST method returns invalid data when discharging.
 

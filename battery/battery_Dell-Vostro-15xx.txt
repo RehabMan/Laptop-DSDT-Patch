@@ -9,6 +9,7 @@
 #  Alienware m14xr1
 #  Dell Inspiron 15R N5521
 #  Dell 3521
+#  Dell XPS 12 9q33
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
