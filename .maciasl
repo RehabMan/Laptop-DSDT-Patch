@@ -63,16 +63,17 @@
 [4.33]  Lenovo Ux10-Z580	battery/battery_Lenovo-Ux10-Z580.txt
 [4.34]  Lenovo X220	battery/battery_Lenovo-X220.txt
 [4.35]  Lenovo y580	battery/battery_Lenovo-y580.txt
-[4.36]  Samsung NP470R5E	battery/battery_Samsung-NP470R5E.txt
-[4.37]  Samsung RF411	battery/battery_Samsung-RF411.txt
-[4.38]  Samsung R528	battery/battery_Samsung-r528.txt
-[4.39]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
-[4.40]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
-[4.41]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
-[4.42]  Surface v1	battery/battery_Surface-Pro-v1.txt
-[4.43]  TabletKiosk	battery/battery_TabletKiosk-i575.txt
-[4.44]  Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
-[4.45]  Vizio Ultrabook CT14	battery/battery_Vizio-Ultrabook-CT14.txt
+[4.36]  Samsung Ativ Book 7	battery/battery_Samsung_NP730U3E_X04IT.txt
+[4.37]  Samsung NP470R5E	battery/battery_Samsung-NP470R5E.txt
+[4.38]  Samsung RF411	battery/battery_Samsung-RF411.txt
+[4.39]  Samsung R528	battery/battery_Samsung-r528.txt
+[4.40]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
+[4.41]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
+[4.42]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
+[4.43]  Surface v1	battery/battery_Surface-Pro-v1.txt
+[4.44]  TabletKiosk	battery/battery_TabletKiosk-i575.txt
+[4.45]  Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
+[4.46]  Vizio Ultrabook CT14	battery/battery_Vizio-Ultrabook-CT14.txt
 [5.0] == Atheros WiFi Patches	NullPatch.txt
 [5.1]   AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
 [5.2]   AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt

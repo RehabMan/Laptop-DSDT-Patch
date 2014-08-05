@@ -1,6 +1,10 @@
-# Samsung NP730U3E-X04IT (Ativ Book 7) Battery Patch
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Samsung_NP730U3E_X04IT.txt
 
 # created by trik - 2014-08-05
+
+# Works for:
+#   Samsung Ativ Book 7
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
