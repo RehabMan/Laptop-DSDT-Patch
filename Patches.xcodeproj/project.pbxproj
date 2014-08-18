@@ -93,6 +93,7 @@
 		84B9D52516FFE684002CD441 /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
 		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v1.txt"; path = "battery/battery_Surface-Pro-v1.txt"; sourceTree = "<group>"; };
+		84C3532419985DDE00005C20 /* battery_Lenovo-y570.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-y570.txt"; path = "battery/battery_Lenovo-y570.txt"; sourceTree = "<group>"; };
 		84C489F118B93BA200061EA3 /* battery_HP-DM4T-1000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DM4T-1000.txt"; path = "battery/battery_HP-DM4T-1000.txt"; sourceTree = "<group>"; };
 		84C4E6821954F237009476EB /* battery_Vizio-Ultrabook-CT14.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Vizio-Ultrabook-CT14.txt"; path = "battery/battery_Vizio-Ultrabook-CT14.txt"; sourceTree = "<group>"; };
 		84CAF68C1926C305000EF232 /* fix_HID_pnp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_HID_pnp.txt; path = syntax/fix_HID_pnp.txt; sourceTree = "<group>"; };
@@ -221,6 +222,7 @@
 				841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */,
 				842F531E17FB301B001CF33B /* battery_Lenovo-Ux10-Z580.txt */,
 				842F531D17FB301B001CF33B /* battery_Lenovo-X220.txt */,
+				84C3532419985DDE00005C20 /* battery_Lenovo-y570.txt */,
 				842F531F17FB301B001CF33B /* battery_Lenovo-y580.txt */,
 				8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */,
 				842F532217FB3114001CF33B /* battery_Samsung-RF411.txt */,

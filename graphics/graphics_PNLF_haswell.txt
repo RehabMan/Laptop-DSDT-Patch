@@ -45,6 +45,19 @@ Field (IGD2, AnyAcc, NoLock, Preserve)\n
 }\n
 end;
 
+# duplicated for case it is in separate scope (this one with leading backslash)
+into scope label \_SB.PCI0.IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
+into scope label \_SB.PCI0.IGPU code_regex (OperationRegion\s\(IGDP,\sPCI_Config[^\}]*\}) replace_matched
+begin
+%1\n
+OperationRegion (IGD2, PCI_Config, 0x10, 4)\n
+Field (IGD2, AnyAcc, NoLock, Preserve)\n
+{\n
+	BAR1,32,\n
+}\n
+end;
+
+
 into device label PNLF remove_entry;
 into definitionblock code_regex . insert
 begin

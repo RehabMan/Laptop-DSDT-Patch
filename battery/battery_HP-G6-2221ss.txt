@@ -12,6 +12,7 @@
 #  HP Pavilion dv6-3165sf
 #  HP Pavilion G6 2231tx
 #  HP 14-b030tu
+#  HP 14-3100er
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
@@ -94,9 +95,11 @@ into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.MFCA, replaceall_matche
 into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.BFCC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FCC0,^^PCI0.LPCB.EC0.FCC1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.MCUR, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.CUR0,^^PCI0.LPCB.EC0.CUR1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.MBRM, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BRM0,^^PCI0.LPCB.EC0.BRM1), end;
+into method label UPBC code_regex \(\^\^PCI0\.LPCB\.EC0\.MBRM, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BRM0,^^PCI0.LPCB.EC0.BRM1), end;
 into method label UPBS code_regex \(\^\^PCI0\.LPCB\.EC0\.MBCV, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BCV0,^^PCI0.LPCB.EC0.BCV1), end;
 into method label CLRI code_regex \(\^\^LPCB\.EC0\.MBRM, replaceall_matched begin (B1B2(^^LPCB.EC0.BRM0,^^LPCB.EC0.BRM1), end;
 into method label GBIF code_regex \(\^\^PCI0\.LPCB\.EC0\.BFCC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FCC0,^^PCI0.LPCB.EC0.FCC1), end;
+into method label UPBC code_regex \^\^PCI0\.LPCB\.EC0\.BFCC, replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.FCC0,^^PCI0.LPCB.EC0.FCC1), end;
 into method label GBCO code_regex \(\^\^PCI0\.LPCB\.EC0\.MCUR, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.CUR0,^^PCI0.LPCB.EC0.CUR1), end;
 
 # deal with SMD0
@@ -404,5 +407,5 @@ Method (WFL1, 1, Serialized)\n
 */\n
 end;
 
-into method label SMRD code_regex \(FLD([1-3]), replaceall_matched begin (RFL%1(), end; 
+into method label SMRD code_regex \(FLD([1-3]), replaceall_matched begin (RFL%1(), end;
 

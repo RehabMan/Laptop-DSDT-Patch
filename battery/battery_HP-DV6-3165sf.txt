@@ -9,6 +9,7 @@
 #  HP Pavilion dv6-3165sf
 #  HP Pavilion dv6661ev, courtesy angelol
 #  HP N050
+#  HP dv5-1030el, courtesy information from matti157
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
@@ -17,6 +18,11 @@ into definitionblock code_regex . insert
 begin
 Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
 end;
+
+# rename device LPC to LPCB
+into device label LPC set_label begin LPCB end;
+into_all method code_regex PCI0\.LPC replaceall_matched begin PCI0.LPCB end;
+into_all method code_regex \^LPC replaceall_matched begin ^LPCB end;
 
 #                        SMD0,   256, 
 #                        BFCC,   16, 
@@ -102,6 +108,7 @@ end;
 into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.MFCA, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FCA0,^^PCI0.LPCB.EC0.FCA1), end;
 into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.BFCC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FCC0,^^PCI0.LPCB.EC0.FCC1), end;
 into method label CLRI code_regex \(\^\^LPCB\.EC0\.MBRM, replaceall_matched begin (B1B2(^^LPCB.EC0.BRM0,^^LPCB.EC0.BRM1), end;
+into method label CLRI code_regex \(\^\^PCI0\.LPCB\.EC0\.MBRM, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BRM0,^^PCI0.LPCB.EC0.BRM1), end;
 into method label GBIF code_regex \(\^\^PCI0\.LPCB\.EC0\.BFCC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FCC0,^^PCI0.LPCB.EC0.FCC1), end;
 into method label GBCO code_regex \(\^\^PCI0\.LPCB\.EC0\.MCUR, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.CUR0,^^PCI0.LPCB.EC0.CUR1), end;
 

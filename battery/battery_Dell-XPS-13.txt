@@ -8,6 +8,7 @@
 #  Dell XPS 13
 #  Dell Insprion 14z
 #  Dell XPS 15z
+#  Dell Inspiron 14r n4110
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
