@@ -137,6 +137,9 @@ Scope (\_SB)\n
         }\n
         Method (_DOS, 1, NotSerialized)\n
         {\n
+            // Note: Some systems have this defined in DSDT, so uncomment\n
+            // the next line if that is the case.\n
+            //External(^^PCI0.IGPU._DOS, MethodObj)\n
             ^^PCI0.IGPU._DOS(Arg0)\n
         }\n
         // extended _BCM/_BQC for setting "in between" levels\n
