@@ -93,6 +93,7 @@
 		84B9D52516FFE684002CD441 /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
 		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v1.txt"; path = "battery/battery_Surface-Pro-v1.txt"; sourceTree = "<group>"; };
+		84C07CDD19A5429500D9C3F4 /* graphics_Rename-PCI0_VID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-PCI0_VID.txt"; path = "graphics/graphics_Rename-PCI0_VID.txt"; sourceTree = "<group>"; };
 		84C3532419985DDE00005C20 /* battery_Lenovo-y570.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-y570.txt"; path = "battery/battery_Lenovo-y570.txt"; sourceTree = "<group>"; };
 		84C489F118B93BA200061EA3 /* battery_HP-DM4T-1000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DM4T-1000.txt"; path = "battery/battery_HP-DM4T-1000.txt"; sourceTree = "<group>"; };
 		84C4E6821954F237009476EB /* battery_Vizio-Ultrabook-CT14.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Vizio-Ultrabook-CT14.txt"; path = "battery/battery_Vizio-Ultrabook-CT14.txt"; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 				8428802A1884C20900F8DE3A /* graphics_PNLF_haswell.txt */,
 				846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */,
 				84F782711916F08B0096E38E /* graphics_Rename-VID_AGP1.txt */,
+				84C07CDD19A5429500D9C3F4 /* graphics_Rename-PCI0_VID.txt */,
 				84EF939D18916DED0027D192 /* graphics_PNLF-Lenovo-Ux10a.txt */,
 				84EF939E189175440027D192 /* graphics_PNLF-Lenovo-Ux10b.txt */,
 				84A7391A19464C0E000B4B6E /* graphics_PNLF-ACPI100.txt */,
