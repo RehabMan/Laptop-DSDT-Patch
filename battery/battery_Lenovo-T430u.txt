@@ -31,6 +31,9 @@ into device label EC code_regex SBSI,\s+16 replace_matched begin BSI0,8,BSI1,8 e
 into device label EC code_regex SBDT,\s+16 replace_matched begin BDT0,8,BDT1,8 end;
 into device label EC code_regex SBSN,\s+16 replace_matched begin BSN0,8,BSN1,8 end;
 
+# this one is sleep related
+into device label EC code_regex HWAK,\s+16 replace_matched begin WAK0,8,WAK1,8 end;
+
 # Change access to EC register (16-bit to 8-bit)
 
 into method label B1B2 remove_entry;
@@ -47,6 +50,10 @@ into_all method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBFC, replaceall_match
 into_all method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBDC, replaceall_matched begin (B1B2 (^PCI0.LPCB.EC.BDC0, ^PCI0.LPCB.EC.BDC1), end;
 into_all method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBDV, replaceall_matched begin (B1B2 (^PCI0.LPCB.EC.BDV0, ^PCI0.LPCB.EC.BDV1), end;
 into_all method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBSN, replaceall_matched begin (B1B2 (^PCI0.LPCB.EC.BSN0, ^PCI0.LPCB.EC.BSN1), end;
+
+# sleep related
+into method label _L1D parent_label _GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;
+into method label _L1D parent_label \_GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;
 
 # Change EC register from 32-bit to 8-bit
 into device label EC code_regex SBCH,\s+32 replace_matched begin BCH0,8,BCH1,8,BCH2,8,BCH3,8 end;
