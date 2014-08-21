@@ -34,7 +34,6 @@ Field (IGD2, AnyAcc, NoLock, Preserve)\n
 end;
 
 # some Lenovo laptops call PCI_Config VPCG...
-into device label IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
 into device label IGPU code_regex (OperationRegion\s\(VPCG,\sPCI_Config[^\}]*\}) replace_matched
 begin
 %1\n
