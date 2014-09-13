@@ -21,8 +21,8 @@ end;
 
 # rename device LPC to LPCB
 into device label LPC set_label begin LPCB end;
-into_all method code_regex PCI0\.LPC replaceall_matched begin PCI0.LPCB end;
-into_all method code_regex \^LPC replaceall_matched begin ^LPCB end;
+into_all method code_regex PCI0\.LPC\. replaceall_matched begin PCI0.LPCB. end;
+into_all method code_regex \^LPC\. replaceall_matched begin ^LPCB. end;
 
 #                        SMD0,   256, 
 #                        BFCC,   16, 

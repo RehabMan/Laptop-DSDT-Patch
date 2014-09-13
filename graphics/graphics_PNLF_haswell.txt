@@ -23,6 +23,8 @@
 #
 
 into device label IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
+
+# add IGD2 PCI_config for BAR1 value
 into device label IGPU code_regex (OperationRegion\s\(IGDP,\sPCI_Config[^\}]*\}) replace_matched
 begin
 %1\n
@@ -35,7 +37,7 @@ end;
 
 # some Lenovo laptops call PCI_Config VPCG...
 # Note: commented out since some DSDTs have both...
-#into device label IGPU code_regex (OperationRegion\s\(VPCG,\sPCI_Config[^\}]*\}) replace_matched
+#into device label IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) replace_matched
 #begin
 #%1\n
 #OperationRegion (IGD2, PCI_Config, 0x10, 4)\n

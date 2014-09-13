@@ -10,6 +10,7 @@
 #  Lenovo T410 model 2518-F5U
 #  Lenovo W510 model 4319RU
 #  Lenovo T440s
+#  Lenovo T60
 
 # Note: disable secondary battery
 #  *** remove this line if you have a second battery installed)

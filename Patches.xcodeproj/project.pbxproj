@@ -26,6 +26,7 @@
 		841D311A17FB71C600EA5675 /* wifi_AR9285-RP02-WLAN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP02-WLAN.txt"; path = "wifi/wifi_AR9285-RP02-WLAN.txt"; sourceTree = "<group>"; };
 		841D311B17FB71C600EA5675 /* wifi_AR9285-RP02-WNIC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "wifi_AR9285-RP02-WNIC.txt"; path = "wifi/wifi_AR9285-RP02-WNIC.txt"; sourceTree = "<group>"; };
 		841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Twist.txt"; path = "battery/battery_Lenovo-Twist.txt"; sourceTree = "<group>"; };
+		8420BAD519BDFF7C00D629B3 /* graphics_nvidia_laptop.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_nvidia_laptop.txt; path = graphics/graphics_nvidia_laptop.txt; sourceTree = "<group>"; };
 		842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Envy-17t.txt"; path = "battery/battery_HP-Envy-17t.txt"; sourceTree = "<group>"; };
 		8427D28F188ECAD900AF8C9C /* battery_HP-G62-B13SL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-G62-B13SL.txt"; path = "battery/battery_HP-G62-B13SL.txt"; sourceTree = "<group>"; };
 		8428802A1884C20900F8DE3A /* graphics_PNLF_haswell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_PNLF_haswell.txt; path = graphics/graphics_PNLF_haswell.txt; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		843A1C9518A52A4C00DB6154 /* battery_ASUS-G75vw.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_ASUS-G75vw.txt"; path = "battery/battery_ASUS-G75vw.txt"; sourceTree = "<group>"; };
 		843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Vostro-15xx.txt"; path = "battery/battery_Dell-Vostro-15xx.txt"; sourceTree = "<group>"; };
 		843F7BE518B901CB00567F87 /* system_PNOT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_PNOT.txt; path = system/system_PNOT.txt; sourceTree = "<group>"; };
+		8440626619C48B3400EAC8CF /* battery_HP-Folio-13-1010es.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Folio-13-1010es.txt"; path = "battery/battery_HP-Folio-13-1010es.txt"; sourceTree = "<group>"; };
 		844FAA1318A680B4001F2C6C /* fix_ADBG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_ADBG.txt; path = syntax/fix_ADBG.txt; sourceTree = "<group>"; };
 		8455C5E01809953B00F919D7 /* fix_IRC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_IRC.txt; path = syntax/fix_IRC.txt; sourceTree = "<group>"; };
 		845A0C2419322B0F005001DE /* battery_Gateway-ID49C07u.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Gateway-ID49C07u.txt"; path = "battery/battery_Gateway-ID49C07u.txt"; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 			name = "AR9285 WiFi";
 			sourceTree = "<group>";
 		};
+		8420BAD419BDFF4C00D629B3 /* Nvidia Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				8420BAD519BDFF7C00D629B3 /* graphics_nvidia_laptop.txt */,
+			);
+			name = "Nvidia Graphics";
+			sourceTree = "<group>";
+		};
 		842F532117FB302D001CF33B /* Battery Status */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +224,7 @@
 				8484672A180F0C3600DD3D99 /* battery_HP-DV7-7xxx.txt */,
 				845B33B8182C17A1000F2476 /* battery_HP-Envy-14.txt */,
 				842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */,
+				8440626619C48B3400EAC8CF /* battery_HP-Folio-13-1010es.txt */,
 				842F531B17FB301B001CF33B /* battery_HP-G6-2221ss.txt */,
 				8427D28F188ECAD900AF8C9C /* battery_HP-G62-B13SL.txt */,
 				842F531C17FB301B001CF33B /* battery_HP-Envy-DV6.txt */,
@@ -272,6 +283,7 @@
 				84B9D52716FFE684002CD441 /* README.txt */,
 				840E6D3517FB271C00784B2A /* Syntax Errors */,
 				840E6D3B17FB297000784B2A /* Intel Graphics */,
+				8420BAD419BDFF4C00D629B3 /* Nvidia Graphics */,
 				84AFCB7617FB2C520089486F /* USB (EHCI-XHCI) */,
 				842F532117FB302D001CF33B /* Battery Status */,
 				841D311E17FB71DC00EA5675 /* AR9285 WiFi */,
