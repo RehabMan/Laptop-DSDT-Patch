@@ -10,6 +10,7 @@
 #  HP Pavilion dv6661ev, courtesy angelol
 #  HP N050
 #  HP dv5-1030el, courtesy information from matti157
+#  HP G62-400 CTO, courtesy information from mnfesq
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
