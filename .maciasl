@@ -100,5 +100,6 @@
 [7.12]  Fix Mutex with non-zero SyncLevel	system/system_Mutex.txt
 [7.13]  Fix PNOT/PPNT	system/system_PNOT.txt
 [7.14]  Add IMEI	system/system_IMEI.txt
+[7.15]  Haswell LPC	misc/misc_Haswell-LPC.txt
 [8.0] == Audio	NullPatch.txt
 [8.1]   Audio Layout 12	audio/audio_HDEF-layout12.txt
