@@ -30,6 +30,7 @@
 		842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Envy-17t.txt"; path = "battery/battery_HP-Envy-17t.txt"; sourceTree = "<group>"; };
 		8427D28F188ECAD900AF8C9C /* battery_HP-G62-B13SL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-G62-B13SL.txt"; path = "battery/battery_HP-G62-B13SL.txt"; sourceTree = "<group>"; };
 		8428802A1884C20900F8DE3A /* graphics_PNLF_haswell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_PNLF_haswell.txt; path = graphics/graphics_PNLF_haswell.txt; sourceTree = "<group>"; };
+		842AF6E419CB3D2F00309DAD /* battery_Lenovo-T440p.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-T440p.txt"; path = "battery/battery_Lenovo-T440p.txt"; sourceTree = "<group>"; };
 		842F531617FB301B001CF33B /* battery_Acer-Aspire-4830T.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-4830T.txt"; path = "battery/battery_Acer-Aspire-4830T.txt"; sourceTree = "<group>"; };
 		842F531717FB301B001CF33B /* battery_Acer-Aspire-5750g.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-5750g.txt"; path = "battery/battery_Acer-Aspire-5750g.txt"; sourceTree = "<group>"; };
 		842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_ASUS-N55SL.txt"; path = "battery/battery_ASUS-N55SL.txt"; sourceTree = "<group>"; };
@@ -233,6 +234,7 @@
 				84CD226F18246E1B0076EF62 /* battery_HP-ProBook-Generic.txt */,
 				8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */,
 				84A21711195204BE004751F3 /* battery_Lenovo-T430u.txt */,
+				842AF6E419CB3D2F00309DAD /* battery_Lenovo-T440p.txt */,
 				841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */,
 				842F531E17FB301B001CF33B /* battery_Lenovo-Ux10-Z580.txt */,
 				842F531D17FB301B001CF33B /* battery_Lenovo-X220.txt */,
@@ -326,7 +328,7 @@
 		84B9D50F16FFE58F002CD441 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = RehabMan;
 			};
 			buildConfigurationList = 84B9D51216FFE58F002CD441 /* Build configuration list for PBXProject "Patches" */;
