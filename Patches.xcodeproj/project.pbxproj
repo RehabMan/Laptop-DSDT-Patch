@@ -28,6 +28,7 @@
 		841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Twist.txt"; path = "battery/battery_Lenovo-Twist.txt"; sourceTree = "<group>"; };
 		8420BAD519BDFF7C00D629B3 /* graphics_nvidia_laptop.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_nvidia_laptop.txt; path = graphics/graphics_nvidia_laptop.txt; sourceTree = "<group>"; };
 		842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Envy-17t.txt"; path = "battery/battery_HP-Envy-17t.txt"; sourceTree = "<group>"; };
+		842525F519CDBD01009FA9D7 /* battery_Dell-Inspiron-13z.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Inspiron-13z.txt"; path = "battery/battery_Dell-Inspiron-13z.txt"; sourceTree = "<group>"; };
 		8427D28F188ECAD900AF8C9C /* battery_HP-G62-B13SL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-G62-B13SL.txt"; path = "battery/battery_HP-G62-B13SL.txt"; sourceTree = "<group>"; };
 		8428802A1884C20900F8DE3A /* graphics_PNLF_haswell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_PNLF_haswell.txt; path = graphics/graphics_PNLF_haswell.txt; sourceTree = "<group>"; };
 		842AF6E419CB3D2F00309DAD /* battery_Lenovo-T440p.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-T440p.txt"; path = "battery/battery_Lenovo-T440p.txt"; sourceTree = "<group>"; };
@@ -212,6 +213,7 @@
 				842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */,
 				84B5A8BE1976BCA4005EE4D7 /* battery_Clevo-P15SM.txt */,
 				842F531917FB301B001CF33B /* battery_Compaq-CQ60.txt */,
+				842525F519CDBD01009FA9D7 /* battery_Dell-Inspiron-13z.txt */,
 				843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */,
 				842F531A17FB301B001CF33B /* battery_Dell-XPS-13.txt */,
 				84D447031836DA1B006B6FEA /* battery_Dell-XPS-18.txt */,
