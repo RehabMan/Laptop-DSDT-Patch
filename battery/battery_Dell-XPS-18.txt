@@ -2,6 +2,7 @@
 #battery_Dell-XPS-18.txt
 
 # created by esaylors 2013-11-16
+# modifications/fixes by RehabMan 2014-09-24
 
 # works for:
 #  Dell XPS 18
@@ -10,6 +11,14 @@ into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
 begin
 Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
+end;
+
+# new fixes (for more recent BIOS?)
+into method label BRCP code_regex ,\sB0RC, replaceall_matched begin ,B1B2(RC00,RC01), end;
+into method label BRCP code_regex Subtract\s+\((.*),\sB0RC\) replaceall_matched
+begin
+Store(Subtract(%1),RC00)\n
+Store(ShiftRight(Subtract(%1),8),RC01)\n
 end;
 
 # 16-bit registers
@@ -34,3 +43,4 @@ into method label BRCP code_regex \(BFCP, replaceall_matched begin (B1B2(FCP0,FC
 into method label BRCP code_regex \(B0ST, replaceall_matched begin (B1B2(ST00,ST01), end;
 into method label BSTS code_regex \(B0ST, replaceall_matched begin (B1B2(ST00,ST01), end;
 into method label BVOT code_regex \(B0VL, replaceall_matched begin (B1B2(VL00,VL01), end;
+

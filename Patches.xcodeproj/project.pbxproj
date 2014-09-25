@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		84091BCF19CE1F4D00695D4C /* battery_HP-Pavilion-n012tx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Pavilion-n012tx.txt"; path = "battery/battery_HP-Pavilion-n012tx.txt"; sourceTree = "<group>"; };
 		840D7594184398D500160A94 /* battery_Gigabyte-u2442N.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Gigabyte-u2442N.txt"; path = "battery/battery_Gigabyte-u2442N.txt"; sourceTree = "<group>"; };
 		840E6D3117FB255B00784B2A /* fix_PLD.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PLD.txt; path = syntax/fix_PLD.txt; sourceTree = "<group>"; };
 		840E6D3217FB266300784B2A /* fix_FPED.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_FPED.txt; path = syntax/fix_FPED.txt; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 				842F531B17FB301B001CF33B /* battery_HP-G6-2221ss.txt */,
 				8427D28F188ECAD900AF8C9C /* battery_HP-G62-B13SL.txt */,
 				842F531C17FB301B001CF33B /* battery_HP-Envy-DV6.txt */,
+				84091BCF19CE1F4D00695D4C /* battery_HP-Pavilion-n012tx.txt */,
 				845AA66318871888007B305B /* battery_HP-ProBook-4x0s-G1.txt */,
 				84CD226F18246E1B0076EF62 /* battery_HP-ProBook-Generic.txt */,
 				8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */,
