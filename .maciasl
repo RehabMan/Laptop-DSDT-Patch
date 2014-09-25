@@ -60,26 +60,26 @@
 [4.29]  HP G6 B13SL	battery/battery_HP-G62-B13SL.txt
 [4.30]  HP Pavilion n012tx	battery/battery_HP-Pavilion-n012tx.txt
 [4.31]  HP ProBook 4x0s G1	battery/battery_HP-ProBook-4x0s-G1.txt
-[4.31]  HP ProBook Generic	battery/battery_HP-ProBook-Generic.txt
-[4.32]  HP Spectre XT	battery/battery_HP-Spectre-XT.txt
-[4.33]  Lenovo T430u	battery/battery_Lenovo-T430u.txt
-[4.34]  Lenovo T440p	battery/battery_Lenovo-T440p.txt
-[4.35]  Lenovo Twist	battery/battery_Lenovo-Twist.txt
-[4.36]  Lenovo Ux10-Z580	battery/battery_Lenovo-Ux10-Z580.txt
-[4.37]  Lenovo X220	battery/battery_Lenovo-X220.txt
-[4.38]  Lenovo y570	battery/battery_Lenovo-y570.txt
-[4.39]  Lenovo y580	battery/battery_Lenovo-y580.txt
-[4.40]  Samsung Ativ Book 7	battery/battery_Samsung_NP730U3E_X04IT.txt
-[4.41]  Samsung NP470R5E	battery/battery_Samsung-NP470R5E.txt
-[4.42]  Samsung RF411	battery/battery_Samsung-RF411.txt
-[4.43]  Samsung R528	battery/battery_Samsung-r528.txt
-[4.44]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
-[4.45]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
-[4.46]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
-[4.47]  Surface v1	battery/battery_Surface-Pro-v1.txt
+[4.32]  HP ProBook Generic	battery/battery_HP-ProBook-Generic.txt
+[4.33]  HP Spectre XT	battery/battery_HP-Spectre-XT.txt
+[4.34]  Lenovo T430u	battery/battery_Lenovo-T430u.txt
+[4.35]  Lenovo T440p	battery/battery_Lenovo-T440p.txt
+[4.36]  Lenovo Twist	battery/battery_Lenovo-Twist.txt
+[4.37]  Lenovo Ux10-Z580	battery/battery_Lenovo-Ux10-Z580.txt
+[4.38]  Lenovo X220	battery/battery_Lenovo-X220.txt
+[4.39]  Lenovo y570	battery/battery_Lenovo-y570.txt
+[4.40]  Lenovo y580	battery/battery_Lenovo-y580.txt
+[4.41]  Samsung Ativ Book 7	battery/battery_Samsung_NP730U3E_X04IT.txt
+[4.42]  Samsung NP470R5E	battery/battery_Samsung-NP470R5E.txt
+[4.43]  Samsung RF411	battery/battery_Samsung-RF411.txt
+[4.44]  Samsung R528	battery/battery_Samsung-r528.txt
+[4.45]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
+[4.46]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
+[4.47]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
+[4.48]  Surface v1	battery/battery_Surface-Pro-v1.txt
 [4.49]  TabletKiosk	battery/battery_TabletKiosk-i575.txt
-[4.40]  Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
-[4.50]  Vizio Ultrabook CT14	battery/battery_Vizio-Ultrabook-CT14.txt
+[4.50]  Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
+[4.51]  Vizio Ultrabook CT14	battery/battery_Vizio-Ultrabook-CT14.txt
 [5.0] == Atheros WiFi Patches	NullPatch.txt
 [5.1]   AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
 [5.2]   AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
