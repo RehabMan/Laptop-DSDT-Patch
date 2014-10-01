@@ -63,6 +63,7 @@
 		845B33B8182C17A1000F2476 /* battery_HP-Envy-14.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Envy-14.txt"; path = "battery/battery_HP-Envy-14.txt"; sourceTree = "<group>"; };
 		845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_EDID.txt; path = graphics/graphics_EDID.txt; sourceTree = "<group>"; };
 		845E02D21846FE8000208D98 /* battery_HP-DV7-1120.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV7-1120.txt"; path = "battery/battery_HP-DV7-1120.txt"; sourceTree = "<group>"; };
+		845FE2B219DC36F90079BAB3 /* graphics_Rename-PCI0_GFX0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-PCI0_GFX0.txt"; path = "graphics/graphics_Rename-PCI0_GFX0.txt"; sourceTree = "<group>"; };
 		845FE5EF1702639F004601B0 /* .maciasl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .maciasl; sourceTree = "<group>"; usesTabs = 1; };
 		84601EA818BCF6790014BF12 /* graphics_Haswell_0a260006.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_Haswell_0a260006.txt; path = graphics/graphics_Haswell_0a260006.txt; sourceTree = "<group>"; };
 		84624C9818219322004C34DA /* battery_HP-DV7-6xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV7-6xxx.txt"; path = "battery/battery_HP-DV7-6xxx.txt"; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 				8430FB4D1884B97E0042D275 /* graphics_PNLF_ivy_sandy.txt */,
 				8428802A1884C20900F8DE3A /* graphics_PNLF_haswell.txt */,
 				846D670717FB7C3800F795FA /* graphics_Rename-GFX0.txt */,
+				845FE2B219DC36F90079BAB3 /* graphics_Rename-PCI0_GFX0.txt */,
 				84F782711916F08B0096E38E /* graphics_Rename-VID_AGP1.txt */,
 				84C07CDD19A5429500D9C3F4 /* graphics_Rename-PCI0_VID.txt */,
 				84EF939D18916DED0027D192 /* graphics_PNLF-Lenovo-Ux10a.txt */,
