@@ -7,6 +7,7 @@
 # works for:
 #  Sony VAIO SVE15117FDB
 #  Sony VPEH26EN
+#  Sony VPCEH3N6E
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
@@ -59,6 +60,13 @@ begin
 Store (ShiftRight(Local1, 8), ^^EC0.ENC1)
 Store (Local1, ^^EC0.ENC0)
 end;
+
+into method label STEC code_regex Store\s+\(Arg1,\s+ENCR\) replaceall_matched
+begin
+Store (ShiftRight(Arg1, 8), ENC1)
+Store (Arg1, ENC0)
+end;
+
 
 # deal with 264-bit SMD0
 
