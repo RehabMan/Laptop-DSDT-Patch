@@ -26,8 +26,12 @@ Method (B1B4, 4, NotSerialized)\n
 }\n
 end;
 
+# fix bogus rate reporting
+into method label UPBS code_regex And.*Local1.*0x8000.*Local7.*\n.*If.*LEqual.*Local7.*\n.*\{.*\n.*Store.*0xFFFFFFFF.*Local1.*\n.*\}\n remove_matched;
+
 # remove WMI device (makes it easier to patch)
 into device label WMI remove_entry;
+into device label WMI0 remove_entry;
 into device label WMI1 remove_entry;
 into_all method code_regex Notify\s+\(WMI,.*\) removeall_matched;
 into_all method code_regex Add\s+\(.*WMI\.EVNT\) removeall_matched;
