@@ -119,6 +119,8 @@
 		84F782711916F08B0096E38E /* graphics_Rename-VID_AGP1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-VID_AGP1.txt"; path = "graphics/graphics_Rename-VID_AGP1.txt"; sourceTree = "<group>"; };
 		84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout12.txt"; path = "audio/audio_HDEF-layout12.txt"; sourceTree = "<group>"; };
 		84FEF29C196D8B7D0061DF5A /* fix_PARSEOP_ZERO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PARSEOP_ZERO.txt; path = syntax/fix_PARSEOP_ZERO.txt; sourceTree = "<group>"; };
+		ED0EC5E41A01E9880021AD90 /* graphics_HD4600_yosemite.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_HD4600_yosemite.txt; path = graphics/graphics_HD4600_yosemite.txt; sourceTree = "<group>"; };
+		EDF0829E1A0BC52C00DD15A5 /* battery_Clevo-M860TU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-M860TU.txt"; path = "battery/battery_Clevo-M860TU.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -147,6 +149,7 @@
 				840E6D3717FB286A00784B2A /* graphics_HD3K_high.txt */,
 				840E6D3917FB288A00784B2A /* graphics_HD4K_high.txt */,
 				84601EA818BCF6790014BF12 /* graphics_Haswell_0a260006.txt */,
+				ED0EC5E41A01E9880021AD90 /* graphics_HD4600_yosemite.txt */,
 				845DB3F618025D7C00B4EF70 /* graphics_EDID.txt */,
 				840E6D3A17FB294000784B2A /* graphics_MEI_sandy.txt */,
 				84AAF75B17FE027A0088DB40 /* graphics_MEI_ivy.txt */,
@@ -214,6 +217,7 @@
 				8436750118359126000618D0 /* battery_Acer-S7-391.txt */,
 				843A1C9518A52A4C00DB6154 /* battery_ASUS-G75vw.txt */,
 				842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */,
+				EDF0829E1A0BC52C00DD15A5 /* battery_Clevo-M860TU.txt */,
 				84B5A8BE1976BCA4005EE4D7 /* battery_Clevo-P15SM.txt */,
 				842F531917FB301B001CF33B /* battery_Compaq-CQ60.txt */,
 				842525F519CDBD01009FA9D7 /* battery_Dell-Inspiron-13z.txt */,

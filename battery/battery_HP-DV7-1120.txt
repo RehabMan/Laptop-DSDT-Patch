@@ -6,6 +6,7 @@
 
 # works for:
 #  HP DV7-1120
+#  HP DV3-2150EL
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 

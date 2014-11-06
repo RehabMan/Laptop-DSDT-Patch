@@ -1,109 +1,111 @@
-[1.0] == Various Syntax Error Fixes	NullPatch.txt
-[1.1]   Fix _PLD Buffer/Package Error	syntax/fix_PLD.txt
-[1.2]   Fix TNOT Error	syntax/fix_TNOT.txt
-[1.3]   Fix FPED Parse Error	syntax/fix_FPED.txt
-[1.4]   Fix _IRC Error	syntax/fix_IRC.txt
-[1.5]   Fix ADBG Error	syntax/fix_ADBG.txt
-[1.6]   Fix PARSEOP_STORE/MMTB Error	syntax/fix_MMTB.txt
-[1.7]   Fix *pnp/pnp lower case Error	syntax/fix_HID_pnp.txt
-[1.8]   Fix PARSEOP_ZERO Error	syntax/fix_PARSEOP_ZERO.txt
-[1.9]   Remove _DSM methods	syntax/remove_DSM.txt
-[2.0] == Intel Graphics Patches (HD3000/HD4000)	NullPatch.txt
-[2.01]   HD3000 Low Resolution	graphics/graphics_HD3K_low.txt
-[2.02]   HD3000 High Resolution	graphics/graphics_HD3K_high.txt
-[2.03]   HD4000 Low Resolution	graphics/graphics_HD4K_low.txt
-[2.04]   HD4000 High Resolution	graphics/graphics_HD4K_high.txt
-[2.05]   Haswell HD4400/HD4600/HD5000	graphics/graphics_Haswell_0a260006.txt
-[2.06]   HD3000 on 7-series	graphics/graphics_MEI_sandy.txt
-[2.07]   HD4000 on 6-series	graphics/graphics_MEI_ivy.txt
-[2.08]   Generic with EDID	graphics/graphics_EDID.txt
-[2.09]   Brightness fix	graphics/graphics_PNLF.txt
-[2.10]   Brightness fix (HD3000/HD4000)	graphics/graphics_PNLF_ivy_sandy.txt
-[2.11]   Brightness fix (Haswell)	graphics/graphics_PNLF_haswell.txt
-[2.12]   Brightness fix (ACPI 100)	graphics/graphics_PNLF-ACPI100.txt
-[2.13]   Rename GFX0 to IGPU	graphics/graphics_Rename-GFX0.txt
-[2.14]   Rename VID/ADP1 to IGPU	graphics/graphics_Rename-VID_AGP1.txt
-[2.15]   Rename PCI0.VID to PCI0.IGPU	graphics/graphics_Rename-PCI0_VID.txt
-[2.16]   Rename PCI0.GFX0 to PCI0.IGPU	graphics/graphics_Rename-PCI0_GFX0.txt
-[3.0] == USB (ECHI) Patches	NullPatch.txt
-[3.1]   6-series USB	usb/usb_6-series.txt
-[3.2]   7-series/8-series USB	usb/usb_7-series.txt
-[3.5]   7-series USB3 Multiplex	usb/usb_7-series-multiplex.txt
-[4.0] == Battery Patches	NullPatch.txt
-[4.01]  Acer Aspire E1-571	battery/battery_Acer-Aspire-E1-571.txt
-[4.02]  Acer 3820tg	battery/battery_Acer-3820tg.txt
-[4.03]  Acer Aspire 4830T	battery/battery_Acer-Aspire-4830T.txt
-[4.04]  Acer Aspire 5737z	battery/battery_Acer-Aspire-5737z.txt
-[4.05]  Acer Aspire 5750g	battery/battery_Acer-Aspire-5750g.txt
-[4.06]  Acer S7 391	battery/battery_Acer-S7-391.txt
-[4.07]  ASUS G75VW	battery/battery_ASUS-G75vw.txt
-[4.08]  ASUS N55SL/VivoBook	battery/battery_ASUS-N55SL.txt
-[4.09]  Clevo P15SM	battery/battery_Clevo-P15SM.txt
-[4.10]  Compaq CQ60	battery/battery_Compaq-CQ60.txt
-[4.11]  Dell Insprion 13z	battery/battery_Dell-Inspiron-13z.txt
-[4.12]  Dell Vostro 15xx	battery/battery_Dell-Vostro-15xx.txt
-[4.13]  Dell XPS 13	battery/battery_Dell-XPS-13.txt
-[4.14]  Dell XPS 18	battery/battery_Dell-XPS-18.txt
-[4.15]  Dell XPS L502x	battery/battery_Dell-XPS-L502x.txt
-[4.16]  Gateway ID49C07u	battery/battery_Gateway-ID49C07u.txt
-[4.17]  Gigabyte u2442N	battery/battery_Gigabyte-u2442N.txt
-[4.18]  HP DM4t-1000	battery/battery_HP-DM4T-1000.txt
-[4.19]  HP DV6-3165sf	battery/battery_HP-DV6-3165sf.txt
-[4.20]  HP DV6t-6b00	battery/battery_HP-DV6t-6b00.txt
-[4.21]  HP DV7-1120	battery/battery_HP-DV7-1120.txt
-[4.22]  HP DV7-6xxx	battery/battery_HP-DV7-6xxx.txt
-[4.23]  HP DV7-7xxx	battery/battery_HP-DV7-7xxx.txt
-[4.24]  HP Envy 14	battery/battery_HP-Envy-14.txt
-[4.25]  HP Envy 17t	battery/battery_HP-Envy-17t.txt
-[4.26]  HP Envy DV6	battery/battery_HP-Envy-DV6.txt
-[4.27]  HP Folio 13 1010es	battery/battery_HP-Folio-13-1010es.txt
-[4.28]  HP G6 2221ss	battery/battery_HP-G6-2221ss.txt
-[4.29]  HP G6 B13SL	battery/battery_HP-G62-B13SL.txt
-[4.30]  HP Pavilion n012tx	battery/battery_HP-Pavilion-n012tx.txt
-[4.31]  HP ProBook 4x0s G1	battery/battery_HP-ProBook-4x0s-G1.txt
-[4.32]  HP ProBook Generic	battery/battery_HP-ProBook-Generic.txt
-[4.33]  HP Spectre XT	battery/battery_HP-Spectre-XT.txt
-[4.34]  Lenovo T430u	battery/battery_Lenovo-T430u.txt
-[4.35]  Lenovo T440p	battery/battery_Lenovo-T440p.txt
-[4.36]  Lenovo Twist	battery/battery_Lenovo-Twist.txt
-[4.37]  Lenovo Ux10-Z580	battery/battery_Lenovo-Ux10-Z580.txt
-[4.38]  Lenovo X220	battery/battery_Lenovo-X220.txt
-[4.39]  Lenovo y570	battery/battery_Lenovo-y570.txt
-[4.40]  Lenovo y580	battery/battery_Lenovo-y580.txt
-[4.41]  Samsung Ativ Book 7	battery/battery_Samsung_NP730U3E_X04IT.txt
-[4.42]  Samsung NP470R5E	battery/battery_Samsung-NP470R5E.txt
-[4.43]  Samsung RF411	battery/battery_Samsung-RF411.txt
-[4.44]  Samsung R528	battery/battery_Samsung-r528.txt
-[4.45]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
-[4.46]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
-[4.47]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
-[4.48]  Surface v1	battery/battery_Surface-Pro-v1.txt
-[4.49]  TabletKiosk	battery/battery_TabletKiosk-i575.txt
-[4.50]  Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
-[4.51]  Vizio Ultrabook CT14	battery/battery_Vizio-Ultrabook-CT14.txt
-[5.0] == Atheros WiFi Patches	NullPatch.txt
-[5.1]   AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
-[5.2]   AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
-[5.3]   AR9285 WiFi RP02-WNIC	wifi/wifi_AR9285-RP02-WNIC.txt
-[6.0] == Fan control/temperature/LID status patches	NullPatch.txt
-[6.1]   Acer Aspire fan control	misc/control_AcerFan.txt
-[6.2]   Poll for LID changes	misc/misc_LidPoll.txt
-[6.3]   Remove LID0._PRW	misc/misc_Lid_PRW.txt
-[7.0] == System Patches	NullPatch.txt
-[7.01]  IRQ Fix	system/system_IRQ.txt
-[7.02]  SMBUS Fix	system/system_SMBUS.txt
-[7.03]  RTC Fix	system/system_RTC.txt
-[7.04]  Shutdown Fix	system/system_Shutdown.txt
-[7.05]  Shutdown Fix v2	system/system_Shutdown2.txt
-[7.06]  HPET Fix	system/system_HPET.txt
-[7.07]  OS Check Fix	system/system_OSYS.txt
-[7.08]  AC Adapter Fix	system/system_ADP1.txt
-[7.09]  Add MCHC	system/system_MCHC.txt
-[7.10]  Fix _WAK Arg0 v1	system/system_WAK1.txt
-[7.11]  Fix _WAK Arg0 v2	system/system_WAK2.txt
-[7.12]  Fix Mutex with non-zero SyncLevel	system/system_Mutex.txt
-[7.13]  Fix PNOT/PPNT	system/system_PNOT.txt
-[7.14]  Add IMEI	system/system_IMEI.txt
-[7.15]  Haswell LPC	misc/misc_Haswell-LPC.txt
-[8.0] == Audio	NullPatch.txt
-[8.1]   Audio Layout 12	audio/audio_HDEF-layout12.txt
+[syn] == Various Syntax Error Fixes	NullPatch.txt
+[syn]   Fix _PLD Buffer/Package Error	syntax/fix_PLD.txt
+[syn]   Fix TNOT Error	syntax/fix_TNOT.txt
+[syn]   Fix FPED Parse Error	syntax/fix_FPED.txt
+[syn]   Fix _IRC Error	syntax/fix_IRC.txt
+[syn]   Fix ADBG Error	syntax/fix_ADBG.txt
+[syn]   Fix PARSEOP_STORE/MMTB Error	syntax/fix_MMTB.txt
+[syn]   Fix *pnp/pnp lower case Error	syntax/fix_HID_pnp.txt
+[syn]   Fix PARSEOP_ZERO Error	syntax/fix_PARSEOP_ZERO.txt
+[syn]   Remove _DSM methods	syntax/remove_DSM.txt
+[gfx] == Intel Graphics Patches (HD3000/HD4000)	NullPatch.txt
+[gfx]   HD3000 Low Resolution	graphics/graphics_HD3K_low.txt
+[gfx]   HD3000 High Resolution	graphics/graphics_HD3K_high.txt
+[gfx]   HD4000 Low Resolution	graphics/graphics_HD4K_low.txt
+[gfx]   HD4000 High Resolution	graphics/graphics_HD4K_high.txt
+[gfx]   Haswell HD4400/HD4600/HD5000	graphics/graphics_Haswell_0a260006.txt
+[gfx]   Haswell HD4600 Yosemite	graphics/graphics_HD4600_yosemite.txt
+[gfx]   HD3000 on 7-series	graphics/graphics_MEI_sandy.txt
+[gfx]   HD4000 on 6-series	graphics/graphics_MEI_ivy.txt
+[gfx]   Generic with EDID	graphics/graphics_EDID.txt
+[gfx]   Brightness fix	graphics/graphics_PNLF.txt
+[gfx]   Brightness fix (HD3000/HD4000)	graphics/graphics_PNLF_ivy_sandy.txt
+[gfx]   Brightness fix (Haswell)	graphics/graphics_PNLF_haswell.txt
+[gfx]   Brightness fix (ACPI 100)	graphics/graphics_PNLF-ACPI100.txt
+[gfx]   Rename GFX0 to IGPU	graphics/graphics_Rename-GFX0.txt
+[gfx]   Rename VID/ADP1 to IGPU	graphics/graphics_Rename-VID_AGP1.txt
+[gfx]   Rename PCI0.VID to PCI0.IGPU	graphics/graphics_Rename-PCI0_VID.txt
+[gfx]   Rename PCI0.GFX0 to PCI0.IGPU	graphics/graphics_Rename-PCI0_GFX0.txt
+[usb] == USB (ECHI) Patches	NullPatch.txt
+[usb]   6-series USB	usb/usb_6-series.txt
+[usb]   7-series/8-series USB	usb/usb_7-series.txt
+[usb]   7-series USB3 Multiplex	usb/usb_7-series-multiplex.txt
+[bat] == Battery Patches	NullPatch.txt
+[bat]  Acer Aspire E1-571	battery/battery_Acer-Aspire-E1-571.txt
+[bat]  Acer 3820tg	battery/battery_Acer-3820tg.txt
+[bat]  Acer Aspire 4830T	battery/battery_Acer-Aspire-4830T.txt
+[bat]  Acer Aspire 5737z	battery/battery_Acer-Aspire-5737z.txt
+[bat]  Acer Aspire 5750g	battery/battery_Acer-Aspire-5750g.txt
+[bat]  Acer S7 391	battery/battery_Acer-S7-391.txt
+[bat]  ASUS G75VW	battery/battery_ASUS-G75vw.txt
+[bat]  ASUS N55SL/VivoBook	battery/battery_ASUS-N55SL.txt
+[bat]  Clevo M860TU	battery/battery_Clevo-M860TU.txt
+[bat]  Clevo P15SM	battery/battery_Clevo-P15SM.txt
+[bat]  Compaq CQ60	battery/battery_Compaq-CQ60.txt
+[bat]  Dell Insprion 13z	battery/battery_Dell-Inspiron-13z.txt
+[bat]  Dell Vostro 15xx	battery/battery_Dell-Vostro-15xx.txt
+[bat]  Dell XPS 13	battery/battery_Dell-XPS-13.txt
+[bat]  Dell XPS 18	battery/battery_Dell-XPS-18.txt
+[bat]  Dell XPS L502x	battery/battery_Dell-XPS-L502x.txt
+[bat]  Gateway ID49C07u	battery/battery_Gateway-ID49C07u.txt
+[bat]  Gigabyte u2442N	battery/battery_Gigabyte-u2442N.txt
+[bat]  HP DM4t-1000	battery/battery_HP-DM4T-1000.txt
+[bat]  HP DV6-3165sf	battery/battery_HP-DV6-3165sf.txt
+[bat]  HP DV6t-6b00	battery/battery_HP-DV6t-6b00.txt
+[bat]  HP DV7-1120	battery/battery_HP-DV7-1120.txt
+[bat]  HP DV7-6xxx	battery/battery_HP-DV7-6xxx.txt
+[bat]  HP DV7-7xxx	battery/battery_HP-DV7-7xxx.txt
+[bat]  HP Envy 14	battery/battery_HP-Envy-14.txt
+[bat]  HP Envy 17t	battery/battery_HP-Envy-17t.txt
+[bat]  HP Envy DV6	battery/battery_HP-Envy-DV6.txt
+[bat]  HP Folio 13 1010es	battery/battery_HP-Folio-13-1010es.txt
+[bat]  HP G6 2221ss	battery/battery_HP-G6-2221ss.txt
+[bat]  HP G6 B13SL	battery/battery_HP-G62-B13SL.txt
+[bat]  HP Pavilion n012tx	battery/battery_HP-Pavilion-n012tx.txt
+[bat]  HP ProBook 4x0s G1	battery/battery_HP-ProBook-4x0s-G1.txt
+[bat]  HP ProBook Generic	battery/battery_HP-ProBook-Generic.txt
+[bat]  HP Spectre XT	battery/battery_HP-Spectre-XT.txt
+[bat]  Lenovo T430u	battery/battery_Lenovo-T430u.txt
+[bat]  Lenovo T440p	battery/battery_Lenovo-T440p.txt
+[bat]  Lenovo Twist	battery/battery_Lenovo-Twist.txt
+[bat]  Lenovo Ux10-Z580	battery/battery_Lenovo-Ux10-Z580.txt
+[bat]  Lenovo X220	battery/battery_Lenovo-X220.txt
+[bat]  Lenovo y570	battery/battery_Lenovo-y570.txt
+[bat]  Lenovo y580	battery/battery_Lenovo-y580.txt
+[bat]  Samsung Ativ Book 7	battery/battery_Samsung_NP730U3E_X04IT.txt
+[bat]  Samsung NP470R5E	battery/battery_Samsung-NP470R5E.txt
+[bat]  Samsung RF411	battery/battery_Samsung-RF411.txt
+[bat]  Samsung R528	battery/battery_Samsung-r528.txt
+[bat]  Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
+[bat]  Sony VAIO S	battery/battery_Sony-VAIO-S.txt
+[bat]  Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
+[bat]  Surface v1	battery/battery_Surface-Pro-v1.txt
+[bat]  TabletKiosk	battery/battery_TabletKiosk-i575.txt
+[bat]  Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
+[bat]  Vizio Ultrabook CT14	battery/battery_Vizio-Ultrabook-CT14.txt
+[wifi] == Atheros WiFi Patches	NullPatch.txt
+[wifi]   AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
+[wifi]   AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
+[wifi]   AR9285 WiFi RP02-WNIC	wifi/wifi_AR9285-RP02-WNIC.txt
+[misc] == Fan control/temperature/LID status patches	NullPatch.txt
+[misc]   Acer Aspire fan control	misc/control_AcerFan.txt
+[misc]   Poll for LID changes	misc/misc_LidPoll.txt
+[misc]   Remove LID0._PRW	misc/misc_Lid_PRW.txt
+[sys] == System Patches	NullPatch.txt
+[sys]  IRQ Fix	system/system_IRQ.txt
+[sys]  SMBUS Fix	system/system_SMBUS.txt
+[sys]  RTC Fix	system/system_RTC.txt
+[sys]  Shutdown Fix	system/system_Shutdown.txt
+[sys]  Shutdown Fix v2	system/system_Shutdown2.txt
+[sys]  HPET Fix	system/system_HPET.txt
+[sys]  OS Check Fix	system/system_OSYS.txt
+[sys]  AC Adapter Fix	system/system_ADP1.txt
+[sys]  Add MCHC	system/system_MCHC.txt
+[sys]  Fix _WAK Arg0 v1	system/system_WAK1.txt
+[sys]  Fix _WAK Arg0 v2	system/system_WAK2.txt
+[sys]  Fix Mutex with non-zero SyncLevel	system/system_Mutex.txt
+[sys]  Fix PNOT/PPNT	system/system_PNOT.txt
+[sys]  Add IMEI	system/system_IMEI.txt
+[sys]  Haswell LPC	misc/misc_Haswell-LPC.txt
+[audio] == Audio	NullPatch.txt
+[audio]   Audio Layout 12	audio/audio_HDEF-layout12.txt
