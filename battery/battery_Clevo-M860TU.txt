@@ -67,7 +67,7 @@ into device label EC code_regex BCW0,\s+32 replace_matched begin CW00,8,CW01,8,C
 into device label EC code_regex BCL0,\s+32 replace_matched begin CL00,8,CL01,8,CL02,8,CL03,8 end;
 into device label EC code_regex BSN0,\s+32 replace_matched begin SN00,8,SN01,8,SN02,8,SN03,8 end;
 
-into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC\.BDC0, replaceall_matched begin (B1B4(^^PCI0.LPCB.EC.DC00,^^PCI0.LPCB.EC.DC01,^^PCI0.LPCB.EC.DC03,^^PCI0.LPCB.EC.DC03), end;
+into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC\.BDC0, replaceall_matched begin (B1B4(^^PCI0.LPCB.EC.DC00,^^PCI0.LPCB.EC.DC01,^^PCI0.LPCB.EC.DC02,^^PCI0.LPCB.EC.DC03), end;
 into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC\.BFC0, replaceall_matched begin (B1B4(^^PCI0.LPCB.EC.FC00,^^PCI0.LPCB.EC.FC01,^^PCI0.LPCB.EC.FC02,^^PCI0.LPCB.EC.FC03), end;
 into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC\.BDV0, replaceall_matched begin (B1B4(^^PCI0.LPCB.EC.DV00,^^PCI0.LPCB.EC.DV01,^^PCI0.LPCB.EC.DV02,^^PCI0.LPCB.EC.DV03), end;
 into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC\.BCW0, replaceall_matched begin (B1B4(^^PCI0.LPCB.EC.CW00,^^PCI0.LPCB.EC.CW01,^^PCI0.LPCB.EC.CW02,^^PCI0.LPCB.EC.CW03), end;
