@@ -19,6 +19,7 @@
 #  ASUS X401A-WX108
 #  ASUS F551CA Bios rev. 207
 #  ASUS S551LB VivoBook
+#  ASUS ZenBook UX32VD
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

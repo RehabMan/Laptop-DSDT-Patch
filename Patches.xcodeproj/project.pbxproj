@@ -120,6 +120,7 @@
 		84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout12.txt"; path = "audio/audio_HDEF-layout12.txt"; sourceTree = "<group>"; };
 		84FEF29C196D8B7D0061DF5A /* fix_PARSEOP_ZERO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PARSEOP_ZERO.txt; path = syntax/fix_PARSEOP_ZERO.txt; sourceTree = "<group>"; };
 		ED0EC5E41A01E9880021AD90 /* graphics_HD4600_yosemite.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_HD4600_yosemite.txt; path = graphics/graphics_HD4600_yosemite.txt; sourceTree = "<group>"; };
+		ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-13.txt"; path = "battery/battery_Lenovo-Yoga-13.txt"; sourceTree = "<group>"; };
 		EDF0829E1A0BC52C00DD15A5 /* battery_Clevo-M860TU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-M860TU.txt"; path = "battery/battery_Clevo-M860TU.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +251,7 @@
 				842F531D17FB301B001CF33B /* battery_Lenovo-X220.txt */,
 				84C3532419985DDE00005C20 /* battery_Lenovo-y570.txt */,
 				842F531F17FB301B001CF33B /* battery_Lenovo-y580.txt */,
+				ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */,
 				8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */,
 				842F532217FB3114001CF33B /* battery_Samsung-RF411.txt */,
 				841796F018539E4C00E987F2 /* battery_Samsung-r528.txt */,
