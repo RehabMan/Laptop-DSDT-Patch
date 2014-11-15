@@ -10,74 +10,25 @@
 # provided AppleBacklight.kext is patched to recognize your 
 # display or an injector is used to set brightness levels.
 #
-#
 # See this thread for more information:
 #     http://www.tonymacx86.com/hp-probook-mavericks/121031-native-brightness-working-without-blinkscreen-using-patched-applebacklight-kext.html
 # (also read any linked threads)
 #
-
-#
-# Note: This patch assumes you have already applied "Rename GFX0 to IGPU"
-# and that the IGPU device is accessible.  For some computers this should
-# be applied to one of the SSDTs, not DSDT.
+# Note: This patch should be applied to the DSDT or SSDT that defines
+# your integrated graphics device (always at _ADR 0x00020000)
 #
 
-into device label IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
+into_all device label PNLF remove_entry;
+#into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
+into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(RMPC,\sPCI_Config[^\}]*\}) remove_matched;
 
-# add IGD2 PCI_config for BAR1 value
-into device label IGPU code_regex (OperationRegion\s\(IGDP,\sPCI_Config[^\}]*\}) replace_matched
+into device name_adr 0x00020000 insert
 begin
-%1\n
-OperationRegion (IGD2, PCI_Config, 0x10, 4)\n
-Field (IGD2, AnyAcc, NoLock, Preserve)\n
-{\n
-	BAR1,32,\n
-}\n
-end;
-
-# some Lenovo laptops call PCI_Config VPCG...
-# Note: commented out since some DSDTs have both...
-#into device label IGPU code_regex (OperationRegion\s\(VPCG,\sPCI_Config[^\}]*\}) replace_matched
-#begin
-#%1\n
-#OperationRegion (IGD2, PCI_Config, 0x10, 4)\n
-#Field (IGD2, AnyAcc, NoLock, Preserve)\n
-#{\n
-#	BAR1,32,\n
-#}\n
-#end;
-
-
-# duplicated for case it is in separate scope
-into scope label _SB.PCI0.IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
-into scope label _SB.PCI0.IGPU code_regex (OperationRegion\s\(IGDP,\sPCI_Config[^\}]*\}) replace_matched
-begin
-%1\n
-OperationRegion (IGD2, PCI_Config, 0x10, 4)\n
-Field (IGD2, AnyAcc, NoLock, Preserve)\n
-{\n
-	BAR1,32,\n
-}\n
-end;
-
-# duplicated for case it is in separate scope (this one with leading backslash)
-into scope label \_SB.PCI0.IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
-into scope label \_SB.PCI0.IGPU code_regex (OperationRegion\s\(IGDP,\sPCI_Config[^\}]*\}) replace_matched
-begin
-%1\n
-OperationRegion (IGD2, PCI_Config, 0x10, 4)\n
-Field (IGD2, AnyAcc, NoLock, Preserve)\n
-{\n
-	BAR1,32,\n
-}\n
-end;
-
-
-into device label PNLF remove_entry;
-into definitionblock code_regex . insert
-begin
-Scope (\_SB)\n
-{\n
+    OperationRegion (RMPC, PCI_Config, 0x10, 4)\n
+    Field (RMPC, AnyAcc, NoLock, Preserve)\n
+    {\n
+        BAR1,32,\n
+    }\n
     Device (PNLF)\n
     {\n
         // normal PNLF declares (note some of this probably not necessary)\n
@@ -89,8 +40,8 @@ Scope (\_SB)\n
         //define hardware register access for brightness\n
         // you can see BAR1 value in RW-Everything under Bus00,02 Intel VGA controler PCI\n
         // Note: Not sure which one is right here... for now, going with BAR1 masked\n
-        //OperationRegion (BRIT, SystemMemory, Subtract(\_SB.PCI0.IGPU.BAR1, 4), 0xe1184)\n
-        OperationRegion (BRIT, SystemMemory, And(\_SB.PCI0.IGPU.BAR1, Not(0xF)), 0xe1184)\n
+        //OperationRegion (BRIT, SystemMemory, Subtract(^BAR1, 4), 0xe1184)\n
+        OperationRegion (BRIT, SystemMemory, And(^BAR1, Not(0xF)), 0xe1184)\n
         Field (BRIT, AnyAcc, Lock, Preserve)\n
         {\n
             Offset(0x48250),\n
@@ -154,8 +105,8 @@ Scope (\_SB)\n
         {\n
             // Note: Some systems have this defined in DSDT, so uncomment\n
             // the next line if that is the case.\n
-            //External(^^PCI0.IGPU._DOS, MethodObj)\n
-            ^^PCI0.IGPU._DOS(Arg0)\n
+            //External(^^_DOS, MethodObj)\n
+            ^^_DOS(Arg0)\n
         }\n
         // extended _BCM/_BQC for setting "in between" levels\n
         Method (XBCM, 1, NotSerialized)\n
@@ -172,44 +123,35 @@ Scope (\_SB)\n
             If (LAnd(Local0, LLess(Local0, XRGL))) { Store(XRGL, Local0) }\n
             Return(Local0)\n
         }\n
+        // Use XOPT=1 to disable smooth transitions\n
+        Name (XOPT, Zero)\n
+        // XRGL/XRGH: defines the valid range\n
+        Name (XRGL, 25)\n
+        Name (XRGH, 2777)\n
+        // _BCL: returns list of valid brightness levels\n
+        // first two entries describe ac/battery power levels\n
+        Name (_BCL, Package()\n
+        {\n
+            2777,\n
+            748,\n
+            0,\n
+            35, 39, 44, 50,\n
+            58, 67, 77, 88,\n
+            101, 115, 130, 147,\n
+            165, 184, 204, 226,\n
+            249, 273, 299, 326,\n
+            354, 383, 414, 446,\n
+            479, 514, 549, 587,\n
+            625, 665, 706, 748,\n
+            791, 836, 882, 930,\n
+            978, 1028, 1079, 1132,\n
+            1186, 1241, 1297, 1355,\n
+            1414, 1474, 1535, 1598,\n
+            1662, 1728, 1794, 1862,\n
+            1931, 2002, 2074, 2147,\n
+            2221, 2296, 2373, 2452,\n
+            2531, 2612, 2694, 2777,\n
+        })\n
     }\n
-}\n
 end;
 
-into device label PNLF code_regex Name\s\(_BCL,\sPackage[^\}]*\}\) remove_matched;
-into device label PNLF code_regex Name\s\(XOPT,.*\)\n removeall_matched;
-into device label PNLF code_regex Name\s\(XRGL,.*\)\n removeall_matched;
-into device label PNLF code_regex Name\s\(XRGH,.*\)\n removeall_matched;
-into device label PNLF code_regex Name\s\(KLVX,.*\)\n removeall_matched;
-into device label PNLF code_regex . insert
-begin
-    // Use XOPT=1 to disable smooth transitions\n
-    Name (XOPT, Zero)\n
-    // XRGL/XRGH: defines the valid range\n
-    Name (XRGL, 25)\n
-    Name (XRGH, 2777)\n
-    // _BCL: returns list of valid brightness levels\n
-    // first two entries describe ac/battery power levels\n
-    Name (_BCL, Package()\n
-    {\n
-        2777,\n
-        748,\n
-        0,\n
-        35, 39, 44, 50,\n
-        58, 67, 77, 88,\n
-        101, 115, 130, 147,\n
-        165, 184, 204, 226,\n
-        249, 273, 299, 326,\n
-        354, 383, 414, 446,\n
-        479, 514, 549, 587,\n
-        625, 665, 706, 748,\n
-        791, 836, 882, 930,\n
-        978, 1028, 1079, 1132,\n
-        1186, 1241, 1297, 1355,\n
-        1414, 1474, 1535, 1598,\n
-        1662, 1728, 1794, 1862,\n
-        1931, 2002, 2074, 2147,\n
-        2221, 2296, 2373, 2452,\n
-        2531, 2612, 2694, 2777,\n
-    })\n
-end;

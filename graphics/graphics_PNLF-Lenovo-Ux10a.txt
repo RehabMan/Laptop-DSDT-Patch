@@ -4,7 +4,6 @@
 # This patch enables the brightness slider in SysPrefs->Displays
 # and will also enable activation of sleep mode by closing
 # the laptop lid.
-
 #
 # This patch is specifically for the Lenovo Ux10 series
 # laptops.
@@ -12,29 +11,21 @@
 # Based on information from the normal laptop DSDT methods,
 # optimized for use with ACPIBacklight.kext
 #
-
-#
-# Note: This patch assumes you have already applied "Rename GFX0 to IGPU"
-# and that the IGPU device is accessible.  For some computers this should
-# be applied to one of the SSDTs, not DSDT.
+# Note: This patch should be applied to the DSDT or SSDT that defines
+# your integrated graphics device (always at _ADR 0x00020000)
 #
 
-into device label IGPU code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
-into device label IGPU code_regex (OperationRegion\s\(IGDP,\sPCI_Config[^\}]*\}) replace_matched
-begin
-%1\n
-OperationRegion (IGD2, PCI_Config, 0x10, 4)\n
-Field (IGD2, AnyAcc, NoLock, Preserve)\n
-{\n
-	BAR1,32,\n
-}\n
-end;
+into_all device label PNLF remove_entry;
+#into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
+into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(RMPC,\sPCI_Config[^\}]*\}) remove_matched;
 
-into device label PNLF remove_entry;
-into definitionblock code_regex . insert
+into device name_adr 0x00020000 insert
 begin
-Scope (\_SB)\n
-{\n
+    OperationRegion (RMPC, PCI_Config, 0x10, 4)\n
+    Field (RMPC, AnyAcc, NoLock, Preserve)\n
+    {\n
+        BAR1,32,\n
+    }\n
     Device (PNLF)\n
     {\n
         // normal PNLF declares (note some of this probably not necessary)\n
@@ -44,7 +35,7 @@ Scope (\_SB)\n
         Name (_STA, 0x0B)\n
         //define hardware register access for brightness\n
         // you can see BAR1 value in RW-Everything under Bus00,02 Intel VGA controler PCI\n
-        OperationRegion (BRIT, SystemMemory, \_SB.PCI0.IGPU.BAR1, 0xc8254)\n
+        OperationRegion (BRIT, SystemMemory, And(^BAR1, Not(0xF)), 0xc8254)\n
         Field (BRIT, AnyAcc, Lock, Preserve)\n
         {\n
             Offset(0x4824c),\n
@@ -107,37 +98,24 @@ Scope (\_SB)\n
         }\n
         Method (_DOS, 1, NotSerialized)\n
         {\n
-            ^^PCI0.IGPU._DOS(Arg0)\n
+            ^^_DOS(Arg0)\n
         }\n
+        // Use XOPT=1 to disable smooth transitions\n
+        Name (XOPT, 1)\n
+        // XRGL/XRGH: defines the valid range\n
+        Name (XRGL, 1)\n
+        Name (XRGH, 15)\n
+        // KLVX is initialization value for LEVX\n
+        Name (KLVX, 0x7100000)\n
+        // _BCL: returns list of valid brightness levels\n
+        // first two entries describe ac/battery power levels\n
+        Name (_BCL, Package()\n
+        {\n
+            15,\n
+            4,\n
+            0,\n
+            1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15\n
+        })\n
     }\n
-}\n
 end;
-
-into device label PNLF code_regex Name\s\(_BCL,\sPackage[^\}]*\}\) remove_matched;
-into device label PNLF code_regex Name\s\(XOPT,.*\)\n removeall_matched;
-into device label PNLF code_regex Name\s\(XRGL,.*\)\n removeall_matched;
-into device label PNLF code_regex Name\s\(XRGH,.*\)\n removeall_matched;
-into device label PNLF code_regex Name\s\(KLVX,.*\)\n removeall_matched;
-into device label PNLF code_regex . insert
-begin
-    // Use XOPT=1 to disable smooth transitions\n
-    Name (XOPT, Zero)\n
-    // XRGL/XRGH: defines the valid range\n
-    Name (XRGL, 1)\n
-    Name (XRGH, 15)\n
-    // KLVX is initialization value for LEVX\n
-    Name (KLVX, 0x7100000)\n
-    // _BCL: returns list of valid brightness levels\n
-    // first two entries describe ac/battery power levels\n
-    Name (_BCL, Package()\n
-    {\n
-        15,\n
-        4,\n
-        0,\n
-        1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15\n
-    })\n
-end;
-
-
-
 

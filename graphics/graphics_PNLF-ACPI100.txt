@@ -4,7 +4,6 @@
 # This patch enables the brightness slider in SysPrefs->Displays
 # and will also enable activation of sleep mode by closing
 # the laptop lid.
-
 #
 # This patch works well for laptops that have working
 # ACPI methods with 64-or more levels (100 is common)
@@ -13,8 +12,11 @@
 # Based on information from the normal laptop DSDT methods,
 # optimized for use with ACPIBacklight.kext
 #
-
-# intended to be used with Windows 2012, so this should be done...
+# Note: This patch should be applied to the DSDT or SSDT that defines
+# your integrated graphics device (always at _ADR 0x00020000)
+# applied to one of the SSDTs, not DSDT.
+#
+# Note: Intended to be used with Windows 2012, so this should be done...
 # if you previously patched for Windows 2006, undo that patch!
 
 # sometimes in Scope (_SB.PCI0)
@@ -25,17 +27,13 @@ begin If(LOr(_OSI("Darwin"),_OSI("Windows 2006"))) end;
 into method label _INI parent_label _SB code_regex If\s+\(_OSI\s+\(\"Windows\s2012\"\)\) replace_matched
 begin If(LOr(_OSI("Darwin"),_OSI("Windows 2006"))) end;
 
-#
-# Note: This patch assumes you have already applied "Rename GFX0 to IGPU"
-# and that the IGPU device is accessible.  For some computers this should
-# be applied to one of the SSDTs, not DSDT.
-#
 
-into device label PNLF remove_entry;
-into definitionblock code_regex . insert
+into_all device label PNLF remove_entry;
+#into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
+into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(RMPC,\sPCI_Config[^\}]*\}) remove_matched;
+
+into device name_adr 0x00020000 insert
 begin
-Scope (\_SB)\n
-{\n
     Device (PNLF)\n
     {\n
         // normal PNLF declares (note some of this probably not necessary)\n
@@ -47,29 +45,29 @@ Scope (\_SB)\n
         Method (_BCM, 1, NotSerialized)\n
         {\n
             // Update backlight via existing DSDT methods\n
-            ^^PCI0.IGPU.DD02._BCM(Arg0)\n
+            ^^DD02._BCM(Arg0)\n
         }\n
         Method (_BQC, 0, NotSerialized)\n
         {\n
-            Return(^^PCI0.IGPU.DD02._BQC())\n
-        }\n
-        Method (_DOS, 1, NotSerialized)\n
-        {\n
-            ^^PCI0.IGPU._DOS(Arg0)\n
+            Return(^^DD02._BQC())\n
         }\n
         Method (_BCL, 0, NotSerialized)\n
         {\n
-            Return(^^PCI0.IGPU.DD02._BCL())\n
+            Return(^^DD02._BCL())\n
+        }\n
+        Method (_DOS, 1, NotSerialized)\n
+        {\n
+            ^^_DOS(Arg0)\n
         }\n
         // extended _BCM/_BQC for setting "in between" levels\n
         Method (XBCM, 1, NotSerialized)\n
         {\n
             // Update backlight via existing DSDT methods\n
-            ^^PCI0.IGPU.DD02._BCM(Arg0)\n
+            ^^DD02._BCM(Arg0)\n
         }\n
         Method (XBQC, 0, NotSerialized)\n
         {\n
-            Return(^^PCI0.IGPU.DD02._BQC())\n
+            Return(^^DD02._BQC())\n
         }\n
         // Use XOPT=1 to disable smooth transitions\n
         Name (XOPT, Zero)\n
@@ -87,6 +85,5 @@ Scope (\_SB)\n
             Return(Local0)\n
         }\n
     }\n
-}\n
 end;
 
