@@ -4,7 +4,7 @@
 # Created by StarLord 2014-11-12
 
 # works for:
-#  Lenovo Yoga 13
+#  Lenovo IdeaPad Yoga 13
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
