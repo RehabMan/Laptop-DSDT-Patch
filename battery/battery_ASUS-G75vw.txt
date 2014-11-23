@@ -9,6 +9,7 @@
 #  ASUS G750 JW (probably works for Asus G750 JX and JH also)
 #  ASUS PRO PU401LA
 #  ASUS K56CM
+#  ASUS X450C
 
 #Convert 16 bit to 8 bit registers
 into device label EC0 code_regex TAH0,\s+16, replace_matched begin AH00,8,AH01,8, end;
