@@ -21,6 +21,7 @@
 #  ASUS S551LB VivoBook
 #  ASUS ZenBook UX32VD
 #  ASUS F550L-X455H
+#  ASUS X53S
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
