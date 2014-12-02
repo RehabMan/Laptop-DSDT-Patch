@@ -122,6 +122,8 @@
 		ED0EC5E41A01E9880021AD90 /* graphics_HD4600_yosemite.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_HD4600_yosemite.txt; path = graphics/graphics_HD4600_yosemite.txt; sourceTree = "<group>"; };
 		ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-13.txt"; path = "battery/battery_Lenovo-Yoga-13.txt"; sourceTree = "<group>"; };
 		ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Medion-Akoya-P6630.txt"; path = "battery/battery_Medion-Akoya-P6630.txt"; sourceTree = "<group>"; };
+		EDCD54641A2E10550009F438 /* graphics_REG-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_REG-disable.txt"; path = "graphics/graphics_REG-disable.txt"; sourceTree = "<group>"; };
+		EDCD54651A2E11EA0009F438 /* graphics_INI-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_INI-disable.txt"; path = "graphics/graphics_INI-disable.txt"; sourceTree = "<group>"; };
 		EDF0829E1A0BC52C00DD15A5 /* battery_Clevo-M860TU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-M860TU.txt"; path = "battery/battery_Clevo-M860TU.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,6 +303,7 @@
 				84B9D52716FFE684002CD441 /* README.txt */,
 				840E6D3517FB271C00784B2A /* Syntax Errors */,
 				840E6D3B17FB297000784B2A /* Intel Graphics */,
+				EDCD54631A2E10190009F438 /* Nvidia/Radeon Disable */,
 				8420BAD419BDFF4C00D629B3 /* Nvidia Graphics */,
 				84AFCB7617FB2C520089486F /* USB (EHCI-XHCI) */,
 				842F532117FB302D001CF33B /* Battery Status */,
@@ -318,6 +321,15 @@
 				84B7DC531808792C00CAA692 /* audio_HDEF-layout12a.txt */,
 			);
 			name = Audio;
+			sourceTree = "<group>";
+		};
+		EDCD54631A2E10190009F438 /* Nvidia/Radeon Disable */ = {
+			isa = PBXGroup;
+			children = (
+				EDCD54641A2E10550009F438 /* graphics_REG-disable.txt */,
+				EDCD54651A2E11EA0009F438 /* graphics_INI-disable.txt */,
+			);
+			name = "Nvidia/Radeon Disable";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
