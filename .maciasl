@@ -29,6 +29,7 @@
 [gfx] == Disable Nvidia/Radeon	NullPatch.txt
 [gfx]   Disable from _REG (DSDT)	graphics/graphics_REG-disable.txt
 [gfx]   Disable from _INI (SSDT)	graphics/graphics_INI-disable.txt
+[gfx]   Disable/Enable on _WAK/_PTS (DSDT)	graphics/graphics_PTS_WAK-disable.txt
 [usb] == USB (ECHI) Patches	NullPatch.txt
 [usb]   6-series USB	usb/usb_6-series.txt
 [usb]   7-series/8-series USB	usb/usb_7-series.txt
