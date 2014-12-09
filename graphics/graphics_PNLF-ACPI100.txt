@@ -29,61 +29,59 @@ begin If(LOr(_OSI("Darwin"),_OSI("Windows 2006"))) end;
 
 
 into_all device label PNLF remove_entry;
-#into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(IGD2,\sPCI_Config[^\}]*\}) remove_matched;
-into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(RMPC,\sPCI_Config[^\}]*\}) remove_matched;
-
-into device name_adr 0x00020000 insert
+into definitionblock code_regex . insert
 begin
-    Device (PNLF)\n
+Device (PNLF)\n
+{\n
+    // normal PNLF declares (note some of this probably not necessary)\n
+    Name (_ADR, Zero)\n
+    Name (_HID, EisaId ("APP0002"))\n
+    Name (_CID, "backlight")\n
+    Name (_UID, 10)\n
+    Name (_STA, 0x0B)\n
+    // _BCM/_BQC: set/get for brightness level\n
+    Method (_BCM, 1, NotSerialized)\n
     {\n
-        // normal PNLF declares (note some of this probably not necessary)\n
-        Name (_HID, EisaId ("APP0002"))\n
-        Name (_CID, "backlight")\n
-        Name (_UID, 10)\n
-        Name (_STA, 0x0B)\n
-        // _BCM/_BQC: set/get for brightness level\n
-        Method (_BCM, 1, NotSerialized)\n
-        {\n
-            // Update backlight via existing DSDT methods\n
-            ^^DD02._BCM(Arg0)\n
-        }\n
-        Method (_BQC, 0, NotSerialized)\n
-        {\n
-            Return(^^DD02._BQC())\n
-        }\n
-        Method (_BCL, 0, NotSerialized)\n
-        {\n
-            Return(^^DD02._BCL())\n
-        }\n
-        Method (_DOS, 1, NotSerialized)\n
-        {\n
-            ^^_DOS(Arg0)\n
-        }\n
-        // extended _BCM/_BQC for setting "in between" levels\n
-        Method (XBCM, 1, NotSerialized)\n
-        {\n
-            // Update backlight via existing DSDT methods\n
-            ^^DD02._BCM(Arg0)\n
-        }\n
-        Method (XBQC, 0, NotSerialized)\n
-        {\n
-            Return(^^DD02._BQC())\n
-        }\n
-        // Use XOPT=1 to disable smooth transitions\n
-        Name (XOPT, Zero)\n
-        // XRGL/XRGH: defines the valid range\n
-        Method (XRGL, 0, NotSerialized)\n
-        {\n
-            Store(_BCL(), Local0)\n
-            Store(DerefOf(Index(Local0, 2)), Local0)\n
-            Return(Local0)\n
-        }\n
-        Method (XRGH, 0, NotSerialized)\n
-        {\n
-            Store(_BCL(), Local0)\n
-            Store(DerefOf(Index(Local0, Subtract(SizeOf(Local0), 1))), Local0)\n
-            Return(Local0)\n
-        }\n
+        // Update backlight via existing DSDT methods\n
+        ^^DD02._BCM(Arg0)\n
     }\n
+    Method (_BQC, 0, NotSerialized)\n
+    {\n
+        Return(^^DD02._BQC())\n
+    }\n
+    Method (_BCL, 0, NotSerialized)\n
+    {\n
+        Return(^^DD02._BCL())\n
+    }\n
+    Method (_DOS, 1, NotSerialized)\n
+    {\n
+        ^^_DOS(Arg0)\n
+    }\n
+    // extended _BCM/_BQC for setting "in between" levels\n
+    Method (XBCM, 1, NotSerialized)\n
+    {\n
+        // Update backlight via existing DSDT methods\n
+        ^^DD02._BCM(Arg0)\n
+    }\n
+    Method (XBQC, 0, NotSerialized)\n
+    {\n
+        Return(^^DD02._BQC())\n
+    }\n
+    // Use XOPT=1 to disable smooth transitions\n
+    Name (XOPT, Zero)\n
+    // XRGL/XRGH: defines the valid range\n
+    Method (XRGL, 0, NotSerialized)\n
+    {\n
+        Store(_BCL(), Local0)\n
+        Store(DerefOf(Index(Local0, 2)), Local0)\n
+        Return(Local0)\n
+    }\n
+    Method (XRGH, 0, NotSerialized)\n
+    {\n
+        Store(_BCL(), Local0)\n
+        Store(DerefOf(Index(Local0, Subtract(SizeOf(Local0), 1))), Local0)\n
+        Return(Local0)\n
+    }\n
+}\n
 end;
 
