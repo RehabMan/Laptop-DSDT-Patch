@@ -61,27 +61,59 @@ begin
         //{\n
         //    Store(Arg0, KLVX)\n
         //}\n
+        // LMAX: use 0x710 to force OS X value\n
+        //       or use any arbitrary value\n
+        //       or use 0 to capture BIOS setting\n
+        Name (LMAX, 0x710)\n
+        // KMAX: defines the unscaled range in the _BCL table below\n
+        Name (KMAX, 0x710)\n
+        // KPCH: saved value for PCHL\n
         Name(KPCH, 0)\n
         // _INI deals with differences between native setting and desired\n
         Method (_INI, 0, NotSerialized)\n
         {\n
+            // save value of PCHL for later\n
             Store(PCHL, KPCH)\n
-            Store(ShiftRight(KLVX,16), Local0)\n
-            Store(ShiftRight(LEVX,16), Local1)\n
-            if (LNotEqual(Local0, Local1))\n
+            // determine LMAX to use\n
+            If (LNot(LMAX)) { Store(ShiftRight(LEVX,16), LMAX) }\n
+            If (LNot(LMAX)) { Store(KMAX, LMAX) }\n
+            Store(ShiftLeft(LMAX,16), KLVX)\n
+            If (LNotEqual(LMAX, KMAX))\n
             {\n
-                Divide(Multiply(LEVL, Local0), Local1,, Local0)\n
-                //Store(P0BL, Local1)\n
-                //While(LEqual (P0BL, Local1)) {}\n
-                Store(Local0, LEVL)\n
-                Store(KLVX, LEVX)\n
+                // Scale all the values in _BCL to the PWM max in use\n
+                Store(0, Local0)\n
+                While (LLess(Local0, SizeOf(_BCL)))\n
+                {\n
+                    Store(DerefOf(Index(_BCL,Local0)), Local1)\n
+                    Divide(Multiply(Local1,LMAX), KMAX,, Local1)\n
+                    Store(Local1, Index(_BCL,Local0))\n
+                    Increment(Local0)\n
+                }\n
+                // Also scale XRGL and XRGH values\n
+                Divide(Multiply(XRGL,LMAX), KMAX,, XRGL)\n
+                Divide(Multiply(XRGH,LMAX), KMAX,, XRGH)\n
+            }\n
+            // adjust values to desired LMAX\n
+            Store(ShiftRight(LEVX,16), Local1)\n
+            If (LNotEqual(Local1, LMAX))\n
+            {\n
+                Store(LEVL, Local0)\n
+                If (LOr(LNot(Local0),LNot(Local1))) { Store(LMAX, Local0) Store(LMAX, Local1) }\n
+                Divide(Multiply(Local0,LMAX), Local1,, Local0)\n
+                //REVIEW: wait for vblank before setting new PWM config\n
+                //Store(P0BL, Local7)\n
+                //While (LEqual (P0BL, Local7)) {}\n
+                If (LGreater(LEVL, LMAX))\n
+                    { Store(KLVX, LEVX) Store(Local0, LEVL) }\n
+                Else\n
+                    { Store(Local0, LEVL) Store(KLVX, LEVX) }\n
             }\n
         }\n
         // _BCM/_BQC: set/get for brightness level\n
         Method (_BCM, 1, NotSerialized)\n
         {\n
             // initialize for consistent backlight level before/after sleep\n
-            if (LNotEqual(PCHL, KPCH)) { Store(KPCH, PCHL) }\n
+            If (LNotEqual(PCHL, KPCH)) { Store(KPCH, PCHL) }\n
             If (LNotEqual(LEVW, 0x80000000)) { Store (0x80000000, LEVW) }\n
             If (LNotEqual(LEVX, KLVX)) { Store (KLVX, LEVX) }\n
             // store new backlight level\n
@@ -104,7 +136,7 @@ begin
         Method (XBCM, 1, NotSerialized)\n
         {\n
             // initialize for consistent backlight level before/after sleep\n
-            if (LNotEqual(PCHL, KPCH)) { Store(KPCH, PCHL) }\n
+            If (LNotEqual(PCHL, KPCH)) { Store(KPCH, PCHL) }\n
             If (LNotEqual(LEVW, 0x80000000)) { Store (0x80000000, LEVW) }\n
             If (LNotEqual(LEVX, KLVX)) { Store (KLVX, LEVX) }\n
             // store new backlight level\n

@@ -55,57 +55,48 @@ begin
             Offset(0xe1180),\n
             PCHL, 32,\n
         }\n
-        // LMAX: set to 0xad9/0x56c to force OS X value\n
-        //       or set any arbitrary value\n
-        //       set to 0 to use BIOS setting\n
+        // LMAX: use 0xad9/0x56c to force OS X value\n
+        //       or use any arbitrary value\n
+        //       or use 0 to capture BIOS setting\n
         Name (LMAX, 0xad9)\n
         // KMAX: defines the unscaled range in the _BCL table below\n
         Name (KMAX, 0xad9)\n
+        // _INI deals with differences between native setting and desired\n
         Method (_INI, 0, NotSerialized)\n
         {\n
-            // If the BIOS actually sets the values prior to boot, this would be\n
-            // how (maybe) to capture them.  My Envy does not have the capability\n
-            // to set brightness and I find these values are not set.\n
-            // The current value could also be in LEVL, and probably is even\n
-            // though OS X seems to manipulate only the low 16-bits of LEVX to\n
-            // change brightness.\n
-            // Because the low-order 16-bits are set to zero on the Envy, enabling\n
-            // this code causes a blank screen before the login screena appears.\n
-            //\n
-            //Store(LEVX, Local0)\n
-            //Store(ShiftRight(Local0,16), Local1)\n
-            //Store(And(Local0,0xFFFF), Local2)\n
-            //Divide(Multiply(Local2, 0xad9), Local1, Local0)\n
-            //Or(Local0, 0xad90000, Local0)\n
-            //\n
-            //REVIEW: wait for vblank to change things\n
-            //While(LEqual (P0BL, Local1)) {}\n
-            //\n
-            // This is part of the "keep startup level"...\n
-            // see comment above.\n
-            //Store(Local0, LEVX)\n
-            //\n
             // This 0xC value comes from looking what OS X initializes this\n
             // register to after display sleep (using ACPIDebug/ACPIPoller)\n
             Store(0xC0000000, LEVW)\n
-            // Because this laptop starts at full brightness, I just set it right\n
-            // here.  This is to insure _BQC and XBQC return the correct level\n
-            // at startup.\n
-            If (LMAX) { Store(Or(ShiftLeft(LMAX,16),LMAX), LEVX) }\n
-            Store(ShiftRight(LEVX,16), LMAX)\n
+            // determine LMAX to use\n
+            If (LNot(LMAX)) { Store(ShiftRight(LEVX,16), LMAX) }\n
             If (LNot(LMAX)) { Store(KMAX, LMAX) }\n
-            // Scale all the values in _BCL to the PWM max in use\n
-            Store(0, Local0)\n
-            While (LLess(Local0, SizeOf(_BCL)))\n
+            If (LNotEqual(LMAX, KMAX))\n
             {\n
-                Store(DerefOf(Index(_BCL,Local0)), Local1)\n
-                Divide(Multiply(Local1,LMAX), KMAX,, Local1)\n
-                Store(Local1, Index(_BCL,Local0))\n
-                Increment(Local0)\n
+                // Scale all the values in _BCL to the PWM max in use\n
+                Store(0, Local0)\n
+                While (LLess(Local0, SizeOf(_BCL)))\n
+                {\n
+                    Store(DerefOf(Index(_BCL,Local0)), Local1)\n
+                    Divide(Multiply(Local1,LMAX), KMAX,, Local1)\n
+                    Store(Local1, Index(_BCL,Local0))\n
+                    Increment(Local0)\n
+                }\n
+                // Also scale XRGL and XRGH values\n
+                Divide(Multiply(XRGL,LMAX), KMAX,, XRGL)\n
+                Divide(Multiply(XRGH,LMAX), KMAX,, XRGH)\n
             }\n
-            // Also scale XRGL and XRGH values\n
-            Divide(Multiply(XRGL,LMAX), KMAX,, XRGL)\n
-            Divide(Multiply(XRGH,LMAX), KMAX,, XRGH)\n
+            // adjust values to desired LMAX\n
+            Store(ShiftRight(LEVX,16), Local1)\n
+            If (LNotEqual(Local1, LMAX))\n
+            {\n
+                Store(And(LEVX,0xFFFF), Local0)\n
+                If (LOr(LNot(Local0),LNot(Local1))) { Store(LMAX, Local0) Store(LMAX, Local1) }\n
+                Divide(Multiply(Local0,LMAX), Local1,, Local0)\n
+                //REVIEW: wait for vblank before setting new PWM config\n
+                //Store(P0BL, Local7)\n
+                //While (LEqual (P0BL, Local7)) {}\n
+                Store(Or(Local0,ShiftLeft(LMAX,16)), LEVX)\n
+            }\n
         }\n
         // _BCM/_BQC: set/get for brightness level\n
         Method (_BCM, 1, NotSerialized)\n
