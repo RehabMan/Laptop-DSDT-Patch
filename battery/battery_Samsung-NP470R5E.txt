@@ -5,6 +5,7 @@
 
 # works for:
 #  Samsung NP470R5E
+#  Samsung NP370R5E
 #  Samsung ATIV 700T
 
 into method label B1B2 remove_entry;
