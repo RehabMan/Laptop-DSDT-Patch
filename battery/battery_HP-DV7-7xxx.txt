@@ -3,9 +3,11 @@
 
 # created by RehabMan 2013-10-16
 # created originally for pain1993
+# enhancements for 128-bit fields by SillyBillie 2014-12-11
 
 # works for:
 #  HP dv7-7302eg
+#  HP dv6-7040tx
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -105,9 +107,48 @@ into method label GBAT code_regex \(\^\^PCI0\.LPCB\.EC0\.BSC2, replaceall_matche
 into method label GBAT code_regex \(\^\^PCI0\.LPCB\.EC0\.BSC3, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BC30,^^PCI0.LPCB.EC0.BC31), end;
 into method label GBAT code_regex \(\^\^PCI0\.LPCB\.EC0\.BSC4, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BC40,^^PCI0.LPCB.EC0.BC41), end;
 
-# GBAT 128-bit (just remove)
-into method label GBAT code_regex Store\s+\(.*BSDN.* remove_matched;
-into method label GBAT code_regex Store\s+\(.*BSCH.* remove_matched;
-into method label GBAT code_regex Store\s+\(.*BSMN.* remove_matched;
-into method label GBAT code_regex Store\s+\(.*BSCN.* remove_matched;
+#For 128-Bit fields
+into scope label _SB.PCI0.LPCB.EC0 code_regex (BSMN,)\s+(128) replace_matched begin SMNX,%2,//%1%2 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex (BSDN,)\s+(128) replace_matched begin SDNX,%2,//%1%2 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex (BSCH,)\s+(128) replace_matched begin SCHX,%2,//%1%2 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex (BSCN,)\s+(128) replace_matched begin SCNX,%2,//%1%2 end;
+
+# utility methods to read/write buffers from/to EC
+into method label RE1B parent_label _SB.PCI0.LPCB.EC0 remove_entry;
+into method label RECB parent_label _SB.PCI0.LPCB.EC0 remove_entry;
+into scope label _SB.PCI0.LPCB.EC0 insert begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+// Arg1 - size of buffer in bits\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+#Replacing used 128-bits
+into method label GBIF code_regex \(BSMN, replaceall_matched begin (RECB(0xE0,128), end;
+into method label GBIF code_regex \(BSDN, replaceall_matched begin (RECB(0xE0,128), end;
+into method label GBIF code_regex \(BSCH, replaceall_matched begin (RECB(0xE0,128), end;
+into method label GBAT code_regex \(\^\^PCI0\.LPCB\.EC0\.BSMN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0xE0,128), end;
+into method label GBAT code_regex \(\^\^PCI0\.LPCB\.EC0\.BSDN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0xE0,128), end;
+into method label GBAT code_regex \(\^\^PCI0\.LPCB\.EC0\.BSCH, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0xE0,128), end;
+into method label GBAT code_regex \(\^\^PCI0\.LPCB\.EC0\.BSCN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0xE0,128), end;
+
+
 

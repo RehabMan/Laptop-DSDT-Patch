@@ -27,8 +27,9 @@
 [gfx]   Rename PCI0.VID to PCI0.IGPU	graphics/graphics_Rename-PCI0_VID.txt
 [gfx]   Rename PCI0.GFX0 to PCI0.IGPU	graphics/graphics_Rename-PCI0_GFX0.txt
 [gfx] == Disable Nvidia/Radeon	NullPatch.txt
-[gfx]   Disable from _REG (DSDT)	graphics/graphics_REG-disable.txt
+[gfx]   Cleanup/Fix Erros (SSDT)	graphics/graphics_SSDT-disable-cleanup.txt
 [gfx]   Disable from _INI (SSDT)	graphics/graphics_INI-disable.txt
+[gfx]   Disable from _REG (DSDT)	graphics/graphics_REG-disable.txt
 [gfx]   Disable/Enable on _WAK/_PTS (DSDT)	graphics/graphics_PTS_WAK-disable.txt
 [usb] == USB (ECHI) Patches	NullPatch.txt
 [usb]   6-series USB	usb/usb_6-series.txt
@@ -58,7 +59,7 @@
 [bat]  HP DV6t-6b00	battery/battery_HP-DV6t-6b00.txt
 [bat]  HP DV7-1120	battery/battery_HP-DV7-1120.txt
 [bat]  HP DV7-6xxx	battery/battery_HP-DV7-6xxx.txt
-[bat]  HP DV7-7xxx	battery/battery_HP-DV7-7xxx.txt
+[bat]  HP DV7-7xxx/DV6-7xxx	battery/battery_HP-DV7-7xxx.txt
 [bat]  HP Envy 14	battery/battery_HP-Envy-14.txt
 [bat]  HP Envy 17t	battery/battery_HP-Envy-17t.txt
 [bat]  HP Envy DV6	battery/battery_HP-Envy-DV6.txt
