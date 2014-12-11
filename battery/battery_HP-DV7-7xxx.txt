@@ -3,7 +3,7 @@
 
 # created by RehabMan 2013-10-16
 # created originally for pain1993
-# enhancements for 128-bit fields by SillyBillie 2014-12-11
+# enhancements for 128-bit fields by SilleBille 2014-12-11
 
 # works for:
 #  HP dv7-7302eg
