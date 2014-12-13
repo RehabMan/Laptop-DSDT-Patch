@@ -6,6 +6,7 @@
 
 # works for:
 #  Lenovo T440p
+#  Lenovo E540
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
@@ -27,6 +28,9 @@ Method (B1B4, 4, NotSerialized)\n
     Return(Local0)\n
 }\n
 end;
+
+into device label EC code_regex HWAK,\s+16, replace_matched begin HWK0,8,HWK1,8, end;
+into method label _L1D code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.HWK0,\\_SB.PCI0.LPC.EC.HWK1), end;
 
 into device label EC code_regex SBRC,\s+16, replace_matched begin BR00,8,BR01,8, end;
 into device label EC code_regex SBFC,\s+16, replace_matched begin BF00,8,BF01,8, end;
