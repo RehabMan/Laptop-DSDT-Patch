@@ -27,7 +27,7 @@
 [igpu] Rename PCI0.VID to PCI0.IGPU	graphics/graphics_Rename-PCI0_VID.txt
 [igpu] Rename PCI0.GFX0 to PCI0.IGPU	graphics/graphics_Rename-PCI0_GFX0.txt
 [gfx0] --> Disable Nvidia/Radeon	NullPatch.txt
-[gfx0] Cleanup/Fix Erros (SSDT)	graphics/graphics_SSDT-disable-cleanup.txt
+[gfx0] Cleanup/Fix Errors (SSDT)	graphics/graphics_SSDT-disable-cleanup.txt
 [gfx0] Disable from _INI (SSDT)	graphics/graphics_INI-disable.txt
 [gfx0] Disable from _REG (DSDT)	graphics/graphics_REG-disable.txt
 [gfx0] Disable/Enable on _WAK/_PTS (DSDT)	graphics/graphics_PTS_WAK-disable.txt

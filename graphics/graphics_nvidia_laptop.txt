@@ -11,6 +11,8 @@
 into method label _DSM parent_label PEGP remove_entry;
 into device name_adr 0 label PEGP insert
 begin
+Method(_DSM, 4, NotSerialized)\n
+{\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
