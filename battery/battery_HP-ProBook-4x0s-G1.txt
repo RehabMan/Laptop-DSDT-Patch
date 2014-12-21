@@ -8,6 +8,7 @@
 
 # Works for:
 #  HP ProBook 4x0s G1, others
+#  HP ProBook 4x0s G2, others
 
 # syntax fix
 
@@ -48,9 +49,18 @@ begin
 	Package(0x0F)\n
 end;
 
+# G1 series has two potential batteries (NBTI package is size 2)
 into all code_regex Name\s\(NBTI,\sPackage\s\(0x02\)\s+\{\s+Package\s\(0x0D\) replaceall_matched
 begin
 	Name (NBTI, Package(0x02)\n
+	{\n
+		Package(0x0F)\n
+end;
+
+# G2 series has three potential batteries (NBTI package is size 3)
+into all code_regex Name\s\(NBTI,\sPackage\s\(0x03\)\s+\{\s+Package\s\(0x0D\) replaceall_matched
+begin
+	Name (NBTI, Package(0x03)\n
 	{\n
 		Package(0x0F)\n
 end;
