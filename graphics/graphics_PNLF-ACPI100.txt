@@ -29,7 +29,7 @@ begin If(LOr(_OSI("Darwin"),_OSI("Windows 2006"))) end;
 
 
 into_all device label PNLF remove_entry;
-into definitionblock code_regex . insert
+into device name_adr 0x00020000 insert
 begin
 Device (PNLF)\n
 {\n
