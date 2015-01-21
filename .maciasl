@@ -70,6 +70,8 @@
 [bat] HP ProBook 4x0s G1	battery/battery_HP-ProBook-4x0s-G1.txt
 [bat] HP ProBook Generic	battery/battery_HP-ProBook-Generic.txt
 [bat] HP Spectre XT	battery/battery_HP-Spectre-XT.txt
+[bat] Lenovo G50-70	battery/battery_Lenovo-G50-70.txt
+[bat] Lenovo IdeaPad Yoga 13	battery/battery_Lenovo-Yoga-13.txt
 [bat] Lenovo T430u	battery/battery_Lenovo-T430u.txt
 [bat] Lenovo T440p	battery/battery_Lenovo-T440p.txt
 [bat] Lenovo Twist	battery/battery_Lenovo-Twist.txt
@@ -77,7 +79,8 @@
 [bat] Lenovo X220	battery/battery_Lenovo-X220.txt
 [bat] Lenovo y570	battery/battery_Lenovo-y570.txt
 [bat] Lenovo y580	battery/battery_Lenovo-y580.txt
-[bat] Lenovo IdeaPad Yoga 13	battery/battery_Lenovo-Yoga-13.txt
+[bat] Lenovo z470-z370	battery/battery_Lenovo-z470-z370.txt
+[bat] LG N450	battery/battery_LG-N450.txt
 [bat] Medion Akoya P6630	battery/battery_Medion-Akoya-P6630.txt
 [bat] Samsung Ativ Book 7	battery/battery_Samsung_NP730U3E_X04IT.txt
 [bat] Samsung NP470R5E	battery/battery_Samsung-NP470R5E.txt

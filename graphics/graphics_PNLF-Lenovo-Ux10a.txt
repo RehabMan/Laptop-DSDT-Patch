@@ -34,7 +34,7 @@ Device (PNLF)\n
     Name (_UID, 10)\n
     Name (_STA, 0x0B)\n
     //define hardware register access for brightness\n
-    // you can see BAR1 value in RW-Everything under Bus00,02 Intel VGA controler PCI\n
+    // lower nibble of BAR1 is status bits and not part of the address\n
     OperationRegion (BRIT, SystemMemory, And(^BAR1, Not(0xF)), 0xc8254)\n
     Field (BRIT, AnyAcc, Lock, Preserve)\n
     {\n

@@ -23,6 +23,7 @@
 #  ASUS F550L-X455H
 #  ASUS X53S
 #  ASUS K550JD-XX003H
+#  ASUS G53SX
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

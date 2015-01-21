@@ -120,10 +120,13 @@
 		84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout12.txt"; path = "audio/audio_HDEF-layout12.txt"; sourceTree = "<group>"; };
 		84FEF29C196D8B7D0061DF5A /* fix_PARSEOP_ZERO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PARSEOP_ZERO.txt; path = syntax/fix_PARSEOP_ZERO.txt; sourceTree = "<group>"; };
 		ED0EC5E41A01E9880021AD90 /* graphics_HD4600_yosemite.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_HD4600_yosemite.txt; path = graphics/graphics_HD4600_yosemite.txt; sourceTree = "<group>"; };
+		ED1F747B1A4C772200FFE7AE /* battery_Lenovo-z470-z370.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-z470-z370.txt"; path = "battery/battery_Lenovo-z470-z370.txt"; sourceTree = "<group>"; };
 		ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-13.txt"; path = "battery/battery_Lenovo-Yoga-13.txt"; sourceTree = "<group>"; };
 		ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Medion-Akoya-P6630.txt"; path = "battery/battery_Medion-Akoya-P6630.txt"; sourceTree = "<group>"; };
+		ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_LG-N450.txt"; path = "battery/battery_LG-N450.txt"; sourceTree = "<group>"; };
 		EDB15EEA1A34B10C009F0E21 /* graphics_PTS_WAK-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_PTS_WAK-disable.txt"; path = "graphics/graphics_PTS_WAK-disable.txt"; sourceTree = "<group>"; };
 		EDB280191A3A21BD002C47E1 /* graphics_nvidia_laptop2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_nvidia_laptop2.txt; path = graphics/graphics_nvidia_laptop2.txt; sourceTree = "<group>"; };
+		EDCCC2CB1A70148300C7301E /* battery_Lenovo-G50-70.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-G50-70.txt"; path = "battery/battery_Lenovo-G50-70.txt"; sourceTree = "<group>"; };
 		EDCD54641A2E10550009F438 /* graphics_REG-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_REG-disable.txt"; path = "graphics/graphics_REG-disable.txt"; sourceTree = "<group>"; };
 		EDCD54651A2E11EA0009F438 /* graphics_INI-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_INI-disable.txt"; path = "graphics/graphics_INI-disable.txt"; sourceTree = "<group>"; };
 		EDF0829E1A0BC52C00DD15A5 /* battery_Clevo-M860TU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-M860TU.txt"; path = "battery/battery_Clevo-M860TU.txt"; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 				84C3532419985DDE00005C20 /* battery_Lenovo-y570.txt */,
 				842F531F17FB301B001CF33B /* battery_Lenovo-y580.txt */,
 				ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */,
+				ED1F747B1A4C772200FFE7AE /* battery_Lenovo-z470-z370.txt */,
+				ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */,
 				ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */,
 				8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */,
 				842F532217FB3114001CF33B /* battery_Samsung-RF411.txt */,
@@ -271,6 +276,7 @@
 				843936A218ABC24200E32386 /* battery_TabletKiosk-i575.txt */,
 				84ACC1B118BAD88B001B61D8 /* battery_Toshiba-A660-16Z.txt */,
 				84C4E6821954F237009476EB /* battery_Vizio-Ultrabook-CT14.txt */,
+				EDCCC2CB1A70148300C7301E /* battery_Lenovo-G50-70.txt */,
 			);
 			name = "Battery Status";
 			sourceTree = "<group>";
