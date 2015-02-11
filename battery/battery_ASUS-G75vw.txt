@@ -10,6 +10,7 @@
 #  ASUS G750 JW (probably works for Asus G750 JX and JH also)
 #  ASUS PRO PU401LA
 #  ASUS K56CM
+#  ASUS Q550LF
 #  ASUS X450C
 #  ASUS X83vm-x1
 
