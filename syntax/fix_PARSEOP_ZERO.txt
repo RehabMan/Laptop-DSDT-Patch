@@ -5,3 +5,6 @@
 
 into device label PCI0 code_regex (\s+Zero){2,} removeall_matched;
 
+# if you need something more agressive...
+#into_all all code_regex (\s+Zero){2,} removeall_matched;
+#into device label PCI0 code_regex (\s+Zero){2,} removeall_matched;
