@@ -51,6 +51,7 @@
 		8436750118359126000618D0 /* battery_Acer-S7-391.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-S7-391.txt"; path = "battery/battery_Acer-S7-391.txt"; sourceTree = "<group>"; };
 		8436A57519152CE7004E19A7 /* battery_HP-DV6t-6b00.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV6t-6b00.txt"; path = "battery/battery_HP-DV6t-6b00.txt"; sourceTree = "<group>"; };
 		8437E5C21803BDD4006BB819 /* control_AcerFan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = control_AcerFan.txt; path = misc/control_AcerFan.txt; sourceTree = "<group>"; };
+		8437F2F71A89C5FF00224BFA /* battery_Surface-Pro-v3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v3.txt"; path = "battery/battery_Surface-Pro-v3.txt"; sourceTree = "<group>"; };
 		843936A218ABC24200E32386 /* battery_TabletKiosk-i575.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_TabletKiosk-i575.txt"; path = "battery/battery_TabletKiosk-i575.txt"; sourceTree = "<group>"; };
 		843A1C9518A52A4C00DB6154 /* battery_ASUS-G75vw.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_ASUS-G75vw.txt"; path = "battery/battery_ASUS-G75vw.txt"; sourceTree = "<group>"; };
 		843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Vostro-15xx.txt"; path = "battery/battery_Dell-Vostro-15xx.txt"; sourceTree = "<group>"; };
@@ -273,6 +274,7 @@
 				842F532417FB3114001CF33B /* battery_Sony-VAIO-S.txt */,
 				842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */,
 				84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */,
+				8437F2F71A89C5FF00224BFA /* battery_Surface-Pro-v3.txt */,
 				843936A218ABC24200E32386 /* battery_TabletKiosk-i575.txt */,
 				84ACC1B118BAD88B001B61D8 /* battery_Toshiba-A660-16Z.txt */,
 				84C4E6821954F237009476EB /* battery_Vizio-Ultrabook-CT14.txt */,

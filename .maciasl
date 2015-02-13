@@ -89,7 +89,8 @@
 [bat] Samsung Series3	battery/battery_Samsung-Series3-NP300.txt
 [bat] Sony VAIO S	battery/battery_Sony-VAIO-S.txt
 [bat] Sony VAIO SVE	battery/battery_Sony-VAIO-SVE1511.txt
-[bat] Surface v1	battery/battery_Surface-Pro-v1.txt
+[bat] Surface Pro v1	battery/battery_Surface-Pro-v1.txt
+[bat] Surface Pro v3	battery/battery_Surface-Pro-v3.txt
 [bat] TabletKiosk	battery/battery_TabletKiosk-i575.txt
 [bat] Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
 [bat] Vizio Ultrabook CT14	battery/battery_Vizio-Ultrabook-CT14.txt
