@@ -4,7 +4,7 @@
 [syn] Fix FPED Parse Error	syntax/fix_FPED.txt
 [syn] Fix _IRC Error	syntax/fix_IRC.txt
 [syn] Fix ADBG Error	syntax/fix_ADBG.txt
-[syn] Fix PARSEOP_STORE/MMTB Error	syntax/fix_MMTB.txt
+[syn] Fix PARSEOP_STORE/MMTB/HRPR Error	syntax/fix_MMTB.txt
 [syn] Fix *pnp/pnp lower case Error	syntax/fix_HID_pnp.txt
 [syn] Fix PARSEOP_ZERO Error	syntax/fix_PARSEOP_ZERO.txt
 [syn] Remove _DSM methods	syntax/remove_DSM.txt
@@ -70,6 +70,7 @@
 [bat] HP ProBook 4x0s G1	battery/battery_HP-ProBook-4x0s-G1.txt
 [bat] HP ProBook Generic	battery/battery_HP-ProBook-Generic.txt
 [bat] HP Spectre XT	battery/battery_HP-Spectre-XT.txt
+[bat] Lenovo E430	battery/battery_Lenovo-E430.txt
 [bat] Lenovo G50-70	battery/battery_Lenovo-G50-70.txt
 [bat] Lenovo IdeaPad Yoga 13	battery/battery_Lenovo-Yoga-13.txt
 [bat] Lenovo T430u	battery/battery_Lenovo-T430u.txt

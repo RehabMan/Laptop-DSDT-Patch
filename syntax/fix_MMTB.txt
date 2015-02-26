@@ -7,3 +7,8 @@
 #into method label _WAK code_regex (Store\s\(\\_GPE\.MMTB.*) replace_matched begin // %1 end;
 
 into_all method code_regex (Store\s\(\\_GPE\.MMTB.*) replaceall_matched begin // %1 end;
+
+# Also to fix HRPR which can reference MMTB in an OperationRegion definition
+
+into method label HRPR remove_entry;
+
