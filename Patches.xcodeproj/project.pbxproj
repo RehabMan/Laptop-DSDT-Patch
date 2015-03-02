@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		84019A2D1AA4D1B4006BA4B1 /* battery_Lenovo-Z50-70.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Z50-70.txt"; path = "battery/battery_Lenovo-Z50-70.txt"; sourceTree = "<group>"; };
 		84091BCF19CE1F4D00695D4C /* battery_HP-Pavilion-n012tx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Pavilion-n012tx.txt"; path = "battery/battery_HP-Pavilion-n012tx.txt"; sourceTree = "<group>"; };
 		840D7594184398D500160A94 /* battery_Gigabyte-u2442N.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Gigabyte-u2442N.txt"; path = "battery/battery_Gigabyte-u2442N.txt"; sourceTree = "<group>"; };
 		840E6D3117FB255B00784B2A /* fix_PLD.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PLD.txt; path = syntax/fix_PLD.txt; sourceTree = "<group>"; };
@@ -271,6 +272,7 @@
 				842F531F17FB301B001CF33B /* battery_Lenovo-y580.txt */,
 				ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */,
 				ED1F747B1A4C772200FFE7AE /* battery_Lenovo-z470-z370.txt */,
+				84019A2D1AA4D1B4006BA4B1 /* battery_Lenovo-Z50-70.txt */,
 				ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */,
 				ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */,
 				8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */,
