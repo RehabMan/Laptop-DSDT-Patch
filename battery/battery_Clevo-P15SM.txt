@@ -1,7 +1,7 @@
 #Maintained by: RehabMan for: Laptop Patches
 #battery_Clevo-P15SM.txt
 
-# created by RehaMan 2014-07-16
+# created by RehabMan 2014-07-16
 
 # works for:
 #  Clevo P15SM

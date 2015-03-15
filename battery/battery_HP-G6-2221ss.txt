@@ -14,6 +14,8 @@
 #  HP 14-b030tu
 #  HP 14-3100er
 #  HP G62 120eg
+#  HP Pavilion 17-e019dx
+#  HP Pavilion Sleekbook 14-b000de
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 

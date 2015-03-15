@@ -46,6 +46,7 @@
 [bat] ASUS N55SL/VivoBook	battery/battery_ASUS-N55SL.txt
 [bat] Clevo M860TU	battery/battery_Clevo-M860TU.txt
 [bat] Clevo P15SM	battery/battery_Clevo-P15SM.txt
+[bat] Clevo W170HN	battery/battery_Clevo-W170HN.txt
 [bat] Compaq CQ60	battery/battery_Compaq-CQ60.txt
 [bat] Dell Insprion 13z	battery/battery_Dell-Inspiron-13z.txt
 [bat] Dell Vostro 15xx	battery/battery_Dell-Vostro-15xx.txt
@@ -79,8 +80,10 @@
 [bat] Lenovo Ux10-Z580	battery/battery_Lenovo-Ux10-Z580.txt
 [bat] Lenovo X201	battery/battery_Lenovo-X201.txt
 [bat] Lenovo X220	battery/battery_Lenovo-X220.txt
+[bat] Lenovo Y510p	battery/battery_Lenovo-y510p.txt
 [bat] Lenovo y570	battery/battery_Lenovo-y570.txt
 [bat] Lenovo y580	battery/battery_Lenovo-y580.txt
+[bat] Lenovo Yoga S1	battery/battery_Lenovo-Yoga-S1.txt
 [bat] Lenovo z470-z370	battery/battery_Lenovo-z470-z370.txt
 [bat] Lenovo Z50-70	battery/battery_Lenovo-Z50-70.txt
 [bat] LG N450	battery/battery_LG-N450.txt
