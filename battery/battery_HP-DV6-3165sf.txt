@@ -62,7 +62,7 @@ into device label EC0 code_regex SMW0,\s+16 replace_matched begin SMWX,8,SMWY,8 
 into device label EC0 code_regex BADC,\s+16 replace_matched begin ADC0,8,ADC1,8 end;
 into device label EC0 code_regex BADV,\s+16 replace_matched begin ADV0,8,ADV1,8 end;
 
-# deal with 65-bit FLD0
+# deal with 64-bit FLD0
 into device label EC0 code_regex FLD0,\s+64 replace_matched 
 begin
 //FLD0, 64,\n
