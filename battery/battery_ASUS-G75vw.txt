@@ -15,6 +15,7 @@
 #  ASUS X83vm-x1
 #  ASUS F550L
 #  ASUS N551 (per shutt1e)
+#  ASUS T300LA-DH51T (per maromi)
 
 #Convert 16 bit to 8 bit registers
 into device label EC0 code_regex TAH0,\s+16, replace_matched begin AH00,8,AH01,8, end;
@@ -101,6 +102,8 @@ into method label WMNB code_regex \^\^PCI0\.LPCB\.EC0\.B1FC\), replaceall_matche
 into_all method code_regex \^\^LPCB\.EC0\.B0DV, replaceall_matched begin B1B2(^^LPCB.EC0.B0D2,^^LPCB.EC0.B0D3), end;
 into_all method code_regex \^\^LPCB\.EC0\.B1DV, replaceall_matched begin B1B2(^^LPCB.EC0.B1D2,^^LPCB.EC0.B1D3), end;
 
+# added for T300LA-DH51T
+into method label OLPM code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.B0DC, replace_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.B0D0,\\_SB.PCI0.LPCB.EC0.B0D1), end;
 
 
 #G750JW requires this fix to compile
