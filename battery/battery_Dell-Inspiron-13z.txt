@@ -6,6 +6,7 @@
 # works for:
 #  Dell Inspiron 13z i13Z-3636sLV
 #  Dell Vostro 3750, per 459below
+#  Dell Inspiron 17 (N7110), per scififan68
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
