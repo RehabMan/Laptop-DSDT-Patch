@@ -19,6 +19,10 @@
 #
 # See system_WAK2.txt for an alternate patch
 #
+# Note regarding Yosemite:
+#  At least in Yosemite 10.10.2, this bug appears to be fixed.
+#  I didn't notice/verify on other versions of Yosemite
+#
 
 into method label _WAK code_regex \s*(.?WAK\s+\([^)]*\)) replace_matched
 begin
