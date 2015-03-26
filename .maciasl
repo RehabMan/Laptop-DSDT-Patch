@@ -115,7 +115,8 @@
 [sys] Shutdown Fix	system/system_Shutdown.txt
 [sys] Shutdown Fix v2	system/system_Shutdown2.txt
 [sys] HPET Fix	system/system_HPET.txt
-[sys] OS Check Fix	system/system_OSYS.txt
+[sys] OS Check Fix (Windows Vista)	system/system_OSYS.txt
+[sys] OS Check Fix (Windows 8)	system/system_OSYS_win8.txt
 [sys] AC Adapter Fix	system/system_ADP1.txt
 [sys] Add MCHC	system/system_MCHC.txt
 [sys] Fix _WAK Arg0 v1	system/system_WAK1.txt

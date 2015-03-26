@@ -34,6 +34,7 @@
 		8427D28F188ECAD900AF8C9C /* battery_HP-G62-B13SL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-G62-B13SL.txt"; path = "battery/battery_HP-G62-B13SL.txt"; sourceTree = "<group>"; };
 		8428802A1884C20900F8DE3A /* graphics_PNLF_haswell.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_PNLF_haswell.txt; path = graphics/graphics_PNLF_haswell.txt; sourceTree = "<group>"; };
 		842AF6E419CB3D2F00309DAD /* battery_Lenovo-T440p.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-T440p.txt"; path = "battery/battery_Lenovo-T440p.txt"; sourceTree = "<group>"; };
+		842BE3591AC4A04E0007070D /* system_OSYS_win8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_OSYS_win8.txt; path = system/system_OSYS_win8.txt; sourceTree = "<group>"; };
 		842F531617FB301B001CF33B /* battery_Acer-Aspire-4830T.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-4830T.txt"; path = "battery/battery_Acer-Aspire-4830T.txt"; sourceTree = "<group>"; };
 		842F531717FB301B001CF33B /* battery_Acer-Aspire-5750g.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-5750g.txt"; path = "battery/battery_Acer-Aspire-5750g.txt"; sourceTree = "<group>"; };
 		842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_ASUS-N55SL.txt"; path = "battery/battery_ASUS-N55SL.txt"; sourceTree = "<group>"; };
@@ -195,6 +196,7 @@
 				84F6F0F718ADD011007F5EF7 /* system_Shutdown2.txt */,
 				846576DA1806D6DC00AB21B7 /* system_HPET.txt */,
 				84F5D32C1806FCC90013F884 /* system_OSYS.txt */,
+				842BE3591AC4A04E0007070D /* system_OSYS_win8.txt */,
 				84D170BD180971C500A4C748 /* system_ADP1.txt */,
 				84AE72BE180DBA4700E29861 /* system_MCHC.txt */,
 				8410973618108F8000829904 /* system_WAK1.txt */,
