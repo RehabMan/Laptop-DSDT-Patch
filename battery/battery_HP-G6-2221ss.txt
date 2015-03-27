@@ -17,6 +17,7 @@
 #  HP Pavilion 17-e019dx
 #  HP Pavilion Sleekbook 14-b000de
 #  HP Envy 15t (Haswell, per faithie999)
+#  HP Pavilion 15-p199sa (per TashDev)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
@@ -28,7 +29,7 @@ end;
 
 #                        SMD0,   256, 
 #                        BFCC,   16, 
-#                        MCUR,   16, 
+#                        MCUR,   16, f
 #                        MBRM,   16, 
 #                        MBCV,   16, 
 #                        SMW0,   16
