@@ -6,6 +6,7 @@
 
 # works for:
 #  Acer Aspire E1-571
+#  Acer Aspire V5-171-6675 (per shinzon)
 #  Gateway NE56R49U
 #  Dell Precision M3800
 
