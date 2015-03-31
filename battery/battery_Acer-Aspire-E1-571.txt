@@ -74,13 +74,13 @@ into method label FANG code_regex \(ERIB, replaceall_matched begin (B1B2(IB00,IB
 into method label FANW code_regex \(ERIB, replaceall_matched begin (B1B2(IB00,IB01), end;
 into method label FANG code_regex Store\s+\((.*),\s+ERIB\) replaceall_matched
 begin
-Store(ShiftRight(%1,8),IB01)
 Store(%1,IB00)
+Store(ShiftRight(%1,8),IB01)
 end;
 into method label FANW code_regex Store\s+\((.*),\s+ERIB\) replaceall_matched
 begin
-Store(ShiftRight(%1,8),IB01)
 Store(%1,IB00)
+Store(ShiftRight(%1,8),IB01)
 end;
 
 # 256-bit register fixes (SMD0)

@@ -41,12 +41,12 @@ into device label EC0 code_regex BACV,\s+16 replace_matched begin ACV0,8,ACV1,8 
 # fan 16-bit
 into method label FANG code_regex Store\s+\(Arg0,\s+ENIB\) replace_matched 
 begin
-Store(ShiftRight(Arg0, 8), ENI1) Store(Arg0, ENI0)
+Store(Arg0, ENI0) Store(ShiftRight(Arg0, 8), ENI1)
 end;
 
 into method label FANW code_regex Store\s+\(Arg0,\s+ENIB\) replace_matched
 begin
-Store(ShiftRight(Arg0, 8), ENI1) Store(Arg0, ENI0)
+Store(Arg0, ENI0) Store(ShiftRight(Arg0, 8), ENI1)
 end;
 
 # _BIF 16-bit

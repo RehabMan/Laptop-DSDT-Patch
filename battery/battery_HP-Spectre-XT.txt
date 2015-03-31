@@ -29,11 +29,11 @@
 into device label EC0 code_regex ERIB,\s+16 replace_matched begin ERI0,8,ERI1,8 end;
 into method label FANG code_regex Store\s+\(Arg0,\s+ERIB\) replace_matched 
 begin
-Store(ShiftRight(Arg0, 8), ERI1) Store(Arg0, ERI0)
+Store(Arg0, ERI0) Store(ShiftRight(Arg0, 8), ERI1)
 end;
 into method label FANW code_regex Store\s+\(Arg0,\s+ERIB\) replace_matched
 begin
-Store(ShiftRight(Arg0, 8), ERI1) Store(Arg0, ERI0)
+Store(Arg0, ERI0) Store(ShiftRight(Arg0, 8), ERI1)
 end;
 
 # utility methods to read/write buffers from/to EC

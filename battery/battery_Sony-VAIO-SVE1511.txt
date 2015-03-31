@@ -32,14 +32,14 @@ into method label SELE code_regex \(BATD, replaceall_matched begin (B1B2(BTD0,BT
 into method label SMRW code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.SMW0, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SM00,\\_SB.PCI0.LPCB.EC0.SM01), end;
 into method label SMRW code_regex Store\s+\(Arg3,\s+\\_SB\.PCI0\.LPCB\.EC0\.SMW0\) replaceall_matched
 begin
-Store (ShiftRight(Arg3, 8), \\_SB.PCI0.LPCB.EC0.SM01)
 Store (Arg3, \\_SB.PCI0.LPCB.EC0.SM00)
+Store (ShiftRight(Arg3, 8), \\_SB.PCI0.LPCB.EC0.SM01)
 end;
 
 into method label SMWR code_regex Store\s+\(Arg3,\s+SMW0\) replaceall_matched
 begin
-Store (ShiftRight(Arg3, 8), SM01)
 Store (Arg3, SM00)
+Store (ShiftRight(Arg3, 8), SM01)
 end;
 
 into method label SMRD code_regex \(SMW0, replaceall_matched begin (B1B2(SM00,SM01), end;
@@ -51,20 +51,20 @@ into method label _STA parent_label BAT0 code_regex \(\^\^PCI0\.LPCB\.EC0\.BATD,
 
 into method label SN02 code_regex Store\s+\(Local1,\s+\^\^EC0\.ENCR\) replaceall_matched
 begin
-Store (ShiftRight(Local1, 8), ^^EC0.ENC1)
 Store (Local1, ^^EC0.ENC0)
+Store (ShiftRight(Local1, 8), ^^EC0.ENC1)
 end;
 
 into method label SN03 code_regex Store\s+\(Local1,\s+\^\^EC0\.ENCR\) replaceall_matched
 begin
-Store (ShiftRight(Local1, 8), ^^EC0.ENC1)
 Store (Local1, ^^EC0.ENC0)
+Store (ShiftRight(Local1, 8), ^^EC0.ENC1)
 end;
 
 into method label STEC code_regex Store\s+\(Arg1,\s+ENCR\) replaceall_matched
 begin
-Store (ShiftRight(Arg1, 8), ENC1)
 Store (Arg1, ENC0)
+Store (ShiftRight(Arg1, 8), ENC1)
 end;
 
 

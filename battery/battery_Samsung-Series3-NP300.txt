@@ -54,7 +54,7 @@ into method label _WAK code_regex \(\\_SB\.PCI0\.LPCB\.H_EC\.B1DF, replaceall_ma
 
 into method label _BTP code_regex Store\s+\(Local0,\s+BTPC\) replaceall_matched 
 begin
-   Store(ShiftRight(Local0, 8),BPC1)\n
-   Store(Local0, BPC0)\n
+    Store(Local0, BPC0)\n
+    Store(ShiftRight(Local0, 8),BPC1)\n
 end;
 

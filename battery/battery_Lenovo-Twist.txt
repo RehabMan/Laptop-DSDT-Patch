@@ -146,6 +146,6 @@ into method label _WAK code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.HWAK, replaceall_mat
 
 into method label _WAK code_regex Store\s+\(([^,].*),\s+\\_SB\.PCI0\.LPCB\.EC0\.HWAK\) replaceall_matched
 begin
-Store(ShiftRight(%1,8), \\_SB.PCI0.LPCB.EC0.HWK1) Store(%1, \\_SB.PCI0.LPCB.EC0.HWK0)
+Store(%1, \\_SB.PCI0.LPCB.EC0.HWK0) Store(ShiftRight(%1,8), \\_SB.PCI0.LPCB.EC0.HWK1)
 end;
 

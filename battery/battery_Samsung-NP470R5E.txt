@@ -57,5 +57,5 @@ into method label SBIX code_regex \(\^\^PCI0\.LPCB\.H_EC\.CYLC, replace_matched 
 
 into method label _BTP code_regex Store\s\((.*),\s\^\^PCI0\.LPCB\.H_EC\.BTPC\) replace_matched
 begin 
-Store(ShiftRight(%1,8), ^^PCI0.LPCB.H_EC.BPC1) Store(%1, ^^PCI0.LPCB.H_EC.BPC1)
+Store(%1, ^^PCI0.LPCB.H_EC.BPC0) Store(ShiftRight(%1,8), ^^PCI0.LPCB.H_EC.BPC1)
 end;
