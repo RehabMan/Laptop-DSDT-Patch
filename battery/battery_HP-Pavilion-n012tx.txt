@@ -6,6 +6,7 @@
 # Works for:
 #  HP Pavilion n012tx
 #  HP Envy 15t-k100 (per bechhamba07)
+#  HP X360 (Haswell) (per lx86)
 
 
 into method label B1B2 remove_entry;
