@@ -5,6 +5,7 @@
 
 # works for:
 #  Dell Inspiron 15 7000 Series (late 2014)
+#  Dell Inspiron 14 7000 Series (14-7447 confirmed, courtesy isnowbee)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

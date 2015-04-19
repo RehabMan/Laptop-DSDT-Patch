@@ -12,6 +12,7 @@
 #  Lenovo T440s
 #  Lenovo T60
 #  Lenovo T61 (courtesy Gringo Vermelho)
+#  Lenovo Thinkpad X1 Carbon, 3rd gen 20BS (per jcsnider)
 
 # Note: disable secondary battery
 #  *** remove this line if you have a second battery installed)
