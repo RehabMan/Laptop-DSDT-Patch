@@ -108,7 +108,7 @@
 [misc] --> Fan control/temperature/LID status patches	NullPatch.txt
 [misc] Acer Aspire fan control	misc/control_AcerFan.txt
 [misc] Poll for LID changes	misc/misc_LidPoll.txt
-[misc] Remove LID0._PRW	misc/misc_Lid_PRW.txt
+[misc] Remove _PRW from LID	misc/misc_Lid_PRW.txt
 [sys] --> System Patches	NullPatch.txt
 [sys] IRQ Fix	system/system_IRQ.txt
 [sys] SMBUS Fix	system/system_SMBUS.txt

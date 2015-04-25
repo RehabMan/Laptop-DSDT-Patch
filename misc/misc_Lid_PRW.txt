@@ -9,4 +9,6 @@
 # Also note with this patch, wakeup via lid will be disabled.
 #
 
-into device label LID0 code_regex Name\s+\(_PRW,[\s\S]*\}\) remove_matched;
+# remove either _PRW Method or _PRW Name from PNP0C0D (ACPI LID)
+into method label _PRW parent_hid PNP0C0D remove_entry;
+into device name_hid PNP0C0D code_regex Name\s+\(_PRW,[\s\S]*\}\) remove_matched;
