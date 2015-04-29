@@ -10,6 +10,7 @@
 #  Samsung Q430
 #  Samsung R480 (NP-R480-JS04AR)
 #  Samsung Series 5 NP530U3B
+#  Samsung Series 3 NP300E5C-A09US
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
