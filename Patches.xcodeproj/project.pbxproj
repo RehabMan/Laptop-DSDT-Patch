@@ -130,6 +130,7 @@
 		ED2A1F171AB32E770024D58C /* battery_Lenovo-y510p.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-y510p.txt"; path = "battery/battery_Lenovo-y510p.txt"; sourceTree = "<group>"; };
 		ED40F7221AF1323E00F0B970 /* battery_Lenovo-ThinkPad-W550s.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-ThinkPad-W550s.txt"; path = "battery/battery_Lenovo-ThinkPad-W550s.txt"; sourceTree = "<group>"; };
 		ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Medion-Akoya-P6630.txt"; path = "battery/battery_Medion-Akoya-P6630.txt"; sourceTree = "<group>"; };
+		ED5EDD851AF50EE4008F32DE /* battery_Dell-Studio-1558.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Studio-1558.txt"; path = "battery/battery_Dell-Studio-1558.txt"; sourceTree = "<group>"; };
 		ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_LG-N450.txt"; path = "battery/battery_LG-N450.txt"; sourceTree = "<group>"; };
 		ED7FB8091AA8BCD20077FD6D /* battery_Clevo-W170HN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-W170HN.txt"; path = "battery/battery_Clevo-W170HN.txt"; sourceTree = "<group>"; };
 		ED894A2C1AA779BC00D72637 /* battery_Lenovo-Yoga-S1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-S1.txt"; path = "battery/battery_Lenovo-Yoga-S1.txt"; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 				842F531917FB301B001CF33B /* battery_Compaq-CQ60.txt */,
 				842525F519CDBD01009FA9D7 /* battery_Dell-Inspiron-13z.txt */,
 				ED2050221AD1124600E60CD2 /* battery_Dell-Inspiron-15-7xxx.txt */,
+				ED5EDD851AF50EE4008F32DE /* battery_Dell-Studio-1558.txt */,
 				843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */,
 				842F531A17FB301B001CF33B /* battery_Dell-XPS-13.txt */,
 				84D447031836DA1B006B6FEA /* battery_Dell-XPS-18.txt */,
