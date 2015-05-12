@@ -8,6 +8,7 @@
 [syn] Fix *pnp/pnp lower case Error	syntax/fix_HID_pnp.txt
 [syn] Fix PARSEOP_ZERO Error	syntax/fix_PARSEOP_ZERO.txt
 [syn] Remove _DSM methods	syntax/remove_DSM.txt
+[syn] Remove _PSS placeholders	syntax/fix_PSS.txt
 [igpu] --> Intel Graphics Patches	NullPatch.txt
 [igpu] HD3000 Low Resolution	graphics/graphics_HD3K_low.txt
 [igpu] HD3000 High Resolution	graphics/graphics_HD3K_high.txt
@@ -26,6 +27,7 @@
 [igpu] Rename VID/ADP1 to IGPU	graphics/graphics_Rename-VID_AGP1.txt
 [igpu] Rename PCI0.VID to PCI0.IGPU	graphics/graphics_Rename-PCI0_VID.txt
 [igpu] Rename PCI0.GFX0 to PCI0.IGPU	graphics/graphics_Rename-PCI0_GFX0.txt
+[igpu] Rename B0D3 to HDAU	graphics/graphics_Rename-B0D3.txt
 [gfx0] --> Disable Nvidia/Radeon	NullPatch.txt
 [gfx0] Cleanup/Fix Errors (SSDT)	graphics/graphics_SSDT-disable-cleanup.txt
 [gfx0] Disable from _INI (SSDT)	graphics/graphics_INI-disable.txt
@@ -35,6 +37,8 @@
 [usb] 6-series USB	usb/usb_6-series.txt
 [usb] 7-series/8-series USB	usb/usb_7-series.txt
 [usb] 7-series USB3 Multiplex	usb/usb_7-series-multiplex.txt
+[usb] USB3 _PRW(0x6D) and Rename XHC to XHC1	usb/usb_prw_0x6d_xhc.txt
+[usb] USB3 _PRW(0x0D) and Rename XHC to XHC1	usb/usb_prw_0x0d_xhc.txt
 [bat] --> Battery Patches	NullPatch.txt
 [bat] Acer Aspire E1-571	battery/battery_Acer-Aspire-E1-571.txt
 [bat] Acer 3820tg	battery/battery_Acer-3820tg.txt
@@ -125,6 +129,7 @@
 [sys] Add MCHC	system/system_MCHC.txt
 [sys] Fix _WAK Arg0 v1	system/system_WAK1.txt
 [sys] Fix _WAK Arg0 v2	system/system_WAK2.txt
+[sys] Fix _WAK IAOE	system/system_IAOE.txt
 [sys] Fix Mutex with non-zero SyncLevel	system/system_Mutex.txt
 [sys] Fix PNOT/PPNT	system/system_PNOT.txt
 [sys] Add IMEI	system/system_IMEI.txt

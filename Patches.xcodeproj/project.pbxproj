@@ -142,6 +142,11 @@
 		EDCD54641A2E10550009F438 /* graphics_REG-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_REG-disable.txt"; path = "graphics/graphics_REG-disable.txt"; sourceTree = "<group>"; };
 		EDCD54651A2E11EA0009F438 /* graphics_INI-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_INI-disable.txt"; path = "graphics/graphics_INI-disable.txt"; sourceTree = "<group>"; };
 		EDDD15E51A72C7C80093ACE1 /* graphics_nvidia_gt520m.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_nvidia_gt520m.txt; sourceTree = "<group>"; };
+		EDE3BCB71B018ED700475630 /* fix_PSS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PSS.txt; path = syntax/fix_PSS.txt; sourceTree = "<group>"; };
+		EDE3BCB81B018F8800475630 /* usb_prw_0x6d_xhc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x6d_xhc.txt; path = usb/usb_prw_0x6d_xhc.txt; sourceTree = "<group>"; };
+		EDE3BCB91B018FCF00475630 /* usb_prw_0x0d_xhc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x0d_xhc.txt; path = usb/usb_prw_0x0d_xhc.txt; sourceTree = "<group>"; };
+		EDE3BCBA1B01900700475630 /* system_IAOE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_IAOE.txt; path = system/system_IAOE.txt; sourceTree = "<group>"; };
+		EDE3BCBB1B01904E00475630 /* graphics_Rename-B0D3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-B0D3.txt"; path = "graphics/graphics_Rename-B0D3.txt"; sourceTree = "<group>"; };
 		EDF0829E1A0BC52C00DD15A5 /* battery_Clevo-M860TU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-M860TU.txt"; path = "battery/battery_Clevo-M860TU.txt"; sourceTree = "<group>"; };
 		EDFBE3951A3767DF00F61E48 /* graphics_SSDT-disable-cleanup.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_SSDT-disable-cleanup.txt"; path = "graphics/graphics_SSDT-disable-cleanup.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +165,7 @@
 				84CAF68C1926C305000EF232 /* fix_HID_pnp.txt */,
 				8475976F1943A347009F3026 /* remove_DSM.txt */,
 				84FEF29C196D8B7D0061DF5A /* fix_PARSEOP_ZERO.txt */,
+				EDE3BCB71B018ED700475630 /* fix_PSS.txt */,
 			);
 			name = "Syntax Errors";
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				84EF939D18916DED0027D192 /* graphics_PNLF-Lenovo-Ux10a.txt */,
 				84EF939E189175440027D192 /* graphics_PNLF-Lenovo-Ux10b.txt */,
 				84A7391A19464C0E000B4B6E /* graphics_PNLF-ACPI100.txt */,
+				EDE3BCBB1B01904E00475630 /* graphics_Rename-B0D3.txt */,
 			);
 			name = "Intel Graphics";
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 				8498961A1811D4A80086DF6C /* system_Mutex.txt */,
 				843F7BE518B901CB00567F87 /* system_PNOT.txt */,
 				841978D1191C77880045C15B /* system_IMEI.txt */,
+				EDE3BCBA1B01900700475630 /* system_IAOE.txt */,
 			);
 			name = System;
 			sourceTree = "<group>";
@@ -326,6 +334,8 @@
 				84F42CD51809F576003AE042 /* usb_6-series-id.txt */,
 				84F42CD61809F585003AE042 /* usb_7-series-id.txt */,
 				849B7B29180B859900B76D3C /* usb_7-series-multiplex.txt */,
+				EDE3BCB81B018F8800475630 /* usb_prw_0x6d_xhc.txt */,
+				EDE3BCB91B018FCF00475630 /* usb_prw_0x0d_xhc.txt */,
 			);
 			name = "USB (EHCI-XHCI)";
 			sourceTree = "<group>";
