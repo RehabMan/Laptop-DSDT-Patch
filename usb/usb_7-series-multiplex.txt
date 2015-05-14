@@ -25,17 +25,17 @@ Method (_OSC, 4, Serialized)\n
 	CreateDWordField (Local0, Zero, CDW1)\n
 	CreateDWordField (Local0, 0x04, CDW2)\n
 	CreateDWordField (Local0, 0x08, CDW3)\n
-	Store (CDW2, SUPP)\n
-	Store (CDW3, CTRL)\n
+    //was: Store (CDW2, SUPP)\n
+    Store (CDW3, Local3) //was: Store (CDW3, CTRL))\n
     If (LAnd (LEqual (Arg0, GUID), NEXP))\n
     {\n
         If (Not (And (CDW1, One)))\n
         {\n
-            If (And (CTRL, 0x02))\n
+            If (And (Local3, 0x02)) //was: And (CTRL, 0x02)\n
             {\n
                 NHPG ()\n
             }\n
-            If (And (CTRL, 0x04))\n
+            If (And (Local3, 0x04)) //was: And (CTRL, 0x04)\n
             {\n
                 NPME ()\n
             }\n
@@ -44,12 +44,12 @@ Method (_OSC, 4, Serialized)\n
         {\n
             Or (CDW1, 0x08, CDW1)\n
         }\n
-        If (LNotEqual (CDW3, CTRL))\n
+        If (LNotEqual (CDW3, Local3)) //was: LNotEqual (CDW3, CTRL)\n
         {\n
             Or (CDW1, 0x10, CDW1)\n
         }\n
-        Store (CTRL, CDW3)\n
-        Store (CTRL, OSCC)\n
+        Store (Local3, CDW3) //was: Store(CTRL, CDW3)\n
+        Store (Local3, OSCC) //was: Store(CTRL, OSCC)\n
     }\n
     Else\n
     {\n
