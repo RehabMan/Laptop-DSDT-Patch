@@ -8,6 +8,7 @@
 #  Sony VAIO SVE15117FDB
 #  Sony VPEH26EN
 #  Sony VPCEH3N6E
+#  Sony VAIO SVE1513AYCW (per giveup@github)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
