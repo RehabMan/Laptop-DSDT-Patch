@@ -13,6 +13,7 @@
 #  Lenovo T60
 #  Lenovo T61 (courtesy Gringo Vermelho)
 #  Lenovo Thinkpad X1 Carbon, 3rd gen 20BS (per jcsnider)
+#  Lenovo L450 (tested by kaiomatico)
 
 # Note: disable secondary battery
 #  *** remove this line if you have a second battery installed)
@@ -189,4 +190,12 @@ into method label _L18 parent_label \_GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWA
 into_all all code_regex \(HWAC, replaceall_matched begin (B1B2(WAC0,WAC1), end;
 into_all all code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAC0,\\_SB.PCI0.LPC.EC.WAC1), end;
 into_all all code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAC0,\\_SB.PCI0.LPC.EC.WAC1), end;
+
+# sleep releated L450
+into_all all code_regex \(HWAK, replaceall_matched begin (B1B2(WAC0,WAC1), end;
+into_all all code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;
+into_all all code_regex Store\s+\((.*),\s\\_SB\.PCI0\.LPC\.EC\.HWAK\) replaceall_matched
+begin
+Store(%1, \\_SB.PCI0.LPC.EC.WAK0) Store(ShiftRight(%1,8), \\_SB.PCI0.LPC.EC.WAK1)
+end;
 
