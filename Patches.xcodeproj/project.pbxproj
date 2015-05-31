@@ -133,6 +133,7 @@
 		ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Medion-Akoya-P6630.txt"; path = "battery/battery_Medion-Akoya-P6630.txt"; sourceTree = "<group>"; };
 		ED5EDD851AF50EE4008F32DE /* battery_Dell-Studio-1558.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Studio-1558.txt"; path = "battery/battery_Dell-Studio-1558.txt"; sourceTree = "<group>"; };
 		ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_LG-N450.txt"; path = "battery/battery_LG-N450.txt"; sourceTree = "<group>"; };
+		ED75B6701B1B6EBA002D6468 /* battery_Lenovo-Y50.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Y50.txt"; path = "battery/battery_Lenovo-Y50.txt"; sourceTree = "<group>"; };
 		ED7FB8091AA8BCD20077FD6D /* battery_Clevo-W170HN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-W170HN.txt"; path = "battery/battery_Clevo-W170HN.txt"; sourceTree = "<group>"; };
 		ED894A2C1AA779BC00D72637 /* battery_Lenovo-Yoga-S1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-S1.txt"; path = "battery/battery_Lenovo-Yoga-S1.txt"; sourceTree = "<group>"; };
 		ED8A1AB61AA38DD70019A7F4 /* battery_Lenovo-X201.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-X201.txt"; path = "battery/battery_Lenovo-X201.txt"; sourceTree = "<group>"; };
@@ -292,6 +293,7 @@
 				ED40F7221AF1323E00F0B970 /* battery_Lenovo-ThinkPad-W550s.txt */,
 				ED8A1AB61AA38DD70019A7F4 /* battery_Lenovo-X201.txt */,
 				842F531D17FB301B001CF33B /* battery_Lenovo-X220.txt */,
+				ED75B6701B1B6EBA002D6468 /* battery_Lenovo-Y50.txt */,
 				ED2A1F171AB32E770024D58C /* battery_Lenovo-y510p.txt */,
 				84C3532419985DDE00005C20 /* battery_Lenovo-y570.txt */,
 				842F531F17FB301B001CF33B /* battery_Lenovo-y580.txt */,
