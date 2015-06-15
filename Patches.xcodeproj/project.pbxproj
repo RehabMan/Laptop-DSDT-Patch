@@ -60,6 +60,7 @@
 		843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Vostro-15xx.txt"; path = "battery/battery_Dell-Vostro-15xx.txt"; sourceTree = "<group>"; };
 		843F7BE518B901CB00567F87 /* system_PNOT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_PNOT.txt; path = system/system_PNOT.txt; sourceTree = "<group>"; };
 		8440626619C48B3400EAC8CF /* battery_HP-Folio-13-1010es.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Folio-13-1010es.txt"; path = "battery/battery_HP-Folio-13-1010es.txt"; sourceTree = "<group>"; };
+		8441FAEB1B2E84A5004CFC38 /* battery_Lenovo-X230i.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-X230i.txt"; path = "battery/battery_Lenovo-X230i.txt"; sourceTree = "<group>"; };
 		844FAA1318A680B4001F2C6C /* fix_ADBG.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_ADBG.txt; path = syntax/fix_ADBG.txt; sourceTree = "<group>"; };
 		8455C5E01809953B00F919D7 /* fix_IRC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_IRC.txt; path = syntax/fix_IRC.txt; sourceTree = "<group>"; };
 		845A0C2419322B0F005001DE /* battery_Gateway-ID49C07u.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Gateway-ID49C07u.txt"; path = "battery/battery_Gateway-ID49C07u.txt"; sourceTree = "<group>"; };
@@ -294,6 +295,7 @@
 				ED40F7221AF1323E00F0B970 /* battery_Lenovo-ThinkPad-W550s.txt */,
 				ED8A1AB61AA38DD70019A7F4 /* battery_Lenovo-X201.txt */,
 				842F531D17FB301B001CF33B /* battery_Lenovo-X220.txt */,
+				8441FAEB1B2E84A5004CFC38 /* battery_Lenovo-X230i.txt */,
 				ED75B6701B1B6EBA002D6468 /* battery_Lenovo-Y50.txt */,
 				ED2A1F171AB32E770024D58C /* battery_Lenovo-y510p.txt */,
 				84C3532419985DDE00005C20 /* battery_Lenovo-y570.txt */,
