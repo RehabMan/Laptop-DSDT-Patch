@@ -12,6 +12,7 @@
 #  HP dv5-1030el, courtesy information from matti157
 #  HP G62-400 CTO, courtesy information from mnfesq
 #  HP G62-120eg, courtesy information from affe1980
+#  Compaq CQ61-230SL, courtesy mingo1976
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
