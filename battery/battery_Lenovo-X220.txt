@@ -14,6 +14,7 @@
 #  Lenovo T61 (courtesy Gringo Vermelho)
 #  Lenovo Thinkpad X1 Carbon, 3rd gen 20BS (per jcsnider)
 #  Lenovo L450 (tested by kaiomatico)
+#  Lenovo T530/T530i (per Swingkid)
 
 # Note: disable secondary battery
 #  *** remove this line if you have a second battery installed)
