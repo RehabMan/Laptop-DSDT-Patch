@@ -2,6 +2,7 @@
 #audio_HDEF-layout12.txt
 
 # Note: Change your layout ID if you need something different
+# Note: "hda-gfx" is not needed with Haswell and should probably be removed
 
 #   Inject Audio info
 into method label _DSM parent_label HDEF remove_entry;
