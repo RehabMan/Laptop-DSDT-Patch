@@ -16,6 +16,7 @@
 #  ASUS F550L
 #  ASUS N551 (per shutt1e)
 #  ASUS T300LA-DH51T (per maromi)
+#  ASUS X551CA
 
 #Convert 16 bit to 8 bit registers
 into device label EC0 code_regex TAH0,\s+16, replace_matched begin AH00,8,AH01,8, end;
