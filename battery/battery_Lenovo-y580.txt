@@ -7,6 +7,7 @@
 # works for:
 #  Lenovo y580
 #  Lenovo z500
+#  Lenovo G510
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
