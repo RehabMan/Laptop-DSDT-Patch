@@ -31,11 +31,13 @@ into device name_adr 0x001B0000 insert begin Name(_PRW, Package() { 0x0D, 0 }) e
 into device name_adr 0x00190000 insert begin Name(_PRW, Package() { 0x0D, 0 }) end;
 
 # rename XHC to XHC1
+# rename is not a good idea for 10.11, maybe not for prior versions
+# disabled for now
 
-into device label XHC set_label begin XHC1 end;
-into_all all code_regex XHC\. replaceall_matched begin XHC1. end;
-into_all all code_regex XHC_\. replaceall_matched begin XHC1. end;
-into_all all code_regex \.XHC, replaceall_matched begin .XHC1, end;
+#into device label XHC set_label begin XHC1 end;
+#into_all all code_regex XHC\. replaceall_matched begin XHC1. end;
+#into_all all code_regex XHC_\. replaceall_matched begin XHC1. end;
+#into_all all code_regex \.XHC, replaceall_matched begin .XHC1, end;
 
 #Maintained by: RehabMan for: Laptop Patches
 #usb_USB_7-series.txt
@@ -104,5 +106,5 @@ end;
 
 
 # special cases... (not in u430 DSDT)
-into scope label _SB.PCI0.XHC.RHUB.HS05 set_label begin _SB.PCI0.XHC1.RHUB.HS05 end;
+#into scope label _SB.PCI0.XHC.RHUB.HS05 set_label begin _SB.PCI0.XHC1.RHUB.HS05 end;
 

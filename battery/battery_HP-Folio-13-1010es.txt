@@ -7,6 +7,7 @@
 # works for:
 #   HP Folio 13 1010-es
 #   HP R100nx (and other R100 series)
+#   HP 15-r010si (and other r000 series, per XploRa1)
 
 # Registers that needs to be patched:
 #
