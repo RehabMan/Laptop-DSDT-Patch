@@ -20,6 +20,7 @@
 #  HP Pavilion 15-p199sa (per TashDev)
 #  HP Pavilion 17-f158nr (per y023rus)
 #  HP Envy 15-k111nl
+#  HP Pavilion G6 1205sq (per Mr.D)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
