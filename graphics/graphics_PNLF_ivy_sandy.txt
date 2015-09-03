@@ -65,12 +65,15 @@ Device (PNLF)\n
     // KMAX: defines the unscaled range in the _BCL table below\n
     Name (KMAX, 0x710)\n
     // KPCH: saved value for PCHL\n
-    Name(KPCH, 0)\n
+    //   use Ones if PCHL does not need to be set (normal)\n
+    //   use Zero if your laptop nees PCHL set on every brightness set\n
+    //   you can also use a custom value (not Ones, not Zero)\n
+    Name(KPCH, Ones)\n
     // _INI deals with differences between native setting and desired\n
     Method (_INI, 0, NotSerialized)\n
     {\n
         // save value of PCHL for later\n
-        Store(PCHL, KPCH)\n
+        If (LNot(KPCH)) { Store(PCHL, KPCH) }\n
         // determine LMAX to use\n
         If (LNot(LMAX)) { Store(ShiftRight(LEVX,16), LMAX) }\n
         If (LNot(LMAX)) { Store(KMAX, LMAX) }\n
@@ -110,7 +113,7 @@ Device (PNLF)\n
     Method (_BCM, 1, NotSerialized)\n
     {\n
         // initialize for consistent backlight level before/after sleep\n
-        If (LNotEqual(PCHL, KPCH)) { Store(KPCH, PCHL) }\n
+        If (LAnd(LNotEqual(KPCH, Ones),LNotEqual(PCHL, KPCH))) { Store(KPCH, PCHL) }\n
         If (LNotEqual(LEVW, 0x80000000)) { Store (0x80000000, LEVW) }\n
         If (LNotEqual(LEVX, KLVX)) { Store (KLVX, LEVX) }\n
         // store new backlight level\n
@@ -136,7 +139,7 @@ Device (PNLF)\n
     Method (XBCM, 1, NotSerialized)\n
     {\n
         // initialize for consistent backlight level before/after sleep\n
-        If (LNotEqual(PCHL, KPCH)) { Store(KPCH, PCHL) }\n
+        If (LAnd(LNotEqual(KPCH, Ones),LNotEqual(PCHL, KPCH))) { Store(KPCH, PCHL) }\n
         If (LNotEqual(LEVW, 0x80000000)) { Store (0x80000000, LEVW) }\n
         If (LNotEqual(LEVX, KLVX)) { Store (KLVX, LEVX) }\n
         // store new backlight level\n
