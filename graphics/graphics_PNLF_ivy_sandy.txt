@@ -14,9 +14,11 @@
 #     http://www.tonymacx86.com/hp-probook-mavericks/121031-native-brightness-working-without-blinkscreen-using-patched-applebacklight-kext.html
 # (also read any linked threads)
 #
-#
 # Note: This patch should be applied to the DSDT or SSDT that defines
 # your integrated graphics device (always at _ADR 0x00020000)
+#
+# This patch works for both Sandy Bridge and Ivy Bridge graphics.
+# also reported to work with graphics prior to Sandy Bridge (eg. Arrandale)
 #
 
 into_all device label PNLF remove_entry;

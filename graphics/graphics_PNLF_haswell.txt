@@ -17,6 +17,8 @@
 # Note: This patch should be applied to the DSDT or SSDT that defines
 # your integrated graphics device (always at _ADR 0x00020000)
 #
+# This patch works for both Haswell and Broadwell graphics
+#
 
 into_all device label PNLF remove_entry;
 into_all device name_adr 0x00020000 code_regex (OperationRegion\s\(RMPC,\sPCI_Config[^\}]*\}) remove_matched;
