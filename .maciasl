@@ -37,8 +37,8 @@
 [usb] 6-series USB	usb/usb_6-series.txt
 [usb] 7-series/8-series USB	usb/usb_7-series.txt
 [usb] 7-series USB3 Multiplex	usb/usb_7-series-multiplex.txt
-[usb] USB3 _PRW(0x6D) and Rename XHC to XHC1	usb/usb_prw_0x6d_xhc.txt
 [usb] USB3 _PRW(0x0D) and Rename XHC to XHC1	usb/usb_prw_0x0d_xhc.txt
+[usb] USB3 _PRW(0x6D) and Rename XHC to XHC1	usb/usb_prw_0x6d_xhc.txt
 [bat] --> Battery Patches	NullPatch.txt
 [bat] Acer Aspire E1-571	battery/battery_Acer-Aspire-E1-571.txt
 [bat] Acer 3820tg	battery/battery_Acer-3820tg.txt
