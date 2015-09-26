@@ -21,7 +21,7 @@
 [igpu] Generic with EDID	graphics/graphics_EDID.txt
 [igpu] Brightness fix	graphics/graphics_PNLF.txt
 [igpu] Brightness fix (HD3000/HD4000)	graphics/graphics_PNLF_ivy_sandy.txt
-[igpu] Brightness fix (Haswell)	graphics/graphics_PNLF_haswell.txt
+[igpu] Brightness fix (Haswell/Broadwell)	graphics/graphics_PNLF_haswell.txt
 [igpu] Brightness fix (ACPI 100)	graphics/graphics_PNLF-ACPI100.txt
 [igpu] Rename GFX0 to IGPU	graphics/graphics_Rename-GFX0.txt
 [igpu] Rename VID/ADP1 to IGPU	graphics/graphics_Rename-VID_AGP1.txt
@@ -37,8 +37,8 @@
 [usb] 6-series USB	usb/usb_6-series.txt
 [usb] 7-series/8-series USB	usb/usb_7-series.txt
 [usb] 7-series USB3 Multiplex	usb/usb_7-series-multiplex.txt
-[usb] USB3 _PRW(0x6D) and Rename XHC to XHC1	usb/usb_prw_0x6d_xhc.txt
 [usb] USB3 _PRW(0x0D) and Rename XHC to XHC1	usb/usb_prw_0x0d_xhc.txt
+[usb] USB3 _PRW(0x6D) and Rename XHC to XHC1	usb/usb_prw_0x6d_xhc.txt
 [bat] --> Battery Patches	NullPatch.txt
 [bat] Acer Aspire E1-571	battery/battery_Acer-Aspire-E1-571.txt
 [bat] Acer 3820tg	battery/battery_Acer-3820tg.txt
@@ -141,3 +141,4 @@
 [sys] Haswell LPC	misc/misc_Haswell-LPC.txt
 [audio] --> Audio	NullPatch.txt
 [audio] Audio Layout 12	audio/audio_HDEF-layout12.txt
+[audio] Audio Layout 3	audio/audio_HDEF-layout3.txt

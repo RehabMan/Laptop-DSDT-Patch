@@ -2,6 +2,7 @@
 #battery_Lenovo-Z50-70.txt
 
 # created by raff 2015-03-02
+# fixed by RehabMan 2015-09-19
 
 # works for:
 #  Lenovo Z50-70
@@ -89,13 +90,35 @@ into method label _BST code_regex \(B1AC, replaceall_matched begin (B1B2(AC00,AC
 
 #MORE THAN 16BIT
 
+# From native DSDT:
+#
+#   OperationRegion (ERAM, EmbeddedControl, Zero, 0xFF)
+#   Field (ERAM, ByteAcc, Lock, Preserve)
+#   {
+#   ...
+#       Offset (0x12),
+#       FUSL,   8,  //12
+#       FUSH,   8,  //13
+#       FWBT,   64, //14
+#       Offset (0x5D),
+#       EXSI,   8,  //5d
+#       EXSB,   8,  //5e
+#       EXND,   8,  //5f
+#       SMPR,   8,  //60
+#       SMST,   8,  //61
+#       SMAD,   8,  //62
+#       SMCM,   8,  //63
+#       SMDA,   256,//64
+
+# Note: Offsets corrected by RehabMan (original calculations by raff were wrong)
+
 into device label EC0 code_regex (FWBT,)\s+(64) replace_matched begin FWBZ,%2,//%1%2 end;
-into method label MHIF code_regex \(FWBT, replaceall_matched begin (RECB(0x12,64), end;
-into method label GBID code_regex \(FWBT, replaceall_matched begin (RECB(0x12,64), end;
+into method label MHIF code_regex \(FWBT, replaceall_matched begin (RECB(0x14,64), end;
+into method label GBID code_regex \(FWBT, replaceall_matched begin (RECB(0x14,64), end;
 
 into device label EC0 code_regex (SMDA,)\s+(256) replace_matched begin SMDY,%2,//%1%2 end;
-into method label MHPF code_regex \(SMDA, replaceall_matched begin (RECB(0x50,256), end;
-into method label CFUN code_regex \(SMDA, replaceall_matched begin (RECB(0x50,256), end;
-into method label MHPF code_regex Store\s\(FB4,\sSMDA\) replaceall_matched begin WECB(0x50,256, FB4) end;
-into method label CFUN code_regex Store\s\(Zero,\sSMDA\) replaceall_matched begin WECB(0x50,256, Zero) end;
+into method label MHPF code_regex \(SMDA, replaceall_matched begin (RECB(0x64,256), end;
+into method label CFUN code_regex \(SMDA, replaceall_matched begin (RECB(0x64,256), end;
+into method label MHPF code_regex Store\s\(FB4,\sSMDA\) replaceall_matched begin WECB(0x64,256, FB4) end;
+into method label CFUN code_regex Store\s\(Zero,\sSMDA\) replaceall_matched begin WECB(0x64,256, Zero) end;
 
