@@ -5,6 +5,7 @@
 
 # works for:
 #  LG N450
+#  LG A560 (per felipeim)
 
 # 16-bit EC registers
 into device label EC0 code_regex FSPD,\s+16 replace_matched begin SPD0,8,SPD1,8 end;
