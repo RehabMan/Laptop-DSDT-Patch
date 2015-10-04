@@ -8,6 +8,7 @@
 #   HP Folio 13 1010-es
 #   HP R100nx (and other R100 series)
 #   HP 15-r010si (and other r000 series, per XploRa1)
+#   HP 250 G3 (per jeanpierre)
 
 # Registers that needs to be patched:
 #
@@ -107,6 +108,16 @@ end;
 
 # FAN EC (not really necessary but might be handy for fan access)
 into device label EC0 code_regex ENIB,\s+16, replace_matched begin NIB0,8,NIB1,8, end;
+into device label EC0 code_regex ERIB,\s+16 replace_matched begin ERI0,8,ERI1,8 end;
+into method label FANG code_regex Store\s+\(Arg0,\s+ERIB\) replace_matched
+begin
+Store(Arg0, ERI0) Store(ShiftRight(Arg0, 8), ERI1)
+end;
+into method label FANW code_regex Store\s+\(Arg0,\s+ERIB\) replace_matched
+begin
+Store(Arg0, ERI0) Store(ShiftRight(Arg0, 8), ERI1)
+end;
+
 
 # BATT EC
 into device label EC0 code_regex MUAC,\s+16, replace_matched begin UAC0,8,UAC1,8, end;
