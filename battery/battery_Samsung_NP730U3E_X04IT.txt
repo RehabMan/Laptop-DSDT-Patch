@@ -5,6 +5,7 @@
 
 # Works for:
 #   Samsung Ativ Book 7
+#   Samsung ATIV Book 8 (per Vairn)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
