@@ -5,7 +5,8 @@
 # minor corrections by RehabMan
 
 # works for:
-#  Samsung Samsung r528 DT02EE
+#  Samsung r528 DT02EE
+#  Samsung r540 (r530/r730 assumed, per Moorre)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
