@@ -14,6 +14,7 @@
 #  HP G62-120eg, courtesy information from affe1980
 #  Compaq CQ61-230SL, courtesy mingo1976
 #  HP Pavilion DV6-3250, per mavvert
+#  HP DV7-3020ea, per Dsynos80
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
