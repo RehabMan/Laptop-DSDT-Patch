@@ -29,6 +29,7 @@
 #  ASUS UX305
 #  ASUS N550LF (per gabberZ)
 #  ASUS TP300LA
+#  ASUS X200LA
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
