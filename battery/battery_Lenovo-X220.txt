@@ -188,7 +188,7 @@ into method label _L18 parent_label _GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK
 into method label _L18 parent_label \_GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;
 
 
-# sleep releated T440s
+# sleep related T440s
 into_all all code_regex \(HWAC, replaceall_matched begin (B1B2(WAC0,WAC1), end;
 into_all all code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAC0,\\_SB.PCI0.LPC.EC.WAC1), end;
 into_all all code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAC0,\\_SB.PCI0.LPC.EC.WAC1), end;
@@ -201,3 +201,26 @@ begin
 Store(%1, \\_SB.PCI0.LPC.EC.WAK0) Store(ShiftRight(%1,8), \\_SB.PCI0.LPC.EC.WAK1)
 end;
 
+# remove dumb code from _WAK (and it is not needed)
+into method label \_WAK code_regex If.*LOr.*Equal.*Arg0.*LGreaterEqual.*Arg0.*0x05.*\n.*\{\n.*Return.*WAKI.*\n.*\} remove_matched;
+into method label _WAK code_regex If.*LOr.*Equal.*Arg0.*LGreaterEqual.*Arg0.*0x05.*\n.*\{\n.*Return.*WAKI.*\n.*\} remove_matched;
+
+# sleep related T450 (LED)... may affect other models
+into method label _WAK code_regex (Return\s+\(.*) replace_matched
+begin
+If (LEqual(Arg0,3))\n
+{\n
+    \\_SB.PCI0.LPC.EC.LED(Zero, 0x80)\n
+    \\_SB.PCI0.LPC.EC.LED(0x0A, 0x80)\n
+}\n
+%1\n
+end;
+into method label \_WAK code_regex (Return\s+\(.*) replace_matched
+begin
+If (LEqual(Arg0,3))\n
+{\n
+    \\_SB.PCI0.LPC.EC.LED(Zero, 0x80)\n
+    \\_SB.PCI0.LPC.EC.LED(0x0A, 0x80)\n
+}\n
+%1\n
+end;
