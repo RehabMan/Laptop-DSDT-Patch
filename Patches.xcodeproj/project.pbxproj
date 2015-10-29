@@ -148,6 +148,7 @@
 		EDCD54641A2E10550009F438 /* graphics_REG-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_REG-disable.txt"; path = "graphics/graphics_REG-disable.txt"; sourceTree = "<group>"; };
 		EDCD54651A2E11EA0009F438 /* graphics_INI-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_INI-disable.txt"; path = "graphics/graphics_INI-disable.txt"; sourceTree = "<group>"; };
 		EDCDC82A1BD1F90A00B4050C /* battery_HP_Envy_M4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battery_HP_Envy_M4.txt; path = battery/battery_HP_Envy_M4.txt; sourceTree = "<group>"; };
+		EDD7C2F11BE1A7E6005C40AE /* battery_Dell-Inspiron-5548.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Inspiron-5548.txt"; path = "battery/battery_Dell-Inspiron-5548.txt"; sourceTree = "<group>"; };
 		EDDD15E51A72C7C80093ACE1 /* graphics_nvidia_gt520m.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graphics_nvidia_gt520m.txt; sourceTree = "<group>"; };
 		EDE3BCB71B018ED700475630 /* fix_PSS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PSS.txt; path = syntax/fix_PSS.txt; sourceTree = "<group>"; };
 		EDE3BCB81B018F8800475630 /* usb_prw_0x6d_xhc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x6d_xhc.txt; path = usb/usb_prw_0x6d_xhc.txt; sourceTree = "<group>"; };
@@ -266,6 +267,7 @@
 				842F531917FB301B001CF33B /* battery_Compaq-CQ60.txt */,
 				842525F519CDBD01009FA9D7 /* battery_Dell-Inspiron-13z.txt */,
 				ED2050221AD1124600E60CD2 /* battery_Dell-Inspiron-15-7xxx.txt */,
+				EDD7C2F11BE1A7E6005C40AE /* battery_Dell-Inspiron-5548.txt */,
 				ED5EDD851AF50EE4008F32DE /* battery_Dell-Studio-1558.txt */,
 				843D33E71832C37F00C347A4 /* battery_Dell-Vostro-15xx.txt */,
 				842F531A17FB301B001CF33B /* battery_Dell-XPS-13.txt */,
