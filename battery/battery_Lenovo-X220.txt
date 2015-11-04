@@ -206,21 +206,24 @@ into method label \_WAK code_regex If.*LOr.*Equal.*Arg0.*LGreaterEqual.*Arg0.*0x
 into method label _WAK code_regex If.*LOr.*Equal.*Arg0.*LGreaterEqual.*Arg0.*0x05.*\n.*\{\n.*Return.*WAKI.*\n.*\} remove_matched;
 
 # sleep related T450 (LED)... may affect other models
-into method label _WAK code_regex (Return\s+\(.*) replace_matched
-begin
-If (LEqual(Arg0,3))\n
-{\n
-    \\_SB.PCI0.LPC.EC.LED(Zero, 0x80)\n
-    \\_SB.PCI0.LPC.EC.LED(0x0A, 0x80)\n
-}\n
-%1\n
-end;
-into method label \_WAK code_regex (Return\s+\(.*) replace_matched
-begin
-If (LEqual(Arg0,3))\n
-{\n
-    \\_SB.PCI0.LPC.EC.LED(Zero, 0x80)\n
-    \\_SB.PCI0.LPC.EC.LED(0x0A, 0x80)\n
-}\n
-%1\n
-end;
+#
+# Note: for T430... LED(0x0A,...) must be changed to LED(0x07,...)
+
+#into method label _WAK code_regex (Return\s+\(.*) replace_matched
+#begin
+#If (LEqual(Arg0,3))\n
+#{\n
+#    \\_SB.PCI0.LPC.EC.LED(Zero, 0x80)\n
+#    \\_SB.PCI0.LPC.EC.LED(0x0A, 0x80)\n
+#}\n
+#%1\n
+#end;
+#into method label \_WAK code_regex (Return\s+\(.*) replace_matched
+#begin
+#If (LEqual(Arg0,3))\n
+#{\n
+#    \\_SB.PCI0.LPC.EC.LED(Zero, 0x80)\n
+#    \\_SB.PCI0.LPC.EC.LED(0x0A, 0x80)\n
+#}\n
+#%1\n
+#end;
