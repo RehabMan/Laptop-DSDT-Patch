@@ -9,6 +9,11 @@
 #  Sony VPEH26EN
 #  Sony VPCEH3N6E
 #  Sony VAIO SVE1513AYCW (per giveup@github)
+#  Sony Vaio VPC S135FG
+
+# rename LPC to LPCB (if needed)
+into device label LPC set_label begin LPCB end;
+into_all all code_regex LPC\. replaceall_matched begin LPCB. end;
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
@@ -26,10 +31,14 @@ into device label EC0 code_regex BT1C,\s+16 replace_matched begin BTC0,8,BTC1,8 
 into device label EC0 code_regex BT1V,\s+16 replace_matched begin BTV0,8,BTV1,8 end;
 into device label EC0 code_regex BATD,\s+16 replace_matched begin BTD0,8,BTD1,8 end;
 into device label EC0 code_regex ENCR,\s+16 replace_matched begin ENC0,8,ENC1,8 end;
+into device label EC0 code_regex HKDA,\s+16 replace_matched begin HKD0,8,HKD1,8 end;
+
 
 # method fixes
 
 into method label SELE code_regex \(BATD, replaceall_matched begin (B1B2(BTD0,BTD1), end;
+into method label GTEC code_regex \(HKDA, replaceall_matched begin (B1B2(HKD0,HKD1), end;
+into method label SMRW code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.SMW0, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SM00,\\_SB.PCI0.LPCB.EC0.SM01), end;
 into method label SMRW code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.SMW0, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SM00,\\_SB.PCI0.LPCB.EC0.SM01), end;
 into method label SMRW code_regex Store\s+\(Arg3,\s+\\_SB\.PCI0\.LPCB\.EC0\.SMW0\) replaceall_matched
 begin
