@@ -158,6 +158,7 @@
 		EDE3BCBB1B01904E00475630 /* graphics_Rename-B0D3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-B0D3.txt"; path = "graphics/graphics_Rename-B0D3.txt"; sourceTree = "<group>"; };
 		EDF0829E1A0BC52C00DD15A5 /* battery_Clevo-M860TU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-M860TU.txt"; path = "battery/battery_Clevo-M860TU.txt"; sourceTree = "<group>"; };
 		EDFBE3951A3767DF00F61E48 /* graphics_SSDT-disable-cleanup.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_SSDT-disable-cleanup.txt"; path = "graphics/graphics_SSDT-disable-cleanup.txt"; sourceTree = "<group>"; };
+		EDFC30DB1C05097100370D17 /* battery_Alienware-m15x.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Alienware-m15x.txt"; path = "battery/battery_Alienware-m15x.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -260,6 +261,7 @@
 				ED1EDC921B051A2F00EFA50B /* battery_Acer-Aspire-5741g.txt */,
 				842F531717FB301B001CF33B /* battery_Acer-Aspire-5750g.txt */,
 				8436750118359126000618D0 /* battery_Acer-S7-391.txt */,
+				EDFC30DB1C05097100370D17 /* battery_Alienware-m15x.txt */,
 				843A1C9518A52A4C00DB6154 /* battery_ASUS-G75vw.txt */,
 				842F531817FB301B001CF33B /* battery_ASUS-N55SL.txt */,
 				EDF0829E1A0BC52C00DD15A5 /* battery_Clevo-M860TU.txt */,
