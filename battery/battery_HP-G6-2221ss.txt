@@ -16,6 +16,7 @@
 #  HP G62 120eg
 #  HP Pavilion 17-e019dx
 #  HP Pavilion Sleekbook 14-b000de
+#  HP Pavilion Sleekbook 14-b120dx
 #  HP Envy 15t (Haswell, per faithie999)
 #  HP Pavilion 15-p199sa (per TashDev)
 #  HP Pavilion 17-f158nr (per y023rus)
