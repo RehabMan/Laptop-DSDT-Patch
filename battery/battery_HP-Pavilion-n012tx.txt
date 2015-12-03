@@ -7,7 +7,7 @@
 #  HP Pavilion n012tx
 #  HP Envy 15t-k100 (per bechhamba07)
 #  HP X360 (Haswell) (per lx86)
-
+#  HP Pavilion G6-2149TX (per computechnopro2)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
