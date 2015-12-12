@@ -2,10 +2,16 @@
 #battery_Dell-Inspiron-15-7xxx.txt
 
 # created by lisai9093, 2015-04-04
+# modified by RehabMan, 2015-12-12 to add SOST fix
 
 # works for:
 #  Dell Inspiron 15 7000 Series (late 2014)
 #  Dell Inspiron 14 7000 Series (14-7447 confirmed, courtesy isnowbee)
+
+# fix SOST _OSI check
+into method label SOST code_regex _OSI\s+\(WIN7\) replaceall_matched begin LOr(_OSI(WIN7),_OSI("Darwin")) end;
+# "OS Check Fix (Windows 7)"
+into_all method code_regex If\s+\([\\]?_OSI\s+\(\"Windows\s2009\"\)\) replace_matched begin If(LOr(_OSI("Darwin"),_OSI("Windows 2009"))) end;
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -30,4 +36,3 @@ into method label _BIF code_regex \(\^\^EC\.FCP0, replaceall_matched begin (B1B2
 into method label _BIF code_regex \(\^\^EC\.DCP0, replaceall_matched begin (B1B2(^^EC.ECP0,^^EC.ECP1), end;
 into method label _BIF code_regex \(\^\^EC\.DVT0, replaceall_matched begin (B1B2(^^EC.EVT0,^^EC.EVT1), end;
 into method label _BIF code_regex \(\^\^EC\.BSN0, replaceall_matched begin (B1B2(^^EC.CSN0,^^EC.CSN1), end;
-

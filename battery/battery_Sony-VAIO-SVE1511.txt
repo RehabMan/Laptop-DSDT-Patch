@@ -38,6 +38,7 @@ into device label EC0 code_regex HKDA,\s+16 replace_matched begin HKD0,8,HKD1,8 
 
 into method label SELE code_regex \(BATD, replaceall_matched begin (B1B2(BTD0,BTD1), end;
 into method label GTEC code_regex \(HKDA, replaceall_matched begin (B1B2(HKD0,HKD1), end;
+into method label SN07 code_regex \(HKDA, replaceall_matched begin (B1B2(HKD0,HKD1), end;
 into method label SMRW code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.SMW0, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SM00,\\_SB.PCI0.LPCB.EC0.SM01), end;
 into method label SMRW code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.SMW0, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SM00,\\_SB.PCI0.LPCB.EC0.SM01), end;
 into method label SMRW code_regex Store\s+\(Arg3,\s+\\_SB\.PCI0\.LPCB\.EC0\.SMW0\) replaceall_matched
