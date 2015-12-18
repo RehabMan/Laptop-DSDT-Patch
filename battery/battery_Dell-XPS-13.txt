@@ -10,6 +10,7 @@
 #  Dell XPS 15z
 #  Dell Inspiron 14r n4110
 #  Dell Vostro 5470 (per sonic1978)
+#  Dell Vostro 3750 (per Moorre)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
