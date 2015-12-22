@@ -9,6 +9,7 @@
 #  Acer 4738z (per dhnguyen92)
 #  Acer Aspire 4741G-382G50Mnsk/C002
 #  Acer Aspire V Nitro VN7-591G-744N (per ylums)
+#  Acer Aspire V Nitro VN7-791G-573T (per dyland)
 
 # requires mutex fix too (2x to work around MaciASL bug...)
 into_all all code_regex_not Mutex\s+\([^,]*,\s+0x00\) code_regex Mutex\s+\(([^,]*),\s+[^)]*\) replaceall_matched begin Mutex(%1, 0) end;
