@@ -9,6 +9,7 @@
 #   HP R100nx (and other R100 series)
 #   HP 15-r010si (and other r000 series, per XploRa1)
 #   HP 250 G3 (per jeanpierre)
+#   HP Envy m6-1125dx (per btm710)
 
 # Registers that needs to be patched:
 #
