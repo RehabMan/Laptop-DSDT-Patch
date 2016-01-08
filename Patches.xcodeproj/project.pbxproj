@@ -132,6 +132,7 @@
 		ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-13.txt"; path = "battery/battery_Lenovo-Yoga-13.txt"; sourceTree = "<group>"; };
 		ED2050221AD1124600E60CD2 /* battery_Dell-Inspiron-15-7xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Inspiron-15-7xxx.txt"; path = "battery/battery_Dell-Inspiron-15-7xxx.txt"; sourceTree = "<group>"; };
 		ED2A1F171AB32E770024D58C /* battery_Lenovo-y510p.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-y510p.txt"; path = "battery/battery_Lenovo-y510p.txt"; sourceTree = "<group>"; };
+		ED2C801E1C3F8A140009BA8A /* battery_Surface-Pro-v4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v4.txt"; path = "battery/battery_Surface-Pro-v4.txt"; sourceTree = "<group>"; };
 		ED40F7221AF1323E00F0B970 /* battery_Lenovo-ThinkPad-W550s.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-ThinkPad-W550s.txt"; path = "battery/battery_Lenovo-ThinkPad-W550s.txt"; sourceTree = "<group>"; };
 		ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Medion-Akoya-P6630.txt"; path = "battery/battery_Medion-Akoya-P6630.txt"; sourceTree = "<group>"; };
 		ED5EDD851AF50EE4008F32DE /* battery_Dell-Studio-1558.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Studio-1558.txt"; path = "battery/battery_Dell-Studio-1558.txt"; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 				842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */,
 				84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */,
 				8437F2F71A89C5FF00224BFA /* battery_Surface-Pro-v3.txt */,
+				ED2C801E1C3F8A140009BA8A /* battery_Surface-Pro-v4.txt */,
 				843936A218ABC24200E32386 /* battery_TabletKiosk-i575.txt */,
 				84ACC1B118BAD88B001B61D8 /* battery_Toshiba-A660-16Z.txt */,
 				84C4E6821954F237009476EB /* battery_Vizio-Ultrabook-CT14.txt */,

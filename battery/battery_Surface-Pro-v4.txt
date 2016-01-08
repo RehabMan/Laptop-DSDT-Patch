@@ -1,0 +1,76 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Surface-Pro-v4.txt
+
+# created by jhax01 2016-01-07
+
+# works for:
+#  Microsoft Surface Pro 4
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+into device label EC0 code_regex B1PV,\s+16, replace_matched begin BPV0,8,BPV1,8, end;
+into device label EC0 code_regex B1CR,\s+16, replace_matched begin BCR0,8,BCR1,8, end;
+into device label EC0 code_regex B1RC,\s+16, replace_matched begin BRC0,8,BRC1,8, end;
+into device label EC0 code_regex B1FC,\s+16, replace_matched begin BFC0,8,BFC1,8, end;
+into device label EC0 code_regex B1CY,\s+16, replace_matched begin BCY0,8,BCY1,8, end;
+into device label EC0 code_regex B1DC,\s+16, replace_matched begin BDC0,8,BDC1,8, end;
+into device label EC0 code_regex B1DV,\s+16, replace_matched begin BDV0,8,BDV1,8, end;
+into device label EC0 code_regex B1SN,\s+16, replace_matched begin BSN0,8,BSN1,8, end;
+into device label EC0 code_regex B1TP,\s+16, replace_matched begin BTP0,8,BTP1,8, end;
+
+into_all method label _BST code_regex B1PV replaceall_matched begin B1B2(BPV0,BPV1) end;
+into_all method label _BTP code_regex B1PV replaceall_matched begin B1B2(BPV0,BPV1) end;
+into_all method label _BST code_regex B1CR replaceall_matched begin B1B2(BCR0,BCR1) end;
+into_all method label _BST code_regex B1RC replace_matched begin B1B2(BRC0,BRC1) end;
+into_all method label _BIX code_regex B1FC replaceall_matched begin B1B2(BFC0,BFC1) end;
+into_all method label _BTP code_regex B1FC replaceall_matched begin B1B2(BFC0,BFC1) end;
+into_all method label _BIX code_regex B1CY replace_matched begin B1B2(BCY0,BCY1) end;
+into_all method label _BIX code_regex B1DC replaceall_matched begin B1B2(BDC0,BDC1) end;
+into_all method label _BIX code_regex B1DV replaceall_matched begin B1B2(BDV0,BDV1) end;
+into_all method label _BST code_regex B1DV replaceall_matched begin B1B2(BDV0,BDV1) end;
+into_all method label _BTP code_regex B1DV replaceall_matched begin B1B2(BDV0,BDV1) end;
+into_all method label _BIX code_regex B1SN replace_matched begin B1B2(BSN0,BSN1) end;
+into_all method label _BTP code_regex Store\s+\(Local0,\s+B1TP\) replace_matched begin Store(Local0,BTP0) Store(ShiftRight(Local0,8),BTP1) end;
+
+into_all method label PNOT code_regex \\_SB.PCI0.LPCB.EC0.B1RC replaceall_matched begin B1B2(\\_SB.PCI0.LPCB.EC0.BRC0,\\_SB.PCI0.LPCB.EC0.BRC1) end;
+
+# utility methods to read/write buffers from/to EC
+into method label RE1B parent_label EC0 remove_entry;
+into method label RECB parent_label EC0 remove_entry;
+into device label EC0 insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+// Arg1 - size of buffer in bits\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+into device label EC0 code_regex (B1MN,)\s+(96) replace_matched begin B1MX,%2,//%1%2 end;
+into device label EC0 code_regex (B1DN,)\s+(64) replace_matched begin B1DX,%2,//%1%2 end;
+into device label EC0 code_regex (B1CH,)\s+(48) replace_matched begin B1CX,%2,//%1%2 end;
+
+into_all method label _BIX code_regex B1MN replaceall_matched begin RECB(0x75,96) end;
+into_all method label _BIX code_regex B1DN replaceall_matched begin RECB(0x81,64) end;
+into_all method label _BIX code_regex B1CH replaceall_matched begin RECB(0x89,48) end;
