@@ -1,0 +1,81 @@
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_ACER-3830TG-nvidia-disable.txt
+
+# created by artar94 11/01/2016
+
+# works for:
+#  Acer Aspire 3830tg
+
+# This patch disables nVidia Optimus switched graphics
+#
+
+into definitionblock code_regex External\s+\(_SB_\.PCI0\.PEG0\.PEGP\._PS3\,\s+MethodObj\) remove_matched;
+into definitionblock code_regex External\s+\(_SB_\.PCI0\.PEG0\.PEGP\._PS0\,\s+MethodObj\) remove_matched;
+into definitionblock code_regex External\s+\(_SB_\.PCI0\.PEG0\.PEGP\._OFF\,\s+MethodObj\) remove_matched;
+into definitionblock code_regex External\s+\(_SB_\.PCI0\.PEG0\.PEGP\._ON\,\s+MethodObj\) remove_matched;
+into definitionblock code_regex External\s+\(_SB_\.PCI0\.PEG0\.PEGP\.GSTA\,\s+MethodObj\) remove_matched;
+
+into definitionblock code_regex . insert
+begin
+External (_SB_.PCI0.PEG0.PEGP._PS3, MethodObj)\n
+External (_SB_.PCI0.PEG0.PEGP._PS0, MethodObj)\n
+External (_SB_.PCI0.PEG0.PEGP._OFF, MethodObj)\n
+External (_SB_.PCI0.PEG0.PEGP._ON, MethodObj)\n
+External (_SB_.PCI0.PEG0.PEGP.GSTA, MethodObj)\n
+end;
+
+into method label NVOF remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (NVOF, 0, NotSerialized)\n
+{\n
+    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP.GSTA))\n
+    {\n
+        If (LEqual (\_SB_.PCI0.PEG0.PEGP.GSTA(), One))\n
+        {\n
+            If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._OFF))\n
+            {\n
+                \_SB_.PCI0.PEG0.PEGP._OFF()\n
+            }\n
+            If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS3))\n
+            {\n
+                \_SB_.PCI0.PEG0.PEGP._PS3()\n
+            }\n
+        }\n
+    }\n
+}\n
+end;
+
+into method label NVON remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (NVON, 0, NotSerialized)\n
+{\n
+    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._ON))\n
+    {\n
+        \_SB_.PCI0.PEG0.PEGP._ON()\n
+    }\n
+    If (CondRefOf(\_SB_.PCI0.PEG0.PEGP._PS0))\n
+    {\n
+        \_SB_.PCI0.PEG0.PEGP._PS0()\n
+    }\n
+}\n
+end;
+
+into method label _WAK code_regex NVOF\(\) remove_matched;
+into method label _WAK code_regex ^ replace_matched
+begin
+NVOF()\n\n        
+end;
+
+into method label _INI parent_label _SB.PCI0 code_regex NVOF\(\) remove_matched;
+into method label _INI parent_label _SB.PCI0 code_regex ^ replace_matched
+begin
+NVOF()\n\n            
+end;
+
+into method label _PTS code_regex NVON\(\) remove_matched;
+into method label _PTS code_regex ^ replace_matched
+begin
+NVON()\n\n        
+end;
