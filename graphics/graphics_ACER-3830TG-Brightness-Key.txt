@@ -1,0 +1,35 @@
+#Maintained by: RehabMan for: Laptop Patches
+graphics_ACER-3830TG-Brightness-Key.txt
+
+# created by artar94 11/01/2016
+
+# works for:
+#  Acer Aspire 3830tg
+
+# This patch maps backlight control to appropriate hotkeys on keyboard.
+#
+
+# Note: ACPIKeyboard.kext is required for this patch to work.
+
+into device label RMKB remove_entry;
+into definitionblock code_regex . insert
+begin
+Device (RMKB)\n
+{\n
+    Name(_HID, "RMKB0000")\n
+}\n
+end;
+
+into method label _Q11 replace_content
+begin
+// Brightness Down\n
+Notify(\RMKB, 0x2191)\n
+Notify(\RMKB, 0x2291)\n
+end;
+
+into method label _Q12 replace_content
+begin
+// Brightness Up\n
+Notify(\RMKB, 0x2190)\n
+Notify(\RMKB, 0x2290)\n
+end;
