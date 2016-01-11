@@ -1,0 +1,67 @@
+#Maintained by: RehabMan for: Laptop Patches
+#graphics_ACER-3830TG-Brightness-PNLF.txt
+
+# created by artar94 11/01/2016
+
+# works for:
+#  Acer Aspire 3830tg
+
+# This patch enables the brightness slider in SysPrefs->Displays
+# and will also enable activation of sleep mode by closing
+# the laptop lid.
+#
+
+# Note: This patch requires IntelBacklight by Rehabman to be installed
+
+# Fix brightness levels in Windows after reboot from OS X
+# sometimes in Scope (_SB.PCI0)
+into method label _INI parent_label _SB.PCI0 code_regex If\s+\(_OSI\s+\(\"Windows\s2012\"\)\) replace_matched
+begin If(LOr(_OSI ("Darwin"), _OSI ("Windows 2012"))) end;
+
+# sometimes in Scope (_SB)
+into method label _INI parent_label _SB code_regex If\s+\(_OSI\s+\(\"Windows\s2012\"\)\) replace_matched
+begin If(LOr(_OSI ("Darwin"), _OSI ("Windows 2012"))) end;
+
+into_all device label PNLF remove_entry;
+into definitionblock code_regex . insert
+begin
+Scope (_SB)\n
+{\n
+    Device (PNLF)\n
+    {\n
+        Name (_ADR, Zero)\n
+        Name (_HID, EisaId ("APP0002"))\n
+        Name (_CID, "backlight")\n
+        Name (_UID, 10)\n
+        Name (_STA, 0x0B)\n
+		\n
+        Method (RMCF)\n
+        {\n
+            Return(Package()\n
+            {\n
+                "PWMMax", 0,\n
+                "PCHLInit", Ones,  // some computers will need this zero\n
+                "LEVWInit", 0xC0000000, // you can use 0 to skip writing LEVW\n
+                "Options", 0x01,\n
+                "BacklightMin", 0x0A,\n
+                "BacklightMax", 0x64,\n
+                "BacklightLevelsScale", 0x64,\n
+                "BacklightLevels", Package()\n
+                {\n
+                    Package(){}, // empty package indicates array follows (instead of dictionary)\n
+                    0x0A,\n
+                    0x14,\n
+                    0x1E,\n
+                    0x28,\n
+                    0x32,\n
+                    0x3C,\n
+                    0x46,\n
+                    0x50,\n
+                    0x5A,\n
+                    0x64,\n
+                },\n
+            })\n
+        }\n
+    }\n
+}\n
+end;
