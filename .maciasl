@@ -75,8 +75,9 @@
 [bat] HP DV7-7xxx/DV6-7xxx	battery/battery_HP-DV7-7xxx.txt
 [bat] HP Envy 14	battery/battery_HP-Envy-14.txt
 [bat] HP Envy 17t	battery/battery_HP-Envy-17t.txt
+[bat] HP Envy 4	battery/battery_HP-Envy-4.txt
 [bat] HP Envy DV6	battery/battery_HP-Envy-DV6.txt
-[bat] HP Envy M4	battery/battery_HP_Envy_M4.txt
+[bat] HP Envy M4	battery/battery_HP-Envy-M4.txt
 [bat] HP Folio 13 1010es	battery/battery_HP-Folio-13-1010es.txt
 [bat] HP G6 2221ss	battery/battery_HP-G6-2221ss.txt
 [bat] HP G6 B13SL	battery/battery_HP-G62-B13SL.txt

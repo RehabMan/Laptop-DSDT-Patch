@@ -7,6 +7,7 @@
 #  Samsung NP470R5E
 #  Samsung NP370R5E
 #  Samsung ATIV 700T
+#  Samsung NP-RC530-S02RU (per artar94)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

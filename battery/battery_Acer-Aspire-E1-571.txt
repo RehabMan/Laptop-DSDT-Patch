@@ -10,6 +10,7 @@
 #  Gateway NE56R49U
 #  Dell Precision M3800
 #  Acer Travelmate T253M (per Simmy)
+#  Acer Aspire V3-571G (per mpckid)
 
 # create B1B2 Method
 into method label B1B2 remove_entry;

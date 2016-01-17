@@ -1,0 +1,146 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_HP-Envy-4.txt
+
+# created by dump2all(mandz) as per guide from Rehabman 2016-01-06
+
+# works for:
+#  HP Envy 4-1025tx  - Tested with Bios Version F.23
+
+# utility methods for 16bit and 32bit registers
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
+end;
+
+# utility methods to read/write buffers from/to EC
+into method label RE1B parent_label EC0 remove_entry;
+into method label RECB parent_label EC0 remove_entry;
+into device label EC0 insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+#utility method to write to EC buffers
+into method label WE1B parent_label EC0 remove_entry;
+into method label WECB parent_label EC0 remove_entry;
+into device label EC0 insert
+begin
+Method (WE1B, 2, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Store(Arg1, BYTE)\n
+}\n
+Method (WECB, 3, Serialized)\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Store(Arg2, TEMP)\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        WE1B(Arg0, DerefOf(Index(TEMP, Local0)))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+}\n
+end;
+
+#
+# Note: Offsets below into EC are based on the following data in the native DSDT
+#            Field (ERAM, ByteAcc, Lock, Preserve)
+#            {
+#                Offset (0x5A), 
+#                Offset (0x5B), 
+#                Offset (0x5C), 
+#                Offset (0x5D), 
+#                ENIB,   16,   //0x5D
+#                ENDD,   8,    //0x5F
+#                SMPR,   8,    //0x60
+#                SMST,   8,    //0x61 
+#                SMAD,   8,    //0x62
+#                SMCM,   8,    //0x63
+#                SMD0,   256,  //!! 0x64
+#
+#            Field (ECPR, ByteAcc, Lock, Preserve)
+#            {
+#                Offset (0x06), 
+#                    ,   4, 
+#                GSPN,   1, 
+#                Offset (0x0E), 
+#                SADP,   8, 
+#                Offset (0x1D), 
+#                EFP1,   8, 
+#                Offset (0x2D), 
+#                BCTL,   128,  //!! 0x2D
+#                Offset (0x88), 
+#                BTDC,   64,   //!! 0x88
+#                BMNN,   72,   //!! 0x90
+#                BDVN,   56,   //!! 0x99
+#
+#
+# If the native DSDT has any such data re-organized such that the fields
+# being read with RECB are at a different offset, the offsets below
+# (first param to WECB/RECB) would need to be changed for the DSDT.
+#
+# This is something to watch out for when adapting this patch to another 
+# computer and maybe even after updating to a new BIOS.
+#
+
+# deal with buffer fields above
+into device label EC0 code_regex (SMD0,)\s+(256) replace_matched begin SMDX,%2,//%1%2 end;
+into device label EC0 code_regex (BCTL,)\s+(128) replace_matched begin BCTX,%2,//%1%2 end;
+into device label EC0 code_regex (BTDC,)\s+(64) replace_matched begin BTDX,%2,//%1%2 end;
+into device label EC0 code_regex (BMNN,)\s+(72) replace_matched begin BMNX,%2,//%1%2 end;
+into device label EC0 code_regex (BDVN,)\s+(56) replace_matched begin BDVX,%2,//%1%2 end;
+
+into method label CFUN code_regex Store\s+\((.*),\s+SMD0\) replaceall_matched begin WECB(0x64,256,%1) end;
+into method label CFUN code_regex \(SMD0, replaceall_matched begin (RECB(0x64,256), end;
+into method label ESMR code_regex SMD0, replaceall_matched begin RECB(0x64,256), end;
+into method label ESMR code_regex Store\s+\(Zero,\s\^\^LPCB.EC0.SMD0\) replaceall_matched begin ^^LPCB.EC0.WECB(0x64,256,Zero) end;
+into method label ESMW code_regex Store\s+\(LBUF,\s\^\^LPCB.EC0.SMD0\) replaceall_matched begin ^^LPCB.EC0.WECB(0x64,256,LBUF) end;
+
+into method label BATT code_regex BCTL, replaceall_matched begin RECB(0x2D,128), end;
+into method label GUBT code_regex \(BTDC, replaceall_matched begin (RECB(0x88,64), end;
+into method label BATT code_regex BTDC, replaceall_matched begin RECB(0x88,64), end;
+into method label GUBI code_regex \(BMNN, replaceall_matched begin (RECB(0x90,72), end;
+into method label BATT code_regex BMNN, replaceall_matched begin RECB(0x90,72), end;
+into method label GBMN code_regex \(BDVN, replaceall_matched begin (RECB(0x99,56), end;
+into method label BATT code_regex BDVN, replaceall_matched begin RECB(0x99,56), end;
+
+# 16-bit registers
+into device label EC0 code_regex MUAC,\s+16 replace_matched begin UAC0,8,UAC1,8 end;
+into device label EC0 code_regex ATTE,\s+16 replace_matched begin TEF0,8,TEF1,8 end;
+into device label EC0 code_regex RTTE,\s+16 replace_matched begin TER0,8,TER1,8 end;
+into device label EC0 code_regex ATTF,\s+16 replace_matched begin TFA0,8,TFA1,8 end;
+into device label EC0 code_regex ERIB,\s+16 replace_matched begin RIB0,8,RIB1,8 end;
+
+# fix 16-bit methods
+into_all method label BATT code_regex \(\^\^PCI0\.LPCB\.EC0\.MUAC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.UAC0,^^PCI0.LPCB.EC0.UAC1), end;
+into_all method label BATT code_regex \(\^\^PCI0\.LPCB\.EC0\.ATTE, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.TEF0,^^PCI0.LPCB.EC0.TEF1), end;
+into_all method label BATT code_regex \(\^\^PCI0\.LPCB\.EC0\.RTTE, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.TER0,^^PCI0.LPCB.EC0.TER1), end;
+into_all method label BATT code_regex \(\^\^PCI0\.LPCB\.EC0\.ATTF, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.TFA0,^^PCI0.LPCB.EC0.TFA1), end;
+into method label FANG code_regex Store\s+\(Arg0,\s+ERIB\) replaceall_matched begin Store (Arg0, RIB0)\nStore (ShiftRight(Arg0,8), RIB1) end;
+into method label FANW code_regex Store\s+\(Arg0,\s+ERIB\) replaceall_matched begin Store (Arg0, RIB0)\nStore (ShiftRight(Arg0,8), RIB1) end;
+

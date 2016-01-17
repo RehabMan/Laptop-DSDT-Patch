@@ -6,6 +6,7 @@
 
 # works for:
 #  Acer Aspire 5750g
+#  Acer Aspire 3830tg (per artar94)
 #  Acer 4830T
 #  Packard Bell Easynote TS44hr-035UK.
 
