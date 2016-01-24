@@ -5,6 +5,7 @@
 
 # works for:
 #  Lenovo E430
+#  Lenovo E531
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
@@ -76,6 +77,11 @@ into method label _WAK code_regex Store\s\(Local0,\s\\_SB\.PCI0\.LPCB\.EC0\.HWAK
 begin
 Store(Local0,\\_SB.PCI0.LPCB.EC0.AK00)\n
 Store(ShiftRight(Local0,8),\\_SB.PCI0.LPCB.EC0.AK01)
+end;
+into method label _WAK code_regex Store\s\(Zero,\s\\_SB\.PCI0\.LPCB\.EC0\.HWAK\) replaceall_matched
+begin
+Store(Zero,\\_SB.PCI0.LPCB.EC0.AK00)\n
+Store(Zero,\\_SB.PCI0.LPCB.EC0.AK01)
 end;
 
 into method label GBST code_regex \(SBRC, replaceall_matched begin (B1B2(RC00,RC01), end;
