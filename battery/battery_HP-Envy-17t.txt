@@ -8,6 +8,7 @@
 #  HP Envy 17t-j000
 #  HP Envy 15-j063cl
 #  HP Envy 15-j040el
+#  HP 2000 2d11DX (per github/bhundven)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -156,6 +157,8 @@ into method label ITLB code_regex \(BFC1, replaceall_matched begin (B1B2(FC10,FC
 into method label ITLB code_regex \sBFC0, replaceall_matched begin B1B2(FC00,FC01), end;
 into method label _Q09 code_regex \(BRC0, replaceall_matched begin (B1B2(RC00,RC01), end;
 into method label _Q09 code_regex \sBFC0\) replaceall_matched begin B1B2(FC00,FC01)) end;
+into method label _Q09 code_regex \(BFC0, replaceall_matched begin (B1B2(RC00,RC01), end;
+into method label _Q09 code_regex \sBRC0\) replaceall_matched begin B1B2(FC00,FC01)) end;
 into method label GBTI code_regex \(BDV0, replaceall_matched begin (B1B2(DV00,DV01), end;
 into method label GBTI code_regex \(BDV1, replaceall_matched begin (B1B2(DV10,DV11), end;
 into method label BTIF code_regex \(BDV0, replaceall_matched begin (B1B2(DV00,DV01), end;
