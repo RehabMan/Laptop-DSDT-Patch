@@ -6,6 +6,7 @@
 # works for:
 #  Dell XPS L502x
 #  Dell 1464/1564 (per dhnguyen92)
+#  Dell XPS L501x (per wofy)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

@@ -7,6 +7,7 @@
 # works for:
 #  Dell Inspiron 15 7000 Series (late 2014)
 #  Dell Inspiron 14 7000 Series (14-7447 confirmed, courtesy isnowbee)
+#  Dell Latitude E7440 (per MBTallan)
 
 # fix SOST _OSI check
 into method label SOST code_regex _OSI\s+\(WIN7\) replaceall_matched begin LOr(_OSI(WIN7),_OSI("Darwin")) end;
