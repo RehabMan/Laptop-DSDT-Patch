@@ -31,6 +31,7 @@
 #  ASUS TP300LA
 #  ASUS X200LA
 #  ASUS TP500LA (per haimann951)
+#  ASUS U46E (per jacopers)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

@@ -7,6 +7,7 @@
 #    HP DV6t-6b00 Quad Core
 #    HP DV6-6150sl
 #    HP DV6-6033cl (per ttran001)
+#    HP DV6-6051er (per AirAlarm)
 
 # define helper method to handle 16 bits
 

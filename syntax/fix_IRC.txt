@@ -5,3 +5,8 @@ into device label VID parent_label PEG code_regex Name\s+\(_IRC,\s+([^\)].*)\) r
 begin
 Method(_IRC, 0, NotSerialized) { Return(%1) }
 end;
+
+into_all device code_regex Name\s+\(_IRC,\s+([^\)].*)\) replace_matched
+begin
+Method(_IRC, 0, NotSerialized) { Return(%1) }
+end;
