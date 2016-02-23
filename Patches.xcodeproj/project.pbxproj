@@ -126,6 +126,7 @@
 		84FEF29C196D8B7D0061DF5A /* fix_PARSEOP_ZERO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PARSEOP_ZERO.txt; path = syntax/fix_PARSEOP_ZERO.txt; sourceTree = "<group>"; };
 		ED01642F1BEE6038008B1949 /* battery_HP-DV2-2500.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV2-2500.txt"; path = "battery/battery_HP-DV2-2500.txt"; sourceTree = "<group>"; };
 		ED0EC5E41A01E9880021AD90 /* graphics_HD4600_yosemite.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_HD4600_yosemite.txt; path = graphics/graphics_HD4600_yosemite.txt; sourceTree = "<group>"; };
+		ED0F9F561C7CA8AA008DC54D /* battery_Razer-Blade-Pro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Razer-Blade-Pro.txt"; path = "battery/battery_Razer-Blade-Pro.txt"; sourceTree = "<group>"; };
 		ED1646481A94E21C00D2D49B /* battery_Lenovo-E430.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-E430.txt"; path = "battery/battery_Lenovo-E430.txt"; sourceTree = "<group>"; };
 		ED1EDC921B051A2F00EFA50B /* battery_Acer-Aspire-5741g.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-5741g.txt"; path = "battery/battery_Acer-Aspire-5741g.txt"; sourceTree = "<group>"; };
 		ED1F747B1A4C772200FFE7AE /* battery_Lenovo-z470-z370.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-z470-z370.txt"; path = "battery/battery_Lenovo-z470-z370.txt"; sourceTree = "<group>"; };
@@ -325,6 +326,7 @@
 				ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */,
 				ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */,
 				EDB8A7B11C4D2679002145FF /* battery_Razer-Blade-2014.txt */,
+				ED0F9F561C7CA8AA008DC54D /* battery_Razer-Blade-Pro.txt */,
 				8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */,
 				842F532217FB3114001CF33B /* battery_Samsung-RF411.txt */,
 				841796F018539E4C00E987F2 /* battery_Samsung-r528.txt */,
