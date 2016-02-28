@@ -126,7 +126,6 @@
 [wifi] AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
 [wifi] AR9285 WiFi RP02-WNIC	wifi/wifi_AR9285-RP02-WNIC.txt
 [misc] --> Fan control/temperature/LID status patches	NullPatch.txt
-[misc] Acer Aspire fan control	misc/control_AcerFan.txt
 [misc] Poll for LID changes	misc/misc_LidPoll.txt
 [misc] Remove _PRW from LID	misc/misc_Lid_PRW.txt
 [sys] --> System Patches	NullPatch.txt
