@@ -20,6 +20,7 @@
 #  ASUS G51Jx-a1 (per elkis75)
 #  ASUS A555LD
 #  ASUS X751LD (per tj3000)
+#  ASUS G771JM (per ouija)
 
 #Convert 16 bit to 8 bit registers
 into device label EC0 code_regex TAH0,\s+16, replace_matched begin AH00,8,AH01,8, end;
