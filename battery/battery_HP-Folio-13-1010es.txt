@@ -3,6 +3,7 @@
 
 # created by jackito 2014-09-13
 # R100 series changes by saudsss 2015-03-26
+# additional fixes by RehabMan 2016-03-15
 
 # works for:
 #   HP Folio 13 1010-es
@@ -11,6 +12,7 @@
 #   HP 250 G3 (per jeanpierre)
 #   HP Envy m6-1125dx (per btm710)
 #   HP 15-r083sr (per Xerz)
+#   HP Envy m6-k015DX (per i.bezkorovayniy)
 
 # Registers that needs to be patched:
 #
@@ -45,8 +47,8 @@ into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 into_all all code_regex CondRefOf\s+\(\\TNOT\) replaceall_matched begin CondRefOf(TNOT) end;
 
 # Create B1B2 Method by RehabMan
-into method label B1B2 parent_label EC0 remove_entry;
-into device label EC0 insert
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
 begin
 Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
 end;
@@ -139,10 +141,10 @@ Store(Arg0, NIB0) Store(ShiftRight(Arg0, 8), NIB1)
 end;
 
 # BATT EC
-into method label BATT code_regex \.MUAC, replaceall_matched begin .B1B2(^^PCI0.LPCB.EC0.UAC0,^^PCI0.LPCB.EC0.UAC1), end;
-into method label BATT code_regex \.ATTE, replaceall_matched begin .B1B2(^^PCI0.LPCB.EC0.TTE0,^^PCI0.LPCB.EC0.TTE1), end;
-into method label BATT code_regex \.RTTE, replaceall_matched begin .B1B2(^^PCI0.LPCB.EC0.RTE0,^^PCI0.LPCB.EC0.RTE1), end;
-into method label BATT code_regex \.ATTF, replaceall_matched begin .B1B2(^^PCI0.LPCB.EC0.TTF0,^^PCI0.LPCB.EC0.TTF1), end;
+into method label BATT code_regex \^\^PCI0\.LPCB\.EC0\.MUAC, replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.UAC0,^^PCI0.LPCB.EC0.UAC1), end;
+into method label BATT code_regex \^\^PCI0\.LPCB\.EC0\.ATTE, replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.TTE0,^^PCI0.LPCB.EC0.TTE1), end;
+into method label BATT code_regex \^\^PCI0\.LPCB\.EC0\.RTTE, replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.RTE0,^^PCI0.LPCB.EC0.RTE1), end;
+into method label BATT code_regex \^\^PCI0\.LPCB\.EC0\.ATTF, replaceall_matched begin B1B2(^^PCI0.LPCB.EC0.TTF0,^^PCI0.LPCB.EC0.TTF1), end;
 
 #### Buffer registers patch
 # BATT EC
@@ -173,6 +175,9 @@ into method label CFUN code_regex \(SMD0\, replaceall_matched begin (RSMD(), end
 # additional 16-bit items for HP R100 series
 into device label EC0 code_regex BFCB,\s+16, replace_matched begin BF11,8,BF12,8, end;
 into device label EC0 code_regex BTPB,\s+16, replace_matched begin BTP0,8,BTP1,8, end;
-into_all method label _BIF code_regex \.BFCB, replaceall_matched begin .B1B2(\\_SB.PCI0.LPCB.EC0.BF11,\\_SB.PCI0.LPCB.EC0.BF12), end;
-into_all method label _BTP code_regex \.BTPB replaceall_matched begin .B1B2(\\_SB.PCI0.LPCB.EC0.BTP0,\\_SB.PCI0.LPCB.EC0.BTP1) end;
+into_all method label _BIF code_regex \^\^EC0\.BFCB, replaceall_matched begin B1B2(\\_SB.PCI0.LPCB.EC0.BF11,\\_SB.PCI0.LPCB.EC0.BF12), end;
 
+into method label _BTP code_regex Store\s+\(Local0,\s+\^\^EC0\.BTPB\) replace_matched
+begin
+Store(Local0, ^^EC0.BTP0) Store(ShiftRight(Arg0, 8), ^^EC0.BTP1)
+end;
