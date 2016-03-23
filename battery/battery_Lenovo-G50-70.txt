@@ -2,9 +2,14 @@
 #battery_Lenovo-G50-70.txt
 
 # created by katar 17/01/2015
+# added G40-80 support (courtesy andres85)
 
 # works for:
 #  Lenovo G50-70
+#  Lenovo G40-80 (per andres85)
+
+# disable BAT1 device
+into method label _STA parent_label BAT1 replace_content begin Return (Zero) end;
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -35,7 +40,15 @@ into method label _BIF code_regex \(B1DV, replaceall_matched begin (B1B2(CE00,CE
 into method label _BIF code_regex \(B1FC, replaceall_matched begin (B1B2(CF00,CF01), end;
 into method label _BST code_regex \(B1AC, replaceall_matched begin (B1B2(CG00,CG01), end;
 
-#                        FWBT,   64, 
+# fix 16-bit methods SMTF (Lenovo G40-80)
+into method label SMTF code_regex \(B1RC, replaceall_matched begin (B1B2(CA00,CA01), end;
+into method label SMTF code_regex \(B1FV, replaceall_matched begin (B1B2(CB00,CB01), end;
+into method label SMTF code_regex \(B1DC, replaceall_matched begin (B1B2(CD00,CD01), end;
+into method label SMTF code_regex \(B1DV, replaceall_matched begin (B1B2(CE00,CE01), end;
+into method label SMTF code_regex \(B1FC, replaceall_matched begin (B1B2(CF00,CF01), end;
+into method label SMTF code_regex \(B1AC, replaceall_matched begin (B1B2(CG00,CG01), end;
+
+#                        FWBT,   64,
 #                        SMDA,   256, 
 
 # deal with buffer fields above
@@ -127,5 +140,3 @@ into method label CFUN code_regex \(SMDA, replaceall_matched begin (RECB(0x64,25
 into method label MHPF code_regex Store\s+\((.*),\s+SMDA\) replaceall_matched begin WECB(0x64,256,%1) end;
 into method label CFUN code_regex Store\s+\((.*),\s+SMDA\) replaceall_matched begin WECB(0x64,256,%1) end;
 
-#BAT1 device
-into method label _STA parent_label BAT1 replace_content begin Return (Zero) end;
