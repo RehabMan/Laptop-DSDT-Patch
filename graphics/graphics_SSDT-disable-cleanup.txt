@@ -19,4 +19,5 @@ begin
 Method(_IRC, 0, NotSerialized) { Return(%1) }
 end;
 
-into method label _BCM code_regex (\s*)(Arg0) replace_matched begin %1//%2 end;
+# if using refs.txt (recommended), this patch not needed
+into method label _BCM code_regex (\s*)(Arg0)$ replace_matched begin %1//%2 end;
