@@ -103,7 +103,7 @@
 		84B6F74818BFCCC8000015F3 /* battery_Acer-Aspire-E1-571.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-E1-571.txt"; path = "battery/battery_Acer-Aspire-E1-571.txt"; sourceTree = "<group>"; };
 		84B7DC531808792C00CAA692 /* audio_HDEF-layout12a.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout12a.txt"; path = "audio/audio_HDEF-layout12a.txt"; sourceTree = "<group>"; };
 		84B9D52516FFE684002CD441 /* License.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.md; sourceTree = "<group>"; };
-		84B9D52716FFE684002CD441 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		84B9D52716FFE684002CD441 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v1.txt"; path = "battery/battery_Surface-Pro-v1.txt"; sourceTree = "<group>"; };
 		84C07CDD19A5429500D9C3F4 /* graphics_Rename-PCI0_VID.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-PCI0_VID.txt"; path = "graphics/graphics_Rename-PCI0_VID.txt"; sourceTree = "<group>"; };
 		84C3532419985DDE00005C20 /* battery_Lenovo-y570.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-y570.txt"; path = "battery/battery_Lenovo-y570.txt"; sourceTree = "<group>"; };
@@ -141,6 +141,7 @@
 		ED75B6701B1B6EBA002D6468 /* battery_Lenovo-Y50.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Y50.txt"; path = "battery/battery_Lenovo-Y50.txt"; sourceTree = "<group>"; };
 		ED77D4F11C3F56F80085DDCA /* battery_Gigabyte-P35Xv3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Gigabyte-P35Xv3.txt"; path = "battery/battery_Gigabyte-P35Xv3.txt"; sourceTree = "<group>"; };
 		ED7FB8091AA8BCD20077FD6D /* battery_Clevo-W170HN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-W170HN.txt"; path = "battery/battery_Clevo-W170HN.txt"; sourceTree = "<group>"; };
+		ED7FE0FD1CAC912600C11BC3 /* rename_DSM.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = rename_DSM.txt; path = syntax/rename_DSM.txt; sourceTree = "<group>"; };
 		ED894A2C1AA779BC00D72637 /* battery_Lenovo-Yoga-S1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-S1.txt"; path = "battery/battery_Lenovo-Yoga-S1.txt"; sourceTree = "<group>"; };
 		ED8A1AB61AA38DD70019A7F4 /* battery_Lenovo-X201.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-X201.txt"; path = "battery/battery_Lenovo-X201.txt"; sourceTree = "<group>"; };
 		ED8F121A1B4DB5D5007ADCA9 /* system_OSYS_win7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_OSYS_win7.txt; path = system/system_OSYS_win7.txt; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 				844FAA1318A680B4001F2C6C /* fix_ADBG.txt */,
 				84E8B501191EB2D2004E7862 /* fix_MMTB.txt */,
 				84CAF68C1926C305000EF232 /* fix_HID_pnp.txt */,
+				ED7FE0FD1CAC912600C11BC3 /* rename_DSM.txt */,
 				8475976F1943A347009F3026 /* remove_DSM.txt */,
 				84FEF29C196D8B7D0061DF5A /* fix_PARSEOP_ZERO.txt */,
 				EDE3BCB71B018ED700475630 /* fix_PSS.txt */,
@@ -377,7 +379,7 @@
 				845FE5EF1702639F004601B0 /* .maciasl */,
 				8499C9761704B5F70066A5F3 /* NullPatch.txt */,
 				84B9D52516FFE684002CD441 /* License.md */,
-				84B9D52716FFE684002CD441 /* README.txt */,
+				84B9D52716FFE684002CD441 /* README.md */,
 				840E6D3517FB271C00784B2A /* Syntax Errors */,
 				840E6D3B17FB297000784B2A /* Intel Graphics */,
 				EDCD54631A2E10190009F438 /* Nvidia/Radeon Disable */,
