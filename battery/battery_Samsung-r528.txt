@@ -7,6 +7,7 @@
 # works for:
 #  Samsung r528 DT02EE
 #  Samsung r540 (r530/r730 assumed, per Moorre)
+#  Samsung r520/r522/r620 (per Mooore)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
