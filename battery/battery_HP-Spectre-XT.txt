@@ -10,6 +10,7 @@
 #  HP Envy 6T 1000
 #  HP Envy 4-1117nr (per chris998)
 #  HP Envy 4-1024tu (per chris998)
+#  HP Envy m6-1100ex (per DrBaseIT)
 
 # remove WMI related items; makes it easier to patch battery EC
 #into device label WMID remove_entry;
