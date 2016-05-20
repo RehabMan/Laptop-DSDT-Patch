@@ -16,6 +16,7 @@
 #  Lenovo L450 (tested by kaiomatico)
 #  Lenovo T530/T530i (per Swingkid)
 #  Lenovo W530 (2441A43) (per GerryGu)
+#  Lenovo T460 (per jkoneal)
 
 # Note: disable secondary battery
 #  *** remove this line if you have a second battery installed)
