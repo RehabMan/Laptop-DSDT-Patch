@@ -129,6 +129,7 @@
 		ED0F9F561C7CA8AA008DC54D /* battery_Razer-Blade-Pro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Razer-Blade-Pro.txt"; path = "battery/battery_Razer-Blade-Pro.txt"; sourceTree = "<group>"; };
 		ED1646481A94E21C00D2D49B /* battery_Lenovo-E430.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-E430.txt"; path = "battery/battery_Lenovo-E430.txt"; sourceTree = "<group>"; };
 		ED16E2A31CB3FFC600B890FC /* misc_Skylake-LPC.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "misc_Skylake-LPC.txt"; path = "misc/misc_Skylake-LPC.txt"; sourceTree = "<group>"; };
+		ED1B7F7C1CF2DE0600B7FE1F /* battery_Surface-Pro-v2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v2.txt"; path = "battery/battery_Surface-Pro-v2.txt"; sourceTree = "<group>"; };
 		ED1EDC921B051A2F00EFA50B /* battery_Acer-Aspire-5741g.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Acer-Aspire-5741g.txt"; path = "battery/battery_Acer-Aspire-5741g.txt"; sourceTree = "<group>"; };
 		ED1F747B1A4C772200FFE7AE /* battery_Lenovo-z470-z370.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-z470-z370.txt"; path = "battery/battery_Lenovo-z470-z370.txt"; sourceTree = "<group>"; };
 		ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-13.txt"; path = "battery/battery_Lenovo-Yoga-13.txt"; sourceTree = "<group>"; };
@@ -340,6 +341,7 @@
 				842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */,
 				EDBE01901C90616800B82230 /* battery_Sony-VAIO-SZ1XP.txt */,
 				84BB387218A84B70008690BA /* battery_Surface-Pro-v1.txt */,
+				ED1B7F7C1CF2DE0600B7FE1F /* battery_Surface-Pro-v2.txt */,
 				8437F2F71A89C5FF00224BFA /* battery_Surface-Pro-v3.txt */,
 				ED2C801E1C3F8A140009BA8A /* battery_Surface-Pro-v4.txt */,
 				843936A218ABC24200E32386 /* battery_TabletKiosk-i575.txt */,

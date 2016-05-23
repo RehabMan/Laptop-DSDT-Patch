@@ -1,0 +1,95 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Surface-Pro-v2.txt
+
+# created by nayeweiyang 2016-05-22
+# initial bugfix by RehabMan 2016-05-22
+
+# works for:
+#  Microsoft Surface Pro v2
+
+#16 registers
+into device label EC0 code_regex F0RM,\s+16, replace_matched begin F0M0,8,F0M1,8, end;
+into device label EC0 code_regex F1RM,\s+16, replace_matched begin F1M0,8,F1M1,8, end;
+into device label EC0 code_regex RBDI,\s+16, replace_matched begin RBI0,8,RBI1,8, end;
+into device label EC0 code_regex RPUI,\s+16, replace_matched begin RPI0,8,RPI1,8, end;
+into device label EC0 code_regex PNFV,\s+16, replace_matched begin PNF0,8,PNF1,8, end;
+into device label EC0 code_regex PLSV,\s+16, replace_matched begin PLS0,8,PLS1,8, end;
+into device label EC0 code_regex B0TP,\s+16, replace_matched begin B0P0,8,B0P1,8, end;
+into device label EC0 code_regex B0VL,\s+16, replace_matched begin BVL0,8,BVL1,8, end;
+into device label EC0 code_regex B0CR,\s+16, replace_matched begin B0R0,8,B0R1,8, end;
+into device label EC0 code_regex B0AC,\s+16, replace_matched begin B0C0,8,B0C1,8, end;
+into device label EC0 code_regex B0ME,\s+16, replace_matched begin B0E0,8,B0E1,8, end;
+into device label EC0 code_regex B0RS,\s+16, replace_matched begin B0S0,8,B0S1,8, end;
+into device label EC0 code_regex B0RC,\s+16, replace_matched begin RC00,8,RC01,8, end;
+into device label EC0 code_regex B0FC,\s+16, replace_matched begin B0F0,8,B0F1,8, end;
+into device label EC0 code_regex B0MC,\s+16, replace_matched begin BMC0,8,BMC1,8, end;
+into device label EC0 code_regex B0MV,\s+16, replace_matched begin B0V0,8,B0V1,8, end;
+into device label EC0 code_regex B0ST,\s+16, replace_matched begin B0T0,8,B0T1,8, end;
+into device label EC0 code_regex B0CC,\s+16, replace_matched begin BCC0,8,BCC1,8, end;
+into device label EC0 code_regex B0DC,\s+16, replace_matched begin B0D0,8,B0D1,8, end;
+into device label EC0 code_regex B0DV,\s+16, replace_matched begin BDV0,8,BDV1,8, end;
+into device label EC0 code_regex B0SI,\s+16, replace_matched begin B0I0,8,B0I1,8, end;
+into device label EC0 code_regex B0MD,\s+16, replace_matched begin B0M0,8,B0M1,8, end;
+into device label EC0 code_regex B0SN,\s+16, replace_matched begin B0N0,8,B0N1,8, end;
+into device label EC0 code_regex B1TP,\s+16, replace_matched begin B1P0,8,B1P1,8, end;
+into device label EC0 code_regex B1VL,\s+16, replace_matched begin B1L0,8,B1L1,8, end;
+into device label EC0 code_regex B1CR,\s+16, replace_matched begin B1R0,8,B1R1,8, end;
+into device label EC0 code_regex B1AC,\s+16, replace_matched begin B1C0,8,B1C1,8, end;
+into device label EC0 code_regex B1ME,\s+16, replace_matched begin B1E0,8,B1E1,8, end;
+into device label EC0 code_regex B1RS,\s+16, replace_matched begin B1S0,8,B1S1,8, end;
+into device label EC0 code_regex B1RC,\s+16, replace_matched begin BR00,8,BR01,8, end;
+into device label EC0 code_regex B1FC,\s+16, replace_matched begin B1F0,8,B1F1,8, end;
+into device label EC0 code_regex B1MC,\s+16, replace_matched begin BM00,8,BM01,8, end;
+into device label EC0 code_regex B1MV,\s+16, replace_matched begin B1V0,8,B1V1,8, end;
+into device label EC0 code_regex B1ST,\s+16, replace_matched begin B1T0,8,B1T1,8, end;
+into device label EC0 code_regex B1CC,\s+16, replace_matched begin BC00,8,BC01,8, end;
+into device label EC0 code_regex B1DC,\s+16, replace_matched begin B1D0,8,B1D1,8, end;
+into device label EC0 code_regex B1DV,\s+16, replace_matched begin BD00,8,BD01,8, end;
+into device label EC0 code_regex B1SI,\s+16, replace_matched begin B1I0,8,B1I1,8, end;
+into device label EC0 code_regex B1MD,\s+16, replace_matched begin B1M0,8,B1M1,8, end;
+into device label EC0 code_regex B1SN,\s+16, replace_matched begin B1N0,8,B1N1,8, end;
+into device label EC0 code_regex B0AH,\s+16, replace_matched begin B0H0,8,B0H1,8, end;
+into device label EC0 code_regex B1AH,\s+16, replace_matched begin B1H0,8,B1H1,8, end;
+
+#fix 16 methods
+into method label BCR1 code_regex B0CR replaceall_matched begin B1B2(B0R0,B0R1) end;
+into method label BRC1 code_regex B0RC replaceall_matched begin B1B2(RC00,RC01) end;
+into method label BIF2 code_regex B0FC replaceall_matched begin B1B2(B0F0,B0F1) end;
+into method label BIF1 code_regex B0DC replaceall_matched begin B1B2(B0D0,B0D1) end;
+into method label BIF4 code_regex B0DV replaceall_matched begin B1B2(BDV0,BDV1) end;
+into method label BVO2 code_regex B1VL replaceall_matched begin B1B2(B1L0,B1L1) end;
+into method label BCR2 code_regex B1CR replaceall_matched begin B1B2(B1R0,B1R1) end;
+into method label BRC2 code_regex B1RC replaceall_matched begin B1B2(BR00,BR01) end;
+into method label BIX2 code_regex B1FC replaceall_matched begin B1B2(B1F0,B1F1) end;
+into method label BIX1 code_regex B1DC replaceall_matched begin B1B2(B1D0,B1D1) end;
+into method label BIX4 code_regex B1DV replaceall_matched begin B1B2(BD00,BD01) end;
+into method label BVO1 code_regex B0VL replaceall_matched begin B1B2(BVL0,BVL1) end;
+
+into_all method parent_label BAT0 code_regex \(\^\^LPCB.EC0.B0CC, replace_matched begin (B1B2(^^LPCB.EC0.BCC0,^^LPCB.EC0.BCC1), end;
+into_all method parent_label BAT0 code_regex \(\^\^LPCB.EC0.B0RC, replace_matched begin (B1B2(^^LPCB.EC0.RC00,^^LPCB.EC0.RC01), end;
+into_all method parent_label BAT1 code_regex \(\^\^LPCB.EC0.B1CC, replace_matched begin (B1B2(^^LPCB.EC0.BC00,^^LPCB.EC0.BC01), end;
+into_all method parent_label BAT1 code_regex \(\^\^LPCB.EC0.B1RC, replace_matched begin (B1B2(^^LPCB.EC0.BR00,^^LPCB.EC0.BR01), end;
+
+into method label _BTP code_regex Store\s\(Arg0,\s\^\^LPCB.EC0.B0AH\) replaceall_matched begin Store(Arg0,^^LPCB.EC0.B0H0) Store (Arg0>>8,^^LPCB.EC0.B0H1) end;
+into method label _BTP code_regex Store\s\(0x05,\s\^\^LPCB.EC0.B0AH\) replaceall_matched begin Store(0x05,^^LPCB.EC0.B0H0) Store (0x05>>8,^^LPCB.EC0.B0H1) end;
+into method label _BTP code_regex Store\s\(Arg0,\s\^\^LPCB.EC0.B1AH\) replaceall_matched begin Store(Arg0,^^LPCB.EC0.B1H0) Store (Arg0>>8,^^LPCB.EC0.B1H1) end;
+into method label _BTP code_regex Store\s\(0x05,\s\^\^LPCB.EC0.B1AH\) replaceall_matched begin Store(0x05,^^LPCB.EC0.B1H0) Store (0x05>>8,^^LPCB.EC0.B1H1) end;
+
+#32
+into device label EC0 code_regex LSFV,\s+32 replace_matched begin LSF0,8,LSF1,8,LSF2,8,LSF3,8 end;
+into device label EC0 code_regex SMFV,\s+32 replace_matched begin SMF0,8,SMF1,8,SMF2,8,SMF3,8 end;
+into device label EC0 code_regex SLSV,\s+32 replace_matched begin SLS0,8,SLS1,8,SLS2,8,SLS3,8 end;
+into device label EC0 code_regex AYFV,\s+32 replace_matched begin AYF0,8,AYF1,8,AYF2,8,AYF3,8 end;
+into device label EC0 code_regex ALSV,\s+32 replace_matched begin ALS0,8,ALS1,8,ALS2,8,ALS3,8 end;
+into device label EC0 code_regex AGID,\s+32 replace_matched begin AGI0,8,AGI1,8,AGI2,8,AGI3,8 end;
+
+#B1B2
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized)\n
+{\n
+    Return(Or(Arg0, ShiftLeft(Arg1, 8)))\n
+}\n
+end;
+
