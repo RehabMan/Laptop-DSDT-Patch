@@ -13,6 +13,7 @@
 #   HP Envy m6-1125dx (per btm710)
 #   HP 15-r083sr (per Xerz)
 #   HP Envy m6-k015DX (per i.bezkorovayniy)
+#   HP 14-k128tx (per nayeweiyang)
 
 # Registers that needs to be patched:
 #
