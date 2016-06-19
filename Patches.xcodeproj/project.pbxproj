@@ -125,6 +125,8 @@
 		84F8BB9D1806D4A800BD0774 /* audio_HDEF-layout12.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout12.txt"; path = "audio/audio_HDEF-layout12.txt"; sourceTree = "<group>"; };
 		84FEF29C196D8B7D0061DF5A /* fix_PARSEOP_ZERO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PARSEOP_ZERO.txt; path = syntax/fix_PARSEOP_ZERO.txt; sourceTree = "<group>"; };
 		ED01642F1BEE6038008B1949 /* battery_HP-DV2-2500.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV2-2500.txt"; path = "battery/battery_HP-DV2-2500.txt"; sourceTree = "<group>"; };
+		ED07F08C1D17476F00985E1D /* usb_prw_0x0d_xhc_skl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x0d_xhc_skl.txt; path = usb/usb_prw_0x0d_xhc_skl.txt; sourceTree = "<group>"; };
+		ED07F08D1D17477500985E1D /* usb_prw_0x6d_xhc_skl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x6d_xhc_skl.txt; path = usb/usb_prw_0x6d_xhc_skl.txt; sourceTree = "<group>"; };
 		ED0EC5E41A01E9880021AD90 /* graphics_HD4600_yosemite.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_HD4600_yosemite.txt; path = graphics/graphics_HD4600_yosemite.txt; sourceTree = "<group>"; };
 		ED0F9F561C7CA8AA008DC54D /* battery_Razer-Blade-Pro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Razer-Blade-Pro.txt"; path = "battery/battery_Razer-Blade-Pro.txt"; sourceTree = "<group>"; };
 		ED1646481A94E21C00D2D49B /* battery_Lenovo-E430.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-E430.txt"; path = "battery/battery_Lenovo-E430.txt"; sourceTree = "<group>"; };
@@ -373,6 +375,8 @@
 				849B7B29180B859900B76D3C /* usb_7-series-multiplex.txt */,
 				EDE3BCB81B018F8800475630 /* usb_prw_0x6d_xhc.txt */,
 				EDE3BCB91B018FCF00475630 /* usb_prw_0x0d_xhc.txt */,
+				ED07F08D1D17477500985E1D /* usb_prw_0x6d_xhc_skl.txt */,
+				ED07F08C1D17476F00985E1D /* usb_prw_0x0d_xhc_skl.txt */,
 			);
 			name = "USB (EHCI-XHCI)";
 			sourceTree = "<group>";

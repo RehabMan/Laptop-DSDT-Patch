@@ -40,6 +40,8 @@
 [usb] 7-series USB3 Multiplex	usb/usb_7-series-multiplex.txt
 [usb] USB3 _PRW 0x0D (instant wake)	usb/usb_prw_0x0d_xhc.txt
 [usb] USB3 _PRW 0x6D (instant wake)	usb/usb_prw_0x6d_xhc.txt
+[usb] USB3 _PRW 0x0D Skylake (instant wake)	usb/usb_prw_0x0d_xhc_skl.txt
+[usb] USB3 _PRW 0x6D Skylake (instant wake)	usb/usb_prw_0x6d_xhc_skl.txt
 [bat] --> Battery Patches	NullPatch.txt
 [bat] Acer Aspire E1-571	battery/battery_Acer-Aspire-E1-571.txt
 [bat] Acer 3820tg	battery/battery_Acer-3820tg.txt
