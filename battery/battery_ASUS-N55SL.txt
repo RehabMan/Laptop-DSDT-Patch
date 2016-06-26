@@ -35,6 +35,7 @@
 #  ASUS N550JK (per sonicmule)
 #  ASUS K46CM
 #  ASUS N76-VB-T4038H (per Tamshiii)
+#  ASUS Zenbook Pro UX501VW (per Jingu)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
