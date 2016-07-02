@@ -12,6 +12,7 @@ into method label _PRW parent_adr 0x00140001 remove_entry;
 into method label _PRW parent_adr 0x001F0003 remove_entry;
 # some other LAN cards use 0x00190000
 into method label _PRW parent_adr 0x00190000 remove_entry;
+into method label _PRW parent_adr 0x001F0006 remove_entry;
 
 # if _PRW methods are stuffed into a separate scope
 into method label _PRW parent_label _SB.PCI0.EHC1 remove_entry;
@@ -38,6 +39,7 @@ into device name_adr 0x00140000 insert begin Method(_PRW) { Return(Package() { 0
 into device name_adr 0x00140001 insert begin Method(_PRW) { Return(Package() { 0x0D, 0 }) } end;
 into device name_adr 0x001F0003 insert begin Method(_PRW) { Return(Package() { 0x0D, 0 }) } end;
 into device name_adr 0x00190000 insert begin Method(_PRW) { Return(Package() { 0x0D, 0 }) } end;
+into device name_adr 0x001F0006 insert begin Method(_PRW) { Return(Package() { 0x0D, 0 }) } end;
 
 # Insert Apple USB properties into USB 3.0 XHC
 into method label _DSM parent_adr 0x00140000 remove_entry;
