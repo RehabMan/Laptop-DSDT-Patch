@@ -7,6 +7,7 @@
 # works for:
 #  Lenovo T440p
 #  Lenovo E540
+#  Lenovo E440
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
