@@ -6,6 +6,7 @@
 # Works for:
 #   Samsung Ativ Book 7
 #   Samsung ATIV Book 8 (per Vairn)
+#   Samsung Ativ Book 6 NP670Z5E-XD2BR
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
