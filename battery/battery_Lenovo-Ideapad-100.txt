@@ -7,6 +7,7 @@
 # Works for
 #   Lenovo Ideapad 100-15ibd
 #   Lenovo Ideapad Y700-15ISK (Skylake)
+#   Lenovo B50-50 (Broadwell)
 
 # Credits to Rehab man for helping me, and his B1B2 methods and patches, along with his guide.
 # 16-Bit Register edit in EC0
@@ -129,3 +130,5 @@ into method label GSBI code_regex \(BDN0, replaceall_matched begin (RECB(0x99,56
 into method label BATD code_regex \(\^\^PCI0\.LPCB\.EC0\.FWBT, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0x14,64), end;
 into method label BATD code_regex \(\^\^PCI0\.LPCB\.EC0\.B1DA, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.B2DA,^^PCI0.LPCB.EC0.B3DA), end;
 
+#RehabMan: added for Lenovo B50-50
+into method label MHPF code_regex Store\s+\(SMDA,\s+FB4\) replaceall_matched begin Store(RECB(0x64,256),FB4) end;
