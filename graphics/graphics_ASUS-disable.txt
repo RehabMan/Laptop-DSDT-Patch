@@ -1,0 +1,37 @@
+#Maintained by: kylon for: Laptop Patches
+#graphics_ASUS-disable.txt
+
+# The purpose of this patch is to add code to _INI to
+# disable nvidia/Radeon on Asus laptops.  The patch is intended to be applied to
+# the DSDT/SSDT that contains the _INI method for the discrete card.
+#
+# Usually the path is _SB.PCI0.PEGR.GFX0 and the method name
+# is _OFF, but some systems use different names.
+#
+# The path of _OFF may have to be customized to match your DSDT/SSDT.
+# In addition the label of EC0 may need to be changed (H_EC, EC, etc)
+#
+# Note: Uncomment the External line if your _OFF method is in
+#   a separate DSDT/SSDT.
+#
+# Tested on
+#
+# k53sj
+# k53sv
+
+into method label _INI parent_label \_SB.PCI0.PEGR.GFX0 insert
+begin
+//added to turn nvidia/radeon off\n
+//External(\_SB.PCI0.PEGR.GFX0._OFF, MethodObj)\n
+_OFF ()\n
+\_SB.PCI0.LPCB.EC0.TSDS ()\n
+end;
+
+into method label _REG parent_hid PNP0C09 insert
+begin
+If (LAnd(LEqual(Arg0,3),LEqual(Arg1,1)))\n
+{\n
+External(_SB.PCI0.PEGR.GFX0._INI, MethodObj)\n
+_INI ()\n
+}\n
+end;
