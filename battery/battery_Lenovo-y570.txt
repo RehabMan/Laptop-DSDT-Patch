@@ -9,6 +9,7 @@
 #  Lenovo g770
 #  Lenovo g470
 #  Lenovo u460
+#  Lenovo y550 (per Maksibon)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 into method label B1B2 remove_entry;

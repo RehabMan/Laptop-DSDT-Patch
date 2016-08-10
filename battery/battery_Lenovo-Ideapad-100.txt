@@ -9,6 +9,39 @@
 #   Lenovo Ideapad Y700-15ISK (Skylake)
 #   Lenovo B50-50 (Broadwell)
 
+# Note, offsets for RECB/WECB based on this EC layout:
+#
+#            OperationRegion (ERAM, EmbeddedControl, Zero, 0xFF)
+#            Field (ERAM, ByteAcc, Lock, Preserve)
+#            {
+#...
+#                Offset (0x12),
+#                FUSL,   8,
+#                FUSH,   8,
+#                FWBT,   64, //!!0x14
+#                Offset (0x4A),
+#                ESMC,   1,
+#                Offset (0x4C),
+#                BFUD,   16,
+#                Offset (0x5D),
+#                EXSI,   8,
+#                EXSB,   8,
+#                EXND,   8,
+#                SMPR,   8,
+#                SMST,   8,
+#                SMAD,   8,
+#                SMCM,   8,
+#                SMDA,   256, //!!0x64
+#                BCNT,   8,
+#                SMAA,   8,
+#                SAD0,   8,
+#                SAD1,   8,
+#                Offset (0x90),
+#                BMN0,   72, //!!0x90
+#                BDN0,   56, //!!0x99
+
+# If you have different offsets, make appropriate modifications.
+
 # Credits to Rehab man for helping me, and his B1B2 methods and patches, along with his guide.
 # 16-Bit Register edit in EC0
 into device label EC0 code_regex BFUD,\s+16 replace_matched begin B2UD,8,B3UD,8 end;

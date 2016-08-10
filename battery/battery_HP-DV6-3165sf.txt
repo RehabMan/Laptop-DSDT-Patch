@@ -17,6 +17,7 @@
 #  HP DV7-3020ea, per Dsynos80
 #  Compaq CQ42-263tu, courtesy subluq
 #  HP DV5-1153ei, per Redhishan
+#  HP Pavilion G4 1214tx, per miraj27
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
