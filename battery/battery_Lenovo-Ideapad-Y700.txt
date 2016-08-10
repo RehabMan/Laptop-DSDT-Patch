@@ -5,6 +5,7 @@
 
 # Works for
 #   Lenovo Ideapad Y700-15ISK (Skylake)
+#   Lenovo Ideapad Y300-I5ISK (Skylake), per Donny895
 
 # Note, offsets for RECB/WECB based on this EC layout:
 #
