@@ -150,6 +150,7 @@
 		ED894A2C1AA779BC00D72637 /* battery_Lenovo-Yoga-S1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-S1.txt"; path = "battery/battery_Lenovo-Yoga-S1.txt"; sourceTree = "<group>"; };
 		ED8A1AB61AA38DD70019A7F4 /* battery_Lenovo-X201.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-X201.txt"; path = "battery/battery_Lenovo-X201.txt"; sourceTree = "<group>"; };
 		ED8F121A1B4DB5D5007ADCA9 /* system_OSYS_win7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_OSYS_win7.txt; path = system/system_OSYS_win7.txt; sourceTree = "<group>"; };
+		ED95C7231D5BBC62006BC358 /* battery_Lenovo-Ideapad-Y700.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Ideapad-Y700.txt"; path = "battery/battery_Lenovo-Ideapad-Y700.txt"; sourceTree = "<group>"; };
 		EDB15EEA1A34B10C009F0E21 /* graphics_PTS_WAK-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_PTS_WAK-disable.txt"; path = "graphics/graphics_PTS_WAK-disable.txt"; sourceTree = "<group>"; };
 		EDB280191A3A21BD002C47E1 /* graphics_nvidia_laptop2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_nvidia_laptop2.txt; path = graphics/graphics_nvidia_laptop2.txt; sourceTree = "<group>"; };
 		EDB703891BAB9D49002AED96 /* audio_HDEF-layout3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout3.txt"; path = "audio/audio_HDEF-layout3.txt"; sourceTree = "<group>"; };
@@ -313,6 +314,7 @@
 				ED1646481A94E21C00D2D49B /* battery_Lenovo-E430.txt */,
 				EDCCC2CB1A70148300C7301E /* battery_Lenovo-G50-70.txt */,
 				ED4E83951CC68C070005EB0E /* battery_Lenovo-Ideapad-100.txt */,
+				ED95C7231D5BBC62006BC358 /* battery_Lenovo-Ideapad-Y700.txt */,
 				84A21711195204BE004751F3 /* battery_Lenovo-T430u.txt */,
 				842AF6E419CB3D2F00309DAD /* battery_Lenovo-T440p.txt */,
 				841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */,

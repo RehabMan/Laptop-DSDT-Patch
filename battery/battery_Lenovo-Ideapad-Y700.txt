@@ -1,12 +1,10 @@
 #Maintained by: RehabMan for: Laptop Patches
-#battery_Lenovo-Ideapad-100.txt
+#battery_Lenovo-Ideapad-Y700.txt
 
-# Created by Superwolf123 2016-04-19
-# some fixes by Rehabman 2016-04-19
+# Created by RehabMan 2016-08-10, based on battery_Lenovo_Ideapad-100.txt
 
 # Works for
-#   Lenovo Ideapad 100-15ibd
-#   Lenovo B50-50 (Broadwell)
+#   Lenovo Ideapad Y700-15ISK (Skylake)
 
 # Note, offsets for RECB/WECB based on this EC layout:
 #
@@ -35,9 +33,9 @@
 #                SMAA,   8,
 #                SAD0,   8,
 #                SAD1,   8,
-#                Offset (0x90),
-#                BMN0,   72, //!!0x90
-#                BDN0,   56, //!!0x99
+#                Offset (0x8F),
+#                BMN0,   72, //!!0x8F
+#                BDN0,   56, //!!0x98
 
 # If you have different offsets, make appropriate modifications.
 
@@ -153,10 +151,10 @@ into method label MHIF code_regex \(FWBT, replaceall_matched begin (RECB(0x14,64
 into method label GBID code_regex \(FWBT, replaceall_matched begin (RECB(0x14,64), end;
 into method label GSBI code_regex \(FWBT, replaceall_matched begin (RECB(0x14,64), end;
 into method label MHPF code_regex Store\s+\(FB4,\s+SMDA\) replaceall_matched begin WECB(0x64,256,FB4) end;
-into method label GSBI code_regex \(BMN0, replaceall_matched begin (RECB(0x90,72), end;
-into method label _BIF code_regex \(BMN0, replaceall_matched begin (RECB(0x90,56), end;
-into method label _BIF code_regex \(BDN0, replaceall_matched begin (RECB(0x99,56), end;
-into method label GSBI code_regex \(BDN0, replaceall_matched begin (RECB(0x99,56), end;
+into method label GSBI code_regex \(BMN0, replaceall_matched begin (RECB(0x8f,72), end;
+into method label _BIF code_regex \(BMN0, replaceall_matched begin (RECB(0x8f,56), end;
+into method label _BIF code_regex \(BDN0, replaceall_matched begin (RECB(0x98,56), end;
+into method label GSBI code_regex \(BDN0, replaceall_matched begin (RECB(0x98,56), end;
 
 #RehabMan: added for Lenovo Y700
 into method label BATD code_regex \(\^\^PCI0\.LPCB\.EC0\.FWBT, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0x14,64), end;
