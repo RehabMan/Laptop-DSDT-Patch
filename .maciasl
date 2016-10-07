@@ -158,3 +158,4 @@
 [audio] --> Audio	NullPatch.txt
 [audio] Audio Layout 12	audio/audio_HDEF-layout12.txt
 [audio] Audio Layout 3	audio/audio_HDEF-layout3.txt
+[keyboard] Keyboard backlight patch /
