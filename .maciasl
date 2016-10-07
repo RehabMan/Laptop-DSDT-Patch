@@ -135,7 +135,7 @@
 [misc] --> Fan control/temperature/LID status patches	NullPatch.txt
 [misc] Poll for LID changes	misc/misc_LidPoll.txt
 [misc] Remove _PRW from LID	misc/misc_Lid_PRW.txt
-[misc] Keyboard backlight patch misc/keyboardbacklight_Haswell.txt
+[misc] Keyboard backlight patch misc/misc_keyboardbacklight_Haswell.txt
 [sys] --> System Patches	NullPatch.txt
 [sys] IRQ Fix	system/system_IRQ.txt
 [sys] SMBUS Fix	system/system_SMBUS.txt
