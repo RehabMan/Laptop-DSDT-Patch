@@ -1,0 +1,67 @@
+# Patch by EMlyDinEsH (www.osxlatitude.com)
+# Enables 4 keyboard backlight levels control to work using my kexts AsusNBFnKeys and Smart Touchpad
+# This patch meant for haswell notebooks.
+
+# Insert backlight auto off control sync field for Smart Touchpad and Asus Fn Keys driver
+into device label ATKD code_regex Name\s\(BOFF,\sZero\) remove_matched;
+into device label ATKD insert begin Name (BOFF, Zero) end;
+
+# Insert method SKBL for setting keyboard backlight level
+into method label SKBL parent_label ATKD remove_entry;
+into Device label ATKD insert begin
+Method (SKBL, 1, NotSerialized)\n
+            {\n
+                If (Or (LEqual (Arg0, 0xED), LEqual (Arg0, 0xFD)))\n
+                {\n
+                    If (And (LEqual (Arg0, 0xED), LEqual (BOFF, 0xEA)))\n
+                    {\n
+                        Store (Zero, Local0)\n
+                        Store (Arg0, BOFF)\n
+                    }\n
+                    Else\n
+                    {\n
+                        If (And (LEqual (Arg0, 0xFD), LEqual (BOFF, 0xFA)))\n
+                        {\n
+                            Store (Zero, Local0)\n
+                            Store (Arg0, BOFF)\n
+                        }\n
+                        Else\n
+                        {\n
+                            Return (BOFF)\n
+                        }\n
+                    }\n
+                }\n
+                Else\n
+                {\n
+                    If (Or (LEqual (Arg0, 0xEA), LEqual (Arg0, 0xFA)))\n
+                    {\n
+                        Store (KBLV, Local0)\n
+                        Store (Arg0, BOFF)\n
+                    }\n
+                    Else\n
+                    {\n
+                        Store (Arg0, Local0)\n
+                        Store (Arg0, KBLV)\n
+                    }\n
+                }\n
+
+                Store (DerefOf (Index (PWKB, Local0)), Local1)\n
+                ^^PCI0.LPCB.EC0.WRAM (0x04B1, Local1)\n
+                Return (Local0)\n
+            }\n
+end;
+
+# Insert method GKBL for reading keyboard backlight level
+into method label GKBL parent_label ATKD remove_entry;
+into Device label ATKD insert begin
+Method (GKBL, 1, NotSerialized)\n
+            {\n
+               If (LEqual (Arg0, 0xFF))\n
+                {\n
+                    Return (BOFF)\n
+                }\n
+
+                Return (KBLV)\n
+            }\n
+end;
+
