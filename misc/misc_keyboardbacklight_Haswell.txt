@@ -1,3 +1,6 @@
+#Maintained by: RehabMan for: Laptop Patches
+#misc_keyboardbacklight_Haswell.txt
+
 # Patch by EMlyDinEsH (www.osxlatitude.com)
 # Enables 4 keyboard backlight levels control to work using my kexts AsusNBFnKeys and Smart Touchpad
 # This patch meant for haswell notebooks.
