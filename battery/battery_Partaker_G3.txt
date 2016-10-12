@@ -1,0 +1,34 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Partaker_G3.txt
+
+# created by dodvidp123 2016-10-06
+
+# works for:
+#  Partaker G3 (Broadwell)
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+into device label H_EC code_regex DC2B,\s+16, replace_matched begin DCB0,8,DCB1,8, end;
+into device label H_EC code_regex FC2B,\s+16, replace_matched begin FCB0,8,FCB1,8, end;
+into device label H_EC code_regex DV2B,\s+16, replace_matched begin DVB0,8,DVB1,8, end;
+into device label H_EC code_regex CC2B,\s+16, replace_matched begin CCB0,8,CCB1,8, end;
+into device label H_EC code_regex RC2B,\s+16, replace_matched begin RCB0,8,RCB1,8, end;
+into device label H_EC code_regex CV2B,\s+16 replace_matched begin CVB0,8,CVB1,8, end;
+
+into method label _BIF code_regex \(DC2B, replaceall_matched begin (B1B2(DCB0,DCB1), end;
+into method label _BIF code_regex \(FC2B, replaceall_matched begin (B1B2(FCB0,FCB1), end;
+into method label _BIF code_regex \(DV2B, replaceall_matched begin (B1B2(DVB0,DVB1), end;
+into method label _BST code_regex \(CC2B, replaceall_matched begin (B1B2(CCB0,CCB1), end;
+into method label _BST code_regex \(RC2B, replaceall_matched begin (B1B2(RCB0,RCB1), end;
+into method label _BST code_regex \(CV2B, replaceall_matched begin (B1B2(CVB0,CVB1), end;
+
+into device label H_EC code_regex (SMBD,)\s+(256) replace_matched begin SMBX,%2,//%1%2 end;
+
+# disable second battery object
+
+into method label _STA parent_label BAT2 replace_content begin Return(0) end;
+

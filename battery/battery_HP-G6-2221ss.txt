@@ -28,6 +28,7 @@
 #  HP Pavilion 14 v066BR (per marcosviniciusf17)
 #  HP Pavilion G4-2309tx (per lemonnine)
 #  HP Pavilion G4 1214tx, per miraj27 (preferred over 3165sf patch)
+#  HP Envy x360 15-u252na (per petapton)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 

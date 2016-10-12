@@ -140,6 +140,7 @@
 		ED2C801E1C3F8A140009BA8A /* battery_Surface-Pro-v4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v4.txt"; path = "battery/battery_Surface-Pro-v4.txt"; sourceTree = "<group>"; };
 		ED40F7221AF1323E00F0B970 /* battery_Lenovo-ThinkPad-W550s.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-ThinkPad-W550s.txt"; path = "battery/battery_Lenovo-ThinkPad-W550s.txt"; sourceTree = "<group>"; };
 		ED4E83951CC68C070005EB0E /* battery_Lenovo-Ideapad-100.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Ideapad-100.txt"; path = "battery/battery_Lenovo-Ideapad-100.txt"; sourceTree = "<group>"; };
+		ED50326E1DA683CE00150E8B /* battery_Partaker_G3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battery_Partaker_G3.txt; path = battery/battery_Partaker_G3.txt; sourceTree = "<group>"; };
 		ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Medion-Akoya-P6630.txt"; path = "battery/battery_Medion-Akoya-P6630.txt"; sourceTree = "<group>"; };
 		ED5EDD851AF50EE4008F32DE /* battery_Dell-Studio-1558.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Studio-1558.txt"; path = "battery/battery_Dell-Studio-1558.txt"; sourceTree = "<group>"; };
 		ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_LG-N450.txt"; path = "battery/battery_LG-N450.txt"; sourceTree = "<group>"; };
@@ -334,6 +335,7 @@
 				84019A2D1AA4D1B4006BA4B1 /* battery_Lenovo-Z50-70.txt */,
 				ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */,
 				ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */,
+				ED50326E1DA683CE00150E8B /* battery_Partaker_G3.txt */,
 				EDB8A7B11C4D2679002145FF /* battery_Razer-Blade-2014.txt */,
 				ED0F9F561C7CA8AA008DC54D /* battery_Razer-Blade-Pro.txt */,
 				8478B915185AB87E00687AFA /* battery_Samsung-NP470R5E.txt */,

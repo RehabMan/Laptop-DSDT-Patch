@@ -9,6 +9,7 @@
 #  Compaq Presario CQ60
 #  Acer 1830t
 #  Acer 7736zg
+#  Acer 7738g
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
