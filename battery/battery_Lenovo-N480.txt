@@ -1,0 +1,71 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Lenovo-N480.txt
+
+# created by nayeweiyang 2016-11022
+# created originally for korapi
+
+# works for:
+#  Lenovo N480
+
+# 16-bit registers
+into device label H_EC code_regex B1ST,\s+16 replace_matched begin ST00,8,ST01,8 end;
+into device label H_EC code_regex B1FC,\s+16 replace_matched begin FC00,8,FC01,8 end;
+into device label H_EC code_regex B1RM,\s+16 replace_matched begin RM00,8,RM01,8 end;
+into device label H_EC code_regex B1TP,\s+16 replace_matched begin TP00,8,TP01,8 end;
+into device label H_EC code_regex B1VT,\s+16 replace_matched begin VT00,8,VT01,8 end;
+into device label H_EC code_regex B1CR,\s+16 replace_matched begin CR00,8,CR01,8 end;
+into device label H_EC code_regex B1FG,\s+16 replace_matched begin FG00,8,FG01,8 end;
+into device label H_EC code_regex SDAT,\s+16 replace_matched begin DAT0,8,DAT1,8 end;
+into device label H_EC code_regex SDA2,\s+16 replace_matched begin DA20,8,DA21,8 end;
+into device label H_EC code_regex FN0S,\s+16 replace_matched begin NS00,8,NS01,8 end;
+into device label H_EC code_regex FN1S,\s+16 replace_matched begin NS10,8,NS11,8 end;
+into device label H_EC code_regex FN2S,\s+16 replace_matched begin NS20,8,NS21,8 end;
+
+#32-bit registers
+into device label H_EC code_regex SDA4,\s+32 replace_matched begin DA40,8,DA41,8,DA42,8,DA43,8 end;
+into device label H_EC code_regex SDA5,\s+32 replace_matched begin DA50,8,DA51,8,DA52,8,DA53,8 end;
+into device label H_EC code_regex SDA6,\s+32 replace_matched begin DA60,8,DA61,8,DA62,8,DA63,8 end;
+into device label H_EC code_regex SDA7,\s+32 replace_matched begin DA70,8,DA71,8,DA72,8,DA73,8 end;
+into device label H_EC code_regex SDA8,\s+32 replace_matched begin DA80,8,DA81,8,DA82,8,DA83,8 end;
+into device label H_EC code_regex SDA9,\s+32 replace_matched begin DA90,8,DA91,8,DA92,8,DA93,8 end;
+into device label H_EC code_regex SDAA,\s+32 replace_matched begin DAA0,8,DAA1,8,DAA2,8,DAA3,8 end;
+
+# fix 16-bit methods
+into method label _BIF code_regex \(B1FC, replaceall_matched begin (B1B2(FC00,FC01), end;
+into method label _BST code_regex \(B1RM, replaceall_matched begin (B1B2(RM00,RM01), end;
+into method label _BST code_regex \(B1VT, replaceall_matched begin (B1B2(VT00,VT01), end;
+#into method label _BST code_regex \(B1CR, replaceall_matched begin (B1B2(CR00,CR01), end;
+into method label _BST code_regex B1CR replaceall_matched begin B1B2(CR00,CR01) end;
+into_all method parent_label BAT1 code_regex \(\\\_SB.PCI0.LPCB.H_EC.SDAT, replace_matched begin (B1B2(\\_SB.PCI0.LPCB.H_EC.DAT0,\\_SB.PCI0.LPCB.H_EC.DAT1), end;
+into method label _BIF code_regex SDAT replaceall_matched begin B1B2(DAT0,DAT1) end;
+into_all method parent_label BAT1 code_regex \(\\\_SB.PCI0.LPCB.H_EC.SDA2, replace_matched begin (B1B2(\\_SB.PCI0.LPCB.H_EC.DA20,\\_SB.PCI0.LPCB.H_EC.DA21), end;
+into method label MHST code_regex FN0S replaceall_matched begin B1B2(NS00,NS01) end;
+
+#fix 32-bit methods
+into_all method parent_label BAT1 code_regex \(\\\_SB.PCI0.LPCB.H_EC.SDA4, replace_matched begin (B1B4(\\_SB.PCI0.LPCB.H_EC.DA40,\\_SB.PCI0.LPCB.H_EC.DA41,\\_SB.PCI0.LPCB.H_EC.DA42,\\_SB.PCI0.LPCB.H_EC.DA43), end;
+into_all method parent_label BAT1 code_regex \(\\\_SB.PCI0.LPCB.H_EC.SDA5, replace_matched begin (B1B4(\\_SB.PCI0.LPCB.H_EC.DA50,\\_SB.PCI0.LPCB.H_EC.DA51,\\_SB.PCI0.LPCB.H_EC.DA52,\\_SB.PCI0.LPCB.H_EC.DA53), end;
+into_all method parent_label BAT1 code_regex \(\\\_SB.PCI0.LPCB.H_EC.SDA6, replace_matched begin (B1B4(\\_SB.PCI0.LPCB.H_EC.DA60,\\_SB.PCI0.LPCB.H_EC.DA61,\\_SB.PCI0.LPCB.H_EC.DA62,\\_SB.PCI0.LPCB.H_EC.DA63), end;
+into_all method parent_label BAT1 code_regex \(\\\_SB.PCI0.LPCB.H_EC.SDA7, replace_matched begin (B1B4(\\_SB.PCI0.LPCB.H_EC.DA70,\\_SB.PCI0.LPCB.H_EC.DA71,\\_SB.PCI0.LPCB.H_EC.DA72,\\_SB.PCI0.LPCB.H_EC.DA73), end;
+into_all method parent_label BAT1 code_regex \(\\\_SB.PCI0.LPCB.H_EC.SDA8, replace_matched begin (B1B4(\\_SB.PCI0.LPCB.H_EC.DA80,\\_SB.PCI0.LPCB.H_EC.DA81,\\_SB.PCI0.LPCB.H_EC.DA82,\\_SB.PCI0.LPCB.H_EC.DA83), end;
+into_all method parent_label BAT1 code_regex \(\\\_SB.PCI0.LPCB.H_EC.SDA9, replace_matched begin (B1B4(\\_SB.PCI0.LPCB.H_EC.DA90,\\_SB.PCI0.LPCB.H_EC.DA91,\\_SB.PCI0.LPCB.H_EC.DA92,\\_SB.PCI0.LPCB.H_EC.DA93), end;
+into_all method parent_label BAT1 code_regex \(\\\_SB.PCI0.LPCB.H_EC.SDAA, replace_matched begin (B1B4(\\_SB.PCI0.LPCB.H_EC.DAA0,\\_SB.PCI0.LPCB.H_EC.DAA1,\\_SB.PCI0.LPCB.H_EC.DAA2,\\_SB.PCI0.LPCB.H_EC.DAA3), end;
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+into method label B1B4 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B4, 4, NotSerialized)\n
+{\n
+    Store(Arg3, Local0)\n
+    Or(Arg2, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg1, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg0, ShiftLeft(Local0, 8), Local0)\n
+    Return(Local0)\n
+}\n
+end;
+
