@@ -6,6 +6,7 @@
 
 # works for:
 #  Dell XPS 18
+#  Cintiq Companion 2 (per Bertolin)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
