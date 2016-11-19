@@ -8,6 +8,7 @@
 #  Lenovo y580
 #  Lenovo z500
 #  Lenovo G510
+#  Lenovo Ideapad 510s (per vonian)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
