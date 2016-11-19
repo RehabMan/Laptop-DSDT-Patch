@@ -60,6 +60,9 @@ into device label EC0 code_regex B1SN,\s+16 replace_matched begin B1N0,8,B1N1,8,
 into device label EC0 code_regex DT2B,\s+16 replace_matched begin T2B0,8,T2B1,8, end;
 into device label EC0 code_regex B1DV,\s+16 replace_matched begin B1D2,8,B1D3,8 end;
 
+#added for Cintiq Companion 2
+into device label EC0 code_regex B0MD,\s+16 replace_matched begin B0M0,8,B0M1,8 end;
+
 #Create B1B2 Method
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
