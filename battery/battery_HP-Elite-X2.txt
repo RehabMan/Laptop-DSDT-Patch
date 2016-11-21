@@ -1,0 +1,68 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_HP-Elite-X2.txt
+
+# created by jhax01 (aka blankmac) 2016-11-21
+
+# works for:
+#  HP Elite X2 1012
+
+into device label EC0 code_regex BFC,\s+16, replace_matched begin FC00,8,FC01,8, end;
+into device label EC0 code_regex BRTE,\s+16, replace_matched begin TE00,8,TE01,8, end;
+into device label EC0 code_regex BME,\s+16, replace_matched begin ME00,8,ME01,8, end;
+into device label EC0 code_regex BDV,\s+16, replace_matched begin DV00,8,DV01,8, end;
+into device label EC0 code_regex BCV1,\s+16, replace_matched begin CA00,8,CA01,8, end;
+into device label EC0 code_regex BATE,\s+16, replace_matched begin BE00,8,BE01,8, end;
+into device label EC0 code_regex BPR,\s+16, replace_matched begin PR00,8,PR01,8, end;
+into device label EC0 code_regex BCR,\s+16, replace_matched begin CR00,8,CR01,8, end;
+into device label EC0 code_regex BRC,\s+16, replace_matched begin RC00,8,RC01,8, end;
+into device label EC0 code_regex BCC,\s+16, replace_matched begin CC00,8,CC01,8, end;
+into device label EC0 code_regex BPV,\s+16, replace_matched begin PV00,8,PV01,8, end;
+into device label EC0 code_regex BCV2,\s+16, replace_matched begin CB00,8,CB01,8, end;
+into device label EC0 code_regex BCV3,\s+16, replace_matched begin CD00,8,CD01,8, end;
+into device label EC0 code_regex BCV4,\s+16, replace_matched begin CE00,8,CE01,8, end;
+into device label EC0 code_regex BATF,\s+16, replace_matched begin TF00,8,TF01,8, end;
+into device label EC0 code_regex MAXC,\s+16, replace_matched begin XC00,8,XC01,8, end;
+into device label EC0 code_regex CBT,\s+16, replace_matched begin BT00,8,BT01,8, end;
+into device label EC0 code_regex BSTS,\s+16, replace_matched begin TS00,8,TS01,8, end;
+into device label EC0 code_regex BSN,\s+16, replace_matched begin SN00,8,SN01,8, end;
+into device label EC0 code_regex BDAT,\s+16, replace_matched begin AT00,8,AT01,8, end;
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+into method label BTIF code_regex BFC replaceall_matched begin B1B2(FC00,FC01) end;
+into method label ITLB code_regex \(BFC, replaceall_matched begin (B1B2(FC00,FC01), end;
+into method label GBTI code_regex \(BFC, replaceall_matched begin (B1B2(FC00,FC01), end;
+into method label GBTI code_regex \(BRTE, replaceall_matched begin (B1B2(TE00,TE01), end;
+into method label GBTI code_regex \(BME, replaceall_matched begin (B1B2(ME00,ME01), end;
+into method label BTIF code_regex BDV, replaceall_matched begin B1B2(DV00,DV01), end;
+into method label GBTI code_regex \(BDV, replaceall_matched begin (B1B2(DV00,DV01), end;
+into method label GBTI code_regex \(BCV1, replaceall_matched begin (B1B2(CA00,CA01), end;
+into method label GBTI code_regex \(BATE, replaceall_matched begin (B1B2(BE00,BE01), end;
+into method label BTST code_regex \(BPR, replaceall_matched begin (B1B2(PR00,PR01), end;
+into method label GBTI code_regex \(BPR, replaceall_matched begin (B1B2(PR00,PR01), end;
+into method label GBTI code_regex \(BCR, replaceall_matched begin (B1B2(CR00,CR01), end;
+into method label BTST code_regex \(BRC, replaceall_matched begin (B1B2(RC00,RC01), end;
+into method label GBTI code_regex \(BRC, replaceall_matched begin (B1B2(RC00,RC01), end;
+into method label GBTI code_regex \(BCC, replaceall_matched begin (B1B2(CC00,CC01), end;
+into method label GBTI code_regex \(BPV, replaceall_matched begin (B1B2(PV00,PV01), end;
+into method label BTST code_regex \(BPV, replaceall_matched begin (B1B2(PV00,PV01), end;
+into method label GBTI code_regex \(BCV2, replaceall_matched begin (B1B2(CB00,CB01), end;
+into method label GBTI code_regex \(BCV3, replaceall_matched begin (B1B2(CD00,CD01), end;
+into method label GBTI code_regex \(BCV4, replaceall_matched begin (B1B2(CE00,CE01), end;
+into method label GBTI code_regex \(BATF, replaceall_matched begin (B1B2(TF00,TF01), end;
+into method label GBTC code_regex \(MAXC, replaceall_matched begin (B1B2(XC00,XC01), end;
+into method label GBTI code_regex \(BSTS, replaceall_matched begin (B1B2(TS00,TS01), end;
+into method label GBTI code_regex \(BSN, replaceall_matched begin (B1B2(SN00,SN01), end;
+into method label GBTI code_regex \(CBT, replaceall_matched begin (B1B2(BT00,BT01), end;
+into method label BTIF code_regex BSN replaceall_matched begin B1B2(SN00,SN01) end;
+into method label BTIF code_regex BDAT replaceall_matched begin B1B2(AT00,AT01) end;
+into method label GBTI code_regex BDAT replaceall_matched begin B1B2(AT00,AT01) end;
+into method label GBTI code_regex \(BDAT, replaceall_matched begin (B1B2(AT00,AT01), end;
+
+into_all method label SBTC code_regex Store\s+\(Zero,\s+MAXC\) replaceall_matched begin Store(Zero, XC00) Store(Zero, XC01) end;
+into_all method label SBTC code_regex Store\s+\(0xFA,\s+MAXC\) replaceall_matched begin Store(0xFA, XC00) Store(Zero, XC01) end;
+

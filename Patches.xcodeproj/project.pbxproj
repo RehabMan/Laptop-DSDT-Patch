@@ -138,6 +138,7 @@
 		ED2050221AD1124600E60CD2 /* battery_Dell-Inspiron-15-7xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Inspiron-15-7xxx.txt"; path = "battery/battery_Dell-Inspiron-15-7xxx.txt"; sourceTree = "<group>"; };
 		ED2A1F171AB32E770024D58C /* battery_Lenovo-y510p.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-y510p.txt"; path = "battery/battery_Lenovo-y510p.txt"; sourceTree = "<group>"; };
 		ED2C801E1C3F8A140009BA8A /* battery_Surface-Pro-v4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v4.txt"; path = "battery/battery_Surface-Pro-v4.txt"; sourceTree = "<group>"; };
+		ED327D541DE386150017A255 /* battery_HP-Elite-X2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Elite-X2.txt"; path = "battery/battery_HP-Elite-X2.txt"; sourceTree = "<group>"; };
 		ED40F7221AF1323E00F0B970 /* battery_Lenovo-ThinkPad-W550s.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-ThinkPad-W550s.txt"; path = "battery/battery_Lenovo-ThinkPad-W550s.txt"; sourceTree = "<group>"; };
 		ED4E83951CC68C070005EB0E /* battery_Lenovo-Ideapad-100.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Ideapad-100.txt"; path = "battery/battery_Lenovo-Ideapad-100.txt"; sourceTree = "<group>"; };
 		ED50326E1DA683CE00150E8B /* battery_Partaker_G3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battery_Partaker_G3.txt; path = battery/battery_Partaker_G3.txt; sourceTree = "<group>"; };
@@ -301,6 +302,7 @@
 				845E02D21846FE8000208D98 /* battery_HP-DV7-1120.txt */,
 				84624C9818219322004C34DA /* battery_HP-DV7-6xxx.txt */,
 				8484672A180F0C3600DD3D99 /* battery_HP-DV7-7xxx.txt */,
+				ED327D541DE386150017A255 /* battery_HP-Elite-X2.txt */,
 				845B33B8182C17A1000F2476 /* battery_HP-Envy-14.txt */,
 				842108E9180F3E4300905120 /* battery_HP-Envy-17t.txt */,
 				842F531C17FB301B001CF33B /* battery_HP-Envy-DV6.txt */,
