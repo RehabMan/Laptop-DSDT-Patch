@@ -1,0 +1,135 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Lenovo-L420.txt
+
+# Created by kosakgroove 2016-12-02.  Some additions/fixes by RehabMan
+
+# Works for:
+#   Lenovo L420
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+into method label B1B4 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B4, 4, NotSerialized)\n
+{\n
+    Store(Arg3, Local0)\n
+    Or(Arg2, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg1, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg0, ShiftLeft(Local0, 8), Local0)\n
+    Return(Local0)\n
+}\n
+end;
+
+into device label EC code_regex BATD,\s+16, replace_matched begin ATD0,8,ATD1,8, end;
+into device label EC code_regex SMW0,\s+16 replace_matched begin MW00,8,MW01,8 end;
+into device label EC code_regex SBRC,\s+16, replace_matched begin BR00,8,BR01,8, end;
+into device label EC code_regex SBFC,\s+16, replace_matched begin BF00,8,BF01,8, end;
+into device label EC code_regex SBVO,\s+16, replace_matched begin BV00,8,BV01,8, end;
+into device label EC code_regex SBSN,\s+16 replace_matched begin SN00,8,SN01,8 end;
+into device label EC code_regex SBDC,\s+16, replace_matched begin DC00,8,DC01,8, end;
+into device label EC code_regex SBDV,\s+16, replace_matched begin DV00,8,DV01,8, end;
+into device label EC code_regex SBAE,\s+16, replace_matched begin BA00,8,BA01,8, end;
+into device label EC code_regex SBAF,\s+16, replace_matched begin BB00,8,BB01,8, end;
+into device label EC code_regex SBBS,\s+16, replace_matched begin BD00,8,BD01,8, end;
+into device label EC code_regex SBMD,\s+16, replace_matched begin SB00,8,SB01,8, end;
+into device label EC code_regex SBCC,\s+16, replace_matched begin CC00,8,CC01,8, end;
+into device label EC code_regex SBOM,\s+16, replace_matched begin OM00,8,OM01,8, end;
+into device label EC code_regex SBSI,\s+16, replace_matched begin SI00,8,SI01,8, end;
+into device label EC code_regex SBDT,\s+16, replace_matched begin DT00,8,DT01,8, end;
+into device label EC code_regex SBAC,\s+16, replace_matched begin AC00,8,AC01,8, end;
+
+into method label SELE code_regex \(BATD, replaceall_matched begin (B1B2(ATD0,ATD1), end;
+into method label SMRD code_regex \(SMW0, replaceall_matched begin (B1B2(MW00,MW01), end;
+into method label SMWR code_regex \(\^PCI0\.LPCB\.EC\.SMW0, replaceall_matched begin (B1B2(^PCI0.LPCB.EC.MW00,^PCI0.LPCB.EC.MW01), end;
+into method label GBST code_regex \(\^PCI0\.LPCB\.EC\.SBRC, replaceall_matched begin (B1B2(^PCI0.LPCB.EC.BR00,^PCI0.LPCB.EC.BR01), end;
+into method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBFC, replaceall_matched begin (B1B2(^PCI0.LPCB.EC.BF00,^PCI0.LPCB.EC.BF01), end;
+into method label GBST code_regex \(\^PCI0\.LPCB\.EC\.SBVO, replaceall_matched begin (B1B2(^PCI0.LPCB.EC.BV00,^PCI0.LPCB.EC.BV01), end;
+into method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBSN, replaceall_matched begin (B1B2(^PCI0.LPCB.EC.SN00,^PCI0.LPCB.EC.SN01), end;
+into method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBDC, replaceall_matched begin (B1B2(^PCI0.LPCB.EC.DC00,^PCI0.LPCB.EC.DC01), end;
+into method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBDV, replaceall_matched begin (B1B2(^PCI0.LPCB.EC.DV00,^PCI0.LPCB.EC.DV01), end;
+into method label GBST code_regex \(\^PCI0\.LPCB\.EC\.SBAC, replaceall_matched begin (B1B2(^PCI0.LPCB.EC.AC00,^PCI0.LPCB.EC.AC01), end;
+
+into device label EC code_regex SBCH,\s+32 replace_matched begin SH00,8,SH01,8,SH02,8,SH03,8, end;
+into method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBCH, replaceall_matched begin (B1B4(^PCI0.LPCB.EC.SH00,^PCI0.LPCB.EC.SH01,^PCI0.LPCB.EC.SH02,^PCI0.LPCB.EC.SH03), end;
+into method label SMWR code_regex Store\s\(Arg3,\sSMW0\) replaceall_matched begin Store (Arg3,MW00) Store(ShiftRight(Arg3,8),MW01)  end;
+
+into method label RE1B parent_label EC remove_entry;
+into method label RXCB parent_label EC remove_entry;
+into device label EC insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RXCB, 2, Serialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+// Arg1 - size of buffer in bits\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+into device label EC code_regex (SBMN,)\s+(128) replace_matched begin BMNX,%2,//%1%2 end;
+into device label EC code_regex (SBDN,)\s+(128) replace_matched begin BDNX,%2,//%1%2 end;
+into device label EC code_regex (FLD0,)\s+(64) replace_matched begin FL0X,%2,//%1%2 end;
+into device label EC code_regex (FLD1,)\s+(128) replace_matched begin FL1X,%2,//%1%2 end;
+into device label EC code_regex (FLD2,)\s+(192) replace_matched begin FL2X,%2,//%1%2 end;
+into device label EC code_regex (FLD3,)\s+(256) replace_matched begin FL3X,%2,//%1%2 end;
+into device label EC code_regex (SMD0,)\s+(100) replace_matched begin SMDX,%2,//%1%2 end;
+
+into method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBMN, replaceall_matched begin (^PCI0.LPCB.EC.RXCB(0xA0,128), end;
+into method label GBIF code_regex \(\^PCI0\.LPCB\.EC\.SBDN, replaceall_matched begin (^PCI0.LPCB.EC.RXCB(0xA0,128), end;
+into method label SMRD code_regex \(\FLD1, replaceall_matched begin (RXCB(0x54,128), end;
+into method label SMRD code_regex \(\FLD2, replaceall_matched begin (RXCB(0x54,192), end;
+into method label SMRD code_regex \(\FLD3, replaceall_matched begin (RXCB(0x54,256), end;
+into method label BFWL code_regex \(SMD0, replaceall_matched begin (RXCB(0x54,100), end;
+
+into method label WE1B parent_label EC remove_entry;
+into method label WXCB parent_label EC remove_entry;
+into device label EC insert
+begin
+Method (WE1B, 2, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Store(Arg1, BYTE)\n
+}\n
+Method (WXCB, 3, Serialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+// Arg1 - size of buffer in bits\n
+// Arg2 - value to write\n
+{\n
+    ShiftRight(Add(Arg1,7), 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Store(Arg2, TEMP)\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        WE1B(Arg0, DerefOf(Index(TEMP, Local0)))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+}\n
+end;
+
+# Calling WXCB method to write into SMDX (offset 0x54)
+into method label SMWR code_regex Store\s?\(Arg3,\s?\SMD0\) replaceall_matched begin WXCB (0x54,100,Arg3) end;

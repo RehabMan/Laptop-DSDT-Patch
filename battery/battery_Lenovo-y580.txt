@@ -3,20 +3,16 @@
 
 # created by RehabMan 2013-09-23
 # created originally for korapi
+# modified based on t_anjan's' findings for Lenovo Yoga 710-15
 
 # works for:
 #  Lenovo y580
 #  Lenovo z500
 #  Lenovo G510
 #  Lenovo Ideapad 510s (per vonian)
+#  Lenovo Yoga 710-15 Kaby Lake (per t_anjan)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
-
-into method label B1B2 remove_entry;
-into definitionblock code_regex . insert
-begin
-Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
-end;
 
 # 16-bit EC
 
@@ -143,3 +139,6 @@ into method label CFUN code_regex Store\s+\(SMD0,\s+Local3\) replaceall_matched 
 into method label MHPF code_regex Store\s+\(FB4,\s+SMD0\) replaceall_matched begin \\_SB.PCI0.LPCB.EC0.WSMD(FB4) end;
 into method label MHPF code_regex Store\s+\(SMD0,\s+FB4\) replaceall_matched begin Store(\\_SB.PCI0.LPCB.EC0.RSMD(), FB4) end;
 
+# added for Lenovo Yoga 710-15 (Kaby Lake)
+into method label CFUN code_regex Store\s+\(SMD0,\s+Local1\) replaceall_matched begin Store(\\_SB.PCI0.LPCB.EC0.RSMD(), Local1) end;
+into method label CFUN code_regex Store\s+\(Local1,\s+SMD0\) replaceall_matched begin \\_SB.PCI0.LPCB.EC0.WSMD(Local1) end;

@@ -145,6 +145,7 @@
 		ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Medion-Akoya-P6630.txt"; path = "battery/battery_Medion-Akoya-P6630.txt"; sourceTree = "<group>"; };
 		ED5EDD851AF50EE4008F32DE /* battery_Dell-Studio-1558.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Studio-1558.txt"; path = "battery/battery_Dell-Studio-1558.txt"; sourceTree = "<group>"; };
 		ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_LG-N450.txt"; path = "battery/battery_LG-N450.txt"; sourceTree = "<group>"; };
+		ED6F13A51DF36C24006CAE1C /* battery_Lenovo-L420.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-L420.txt"; path = "battery/battery_Lenovo-L420.txt"; sourceTree = "<group>"; };
 		ED75B6701B1B6EBA002D6468 /* battery_Lenovo-Y50.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Y50.txt"; path = "battery/battery_Lenovo-Y50.txt"; sourceTree = "<group>"; };
 		ED77D4F11C3F56F80085DDCA /* battery_Gigabyte-P35Xv3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Gigabyte-P35Xv3.txt"; path = "battery/battery_Gigabyte-P35Xv3.txt"; sourceTree = "<group>"; };
 		ED7FB8091AA8BCD20077FD6D /* battery_Clevo-W170HN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-W170HN.txt"; path = "battery/battery_Clevo-W170HN.txt"; sourceTree = "<group>"; };
@@ -319,6 +320,7 @@
 				EDCCC2CB1A70148300C7301E /* battery_Lenovo-G50-70.txt */,
 				ED4E83951CC68C070005EB0E /* battery_Lenovo-Ideapad-100.txt */,
 				ED95C7231D5BBC62006BC358 /* battery_Lenovo-Ideapad-Y700.txt */,
+				ED6F13A51DF36C24006CAE1C /* battery_Lenovo-L420.txt */,
 				EDC041151DBCE05F008724C6 /* battery_Lenovo-N480.txt */,
 				84A21711195204BE004751F3 /* battery_Lenovo-T430u.txt */,
 				842AF6E419CB3D2F00309DAD /* battery_Lenovo-T440p.txt */,

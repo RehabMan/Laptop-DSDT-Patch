@@ -6,6 +6,7 @@
 
 # works for:
 #  Lenovo Yoga S1
+#  Lenovo Thinkpad S540
 
 # fix 16-bit fields
 into method label B1B2 remove_entry;
