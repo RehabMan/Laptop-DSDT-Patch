@@ -140,6 +140,7 @@
 		ED2C801E1C3F8A140009BA8A /* battery_Surface-Pro-v4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v4.txt"; path = "battery/battery_Surface-Pro-v4.txt"; sourceTree = "<group>"; };
 		ED327D541DE386150017A255 /* battery_HP-Elite-X2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Elite-X2.txt"; path = "battery/battery_HP-Elite-X2.txt"; sourceTree = "<group>"; };
 		ED40F7221AF1323E00F0B970 /* battery_Lenovo-ThinkPad-W550s.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-ThinkPad-W550s.txt"; path = "battery/battery_Lenovo-ThinkPad-W550s.txt"; sourceTree = "<group>"; };
+		ED4580F51E05E78B002B93C0 /* battery_Samsung-NP300E5K-XF3BR.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Samsung-NP300E5K-XF3BR.txt"; path = "battery/battery_Samsung-NP300E5K-XF3BR.txt"; sourceTree = "<group>"; };
 		ED4E83951CC68C070005EB0E /* battery_Lenovo-Ideapad-100.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Ideapad-100.txt"; path = "battery/battery_Lenovo-Ideapad-100.txt"; sourceTree = "<group>"; };
 		ED50326E1DA683CE00150E8B /* battery_Partaker_G3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = battery_Partaker_G3.txt; path = battery/battery_Partaker_G3.txt; sourceTree = "<group>"; };
 		ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Medion-Akoya-P6630.txt"; path = "battery/battery_Medion-Akoya-P6630.txt"; sourceTree = "<group>"; };
@@ -348,6 +349,7 @@
 				842F532217FB3114001CF33B /* battery_Samsung-RF411.txt */,
 				841796F018539E4C00E987F2 /* battery_Samsung-r528.txt */,
 				842F532317FB3114001CF33B /* battery_Samsung-Series3-NP300.txt */,
+				ED4580F51E05E78B002B93C0 /* battery_Samsung-NP300E5K-XF3BR.txt */,
 				841C83B819914DA40045DCCD /* battery_Samsung_NP730U3E_X04IT.txt */,
 				842F532417FB3114001CF33B /* battery_Sony-VAIO-S.txt */,
 				842F532517FB3114001CF33B /* battery_Sony-VAIO-SVE1511.txt */,
