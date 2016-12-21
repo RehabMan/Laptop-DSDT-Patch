@@ -89,7 +89,7 @@
 [bat] HP ProBook 4x0s G1	battery/battery_HP-ProBook-4x0s-G1.txt
 [bat] HP ProBook Generic	battery/battery_HP-ProBook-Generic.txt
 [bat] HP Spectre XT	battery/battery_HP-Spectre-XT.txt
-[bat] Lenovo E430	battery/battery_Lenovo-E430.txt
+[bat] Lenovo E430/E540	battery/battery_Lenovo-E430.txt
 [bat] Lenovo G50-70	battery/battery_Lenovo-G50-70.txt
 [bat] Lenovo Ideapad-100	battery/battery_Lenovo-Ideapad-100.txt
 [bat] Lenovo Ideapad-Y700	battery/battery_Lenovo-Ideapad-Y700.txt
