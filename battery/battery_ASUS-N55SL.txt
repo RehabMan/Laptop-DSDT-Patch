@@ -40,6 +40,8 @@
 #  ASUS S300CA (per mugen441)
 #  ASUS F556UA-AB32 (per Jdazzle44)
 #  ASUS UX306UA (per MaraficeEye)
+#  ASUS N550JV (per Xracer99)
+#  ASUS X540LJ (per palash)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
