@@ -1,0 +1,58 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_MECHREVO-x6TI.txt
+
+# created by nayeweiyang 2017-01-01
+
+# works for:
+#  MECHREVO x6TI
+
+
+#16
+into device label EC0 code_regex XIF0,\s+16, replace_matched begin F000,8,F001,8, end;
+into device label EC0 code_regex XIF1,\s+16, replace_matched begin F100,8,F101,8, end;
+into device label EC0 code_regex XIF2,\s+16, replace_matched begin F200,8,F201,8, end;
+into device label EC0 code_regex XIF3,\s+16, replace_matched begin F300,8,F301,8, end;
+into device label EC0 code_regex XIF4,\s+16, replace_matched begin F400,8,F401,8, end;
+into device label EC0 code_regex XIF5,\s+16, replace_matched begin F500,8,F501,8, end;
+into device label EC0 code_regex XIF6,\s+16, replace_matched begin F600,8,F601,8, end;
+into device label EC0 code_regex XIF7,\s+16, replace_matched begin F700,8,F701,8, end;
+into device label EC0 code_regex XIF8,\s+16, replace_matched begin F800,8,F801,8, end;
+into device label EC0 code_regex XST0,\s+16, replace_matched begin T000,8,T001,8, end;
+into device label EC0 code_regex XST1,\s+16, replace_matched begin T100,8,T101,8, end;
+into device label EC0 code_regex XST2,\s+16, replace_matched begin T200,8,T201,8, end;
+into device label EC0 code_regex XST3,\s+16, replace_matched begin T300,8,T301,8, end;
+into device label EC0 code_regex XTP0,\s+16, replace_matched begin XP00,8,XP01,8, end;
+into device label EC0 code_regex BIF0,\s+16, replace_matched begin BF00,8,BF01,8, end;
+into device label EC0 code_regex BIF1,\s+16, replace_matched begin BF10,8,BF11,8, end;
+into device label EC0 code_regex BIF2,\s+16, replace_matched begin BF20,8,BF21,8, end;
+into device label EC0 code_regex BIF3,\s+16, replace_matched begin BF30,8,BF31,8, end;
+into device label EC0 code_regex BIF4,\s+16, replace_matched begin BF40,8,BF41,8, end;
+into device label EC0 code_regex BIF5,\s+16, replace_matched begin BF50,8,BF51,8, end;
+into device label EC0 code_regex BIF6,\s+16, replace_matched begin BF60,8,BF61,8, end;
+into device label EC0 code_regex BIF7,\s+16, replace_matched begin BF70,8,BF71,8, end;
+into device label EC0 code_regex BIF8,\s+16, replace_matched begin BF80,8,BF81,8, end;
+into device label EC0 code_regex BST0,\s+16, replace_matched begin BT00,8,BT01,8, end;
+into device label EC0 code_regex BST1,\s+16, replace_matched begin BT10,8,BT11,8, end;
+into device label EC0 code_regex BST2,\s+16, replace_matched begin BT20,8,BT21,8, end;
+into device label EC0 code_regex BST3,\s+16, replace_matched begin BT30,8,BT31,8, end;
+into device label EC0 code_regex BTP0,\s+16, replace_matched begin BP00,8,BP01,8, end;
+
+#16 fix
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XIF1, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.F100,^^PCI0.LPCB.EC0.F101), end;
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XIF2, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.F200,^^PCI0.LPCB.EC0.F201), end;
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XIF3, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.F300,^^PCI0.LPCB.EC0.F301), end;
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XIF4, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.F400,^^PCI0.LPCB.EC0.F401), end;
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XIF7, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.F700,^^PCI0.LPCB.EC0.F701), end;
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XST0, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.T000,^^PCI0.LPCB.EC0.T001), end;
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XST1, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.T100,^^PCI0.LPCB.EC0.T101), end;
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XST2, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.T200,^^PCI0.LPCB.EC0.T201), end;
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XST3, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.T300,^^PCI0.LPCB.EC0.T301), end;
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized)\n
+{\n
+    Return(Or(Arg0, ShiftLeft(Arg1, 8)))\n
+}\n
+end;

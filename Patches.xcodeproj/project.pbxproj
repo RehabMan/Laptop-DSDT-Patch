@@ -158,6 +158,7 @@
 		EDB15EEA1A34B10C009F0E21 /* graphics_PTS_WAK-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_PTS_WAK-disable.txt"; path = "graphics/graphics_PTS_WAK-disable.txt"; sourceTree = "<group>"; };
 		EDB280191A3A21BD002C47E1 /* graphics_nvidia_laptop2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_nvidia_laptop2.txt; path = graphics/graphics_nvidia_laptop2.txt; sourceTree = "<group>"; };
 		EDB703891BAB9D49002AED96 /* audio_HDEF-layout3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout3.txt"; path = "audio/audio_HDEF-layout3.txt"; sourceTree = "<group>"; };
+		EDB858B51E1953F200E1B32E /* battery_MECHREVO-x6TI.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_MECHREVO-x6TI.txt"; path = "battery/battery_MECHREVO-x6TI.txt"; sourceTree = "<group>"; };
 		EDB8A7B11C4D2679002145FF /* battery_Razer-Blade-2014.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Razer-Blade-2014.txt"; path = "battery/battery_Razer-Blade-2014.txt"; sourceTree = "<group>"; };
 		EDBC416D1AFAA14700F2C133 /* battery_Dell-XPS-14Z-L412Z.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-XPS-14Z-L412Z.txt"; path = "battery/battery_Dell-XPS-14Z-L412Z.txt"; sourceTree = "<group>"; };
 		EDBE01901C90616800B82230 /* battery_Sony-VAIO-SZ1XP.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Sony-VAIO-SZ1XP.txt"; path = "battery/battery_Sony-VAIO-SZ1XP.txt"; sourceTree = "<group>"; };
@@ -341,6 +342,7 @@
 				ED1F747B1A4C772200FFE7AE /* battery_Lenovo-z470-z370.txt */,
 				84019A2D1AA4D1B4006BA4B1 /* battery_Lenovo-Z50-70.txt */,
 				ED6DC49A1A5383AC008A901E /* battery_LG-N450.txt */,
+				EDB858B51E1953F200E1B32E /* battery_MECHREVO-x6TI.txt */,
 				ED5A9CD01A2A43710024EC94 /* battery_Medion-Akoya-P6630.txt */,
 				ED50326E1DA683CE00150E8B /* battery_Partaker_G3.txt */,
 				EDB8A7B11C4D2679002145FF /* battery_Razer-Blade-2014.txt */,
