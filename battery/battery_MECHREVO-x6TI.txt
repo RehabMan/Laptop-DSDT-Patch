@@ -5,6 +5,7 @@
 
 # works for:
 #  MECHREVO x6TI
+#  Acer One 14 z1402g (per andres85)
 
 
 #16
