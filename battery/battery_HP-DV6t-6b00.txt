@@ -124,7 +124,7 @@ into method label WMBG code_regex \(\^\^PCI0\.LPCB\.EC\.BST, replaceall_matched 
 # Buffer fields renaming so they are inaccessible
 
 into device label EC code_regex (BTN,)\s+(64) replace_matched begin BTNX,%2,//%1%2 end;
-into device label EC code_regex (BDNB,)\s+(56) replace_matched begin BDNBX,%2,//%1%2 end;
+into device label EC code_regex (BDNB,)\s+(112) replace_matched begin BDNX,%2,//%1%2 end;
 into device label EC code_regex (CTL,)\s+(128) replace_matched begin CTLX,%2,//%1%2 end;
 
 # Apply RECB method 
