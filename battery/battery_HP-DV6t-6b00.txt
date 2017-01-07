@@ -8,6 +8,7 @@
 #    HP DV6-6150sl
 #    HP DV6-6033cl (per ttran001)
 #    HP DV6-6051er (per AirAlarm)
+#    HP DV6-6b57er (per urx)
 
 # define helper method to handle 16 bits
 
