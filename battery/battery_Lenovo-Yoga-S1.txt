@@ -3,6 +3,7 @@
 
 # Created by stkov 2014-04-12
 # Modifications by akebono 2015-04-03
+# Fix for HWAK write by nayeweiyang 2017-01-12 (after corrections by RehabMan)
 
 # works for:
 #  Lenovo Yoga S1
@@ -87,9 +88,14 @@ into method label GBIF code_regex \(SBMN, replaceall_matched begin (RECB(0xA0, 1
 into method label GBIF code_regex Store\s\(B1B2\(BSN0 replace_matched begin /* Store (B1B2(BSN0 end;
 into method label GBIF code_regex Index\s\(Arg1,\s0x0C\)\) replace_matched begin Index (Arg1, 0x0C)) */ end;
 
-# Fix HWAK
+# Fix HWAK Read
 into device label EC0 code_regex HWAK,\s+16 replace_matched begin WAK0,8,WAK1,8 end;
-into method label _WAK code_regex \\\_SB.PCI0.LPCB.EC0.HWAK replaceall_matched begin B1B2(\\_SB.PCI0.LPCB.EC0.WAK0,\\_SB.PCI0.LPCB.EC0.WAK1) end;
-into method label _L0F code_regex \\\_SB.PCI0.LPCB.EC0.HWAK replaceall_matched begin B1B2(\\_SB.PCI0.LPCB.EC0.WAK0,\\_SB.PCI0.LPCB.EC0.WAK1) end;
-into method label BL0F code_regex \\\_SB.PCI0.LPCB.EC0.HWAK replaceall_matched begin B1B2(\\_SB.PCI0.LPCB.EC0.WAK0,\\_SB.PCI0.LPCB.EC0.WAK1) end;
+into method label _WAK code_regex \(\\\_SB.PCI0.LPCB.EC0.HWAK replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.WAK0,\\_SB.PCI0.LPCB.EC0.WAK1) end;
+into method label _L0F code_regex \(\\\_SB.PCI0.LPCB.EC0.HWAK replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.WAK0,\\_SB.PCI0.LPCB.EC0.WAK1) end;
+into method label BL0F code_regex \(\\\_SB.PCI0.LPCB.EC0.HWAK replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.WAK0,\\_SB.PCI0.LPCB.EC0.WAK1) end;
 
+# Fix HWAK Write
+into method label _WAK code_regex Store\s\(Local0,\s\\\_SB.PCI0.LPCB.EC0.HWAK\) replaceall_matched
+begin
+Store (Local0,\\_SB.PCI0.LPCB.EC0.WAK0) Store (ShiftRight(Local0,8),\\_SB.PCI0.LPCB.EC0.WAK1)
+end;
