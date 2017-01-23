@@ -155,6 +155,7 @@
 		ED894A2C1AA779BC00D72637 /* battery_Lenovo-Yoga-S1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-S1.txt"; path = "battery/battery_Lenovo-Yoga-S1.txt"; sourceTree = "<group>"; };
 		ED8A1AB61AA38DD70019A7F4 /* battery_Lenovo-X201.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-X201.txt"; path = "battery/battery_Lenovo-X201.txt"; sourceTree = "<group>"; };
 		ED8F121A1B4DB5D5007ADCA9 /* system_OSYS_win7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_OSYS_win7.txt; path = system/system_OSYS_win7.txt; sourceTree = "<group>"; };
+		ED8F3B2C1E3671F800C4F906 /* battery_Thunderobot-911.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Thunderobot-911.txt"; path = "battery/battery_Thunderobot-911.txt"; sourceTree = "<group>"; };
 		ED95C7231D5BBC62006BC358 /* battery_Lenovo-Ideapad-Y700.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Ideapad-Y700.txt"; path = "battery/battery_Lenovo-Ideapad-Y700.txt"; sourceTree = "<group>"; };
 		EDB15EEA1A34B10C009F0E21 /* graphics_PTS_WAK-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_PTS_WAK-disable.txt"; path = "graphics/graphics_PTS_WAK-disable.txt"; sourceTree = "<group>"; };
 		EDB280191A3A21BD002C47E1 /* graphics_nvidia_laptop2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_nvidia_laptop2.txt; path = graphics/graphics_nvidia_laptop2.txt; sourceTree = "<group>"; };
@@ -363,6 +364,7 @@
 				8437F2F71A89C5FF00224BFA /* battery_Surface-Pro-v3.txt */,
 				ED2C801E1C3F8A140009BA8A /* battery_Surface-Pro-v4.txt */,
 				843936A218ABC24200E32386 /* battery_TabletKiosk-i575.txt */,
+				ED8F3B2C1E3671F800C4F906 /* battery_Thunderobot-911.txt */,
 				84ACC1B118BAD88B001B61D8 /* battery_Toshiba-A660-16Z.txt */,
 				84C4E6821954F237009476EB /* battery_Vizio-Ultrabook-CT14.txt */,
 			);
