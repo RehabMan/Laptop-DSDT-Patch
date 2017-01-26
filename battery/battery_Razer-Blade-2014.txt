@@ -7,6 +7,7 @@
 # works for:
 #  Razer Blade (2014)
 #  Razer Blade Stealth (Kaby Lake), per BlenderSleuth
+#  Razer Blade (14", late 2016)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

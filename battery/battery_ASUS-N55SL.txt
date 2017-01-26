@@ -42,6 +42,7 @@
 #  ASUS UX306UA (per MaraficeEye)
 #  ASUS N550JV (per Xracer99)
 #  ASUS X540LJ (per palash)
+#  ASUS X550VX (per vualeks)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
