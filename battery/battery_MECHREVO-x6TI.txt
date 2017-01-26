@@ -6,6 +6,7 @@
 # works for:
 #  MECHREVO x6TI
 #  Acer One 14 z1402g (per andres85)
+#  Fujitsu Siemens Amilo PI 3540 (per forteller)
 
 
 #16
@@ -39,6 +40,7 @@ into device label EC0 code_regex BST3,\s+16, replace_matched begin BT30,8,BT31,8
 into device label EC0 code_regex BTP0,\s+16, replace_matched begin BP00,8,BP01,8, end;
 
 #16 fix
+into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XIF0, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.F000,^^PCI0.LPCB.EC0.F001), end;
 into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XIF1, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.F100,^^PCI0.LPCB.EC0.F101), end;
 into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XIF2, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.F200,^^PCI0.LPCB.EC0.F201), end;
 into_all method parent_label BAT0 code_regex \(\^\^PCI0.LPCB.EC0.XIF3, replace_matched begin (B1B2(^^PCI0.LPCB.EC0.F300,^^PCI0.LPCB.EC0.F301), end;
