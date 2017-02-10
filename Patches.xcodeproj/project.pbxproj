@@ -140,6 +140,7 @@
 		ED2A20371E1D358D0088E616 /* battery_Microxperts-u731ga1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Microxperts-u731ga1.txt"; path = "battery/battery_Microxperts-u731ga1.txt"; sourceTree = "<group>"; };
 		ED2C801E1C3F8A140009BA8A /* battery_Surface-Pro-v4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v4.txt"; path = "battery/battery_Surface-Pro-v4.txt"; sourceTree = "<group>"; };
 		ED327D541DE386150017A255 /* battery_HP-Elite-X2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Elite-X2.txt"; path = "battery/battery_HP-Elite-X2.txt"; sourceTree = "<group>"; };
+		ED3C8C801E459D7B00C02EB2 /* battery_Fujitsu-Lifebook-A555.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Fujitsu-Lifebook-A555.txt"; path = "battery/battery_Fujitsu-Lifebook-A555.txt"; sourceTree = "<group>"; };
 		ED40F7221AF1323E00F0B970 /* battery_Lenovo-ThinkPad-W550s.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-ThinkPad-W550s.txt"; path = "battery/battery_Lenovo-ThinkPad-W550s.txt"; sourceTree = "<group>"; };
 		ED4580F51E05E78B002B93C0 /* battery_Samsung-NP300E5K-XF3BR.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Samsung-NP300E5K-XF3BR.txt"; path = "battery/battery_Samsung-NP300E5K-XF3BR.txt"; sourceTree = "<group>"; };
 		ED4E83951CC68C070005EB0E /* battery_Lenovo-Ideapad-100.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Ideapad-100.txt"; path = "battery/battery_Lenovo-Ideapad-100.txt"; sourceTree = "<group>"; };
@@ -297,6 +298,7 @@
 				EDBC416D1AFAA14700F2C133 /* battery_Dell-XPS-14Z-L412Z.txt */,
 				84D447031836DA1B006B6FEA /* battery_Dell-XPS-18.txt */,
 				84AA4E051846A6750048423C /* battery_Dell-XPS-L502x.txt */,
+				ED3C8C801E459D7B00C02EB2 /* battery_Fujitsu-Lifebook-A555.txt */,
 				845A0C2419322B0F005001DE /* battery_Gateway-ID49C07u.txt */,
 				ED77D4F11C3F56F80085DDCA /* battery_Gigabyte-P35Xv3.txt */,
 				840D7594184398D500160A94 /* battery_Gigabyte-u2442N.txt */,
