@@ -29,3 +29,5 @@ Scope (_SB)\n
 }\n
 end;
 
+# to avoid conflict with root scope PNLF
+into_all method code_regex Store\s+\(PNLF,\s+(.*)\) replaceall_matched begin Store(\\PNLF, %1) end;
