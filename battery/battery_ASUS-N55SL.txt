@@ -4,7 +4,7 @@
 # created by RehabMan 8/12/2013
 # created originally for jesselid
 
-# works for:
+#  works for:
 #  ASUS N55SL, BIOS rev. 204
 #  ASUS VivoBook series
 #  ASUS Zenbook UX31A
@@ -43,6 +43,7 @@
 #  ASUS N550JV (per Xracer99)
 #  ASUS X540LJ (per palash)
 #  ASUS X550VX (per vualeks)
+#  ASUS K550JK (per m3ftwz)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
