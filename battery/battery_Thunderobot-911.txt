@@ -4,7 +4,8 @@
 # created by nayeweiyang 2017-01-23
 
 # works for:
-#  Thunderobot 911.txt
+#  Thunderobot 911
+#  Thunderobot 911m-s2b (per kitkim)
 
 # 16-bit registers
 into device label EC0 code_regex DSCP,\s+16, replace_matched begin SCP0,8,SCP1,8, end;
