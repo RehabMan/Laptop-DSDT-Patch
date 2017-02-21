@@ -43,6 +43,9 @@
 #  ASUS N550JV (per Xracer99)
 #  ASUS X540LJ (per palash)
 #  ASUS X550VX (per vualeks)
+#  ASUS UX330UA (per fluxo)
+#  ASUS UX303UB (per CyanTech)
+#  ASUS K550JK (per m3ftwz)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -278,6 +281,7 @@ into device label EC0 code_regex B0C3,\s+16 replace_matched begin XC30,8,XC31,8 
 into device label EC0 code_regex B1C3,\s+16 replace_matched begin YC30,8,YC31,8 end;
 into_all method label _BIX code_regex \(\^\^LPCB\.EC0\.B0C3, replaceall_matched begin (B1B2(^^LPCB.EC0.XC30,^^LPCB.EC0.XC31), end;
 into_all method label _BIX code_regex \(\^\^LPCB\.EC0\.B1C3, replaceall_matched begin (B1B2(^^LPCB.EC0.YC30,^^LPCB.EC0.YC31), end;
+into_all method label _BIX code_regex \(B0C3, replaceall_matched begin (B1B2(XC30,XC31), end;
 
 # or could remove the _BIX method if it turns out not to work
 
