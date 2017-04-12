@@ -46,6 +46,7 @@
 #  ASUS UX330UA (per fluxo)
 #  ASUS UX303UB (per CyanTech)
 #  ASUS K550JK (per m3ftwz)
+#  ASUS TP500LB (per Archangeliques)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

@@ -143,6 +143,9 @@ into_all method label GBTI code_regex \(BATE, replaceall_matched begin (B1B2 (AT
 into_all method label GBTI code_regex \(BATF, replaceall_matched begin (B1B2 (ATF0, ATF1), end;
 into_all method label GBTC code_regex \(MAXC, replaceall_matched begin (B1B2 (AXC0, AXC1), end;
 
+# added for ProBoook 4x0 G4 (Kaby Lake)
+into_all method label ITLB code_regex \(BFC, replaceall_matched begin (B1B2 (BFC0, BFC1), end;
+
 # Now deal with the writes to those registers
 # Store (0xFA, MAXC)
 into_all method label SBTC code_regex \(0xFA,\sMAXC\) replaceall_matched begin (0xFA, AXC0)\nStore (Zero, AXC1) end;
