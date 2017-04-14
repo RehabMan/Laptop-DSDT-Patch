@@ -7,7 +7,6 @@
 # works for:
 #  ASUS G75vw
 #  ASUS S400
-#  ASUS G750 JW (probably works for Asus G750 JX and JH also)
 #  ASUS PRO PU401LA
 #  ASUS K56CM
 #  ASUS Q550LF
@@ -21,6 +20,10 @@
 #  ASUS A555LD
 #  ASUS X751LD (per tj3000)
 #  ASUS G771JM (per ouija)
+#  ASUS G750JW (probably works for Asus G750 JX and JH also)
+#  ASUS G551VW (per ahmadsafar)
+#  ASUS G552VW (per ahmadsafar)
+#  ASUS G502VS (per ahmadsafar)
 #  ASUS F3SV (per conath)
 #  ASUS R510JK (per renardn)
 
