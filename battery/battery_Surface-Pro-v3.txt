@@ -2,6 +2,7 @@
 #battery_Surface-Pro-v3.txt
 
 # created by Ravi C (wen1) 2015-02-08
+# additional fixes by RehabMan, 2017-04-20 based on feedback from naterh (github) pull #46
 
 # works for:
 #  Microsoft Surface Pro 3
@@ -25,11 +26,77 @@ Method (B1B4, 4, NotSerialized)\n
 }\n
 end;
 
+# utility methods to read/write buffers from/to EC
+into method label RE1B parent_label EC0 remove_entry;
+into method label RECB parent_label EC0 remove_entry;
+into device label EC0 insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+// Arg1 - size of buffer in bits\n
+{\n
+    ShiftRight(Add(Arg1,7), 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
 # 32-bit registers
 into device label EC0 code_regex SMFV,\s+32 replace_matched begin MFV0,8,MFV1,8,MFV2,8,MFV3,8 end;
+into device label EC0 code_regex B0SN,\s+32 replace_matched begin SN00,8,SN01,8,SN02,8,SN03,8 end;
 
 # fix 32-bit methods
 into method label _HRV code_regex \(\^\^\^SBRG\.EC0\.SMFV, replaceall_matched begin (B1B4(^^^SBRG.EC0.MFV0,^^^SBRG.EC0.MFV1,^^^SBRG.EC0.MFV2,^^^SBRG.EC0.MFV3), end;
+into method label FBIF code_regex \(\^\^SBRG\.EC0\.B0SN, replaceall_matched begin (B1B4(^^SBRG.EC0.SN00,^^SBRG.EC0.SN01,^^SBRG.EC0.SN02,^^SBRG.EC0.SN03), end;
+
+# large registers
+into device label EC0 code_regex (B0MN,)\s+(96) replace_matched begin BXMN,%2,//%1%2 end;
+into device label EC0 code_regex (B0DN,)\s+(64) replace_matched begin BXDN,%2,//%1%2 end;
+into device label EC0 code_regex (B0CM,)\s+(48) replace_matched begin BXCM,%2,//%1%2 end;
+
+# B0MN to BXMN //offset 0x75
+# B0DN to BXDN //offset 0x81
+# B0CM to BXCM //offset 0x89
+
+# supporting math
+#  Offset (0x53),
+#  B0TP,   16, //53
+#  VL00,8,VL01,8, //55
+#  CR00,8,CR01,8, //57
+#  B0AC,   16, //59
+#  B0ME,   16, //5b
+#  B0RS,   16, //5d
+#  RC00,8,RC01,8, //5f
+#  FC00,8,FC01,8, //61
+#  B0MC,   16, //63
+#  B0MV,   16, //65
+#  B0ST,   16, //67
+#  CC00,8,CC01,8, //69
+#  DC00,8,DC01,8, //6b
+#  DV00,8,DV01,8, //6d
+#  B0SI,   16, //6f
+#  SN00,8,SN01,8,SN02,8,SN03,8, //71
+#  B0MN,   96, //75
+#  B0DN,   64, //81
+#  B0CM,   48, //89
+
+into method label FBIF code_regex \^\^SBRG\.EC0\.B0MN replaceall_matched begin ^^SBRG.EC0.RECB(0x75,96) end;
+into method label FBIF code_regex \^\^SBRG\.EC0\.B0DN replaceall_matched begin ^^SBRG.EC0.RECB(0x81,64) end;
+into method label FBIF code_regex \^\^SBRG\.EC0\.B0CM replaceall_matched begin ^^SBRG.EC0.RECB(0x89,48) end;
 
 # 16-bit registers
 
