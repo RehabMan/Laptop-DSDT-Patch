@@ -7,6 +7,7 @@
 
 # works for:
 #  HP G6 2221ss
+#  HP G6-2233sw
 #  HP dv7t-4100
 #  HP Envy 14 Spectre 14t-3000
 #  HP Pavilion dv6-3165sf
