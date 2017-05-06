@@ -49,6 +49,7 @@
 #  ASUS TP500LB (per Archangeliques)
 #  ASUS X556UA (per ben9923)
 #  ASUS UX410 (per minhquang211090)
+#  ASUS N552VW (per nicolas2121)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

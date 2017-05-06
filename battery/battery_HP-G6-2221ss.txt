@@ -32,6 +32,7 @@
 #  HP Pavilion DV6 2137el (per TheStraing)
 #  HP Pavilion 15 ab035TX (per er.manojsoni)
 #  HP Envy x360 13-y013cl Kaby Lake (per lilryu)
+#  HP HP Pavilion G6-2233sw (per hexplor)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
