@@ -1,0 +1,169 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_HP-x360.txt
+
+# created by Krennn 2017-05-15
+
+# works for:
+#  HP Pavilion x360 13-u002ur, W7R60EA
+
+into method label WE1B parent_label H_EC remove_entry;
+into method label WECB parent_label H_EC remove_entry;
+into device label H_EC insert
+begin
+Method (WE1B, 2, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Store(Arg1, BYTE)\n
+}\n
+Method (WECB, 3, Serialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+// Arg1 - size of buffer in bits\n
+// Arg2 - value to write\n
+{\n
+    ShiftRight(Add(Arg1,7), 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Store(Arg2, TEMP)\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        WE1B(Arg0, DerefOf(Index(TEMP, Local0)))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+}\n
+end;
+
+into method label RE1B parent_label H_EC remove_entry;
+into method label RECB parent_label H_EC remove_entry;
+into device label H_EC insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+// Arg1 - size of buffer in bits\n
+{\n
+    ShiftRight(Add(Arg1,7), 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+into method label B1B4 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B4, 4, NotSerialized)\n
+{\n
+    Store(Arg3, Local0)\n
+    Or(Arg2, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg1, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg0, ShiftLeft(Local0, 8), Local0)\n
+    Return(Local0)\n
+}\n
+end;
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+into device label H_EC code_regex CPUP,\s+16, replace_matched begin PUP0,8,PUP1,8, end;
+into device label H_EC code_regex BPWR,\s+16, replace_matched begin PRW0,8,PRW1,8, end;
+into device label H_EC code_regex PPWR,\s+16, replace_matched begin PPW0,8,PPW1,8, end;
+into device label H_EC code_regex B1DC,\s+16, replace_matched begin DC10,8,DC11,8, end;
+into device label H_EC code_regex B1RC,\s+16, replace_matched begin RC10,8,RC11,8, end;
+into device label H_EC code_regex B1FC,\s+16, replace_matched begin FC10,8,FC11,8, end;
+into device label H_EC code_regex B1FV,\s+16, replace_matched begin FV10,8,FV11,8, end;
+into device label H_EC code_regex B1DI,\s+16, replace_matched begin DI10,8, DI11,8, end;
+into device label H_EC code_regex B1CI,\s+16, replace_matched begin CI10,8,CI11,8, end;
+into device label H_EC code_regex B2RC,\s+16, replace_matched begin RC20,8,RC21,8, end;
+into device label H_EC code_regex B2FC,\s+16, replace_matched begin FC20,8,FC21,8, end;
+into device label H_EC code_regex B2FV,\s+16, replace_matched begin FV20,8,FV21,8, end;
+into device label H_EC code_regex B2DI,\s+16, replace_matched begin DI20,8,DI21,8, end;
+into device label H_EC code_regex B2CI,\s+16, replace_matched begin CI20,8,CI21,8, end;
+into device label H_EC code_regex CPAP,\s+16, replace_matched begin PAP0,8,PAP1,8, end;
+into device label H_EC code_regex BKAP,\s+16, replace_matched begin KAP0,8,KAP1,8, end;
+into device label H_EC code_regex PLAP,\s+16, replace_matched begin LAP0,8,LAP1,8, end;
+into device label H_EC code_regex CFSP,\s+16, replace_matched begin FSP0,8,FSP1,8, end;
+into device label H_EC code_regex B2DC,\s+16, replace_matched begin DC20,8,DC21,8, end;
+into device label H_EC code_regex B1DV,\s+16, replace_matched begin DV10,8,DV11,8, end;
+into device label H_EC code_regex B2DV,\s+16, replace_matched begin DV20,8,DV21,8, end;
+into device label H_EC code_regex CHGR,\s+16, replace_matched begin HGR0,8,HGR1,8, end;
+
+into scope label _SB.PCI0.LPCB.EC0 code_regex BSRE,\s+16 replace_matched begin SRE0,8,SRE1,8 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex BSAF,\s+16 replace_matched begin SAF0,8,SAF1,8 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex BSAE,\s+16 replace_matched begin SAE0,8,SAE1,8 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex BSC1,\s+16 replace_matched begin SC10,8,SC11,8 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex BSC2,\s+16 replace_matched begin SC20,8,SC21,8 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex BSC3,\s+16 replace_matched begin SC30,8,SC31,8 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex BSC4,\s+16 replace_matched begin SC40,8,SC41,8 end;
+
+into device label H_EC code_regex CPUE,\s+32 replace_matched begin PUE0,8,PUE1,8,PUE2,8,PUE3,8 end;
+
+into device label H_EC code_regex (IWCW,)\s+(160) replace_matched begin IWCX,%2,//%1%2 end;
+into device label H_EC code_regex (IWCR,)\s+(160) replace_matched begin WECY,%2,//%1%2 end;
+into scope label _SB.PCI0.LPCB.EC0 code_regex (BSCN,)\s+(128) replace_matched begin SCNY,%2,//%1%2 end;
+
+into_all method parent_label BAT1 code_regex ECRD\s\(RefOf\s\(B1DC\)\) replaceall_matched begin B1B2(DC10,DC11) end;
+into_all method parent_label BAT1 code_regex ECRD\s\(RefOf\s\(B1RC\)\) replaceall_matched begin B1B2(RC10,RC11) end;
+into_all method parent_label BAT1 code_regex ECRD\s\(RefOf\s\(B1FC\)\) replaceall_matched begin B1B2(FC10,FC11) end;
+into_all method parent_label BAT1 code_regex ECRD\s\(RefOf\s\(B1FV\)\) replaceall_matched begin B1B2(FV10,FV11) end;
+into_all method parent_label BAT1 code_regex ECRD\s\(RefOf\s\(B1DI\)\) replaceall_matched begin B1B2(DI10,DI11) end;
+into_all method parent_label BAT1 code_regex ECRD\s\(RefOf\s\(B1CI\)\) replaceall_matched begin B1B2(CI10,CI11) end;
+into_all method parent_label BAT2 code_regex ECRD\s\(RefOf\s\(B2RC\)\) replaceall_matched begin B1B2(RC20,RC21) end;
+into_all method parent_label BAT2 code_regex ECRD\s\(RefOf\s\(B2FC\)\) replaceall_matched begin B1B2(FC20,FC21) end;
+into_all method parent_label BAT2 code_regex ECRD\s\(RefOf\s\(B2FV\)\) replaceall_matched begin B1B2(FV20,FV21) end;
+into_all method parent_label BAT2 code_regex ECRD\s\(RefOf\s\(B2DI\)\) replaceall_matched begin B1B2(DI20,DI21) end;
+into_all method parent_label BAT2 code_regex ECRD\s\(RefOf\s\(B2CI\)\) replaceall_matched begin B1B2(CI20,CI21) end;
+into_all method parent_label BAT2 code_regex ECRD\s\(RefOf\s\(B2DC\)\) replaceall_matched begin B1B2(DC20,DC21) end;
+into_all method parent_label BAT1 code_regex ECRD\s\(RefOf\s\(B1DV\)\) replaceall_matched begin B1B2(DV10,DV11) end;
+
+into_all method parent_label BAT2 code_regex ECRD\s\(RefOf\s\(B2DV\)\) replaceall_matched begin B1B2(DV20,DV21) end;
+into_all method parent_label BAT2 code_regex \(B2DV, replaceall_matched begin (B1B2(DV20,DV21), end;
+into_all method parent_label BAT1 code_regex \(B1DV, replaceall_matched begin (B1B2(DV10,DV11), end;
+
+into_all method label GBAT code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.BSRE, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SRE0,\\_SB.PCI0.LPCB.EC0.SRE1), end;
+into_all method label GBAT code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.BSAF, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SAF0,\\_SB.PCI0.LPCB.EC0.SAF1), end;
+into_all method label GBAT code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.BSAE, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SAE0,\\_SB.PCI0.LPCB.EC0.SAE1), end;
+into_all method label GBAT code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.BSC1, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SC10,\\_SB.PCI0.LPCB.EC0.SC11), end;
+into_all method label GBAT code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.BSC2, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SC20,\\_SB.PCI0.LPCB.EC0.SC21), end;
+into_all method label GBAT code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.BSC3, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SC30,\\_SB.PCI0.LPCB.EC0.SC31), end;
+into_all method label GBAT code_regex \(\\_SB\.PCI0\.LPCB\.EC0\.BSC4, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.SC40,\\_SB.PCI0.LPCB.EC0.SC41), end;
+
+# offsets based on original DSDT code:
+#            OperationRegion (ECF3, EmbeddedControl, Zero, 0xFF)
+#            Field (ECF3, ByteAcc, Lock, Preserve)
+#            {
+#                Offset (0x04),
+#                IWCW,   160,
+#                IWCR,   160
+#            }
+
+into_all method parent_label WCT0 code_regex Store\s\(Arg0,\s\^\^PCI0.LPCB.H_EC.IWCW\) replaceall_matched begin \\_SB.PCI0.LPCB.H_EC.WECB(0x04,160,Arg0) end;
+into_all method parent_label WCT0 code_regex \^\^PCI0.LPCB.H_EC.IWCR replaceall_matched begin \\_SB.PCI0.LPCB.H_EC.RECB(0x18,160) end;
+
+# offsets based on original DSDT code:
+#        Field (RAM, ByteAcc, NoLock, Preserve)
+#        {
+#            Offset (0xE0),
+#            BSCN,   128
+#        }
+
+into method label GBAT code_regex _SB.PCI0.LPCB.EC0.BSCN, replaceall_matched begin _SB.PCI0.LPCB.H_EC.RECB (0xE0,128), end;
+
+

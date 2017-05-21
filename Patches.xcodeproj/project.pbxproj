@@ -177,6 +177,7 @@
 		EDE3BCB91B018FCF00475630 /* usb_prw_0x0d_xhc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x0d_xhc.txt; path = usb/usb_prw_0x0d_xhc.txt; sourceTree = "<group>"; };
 		EDE3BCBA1B01900700475630 /* system_IAOE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_IAOE.txt; path = system/system_IAOE.txt; sourceTree = "<group>"; };
 		EDE3BCBB1B01904E00475630 /* graphics_Rename-B0D3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_Rename-B0D3.txt"; path = "graphics/graphics_Rename-B0D3.txt"; sourceTree = "<group>"; };
+		EDEA10651ED23B3800EB2F7C /* battery_HP-x360.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-x360.txt"; path = "battery/battery_HP-x360.txt"; sourceTree = "<group>"; };
 		EDF0829E1A0BC52C00DD15A5 /* battery_Clevo-M860TU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Clevo-M860TU.txt"; path = "battery/battery_Clevo-M860TU.txt"; sourceTree = "<group>"; };
 		EDFBE3951A3767DF00F61E48 /* graphics_SSDT-disable-cleanup.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_SSDT-disable-cleanup.txt"; path = "graphics/graphics_SSDT-disable-cleanup.txt"; sourceTree = "<group>"; };
 		EDFC30DB1C05097100370D17 /* battery_Alienware-m15x.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Alienware-m15x.txt"; path = "battery/battery_Alienware-m15x.txt"; sourceTree = "<group>"; };
@@ -322,6 +323,7 @@
 				845AA66318871888007B305B /* battery_HP-ProBook-4x0s-G1.txt */,
 				84CD226F18246E1B0076EF62 /* battery_HP-ProBook-Generic.txt */,
 				8499201B18060CDF00F1FC19 /* battery_HP-Spectre-XT.txt */,
+				EDEA10651ED23B3800EB2F7C /* battery_HP-x360.txt */,
 				ED1646481A94E21C00D2D49B /* battery_Lenovo-E430.txt */,
 				EDCCC2CB1A70148300C7301E /* battery_Lenovo-G50-70.txt */,
 				ED4E83951CC68C070005EB0E /* battery_Lenovo-Ideapad-100.txt */,
