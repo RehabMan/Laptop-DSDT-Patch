@@ -33,6 +33,7 @@
 #  HP Pavilion 15 ab035TX (per er.manojsoni)
 #  HP Envy x360 13-y013cl Kaby Lake (per lilryu)
 #  HP HP Pavilion G6-2233sw (per hexplor)
+#  HP Pavallion 15 au009tx, au006tx, au118tx (per SSH@HBTU)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
