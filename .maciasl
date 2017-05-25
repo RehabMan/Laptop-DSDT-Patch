@@ -7,6 +7,7 @@
 [syn] Fix PARSEOP_STORE/MMTB/HRPR Error	syntax/fix_MMTB.txt
 [syn] Fix *pnp/pnp lower case Error	syntax/fix_HID_pnp.txt
 [syn] Fix PARSEOP_ZERO Error	syntax/fix_PARSEOP_ZERO.txt
+[syn] Fix PARSEOP_ZERO Error (aggressive)	syntax/fix_PARSEOP_ZERO_agressive.txt
 [syn] Rename _DSM methods to XDSM	syntax/rename_DSM.txt
 [syn] Remove _DSM methods	syntax/remove_DSM.txt
 [syn] Remove _PSS placeholders	syntax/fix_PSS.txt
