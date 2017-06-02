@@ -173,6 +173,7 @@
 		EDCDC82A1BD1F90A00B4050C /* battery_HP-Envy-M4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Envy-M4.txt"; path = "battery/battery_HP-Envy-M4.txt"; sourceTree = "<group>"; };
 		EDD059951C4B1CF50023376B /* battery_HP-Envy-4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-Envy-4.txt"; path = "battery/battery_HP-Envy-4.txt"; sourceTree = "<group>"; };
 		EDD7C2F11BE1A7E6005C40AE /* battery_Dell-Inspiron-5548.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Inspiron-5548.txt"; path = "battery/battery_Dell-Inspiron-5548.txt"; sourceTree = "<group>"; };
+		EDDD0C1C1EE0DCF40098D564 /* battery_Lenovo-Yoga-900-13ISK.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-900-13ISK.txt"; path = "battery/battery_Lenovo-Yoga-900-13ISK.txt"; sourceTree = "<group>"; };
 		EDE3BCB71B018ED700475630 /* fix_PSS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PSS.txt; path = syntax/fix_PSS.txt; sourceTree = "<group>"; };
 		EDE3BCB81B018F8800475630 /* usb_prw_0x6d_xhc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x6d_xhc.txt; path = usb/usb_prw_0x6d_xhc.txt; sourceTree = "<group>"; };
 		EDE3BCB91B018FCF00475630 /* usb_prw_0x0d_xhc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x0d_xhc.txt; path = usb/usb_prw_0x0d_xhc.txt; sourceTree = "<group>"; };
@@ -345,6 +346,7 @@
 				84C3532419985DDE00005C20 /* battery_Lenovo-y570.txt */,
 				842F531F17FB301B001CF33B /* battery_Lenovo-y580.txt */,
 				ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */,
+				EDDD0C1C1EE0DCF40098D564 /* battery_Lenovo-Yoga-900-13ISK.txt */,
 				8402FD071B27F536003A83DF /* battery_Lenovo-Yoga-Pro2.txt */,
 				ED894A2C1AA779BC00D72637 /* battery_Lenovo-Yoga-S1.txt */,
 				ED1F747B1A4C772200FFE7AE /* battery_Lenovo-z470-z370.txt */,
