@@ -3,9 +3,11 @@
 
 # Created by Jarett, 2015-06-15
 # some fixes by Rehabman
+# added Thinkpad X1 Carbon support based on submittal by dealecth
 
 # Works for:
 #   Lenovo ThinkPad X230i
+#   Lenovo ThinkPad X1 Carbon (5th gen)
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
@@ -75,6 +77,13 @@ into device label EC code_regex SBCH,\s+32 replace_matched begin CH00,8,CH01,8,C
 into device label EC code_regex (SBMN,)\s+(128) replace_matched begin BMNX,%2,//%1%2 end;
 into device label EC code_regex (SBDN,)\s+(128) replace_matched begin BDNX,%2,//%1%2 end;
 
+# SBCC added for newer Lenovo laptops, such as X1 Carbon
+into device label EC code_regex SBCC,\s+16 replace_matched begin CC00,8,CC01,8, end;
+# HWAC added for newer Lenovo laptops, such as X1 Carbon
+into device label EC code_regex HWAC,\s+16, replace_matched begin AC10,8,AC11,8, end;
+into method label _L17 code_regex \(\\_SB\.PCI0\.LPCB\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC.AC10,\\_SB.PCI0.LPCB.EC.AC11), end;
+into method label OWAK code_regex \(\\_SB\.PCI0\.LPCB\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC.AC10,\\_SB.PCI0.LPCB.EC.AC11), end;
+
 #put 8-bit variable together
 into method label _L1D code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.AK00,\\_SB.PCI0.LPC.EC.AK01), end;
 into method label GBST code_regex \(SBRC, replaceall_matched begin (B1B2(RC00,RC01), end;
@@ -90,3 +99,14 @@ into method label GBIF code_regex \(SBCH, replaceall_matched begin (B1B4(CH00,CH
 into method label GBIF code_regex \(SBMN, replaceall_matched begin (RECB(0xA0,128), end;
 into method label GBIF code_regex \(SBDN, replaceall_matched begin (RECB(0xA0,128), end;
 
+#GBIX added for newer Lenovo such as Lenovo X1 Carbon
+into method label GBIX code_regex \(SBFC, replaceall_matched begin (B1B2(FC00,FC01), end;
+into method label GBIX code_regex \(SBBM, replaceall_matched begin (B1B2(SB00,SB01), end;
+into method label GBIX code_regex \(SBCC, replaceall_matched begin (B1B2(CC00,CC01), end;
+into method label GBIX code_regex \(SBDC, replaceall_matched begin (B1B2(DC00,DC01), end;
+into method label GBIX code_regex \(SBDV\) replaceall_matched begin (B1B2(DV00,DV01)) end;
+into method label GBIX code_regex SBDV, replaceall_matched begin B1B2(DV00,DV01), end;
+into method label GBIX code_regex \(SBSN, replaceall_matched begin (B1B2(SN00,SN01), end;
+into method label GBIX code_regex \(SBCH, replaceall_matched begin (B1B4(CH00,CH01,CH02,CH03), end;
+into method label GBIX code_regex \(SBMN, replaceall_matched begin (RECB(0xA0,128), end;
+into method label GBIX code_regex \(SBDN, replaceall_matched begin (RECB(0xA0,128), end;
