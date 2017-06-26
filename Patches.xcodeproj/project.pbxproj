@@ -137,6 +137,7 @@
 		ED1F8F471A1399D1005F6F5B /* battery_Lenovo-Yoga-13.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Yoga-13.txt"; path = "battery/battery_Lenovo-Yoga-13.txt"; sourceTree = "<group>"; };
 		ED2050221AD1124600E60CD2 /* battery_Dell-Inspiron-15-7xxx.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-Inspiron-15-7xxx.txt"; path = "battery/battery_Dell-Inspiron-15-7xxx.txt"; sourceTree = "<group>"; };
 		ED2188281ED71F220034C32E /* fix_PARSEOP_ZERO_agressive.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fix_PARSEOP_ZERO_agressive.txt; path = syntax/fix_PARSEOP_ZERO_agressive.txt; sourceTree = "<group>"; };
+		ED227BBA1F014C3E003D562D /* battery_Lenovo-Miix-720.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Miix-720.txt"; path = "battery/battery_Lenovo-Miix-720.txt"; sourceTree = "<group>"; };
 		ED2A1F171AB32E770024D58C /* battery_Lenovo-y510p.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-y510p.txt"; path = "battery/battery_Lenovo-y510p.txt"; sourceTree = "<group>"; };
 		ED2A20371E1D358D0088E616 /* battery_Microxperts-u731ga1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Microxperts-u731ga1.txt"; path = "battery/battery_Microxperts-u731ga1.txt"; sourceTree = "<group>"; };
 		ED2C801E1C3F8A140009BA8A /* battery_Surface-Pro-v4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Surface-Pro-v4.txt"; path = "battery/battery_Surface-Pro-v4.txt"; sourceTree = "<group>"; };
@@ -331,6 +332,7 @@
 				EDCCC2CB1A70148300C7301E /* battery_Lenovo-G50-70.txt */,
 				ED4E83951CC68C070005EB0E /* battery_Lenovo-Ideapad-100.txt */,
 				ED95C7231D5BBC62006BC358 /* battery_Lenovo-Ideapad-Y700.txt */,
+				ED227BBA1F014C3E003D562D /* battery_Lenovo-Miix-720.txt */,
 				ED6F13A51DF36C24006CAE1C /* battery_Lenovo-L420.txt */,
 				EDC041151DBCE05F008724C6 /* battery_Lenovo-N480.txt */,
 				84A21711195204BE004751F3 /* battery_Lenovo-T430u.txt */,
