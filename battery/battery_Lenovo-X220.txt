@@ -17,7 +17,7 @@
 #  Lenovo T530/T530i (per Swingkid)
 #  Lenovo W530 (2441A43) (per GerryGu)
 #  Lenovo T460 (per jkoneal)
-#  Lenovo x240 
+#  Lenovo x240
 
 # Note: disable secondary battery
 #  *** remove this line if you have a second battery installed)
@@ -99,6 +99,7 @@ into device label EC code_regex SBDV,\s+16 replace_matched begin BDV0,8,BDV1,8 e
 into device label EC code_regex SBSN,\s+16 replace_matched begin BSN0,8,BSN1,8 end;
 
 into device label EC code_regex SBAC,\s+16 replace_matched begin BAC0,8,BAC1,8 end;
+into device label EC code_regex SBCC,\s+16 replace_matched begin BCC0,8,BCC1,8 end;
 
 # this one is fan related
 into device label EC code_regex HFN1,\s+16 replace_matched begin FN10,8,FN11,8 end;
@@ -142,34 +143,44 @@ into device label EC code_regex SBCH,\s+32 replace_matched begin BCH0,8,BCH1,8,B
 into device label EC code_regex (SBMN,)\s+(128) replace_matched begin BMNX,%2,//%1%2 end;
 into device label EC insert begin Method (RBMN, 0, Serialized) { Return(RECB(0xA0,128)) } end;
 into method label GBIF code_regex \(SBMN, replaceall_matched begin (RBMN(), end;
+into method label GBIX code_regex \(SBMN, replaceall_matched begin (RBMN(), end;
 
 # deal with 128-bit SBDN
 into device label EC code_regex (SBDN,)\s+(128) replace_matched begin BDNX,%2,//%1%2 end;
 into device label EC insert begin Method (RBDN, 0, Serialized) { Return(RECB(0xA0,128)) } end;
 into method label GBIF code_regex \(SBDN, replaceall_matched begin (RBDN(), end;
+into method label GBIX code_regex \(SBDN, replaceall_matched begin (RBDN(), end;
 
 
 # Change access (reads) to those registers from 16-bit to 8-bit
 into_all method label GBST code_regex \(SBRC, replaceall_matched begin (B1B2 (BRC0, BRC1), end;
 into_all method label GBST code_regex \(SBFC, replaceall_matched begin (B1B2 (BFC0, BFC1), end;
 into_all method label GBST code_regex \(SBVO, replaceall_matched begin (B1B2 (BVO0, BVO1), end;
-
 into_all method label GBST code_regex \(SBDC, replaceall_matched begin (B1B2 (BDC0, BDC1), end;
 into_all method label GBST code_regex \(SBDV, replaceall_matched begin (B1B2 (BDV0, BDV1), end;
 into_all method label GBST code_regex \(SBSN, replaceall_matched begin (B1B2 (BSN0, BSN1), end;
-
 into_all method label GBST code_regex \(SBAC, replaceall_matched begin (B1B2 (BAC0, BAC1), end;
 
 into_all method label GBIF code_regex \(SBRC, replaceall_matched begin (B1B2 (BRC0, BRC1), end;
 into_all method label GBIF code_regex \(SBFC, replaceall_matched begin (B1B2 (BFC0, BFC1), end;
 into_all method label GBIF code_regex \(SBVO, replaceall_matched begin (B1B2 (BVO0, BVO1), end;
-
 into_all method label GBIF code_regex \(SBDC, replaceall_matched begin (B1B2 (BDC0, BDC1), end;
 into_all method label GBIF code_regex \(SBDV, replaceall_matched begin (B1B2 (BDV0, BDV1), end;
 into_all method label GBIF code_regex \(SBSN, replaceall_matched begin (B1B2 (BSN0, BSN1), end;
-
 into_all method label GBIF code_regex \(SBDV\) replaceall_matched begin (B1B2 (BDV0, BDV1)) end;
 into_all method label GBIF code_regex ,\s+SBDV, replaceall_matched begin ,B1B2(BDV0, BDV1), end;
+
+## GBIX method for T470s
+into_all method label GBIX code_regex \(SBCC, replaceall_matched begin (B1B2(BCC0,BCC1), end;
+into_all method label GBIX code_regex \(SBBM, replaceall_matched begin (B1B2(BBM0,BBM1), end;
+into_all method label GBIX code_regex \(SBFC, replaceall_matched begin (B1B2 (BFC0, BFC1), end;
+into_all method label GBIX code_regex \(SBDC, replaceall_matched begin (B1B2 (BDC0, BDC1), end;
+into_all method label GBIX code_regex \(SBDV, replaceall_matched begin (B1B2 (BDV0, BDV1), end;
+into_all method label GBIX code_regex \(SBDV\) replaceall_matched begin (B1B2 (BDV0, BDV1)) end;
+into_all method label GBIX code_regex ,\s+SBDV, replaceall_matched begin ,B1B2(BDV0, BDV1), end;
+into_all method label GBIX code_regex \(SBSN, replaceall_matched begin (B1B2 (BSN0, BSN1), end;
+into_all method label GBIX code_regex \(SBCH, replaceall_matched begin (B1B4(BCH0,BCH1,BCH2,BCH3), end;
+
 
 into device label EC code_regex SBBM,\s+16 replace_matched begin BBM0,8,BBM1,8 end;
 into_all method label GBIF code_regex \(SBBM, replaceall_matched begin (B1B2(BBM0,BBM1), end;
@@ -190,10 +201,13 @@ into method label _L18 parent_label _GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK
 into method label _L18 parent_label \_GPE code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAK0,\\_SB.PCI0.LPC.EC.WAK1), end;
 
 
-# sleep related T440s
+# sleep related T440s, T470s
 into_all all code_regex \(HWAC, replaceall_matched begin (B1B2(WAC0,WAC1), end;
 into_all all code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAC0,\\_SB.PCI0.LPC.EC.WAC1), end;
 into_all all code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.WAC0,\\_SB.PCI0.LPC.EC.WAC1), end;
+into_all all code_regex \(\\_SB\.PCI0\.LPCB\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC.WAC0,\\_SB.PCI0.LPCB.EC.WAC1), end;
+into_all all code_regex \(\\_SB\.PCI0\.LPCB\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC.WAC0,\\_SB.PCI0.LPCB.EC.WAC1), end;
+
 
 # sleep releated L450
 into_all all code_regex \(HWAK, replaceall_matched begin (B1B2(WAC0,WAC1), end;
