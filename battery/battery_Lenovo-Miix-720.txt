@@ -153,7 +153,7 @@ into method label GBID code_regex \(FWBT, replaceall_matched begin (RECB(0x14,64
 into method label GSBI code_regex \(FWBT, replaceall_matched begin (RECB(0x14,64), end;
 into method label MHPF code_regex Store\s+\(FB4,\s+SMDA\) replaceall_matched begin WECB(0x64,256,FB4) end;
 into method label GSBI code_regex \(BMN0, replaceall_matched begin (RECB(0x8f,72), end;
-into method label _BIF code_regex \(BMN0, replaceall_matched begin (RECB(0x8f,56), end;
+into method label _BIF code_regex \(BMN0, replaceall_matched begin (RECB(0x8f,72), end;
 into method label _BIF code_regex \(BDN0, replaceall_matched begin (RECB(0x98,64), end;
 into method label GSBI code_regex \(BDN0, replaceall_matched begin (RECB(0x98,64), end;
 
