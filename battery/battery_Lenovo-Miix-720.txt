@@ -163,3 +163,10 @@ into method label BATD code_regex \(\^\^PCI0\.LPCB\.EC0\.B1DA, replaceall_matche
 
 #RehabMan: added for Lenovo B50-50
 into method label MHPF code_regex Store\s+\(SMDA,\s+FB4\) replaceall_matched begin Store(RECB(0x64,256),FB4) end;
+
+#RehabMan: fixing BAT0._STA logic bug
+into method label _STA parent_label BAT0 code_regex ([\s\S]*) replace_matched
+begin
+If(!ECON) { Return(0xf) }\n
+%1
+end;
