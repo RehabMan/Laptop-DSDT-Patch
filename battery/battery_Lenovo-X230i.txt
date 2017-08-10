@@ -4,10 +4,12 @@
 # Created by Jarett, 2015-06-15
 # some fixes by Rehabman
 # added Thinkpad X1 Carbon support based on submittal by dealecth
+# added Thinkpad P50 (Skylake) support based on info from msharaf
 
 # Works for:
 #   Lenovo ThinkPad X230i
 #   Lenovo ThinkPad X1 Carbon (5th gen)
+#   Lenovo ThinkPad P50 (6th gen)
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
@@ -83,6 +85,10 @@ into device label EC code_regex SBCC,\s+16 replace_matched begin CC00,8,CC01,8, 
 into device label EC code_regex HWAC,\s+16, replace_matched begin AC10,8,AC11,8, end;
 into method label _L17 code_regex \(\\_SB\.PCI0\.LPCB\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC.AC10,\\_SB.PCI0.LPCB.EC.AC11), end;
 into method label OWAK code_regex \(\\_SB\.PCI0\.LPCB\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC.AC10,\\_SB.PCI0.LPCB.EC.AC11), end;
+# added for P50
+into method label _WAK code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.AC10,\\_SB.PCI0.LPC.EC.AC11), end;
+into method label \_WAK code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.AC10,\\_SB.PCI0.LPC.EC.AC11), end;
+into method label _L17 code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.AC10,\\_SB.PCI0.LPC.EC.AC11), end;
 
 #put 8-bit variable together
 into method label _L1D code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.AK00,\\_SB.PCI0.LPC.EC.AK01), end;
