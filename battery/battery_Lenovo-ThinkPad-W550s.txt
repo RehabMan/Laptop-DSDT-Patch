@@ -5,6 +5,7 @@
 
 # Works for:
 #   Lenovo ThinkPad W550s (dual-battery)
+#   Lenovo w540 (per tstc)
 
 # This patch is designed for ThinkPad W550s with
 # built-in battery and external battery.
@@ -131,4 +132,7 @@ into method label GBST code_regex SBAC, replaceall_matched begin B1B2(BAC0,BAC1)
 into method label GBIF code_regex SBCH, replaceall_matched begin B1B4(BCH0,BCH1,BCH2,BCH3), end;
 into method label GBIF code_regex \(SBDN, replaceall_matched begin (RECB(0xA0,128), end;
 into method label GBIF code_regex \(SBMN, replaceall_matched begin (RECB(0xA0,128), end;
+
+# added for Lenovo w540
+into method label _L1D code_regex \_SB.PCI0.LPC.EC.HWAC, replaceall_matched begin B1B2(\\_SB.PCI0.LPC.EC.WAC0,\\_SB.PCI0.LPC.EC.WAC1), end;
 

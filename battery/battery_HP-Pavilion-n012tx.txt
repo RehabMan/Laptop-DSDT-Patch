@@ -10,6 +10,7 @@
 #  HP Pavilion G6-2149TX (per computechnopro2)
 #  HP Pavilion 15-b119sl (per Skorpion96)
 #  HP Pavilion 15-n096ea (per oscarr)
+#  HP Pavilion 17-f078nf (per xdevillived666)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
