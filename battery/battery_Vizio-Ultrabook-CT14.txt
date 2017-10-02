@@ -5,6 +5,7 @@
 
 # works for:
 #  Visio Ultrabook CT14
+#  Fujitsu Lifebook AH512 (per anmool)
 
 #B1B2 Utility
 into method label B1B2 remove_entry;
@@ -40,6 +41,9 @@ into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.BASN, replaceall_matche
 into method label SMRD code_regex \(SMW0, replaceall_matched begin (B1B2(SMW1,SMW2), end;
 into method label SMWR code_regex Store\s+\((.*),\s+SMW0\) replaceall_matched begin Store(%1, SMW1) Store(ShiftRight(%1,8), SMW2) end;
 into method label UPBI code_regex \(\^\^PCI0\.LPCB\.EC0\.MBDV, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.MDV0,^^PCI0.LPCB.EC0.MDV1), end;
+
+#added for Fujitsu Lifebook AH512
+into method label _STA parent_label BAT1 code_regex \(\^\^PCI0\.LPCB\.EC0\.DBAT, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.DBA0,^^PCI0.LPCB.EC0.DBA1), end;
 
 #utility methods to read/write buffers from/to EC
 into method label RE1B parent_label EC0 remove_entry;
