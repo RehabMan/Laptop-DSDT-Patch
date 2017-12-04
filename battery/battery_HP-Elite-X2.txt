@@ -2,6 +2,7 @@
 #battery_HP-Elite-X2.txt
 
 # created by jhax01 (aka blankmac) 2016-11-21
+# updated for BIOS 1.24 (per Balut) 2017-11-22
 
 # works for:
 #  HP Elite X2 1012
@@ -62,6 +63,10 @@ into method label BTIF code_regex BSN replaceall_matched begin B1B2(SN00,SN01) e
 into method label BTIF code_regex BDAT replaceall_matched begin B1B2(AT00,AT01) end;
 into method label GBTI code_regex BDAT replaceall_matched begin B1B2(AT00,AT01) end;
 into method label GBTI code_regex \(BDAT, replaceall_matched begin (B1B2(AT00,AT01), end;
+
+# new code for BPR in method GCGC as of BIOS 1.24
+# original code Store (\_SB.PCI0.LPCB.EC0.BPR, LTMP)
+into method label GCGC code_regex \(\\\_SB\.PCI0\.LPCB\.EC0\.BPR, replaceall_matched begin (B1B2(\\_SB.PCI0.LPCB.EC0.PR00,\\_SB.PCI0.LPCB.EC0.PR01), end;
 
 into_all method label SBTC code_regex Store\s+\(Zero,\s+MAXC\) replaceall_matched begin Store(Zero, XC00) Store(Zero, XC01) end;
 into_all method label SBTC code_regex Store\s+\(0xFA,\s+MAXC\) replaceall_matched begin Store(0xFA, XC00) Store(Zero, XC01) end;

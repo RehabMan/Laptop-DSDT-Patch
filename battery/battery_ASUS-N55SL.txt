@@ -52,6 +52,7 @@
 #  ASUS N552VW (per nicolas2121)
 #  ASUS Vivobook NV752 (per tmazzoni)
 #  ASUS Strix FX502VM/GL502VM (per benspoonder)
+#  ASUS X53E (per REvandenBerg)
 # ...
 #  and many others
 
