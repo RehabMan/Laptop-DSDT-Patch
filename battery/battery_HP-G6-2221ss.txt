@@ -35,6 +35,11 @@
 #  HP Envy x360 13-y013cl Kaby Lake (per lilryu)
 #  HP HP Pavilion G6-2233sw (per hexplor)
 
+# Note: some may require this patch
+# it is commented out because it is really not the correct fix
+# and is not needed by all
+#into method label INIT parent_label ACEL replace_content begin // code removed\n end;
+
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
 into method label B1B2 remove_entry;
