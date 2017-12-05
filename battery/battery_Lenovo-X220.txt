@@ -18,6 +18,7 @@
 #  Lenovo W530 (2441A43) (per GerryGu)
 #  Lenovo T460 (per jkoneal)
 #  Lenovo x240
+#  Lenovo X1 Carbon 2017 (per jqqqqqqqqqq)
 
 # Note: disable secondary battery
 #  *** remove this line if you have a second battery installed)
