@@ -1,0 +1,141 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Lenovo-V510-15IKB.txt
+
+# Created by Stalkiee 2017-12-14
+
+# Works for:
+#   Lenovo V510-15IKB
+
+#BATTERY PATCH FOR LENOVO V510-15IKB
+
+#utility method B1B2
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
+end;
+
+ # utility methods to read/write buffers from/to EC
+into method label RE1B parent_label EC0 remove_entry;
+into method label RECB parent_label EC0 remove_entry;
+into device label EC0 insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+// Arg1 - size of buffer in bits\n
+{\n
+    ShiftRight(Add(Arg1,7), 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+#RehabMan: remove extraneous External(BNUM,...) declaration
+into definitionblock code_regex (External\s+\(BNUM,\s+.*\)) replace_matched begin //%1 end;
+
+into device label EC0 code_regex MCUR,\s+16, replace_matched begin CUR0,8,CUR1,8, end;
+into device label EC0 code_regex MBRM,\s+16, replace_matched begin BRM0,8,BRM1,8, end;
+into device label EC0 code_regex MBVG,\s+16, replace_matched begin BVG0,8,BVG1,8, end;
+into device label EC0 code_regex ACUR,\s+16, replace_matched begin ACU0,8,ACU1,8, end;
+into device label EC0 code_regex ABRM,\s+16, replace_matched begin ABR0,8,ABR1,8, end;
+into device label EC0 code_regex ABVG,\s+16, replace_matched begin ABV0,8,ABV1,8, end;
+into device label EC0 code_regex B1FC,\s+16, replace_matched begin FC00,8,FC01,8, end;
+into device label EC0 code_regex B2FC,\s+16, replace_matched begin BC00,8,BC01,8, end;
+into device label EC0 code_regex SBCC,\s+16 replace_matched begin BCC0,8,BCC1,8, end;
+into device label EC0 code_regex SBDC,\s+16, replace_matched begin BDC0,8,BDC1,8, end;
+into device label EC0 code_regex SBDV,\s+16, replace_matched begin BDV0,8,BDV1,8, end;
+into device label EC0 code_regex SBOM,\s+16, replace_matched begin BOM0,8,BOM1,8, end;
+into device label EC0 code_regex SBDT,\s+16, replace_matched begin BDT0,8,BDT1,8, end;
+into device label EC0 code_regex SBFC,\s+16, replace_matched begin BFC0,8,BFC1,8, end;
+into device label EC0 code_regex SBRC,\s+16, replace_matched begin BRC0,8,BRC1,8, end;
+into device label EC0 code_regex SBAE,\s+16, replace_matched begin BAE0,8,BAE1,8, end;
+into device label EC0 code_regex SBAF,\s+16, replace_matched begin BAF0,8,BAF1,8, end;
+into device label EC0 code_regex SBVO,\s+16, replace_matched begin BVO0,8,BVO1,8, end;
+into device label EC0 code_regex SBAC,\s+16, replace_matched begin BAC0,8,BAC1,8, end;
+into device label EC0 code_regex SBTP,\s+16 replace_matched begin BTP0,8,BTP1,8, end;
+
+
+into method label UPBS code_regex \(\^\^PCI0.LPCB.EC0.MCUR, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.CUR0,^^PCI0.LPCB.EC0.CUR1), end;
+into method label UPBS code_regex \(\^\^PCI0.LPCB.EC0.MBRM, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BRM0,^^PCI0.LPCB.EC0.BRM1), end;
+into method label UPBS code_regex \(\^\^PCI0.LPCB.EC0.MBVG, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BVG0,^^PCI0.LPCB.EC0.BVG1), end;
+into method label UPB2 code_regex \(\^\^PCI0.LPCB.EC0.ACUR, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.ACU0,^^PCI0.LPCB.EC0.ACU1), end;
+into method label UPB2 code_regex \(\^\^PCI0.LPCB.EC0.ABRM, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.ABR0,^^PCI0.LPCB.EC0.ABR1), end;
+into method label UPB2 code_regex \(\^\^PCI0.LPCB.EC0.ABVG, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.ABV0,^^PCI0.LPCB.EC0.ABV1), end;
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.B1FC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FC00,^^PCI0.LPCB.EC0.FC01), end;
+into method label SMTF code_regex \(B1FC, replaceall_matched begin (B1B2(FC00,FC01), end;
+into method label UPI2 code_regex \(\^\^PCI0.LPCB.EC0.B2FC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BC00,^^PCI0.LPCB.EC0.BC01), end;
+into method label SMTF code_regex \(B2FC, replaceall_matched begin (B1B2(FC00,FC01), end;
+into method label GBID code_regex \(SBCC, replaceall_matched begin (B1B2(BCC0,BCC1), end;
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.SBDC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BDC0,^^PCI0.LPCB.EC0.BDC1), end;
+into method label UPI2 code_regex \(\^\^PCI0.LPCB.EC0.SBDC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BDC0,^^PCI0.LPCB.EC0.BDC1), end;
+into method label GSBI code_regex \(SBDC, replaceall_matched begin (B1B2(BDC0,BDC1), end;
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.SBDV, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BDV0,^^PCI0.LPCB.EC0.BDV1), end;
+into method label UPI2 code_regex \(\^\^PCI0.LPCB.EC0.SBDV, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BDV0,^^PCI0.LPCB.EC0.BDV1), end;
+into method label GSBI code_regex \(SBDV, replaceall_matched begin (B1B2(BDV0,BDV1), end;
+into method label GSBI code_regex \(SBOM, replaceall_matched begin (B1B2(BOM0,BOM1), end;
+into method label GSBI code_regex \(SBDT, replaceall_matched begin (B1B2(BDT0,BDT1), end;
+into method label GSBI code_regex \(SBFC, replaceall_matched begin (B1B2(BFC0,BFC1), end;
+into method label GSBI code_regex \(SBRC, replaceall_matched begin (B1B2(BRC0,BRC1), end;
+into method label GSBI code_regex \(SBAE, replaceall_matched begin (B1B2(BAE0,BAE1), end;
+into method label GSBI code_regex \(SBAF, replaceall_matched begin (B1B2(BAF0,BAF1), end;
+into method label GSBI code_regex \(SBVO, replaceall_matched begin (B1B2(BVO0,BVO1), end;
+into method label GSBI code_regex \(SBAC, replaceall_matched begin (B1B2(BAC0,BAC1), end;
+into method label GSBI code_regex \(SBTP, replaceall_matched begin (B1B2(BTP0,BTP1), end;
+
+
+#DEAL WITH BUFFER FIELDS BELOW
+into device label EC0 code_regex (BAIF,)\s+(128) replace_matched begin BAIX,%2,//%1%2 end;
+into method label MHIF code_regex \(BAIF, replaceall_matched begin (RECB(0xA0,128), end;
+into device label EC0 code_regex (SBCH,)\s+(64) replace_matched begin SBCX,%2,//%1%2 end;
+into method label GSBI code_regex \(SBCH, replaceall_matched begin (RECB(0xA0,64), end;
+into device label EC0 code_regex (BAMN,)\s+(96) replace_matched begin BAMX,%2,//%1%2 end;
+into method label GSBI code_regex \(BAMN, replaceall_matched begin (RECB(0xA0,96), end;
+into device label EC0 code_regex (BADN,)\s+(64) replace_matched begin BADX,%2,//%1%2 end;
+into method label GSBI code_regex \(BADN, replaceall_matched begin (RECB(0xA0,64), end;
+into device label EC0 code_regex (SBBN,)\s+(128) replace_matched begin SBBX,%2,//%1%2 end;
+into method label GSBI code_regex \(SBBN, replaceall_matched begin (RECB(0xA0,128), end;
+into device label EC0 code_regex (SBFV,)\s+(64) replace_matched begin SBFX,%2,//%1%2 end;
+into method label GSBI code_regex \(SBFV, replaceall_matched begin (RECB(0xA2,64), end;
+into method label GBID code_regex \(SBFV, replaceall_matched begin (RECB(0xA2,64), end;
+into device label EC0 code_regex (BBN2,)\s+(56) replace_matched begin BBNX,%2,//%1%2 end;
+into method label GSBI code_regex \(BBN2, replaceall_matched begin (RECB(0xA0,56), end;
+
+#DEAL WITH 256 bit SMD0
+into device label EC0 code_regex (SMD0,)\s+(256) replace_matched begin XMD0,%2,//%1%2 end;
+into method label BFWL code_regex \_SB.PCI0.LPCB.EC0.SMD0, replaceall_matched begin \_SB.PCI0.LPCB.EC0.RECB(0X64,256), end;
+
+#DEAL WITH 128 bit SBMN
+into device label EC0 code_regex (SBMN,)\s+(128) replace_matched begin BMNX,%2,//%1%2 end;
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.SBMN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0XA0,128), end;
+into method label UPI2 code_regex \(\^\^PCI0.LPCB.EC0.SBMN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0XA0,128), end;
+
+
+#DEAL WITH 128 bit SBDN
+into device label EC code_regex (SBDN,)\s+(128) replace_matched begin BDNX,%2,//%1%2 end;
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.SBDN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0XA0,128), end;
+into method label UPI2 code_regex \(\^\^PCI0.LPCB.EC0.SBDN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0XA0,128), end;
+
+
+
+
+
+
+
+
+
+
+

@@ -169,6 +169,7 @@
 		EDBC416D1AFAA14700F2C133 /* battery_Dell-XPS-14Z-L412Z.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Dell-XPS-14Z-L412Z.txt"; path = "battery/battery_Dell-XPS-14Z-L412Z.txt"; sourceTree = "<group>"; };
 		EDBE01901C90616800B82230 /* battery_Sony-VAIO-SZ1XP.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Sony-VAIO-SZ1XP.txt"; path = "battery/battery_Sony-VAIO-SZ1XP.txt"; sourceTree = "<group>"; };
 		EDC041151DBCE05F008724C6 /* battery_Lenovo-N480.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-N480.txt"; path = "battery/battery_Lenovo-N480.txt"; sourceTree = "<group>"; };
+		EDC7C00A1FE32F8700817A08 /* battery_Lenovo-V510-15IKB.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-V510-15IKB.txt"; path = "battery/battery_Lenovo-V510-15IKB.txt"; sourceTree = "<group>"; };
 		EDCCC2CB1A70148300C7301E /* battery_Lenovo-G50-70.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-G50-70.txt"; path = "battery/battery_Lenovo-G50-70.txt"; sourceTree = "<group>"; };
 		EDCD54641A2E10550009F438 /* graphics_REG-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_REG-disable.txt"; path = "graphics/graphics_REG-disable.txt"; sourceTree = "<group>"; };
 		EDCD54651A2E11EA0009F438 /* graphics_INI-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_INI-disable.txt"; path = "graphics/graphics_INI-disable.txt"; sourceTree = "<group>"; };
@@ -340,8 +341,9 @@
 				84A21711195204BE004751F3 /* battery_Lenovo-T430u.txt */,
 				842AF6E419CB3D2F00309DAD /* battery_Lenovo-T440p.txt */,
 				841F8DE817FB541900C36F76 /* battery_Lenovo-Twist.txt */,
-				842F531E17FB301B001CF33B /* battery_Lenovo-Ux10-Z580.txt */,
 				ED40F7221AF1323E00F0B970 /* battery_Lenovo-ThinkPad-W550s.txt */,
+				842F531E17FB301B001CF33B /* battery_Lenovo-Ux10-Z580.txt */,
+				EDC7C00A1FE32F8700817A08 /* battery_Lenovo-V510-15IKB.txt */,
 				ED8A1AB61AA38DD70019A7F4 /* battery_Lenovo-X201.txt */,
 				842F531D17FB301B001CF33B /* battery_Lenovo-X220.txt */,
 				8441FAEB1B2E84A5004CFC38 /* battery_Lenovo-X230i.txt */,
