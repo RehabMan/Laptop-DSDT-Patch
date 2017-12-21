@@ -10,6 +10,7 @@
 #  Lenovo E540
 #  Lenovo E440
 #  Lenovo Thinkpad E470 KabyLake (per HelderGoncalves)
+#  Lenovo Thinkpad E570 KabyLake (per Ortofon)
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
