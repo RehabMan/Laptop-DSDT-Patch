@@ -1,0 +1,39 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_Lenovo-Yoga-3-Pro.txt
+
+# Created by zohaad 2018-02-12
+
+# works for:
+#  Lenovo Yoga 3 Pro
+
+
+# 16 bit utility method B1B2
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+# patches
+into device label H_EC code_regex B1VT,\s+16, replace_matched begin ZVT0,8,ZVT1,8, end;
+into device label H_EC code_regex B1CR,\s+16, replace_matched begin ZCR0,8,ZCR1,8, end;
+into device label H_EC code_regex B1RC,\s+16, replace_matched begin ZRC0,8,ZRC1,8, end;
+into device label H_EC code_regex B1FC,\s+16, replace_matched begin ZFC0,8,ZFC1,8, end;
+into device label H_EC code_regex B1DC,\s+16, replace_matched begin ZDC0,8,ZDC1,8, end;
+into device label H_EC code_regex B1DV,\s+16, replace_matched begin ZDV0,8,ZDV1,8, end;
+into device label H_EC code_regex B1CY,\s+16, replace_matched begin ZCY0,8,ZCY1,8, end;
+into device label H_EC code_regex BCRT,\s+16, replace_matched begin CRT0,8,CRT1,8, end;
+
+# fix methods
+into method label _BST code_regex \(B1VT, replaceall_matched begin (B1B2(ZVT0, ZVT1), end;
+into method label _BST code_regex \(B1CR, replaceall_matched begin (B1B2(ZCR0, ZCR1), end;
+into method label _BST code_regex \(B1RC, replaceall_matched begin (B1B2(ZRC0, ZRC1), end;
+into method label _BIF code_regex \(B1FC, replaceall_matched begin (B1B2(ZFC0, ZFC1), end;
+into method label _BIF code_regex \(B1DC, replaceall_matched begin (B1B2(ZDC0, ZDC1), end;
+into method label _BIF code_regex \(B1DV, replaceall_matched begin (B1B2(ZDV0, ZDV1), end;
+into method label GBID code_regex \(B1CY, replaceall_matched begin (B1B2(ZCY0, ZCY1), end;
+into method label SMTF code_regex \(BCRT, replaceall_matched begin (B1B2(CRT0, CRT1), end;
+
+# 256 bit SMD0
+into device label H_EC code_regex (SMD0,)\s+(256) replace_matched begin SMDX,%2,//%1%2 end;
+# compiling didn’t show any errors after this... so we could remove this
