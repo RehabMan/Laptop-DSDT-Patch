@@ -161,6 +161,7 @@
 		ED8F121A1B4DB5D5007ADCA9 /* system_OSYS_win7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_OSYS_win7.txt; path = system/system_OSYS_win7.txt; sourceTree = "<group>"; };
 		ED8F3B2C1E3671F800C4F906 /* battery_Thunderobot-911.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Thunderobot-911.txt"; path = "battery/battery_Thunderobot-911.txt"; sourceTree = "<group>"; };
 		ED95C7231D5BBC62006BC358 /* battery_Lenovo-Ideapad-Y700.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Ideapad-Y700.txt"; path = "battery/battery_Lenovo-Ideapad-Y700.txt"; sourceTree = "<group>"; };
+		EDA0FF632033463F003F732A /* system_Shutdown_restart.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_Shutdown_restart.txt; path = system/system_Shutdown_restart.txt; sourceTree = "<group>"; };
 		EDB15EEA1A34B10C009F0E21 /* graphics_PTS_WAK-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_PTS_WAK-disable.txt"; path = "graphics/graphics_PTS_WAK-disable.txt"; sourceTree = "<group>"; };
 		EDB280191A3A21BD002C47E1 /* graphics_nvidia_laptop2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_nvidia_laptop2.txt; path = graphics/graphics_nvidia_laptop2.txt; sourceTree = "<group>"; };
 		EDB703891BAB9D49002AED96 /* audio_HDEF-layout3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "audio_HDEF-layout3.txt"; path = "audio/audio_HDEF-layout3.txt"; sourceTree = "<group>"; };
@@ -244,6 +245,7 @@
 				84A74C281805D410009DAAAF /* system_RTC.txt */,
 				84A74C291805D49F009DAAAF /* system_Shutdown.txt */,
 				84F6F0F718ADD011007F5EF7 /* system_Shutdown2.txt */,
+				EDA0FF632033463F003F732A /* system_Shutdown_restart.txt */,
 				846576DA1806D6DC00AB21B7 /* system_HPET.txt */,
 				84F5D32C1806FCC90013F884 /* system_OSYS.txt */,
 				ED8F121A1B4DB5D5007ADCA9 /* system_OSYS_win7.txt */,
