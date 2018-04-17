@@ -6,6 +6,7 @@
 # works for:
 #  Visio Ultrabook CT14
 #  Fujitsu Lifebook AH512 (per anmool)
+#  ASUS GL503VM (per Illorca))
 
 #B1B2 Utility
 into method label B1B2 remove_entry;
