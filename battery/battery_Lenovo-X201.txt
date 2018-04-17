@@ -34,11 +34,9 @@ into_all method label GBIF code_regex \(SBCH, replaceall_matched begin (B1B4(BCH
 
 # 128-bit, SBMN, SBDN
 into device label EC code_regex (SBMN,)\s+(128) replace_matched begin BMNX,%2,//%1%2 end;
-into device label EC insert begin Method (RBMN, 0, Serialized) { Return(RECB(0xA0,128)) } end;
-into method label GBIF code_regex \(SBMN, replaceall_matched begin (RBMN(), end;
+into method label GBIF code_regex \(SBMN, replaceall_matched begin (RECB(0xA0,128), end;
 into device label EC code_regex (SBDN,)\s+(128) replace_matched begin BDNX,%2,//%1%2 end;
-into device label EC insert begin Method (RBDN, 0, Serialized) { Return(RECB(0xA0,128)) } end;
-into method label GBIF code_regex \(SBDN, replaceall_matched begin (RBDN(), end;
+into method label GBIF code_regex \(SBDN, replaceall_matched begin (RECB(0xA0,128), end;
 
 # Disable BAT1
 into method label _STA parent_label BAT1 replace_content begin Return(0) end;
