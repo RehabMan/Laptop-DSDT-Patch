@@ -161,6 +161,8 @@
 [sys] OS Check Fix (Windows Vista)	system/system_OSYS.txt
 [sys] OS Check Fix (Windows 7)	system/system_OSYS_win7.txt
 [sys] OS Check Fix (Windows 8)	system/system_OSYS_win8.txt
+[sys] OS Check Fix (Windows 10)	system/system_OSYS_win10.txt
+[sys] OS Check Fix (Linux)	system/system_OSYS_linux.txt
 [sys] AC Adapter Fix	system/system_ADP1.txt
 [sys] Add MCHC	system/system_MCHC.txt
 [sys] Fix _WAK Arg0 v1	system/system_WAK1.txt
