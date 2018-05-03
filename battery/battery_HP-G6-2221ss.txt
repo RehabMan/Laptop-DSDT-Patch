@@ -33,7 +33,8 @@
 #  HP Pavilion DV6 2137el (per TheStraing)
 #  HP Pavilion 15 ab035TX (per er.manojsoni)
 #  HP Envy x360 13-y013cl Kaby Lake (per lilryu)
-#  HP HP Pavilion G6-2233sw (per hexplor)
+#  HP Pavilion G6-2233sw (per hexplor)
+#  HP Notebook 15-ab522tx (per AmitKumar123)
 
 # Note: some may require this patch
 # it is commented out because it is really not the correct fix
