@@ -1,4 +1,4 @@
-#Maintained by: xiegengcai for: Laptop Patches
+#Maintained by: RehabMan for: Laptop Patches
 #battery_HP-Envy-13.txt
 # created by xiegengcai 2018-05-02
 
@@ -10,21 +10,21 @@ into method label B1B2 remove_entry;
 # B1B2在battery_HP-Envy-14.txt是和B1B4插入到一样位置的，但导致107行116行补丁访问范围不对，改为在LPCB范围插入，即和设备H_EC同级
 into Scope label _SB.PCI0.LPCB code_regex . insert
 begin
-Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }
+Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
 end;
 
 # 访问32位属性方法 B1B4
 into method label B1B4 remove_entry;
 into definitionblock code_regex . insert
 begin
-Method (B1B4, 4, NotSerialized)
-{
-    Store(Arg3, Local0)
-    Or(Arg2, ShiftLeft(Local0, 8), Local0)
-    Or(Arg1, ShiftLeft(Local0, 8), Local0)
-    Or(Arg0, ShiftLeft(Local0, 8), Local0)
-    Return(Local0)
-}
+Method (B1B4, 4, NotSerialized)\n
+{\n
+    Store(Arg3, Local0)\n
+    Or(Arg2, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg1, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg0, ShiftLeft(Local0, 8), Local0)\n
+    Return(Local0)\n
+}\n
 end;
 
 # utility methods to read/write buffers from/to EC
@@ -33,25 +33,25 @@ into method label RECB parent_label H_EC remove_entry;
 into device label H_EC insert
 begin
 Method (RE1B, 1, NotSerialized)
-{
-    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)
-    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }
-    Return(BYTE)
-}
-Method (RECB, 2, Serialized)
-{
-    ShiftRight(Arg1, 3, Arg1)
-    Name(TEMP, Buffer(Arg1) { })
-    Add(Arg0, Arg1, Arg1)
-    Store(0, Local0)
-    While (LLess(Arg0, Arg1))
-    {
-        Store(RE1B(Arg0), Index(TEMP, Local0))
-        Increment(Arg0)
-        Increment(Local0)
-    }
-    Return(TEMP)
-}
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
 end;
 
 # ===================================拆字节========================================= #
@@ -65,8 +65,8 @@ into scope label ^^LPCB code_regex (BCT0,)\s+(128) replace_matched begin BCTX,%2
 # 改变大于32位属性访问方式，RECB方法访问
 # GBTI 即在这个方法里有访问（通过RECB方法访问），如果多个方法方法，复制修改（16位、32位同理）
 into method label GBTI code_regex \(BDN0, replaceall_matched begin (RECB(0x10,56), end;
-into method label GBTI code_regex \(BMN0, replaceall_matched begin (RECB(0x21,128), end;
-into method label GBTI code_regex \(BCT0, replaceall_matched begin (RECB(0x32,128), end;
+into method label GBTI code_regex \(BMN0, replaceall_matched begin (RECB(0x20,128), end;
+into method label GBTI code_regex \(BCT0, replaceall_matched begin (RECB(0x31,128), end;
 
 # 拆分16位属性
 into scope label ^^LPCB code_regex BDC0,\s+16 replace_matched begin DC00,8,DC01,8 end;
