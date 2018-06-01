@@ -1,0 +1,74 @@
+# Created by aytic 2018-06-01, based on battery_Lenovo-Ideapad-Y700.txt
+
+# works for:
+# Lenovo IdeaPad Flex 2-15
+
+# Based on following Field definition:
+# MCUR,   16, 
+# MBRM,   16, 
+# MBVG,   16, 
+# B1FC,   16, 
+# DICP,   16, 
+# DIVO,   16
+# SBDN,   128
+# SBMN,   128
+
+# apply B1B2 patch
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+# utility methods to read/write buffers from/to EC
+into method label RE1B parent_label EC0 remove_entry;
+into method label RECB parent_label EC0 remove_entry;
+into device label EC0 insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+// Arg0 - offset in bytes from zero-based EC\n
+// Arg1 - size of buffer in bits\n
+{\n
+    ShiftRight(Add(Arg1,7), 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+# fix 16-bit
+into device label EC0 code_regex MCUR,\s+16 replace_matched begin CUR1,8,CUR2,8 end;
+into device label EC0 code_regex MBRM,\s+16 replace_matched begin BRM1,8,BRM2,8 end;
+into device label EC0 code_regex MBVG,\s+16 replace_matched begin BVG1,8,BVG2,8 end;
+into device label EC0 code_regex B1FC,\s+16 replace_matched begin FC01,8,FC02,8 end;
+into device label EC0 code_regex DICP,\s+16 replace_matched begin ICP1,8,ICP2,8 end;
+into device label EC0 code_regex DIVO,\s+16 replace_matched begin IVO1,8,IVO2,8 end;
+
+# fix 16-bit methods
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.B1FC, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.FC01,^^PCI0.LPCB.EC0.FC02), end;
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.DICP, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.ICP1,^^PCI0.LPCB.EC0.ICP2), end;
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.DIVO, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.IVO1,^^PCI0.LPCB.EC0.IVO2), end;
+into method label UPBS code_regex \(\^\^PCI0.LPCB.EC0.MCUR, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.CUR1,^^PCI0.LPCB.EC0.CUR2), end;
+into method label UPBS code_regex \(\^\^PCI0.LPCB.EC0.MBRM, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BRM1,^^PCI0.LPCB.EC0.BRM2), end;
+into method label UPBS code_regex \(\^\^PCI0.LPCB.EC0.MBVG, replaceall_matched begin (B1B2(^^PCI0.LPCB.EC0.BVG1,^^PCI0.LPCB.EC0.BVG2), end;
+
+# fix 128-bit SBMN and SBDN
+into device label EC0 code_regex (SBMN,)\s+(128) replace_matched begin BMNX,%2,//%1%2 end;
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.SBMN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0xA0,128), end;
+into method label UPI2 code_regex \(\^\^PCI0.LPCB.EC0.SBMN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0xA0,128), end;
+into device label EC0 code_regex (SBDN,)\s+(128) replace_matched begin BDNX,%2,//%1%2 end;
+into method label UPBI code_regex \(\^\^PCI0.LPCB.EC0.SBDN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0xA0,128), #end;
+into method label UPI2 code_regex \(\^\^PCI0.LPCB.EC0.SBDN, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0xA0,128), #end;
