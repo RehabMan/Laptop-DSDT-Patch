@@ -69,6 +69,7 @@
 [bat] Dell XPS L502x	battery/battery_Dell-XPS-L502x.txt
 [bat] Fujitsu Lifebook A555	battery/battery_Fujitsu-Lifebook-A555.txt
 [bat] Gateway ID49C07u	battery/battery_Gateway-ID49C07u.txt
+[bat] Gigabyte Aero 15W V8	battery/battery_Gigabyte-Aero15V8.txt
 [bat] Gigabyte P35Xv3	battery/battery_Gigabyte-P35Xv3.txt
 [bat] Gigabyte u2442N/P34Wv3	battery/battery_Gigabyte-u2442N.txt
 [bat] HP DM4t-1000	battery/battery_HP-DM4T-1000.txt
@@ -122,7 +123,7 @@
 [bat] LG N450	battery/battery_LG-N450.txt
 [bat] MECHREVO x6TI	battery/battery_MECHREVO-x6TI.txt
 [bat] Medion Akoya P6630	battery/battery_Medion-Akoya-P6630.txt
-[bat] Microxperts u731ga1	battery/battery_Microxperts-u731ga1.txt
+[bat] Microxperts u731ga1 (Clevo rebrand)	battery/battery_Microxperts-u731ga1.txt
 [bat] Partaker G3	battery/battery_Partaker_G3.txt
 [bat] Razer Blade (2014)	battery/battery_Razer-Blade-2014.txt
 [bat] Razer Blade Pro	battery/battery_Razer-Blade-Pro.txt
