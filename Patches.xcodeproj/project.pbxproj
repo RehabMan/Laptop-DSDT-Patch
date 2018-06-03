@@ -161,6 +161,7 @@
 		ED8F121A1B4DB5D5007ADCA9 /* system_OSYS_win7.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_OSYS_win7.txt; path = system/system_OSYS_win7.txt; sourceTree = "<group>"; };
 		ED8F3B2C1E3671F800C4F906 /* battery_Thunderobot-911.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Thunderobot-911.txt"; path = "battery/battery_Thunderobot-911.txt"; sourceTree = "<group>"; };
 		ED95C7231D5BBC62006BC358 /* battery_Lenovo-Ideapad-Y700.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-Ideapad-Y700.txt"; path = "battery/battery_Lenovo-Ideapad-Y700.txt"; sourceTree = "<group>"; };
+		ED98460C20C4314200772A28 /* battery_Gigabyte-Aero15V8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Gigabyte-Aero15V8.txt"; path = "battery/battery_Gigabyte-Aero15V8.txt"; sourceTree = "<group>"; };
 		EDA0FF632033463F003F732A /* system_Shutdown_restart.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = system_Shutdown_restart.txt; path = system/system_Shutdown_restart.txt; sourceTree = "<group>"; };
 		EDB15EEA1A34B10C009F0E21 /* graphics_PTS_WAK-disable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "graphics_PTS_WAK-disable.txt"; path = "graphics/graphics_PTS_WAK-disable.txt"; sourceTree = "<group>"; };
 		EDB280191A3A21BD002C47E1 /* graphics_nvidia_laptop2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_nvidia_laptop2.txt; path = graphics/graphics_nvidia_laptop2.txt; sourceTree = "<group>"; };
@@ -309,6 +310,7 @@
 				84AA4E051846A6750048423C /* battery_Dell-XPS-L502x.txt */,
 				ED3C8C801E459D7B00C02EB2 /* battery_Fujitsu-Lifebook-A555.txt */,
 				845A0C2419322B0F005001DE /* battery_Gateway-ID49C07u.txt */,
+				ED98460C20C4314200772A28 /* battery_Gigabyte-Aero15V8.txt */,
 				ED77D4F11C3F56F80085DDCA /* battery_Gigabyte-P35Xv3.txt */,
 				840D7594184398D500160A94 /* battery_Gigabyte-u2442N.txt */,
 				84C489F118B93BA200061EA3 /* battery_HP-DM4T-1000.txt */,

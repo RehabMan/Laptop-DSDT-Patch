@@ -5,6 +5,8 @@
 
 # works for:
 #  Microxperts u731ga
+#  Tuxedo Infinitybook 13v2 (per TheFox88)
+#  perhaps other Clevo rebrands
 
 # 16-bit registers
 into device label H_EC code_regex BDCA,\s+16 replace_matched begin DC00,8,DC01,8 end;

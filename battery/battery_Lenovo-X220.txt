@@ -19,6 +19,7 @@
 #  Lenovo T460 (per jkoneal)
 #  Lenovo x240
 #  Lenovo X1 Carbon 2017 (per jqqqqqqqqqq)
+#  Lenovo Yoga 260 (per gi10)
 
 # Note: disable secondary battery
 #  *** remove this line if you have a second battery installed)
