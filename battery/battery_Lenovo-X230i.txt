@@ -12,6 +12,7 @@
 #   Lenovo ThinkPad P50 (6th gen)
 #   Lenovo Thinkpad P51 (KabyLake) (per szclsya)
 #   Lenovo E580 (per jamesst20)
+#   Lenovo Thinkpad X1 Carbon (6th gen) (per jhonizzle)
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
@@ -95,6 +96,8 @@ into method label _L43 code_regex \(\\_SB\.PCI0\.LPCB\.EC\.HWAK, replaceall_matc
 into method label _WAK code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.AC10,\\_SB.PCI0.LPC.EC.AC11), end;
 into method label \_WAK code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.AC10,\\_SB.PCI0.LPC.EC.AC11), end;
 into method label _L17 code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAC, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.AC10,\\_SB.PCI0.LPC.EC.AC11), end;
+# added for X1 Cabon 6th gen
+into method label AJTP code_regex \(SBRC, replaceall_matched begin (B1B2(RC00,RC01), end;
 
 #put 8-bit variable together
 into method label _L1D code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.AK00,\\_SB.PCI0.LPC.EC.AK01), end;
