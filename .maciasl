@@ -144,6 +144,7 @@
 [bat] Thunderobot 911	battery/battery_Thunderobot-911.txt
 [bat] Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
 [bat] Vizio Ultrabook CT14	battery/battery_Vizio-Ultrabook-CT14.txt
+[bat] WBIN AirBook	battery/battery_WBIN-AirBook.txt
 [wifi] --> Atheros WiFi Patches	NullPatch.txt
 [wifi] AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
 [wifi] AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
