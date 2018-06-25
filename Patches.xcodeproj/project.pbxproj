@@ -127,6 +127,7 @@
 		ED01642F1BEE6038008B1949 /* battery_HP-DV2-2500.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_HP-DV2-2500.txt"; path = "battery/battery_HP-DV2-2500.txt"; sourceTree = "<group>"; };
 		ED07F08C1D17476F00985E1D /* usb_prw_0x0d_xhc_skl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x0d_xhc_skl.txt; path = usb/usb_prw_0x0d_xhc_skl.txt; sourceTree = "<group>"; };
 		ED07F08D1D17477500985E1D /* usb_prw_0x6d_xhc_skl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = usb_prw_0x6d_xhc_skl.txt; path = usb/usb_prw_0x6d_xhc_skl.txt; sourceTree = "<group>"; };
+		ED0A6FC520E133E300C2A1EE /* battery_Lenovo-X210.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-X210.txt"; path = "battery/battery_Lenovo-X210.txt"; sourceTree = "<group>"; };
 		ED0EC5E41A01E9880021AD90 /* graphics_HD4600_yosemite.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = graphics_HD4600_yosemite.txt; path = graphics/graphics_HD4600_yosemite.txt; sourceTree = "<group>"; };
 		ED0F9F561C7CA8AA008DC54D /* battery_Razer-Blade-Pro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Razer-Blade-Pro.txt"; path = "battery/battery_Razer-Blade-Pro.txt"; sourceTree = "<group>"; };
 		ED1646481A94E21C00D2D49B /* battery_Lenovo-E430.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "battery_Lenovo-E430.txt"; path = "battery/battery_Lenovo-E430.txt"; sourceTree = "<group>"; };
@@ -350,6 +351,7 @@
 				842F531E17FB301B001CF33B /* battery_Lenovo-Ux10-Z580.txt */,
 				EDC7C00A1FE32F8700817A08 /* battery_Lenovo-V510-15IKB.txt */,
 				ED8A1AB61AA38DD70019A7F4 /* battery_Lenovo-X201.txt */,
+				ED0A6FC520E133E300C2A1EE /* battery_Lenovo-X210.txt */,
 				842F531D17FB301B001CF33B /* battery_Lenovo-X220.txt */,
 				8441FAEB1B2E84A5004CFC38 /* battery_Lenovo-X230i.txt */,
 				ED75B6701B1B6EBA002D6468 /* battery_Lenovo-Y50.txt */,
