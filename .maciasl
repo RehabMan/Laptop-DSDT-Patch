@@ -125,6 +125,7 @@
 [bat] MECHREVO x6TI	battery/battery_MECHREVO-x6TI.txt
 [bat] Medion Akoya P6630	battery/battery_Medion-Akoya-P6630.txt
 [bat] Microxperts u731ga1 (Clevo rebrand)	battery/battery_Microxperts-u731ga1.txt
+[bat] MSI CX61 2PC	battery/battery_MSI-CX61-2PC.txt
 [bat] Partaker G3	battery/battery_Partaker_G3.txt
 [bat] Razer Blade (2014)	battery/battery_Razer-Blade-2014.txt
 [bat] Razer Blade Pro	battery/battery_Razer-Blade-Pro.txt
@@ -177,5 +178,7 @@
 [sys] Haswell LPC	misc/misc_Haswell-LPC.txt
 [sys] Skylake LPC	misc/misc_Skylake-LPC.txt
 [audio] --> Audio	NullPatch.txt
-[audio] Audio Layout 12	audio/audio_HDEF-layout12.txt
+[audio] Audio Layout 2	audio/audio_HDEF-layout2.txt
+[audio] Audio Layout 14	audio/audio_HDEF-layout14.txt
 [audio] Audio Layout 3	audio/audio_HDEF-layout3.txt
+[audio] Audio Layout 12	audio/audio_HDEF-layout12.txt

@@ -33,7 +33,7 @@ Method (_DSM, 4, NotSerialized)\n
     If (LEqual (Arg2, Zero)) { Return (Buffer() { 0x03 } ) }\n
     Return (Package()\n
     {\n
-        "layout-id", Buffer() { 12, 0x00, 0x00, 0x00 },\n
+        "layout-id", Buffer() { 14, 0x00, 0x00, 0x00 },\n
         "hda-gfx", Buffer() { "onboard-1" },\n
     })\n
 }\n
