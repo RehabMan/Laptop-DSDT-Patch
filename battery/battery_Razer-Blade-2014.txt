@@ -9,7 +9,7 @@
 #  Razer Blade Stealth (Kaby Lake), per BlenderSleuth
 #  Razer Blade (14", late 2016)
 #  Razer Blade Pro (2017)
-#  Razer Blade 15 (2015), per JomanJi/blodtanner
+#  Razer Blade 15 (2018), per JomanJi/blodtanner
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
@@ -37,7 +37,7 @@ into method label _BST code_regex \^\^EC0\.BST1, replaceall_matched begin B1B2(^
 into method label _BST code_regex \^\^EC0\.BST2, replaceall_matched begin B1B2(^^EC0.ST20,^^EC0.ST21), end;
 into method label _BST code_regex \^\^EC0\.BST3, replaceall_matched begin B1B2(^^EC0.ST30,^^EC0.ST31), end;
 
-# added for Razer Blade 15 (2015), per JomanJi
+# added for Razer Blade 15 (2018), per JomanJi
 into device label EC0 code_regex BIF0,\s+16, replace_matched begin IF00,8,IF01,8, end;
 into method label _BIF code_regex \(\^\^EC0.BIF0, replaceall_matched begin (B1B2(\^\^EC0.IF00,\^\^EC0.IF01), end;
 
