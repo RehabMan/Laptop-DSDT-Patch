@@ -35,6 +35,7 @@
 #  HP Envy x360 13-y013cl Kaby Lake (per lilryu)
 #  HP Pavilion G6-2233sw (per hexplor)
 #  HP Notebook 15-ab522tx (per AmitKumar123)
+#  HP Pavilion 15 au009tx, au006tx, au118tx (per github/ShubhamElite)
 
 # Note: some may require this patch
 # it is commented out because it is really not the correct fix
