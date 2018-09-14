@@ -12,6 +12,7 @@
 #  Samsung Series 5 NP530U3B
 #  Samsung Series 3 NP300E5C-A09US
 #  Samsung NP270E5E (per vocalico)
+#  Samsung NP900X3E (per bjornsnoen)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

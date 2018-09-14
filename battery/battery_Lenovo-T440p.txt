@@ -3,11 +3,14 @@
 
 # created by yekki 2014-09-18
 # cleanup/finished by RehabMan 2014-09-18
+# added E470 KabyLake support by RehabMan 2017-12-06
 
 # works for:
 #  Lenovo T440p
 #  Lenovo E540
 #  Lenovo E440
+#  Lenovo Thinkpad E470 KabyLake (per HelderGoncalves)
+#  Lenovo Thinkpad E570 KabyLake (per Ortofon)
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
@@ -32,6 +35,8 @@ end;
 
 into device label EC code_regex HWAK,\s+16, replace_matched begin HWK0,8,HWK1,8, end;
 into method label _L1D code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.HWK0,\\_SB.PCI0.LPC.EC.HWK1), end;
+# _L43 patch added for E470 (KabyLake)
+into method label _L43 code_regex \(\\_SB\.PCI0\.LPC\.EC\.HWAK, replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.HWK0,\\_SB.PCI0.LPC.EC.HWK1), end;
 
 into device label EC code_regex SBRC,\s+16, replace_matched begin BR00,8,BR01,8, end;
 into device label EC code_regex SBFC,\s+16, replace_matched begin BF00,8,BF01,8, end;
@@ -91,3 +96,27 @@ end;
 
 into method label GBIF code_regex \(SBMN, replaceall_matched begin (RECB(0xA0,128), end;
 into method label GBIF code_regex \(SBDN, replaceall_matched begin (RECB(0xA0,128), end;
+
+# added for E470 KabyLake
+# Fix HWAK Read
+into method label \_WAK code_regex \(\\\_SB.PCI0.LPC.EC.HWAK replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.HWK0,\\_SB.PCI0.LPC.EC.HWK1) end;
+into method label _WAK code_regex \(\\\_SB.PCI0.LPC.EC.HWAK replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.HWK0,\\_SB.PCI0.LPC.EC.HWK1) end;
+
+# Fix HWAK Write
+into method label \_WAK code_regex Store\s\(0x00,\s\\\_SB.PCI0.LPC.EC.HWAK\) replaceall_matched
+begin
+Store(Zero,\\_SB.PCI0.LPC.EC.HWK0) Store(Zero,\\_SB.PCI0.LPC.EC.HWK1)
+end;
+into method label _WAK code_regex Store\s\(0x00,\s\\\_SB.PCI0.LPC.EC.HWAK\) replaceall_matched
+begin
+Store(Zero,\\_SB.PCI0.LPC.EC.HWK0) Store(Zero,\\_SB.PCI0.LPC.EC.HWK1)
+end;
+
+into method label \_WAK code_regex Store\s\(Zero,\s\\\_SB.PCI0.LPC.EC.HWAK\) replaceall_matched
+begin
+Store(Zero,\\_SB.PCI0.LPC.EC.HWK0) Store(Zero,\\_SB.PCI0.LPC.EC.HWK1)
+end;
+into method label _WAK code_regex Store\s\(Zero,\s\\\_SB.PCI0.LPC.EC.HWAK\) replaceall_matched
+begin
+Store(Zero,\\_SB.PCI0.LPC.EC.HWK0) Store(Zero,\\_SB.PCI0.LPC.EC.HWK1)
+end;

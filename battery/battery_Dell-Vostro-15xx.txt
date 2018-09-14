@@ -11,6 +11,7 @@
 #  Dell 3521
 #  Dell XPS 12 9q33
 #  Alienware m17xR3
+#  Dell Vostro V5459 (per Aftermathx25)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

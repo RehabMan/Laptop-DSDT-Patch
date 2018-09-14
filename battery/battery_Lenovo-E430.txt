@@ -8,6 +8,7 @@
 #  Lenovo E430
 #  Lenovo E531
 #  Lenovo E540 (per nayeweiyang)
+#  Lenovo E530 (per kikiwora)
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 

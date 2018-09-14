@@ -82,13 +82,15 @@ begin
 Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
 end;
 
+# Note: ## means those fields used in SSDT-4
+
 into device label H_EC code_regex CPUP,\s+16, replace_matched begin PUP0,8,PUP1,8, end;
 into device label H_EC code_regex BPWR,\s+16, replace_matched begin PRW0,8,PRW1,8, end;
-into device label H_EC code_regex PPWR,\s+16, replace_matched begin PPW0,8,PPW1,8, end;
+into device label H_EC code_regex PPWR,\s+16, replace_matched begin PPW0,8,PPW1,8, end;##
 into device label H_EC code_regex B1DC,\s+16, replace_matched begin DC10,8,DC11,8, end;
-into device label H_EC code_regex B1RC,\s+16, replace_matched begin RC10,8,RC11,8, end;
-into device label H_EC code_regex B1FC,\s+16, replace_matched begin FC10,8,FC11,8, end;
-into device label H_EC code_regex B1FV,\s+16, replace_matched begin FV10,8,FV11,8, end;
+into device label H_EC code_regex B1RC,\s+16, replace_matched begin RC10,8,RC11,8, end;##
+into device label H_EC code_regex B1FC,\s+16, replace_matched begin FC10,8,FC11,8, end;##
+into device label H_EC code_regex B1FV,\s+16, replace_matched begin FV10,8,FV11,8, end;##
 into device label H_EC code_regex B1DI,\s+16, replace_matched begin DI10,8, DI11,8, end;
 into device label H_EC code_regex B1CI,\s+16, replace_matched begin CI10,8,CI11,8, end;
 into device label H_EC code_regex B2RC,\s+16, replace_matched begin RC20,8,RC21,8, end;
@@ -99,11 +101,11 @@ into device label H_EC code_regex B2CI,\s+16, replace_matched begin CI20,8,CI21,
 into device label H_EC code_regex CPAP,\s+16, replace_matched begin PAP0,8,PAP1,8, end;
 into device label H_EC code_regex BKAP,\s+16, replace_matched begin KAP0,8,KAP1,8, end;
 into device label H_EC code_regex PLAP,\s+16, replace_matched begin LAP0,8,LAP1,8, end;
-into device label H_EC code_regex CFSP,\s+16, replace_matched begin FSP0,8,FSP1,8, end;
+into device label H_EC code_regex CFSP,\s+16, replace_matched begin FSP0,8,FSP1,8, end;##
 into device label H_EC code_regex B2DC,\s+16, replace_matched begin DC20,8,DC21,8, end;
 into device label H_EC code_regex B1DV,\s+16, replace_matched begin DV10,8,DV11,8, end;
 into device label H_EC code_regex B2DV,\s+16, replace_matched begin DV20,8,DV21,8, end;
-into device label H_EC code_regex CHGR,\s+16, replace_matched begin HGR0,8,HGR1,8, end;
+into device label H_EC code_regex CHGR,\s+16, replace_matched begin HGR0,8,HGR1,8, end;##
 
 into scope label _SB.PCI0.LPCB.EC0 code_regex BSRE,\s+16 replace_matched begin SRE0,8,SRE1,8 end;
 into scope label _SB.PCI0.LPCB.EC0 code_regex BSAF,\s+16 replace_matched begin SAF0,8,SAF1,8 end;
@@ -166,4 +168,24 @@ into_all method parent_label WCT0 code_regex \^\^PCI0.LPCB.H_EC.IWCR replaceall_
 
 into method label GBAT code_regex _SB.PCI0.LPCB.EC0.BSCN, replaceall_matched begin _SB.PCI0.LPCB.H_EC.RECB (0xE0,128), end;
 
+# for SSDT-4
+into definitionblock code_regex External\s\((.*)\.PPWR,\sFieldUnitObj\) replace_matched begin External(%1.PPW0,FieldUnitObj) External(%1.PPW1,FieldUnitObj) end;
+into definitionblock code_regex External\s\((.*)\.B1RC,\sFieldUnitObj\) replace_matched begin External(%1.RC10,FieldUnitObj) External(%1.RC11,FieldUnitObj) end;
+into definitionblock code_regex External\s\((.*)\.B1FC,\sFieldUnitObj\) replace_matched begin External(%1.FC10,FieldUnitObj) External(%1.FC11,FieldUnitObj) end;
+into definitionblock code_regex External\s\((.*)\.B1FV,\sFieldUnitObj\) replace_matched begin External(%1.FV10,FieldUnitObj) External(%1.FV11,FieldUnitObj) end;
+into definitionblock code_regex External\s\((.*)\.CFSP,\sFieldUnitObj\) replace_matched begin External(%1.FSP0,FieldUnitObj) External(%1.FSP1,FieldUnitObj) end;
+into definitionblock code_regex External\s\((.*)\.CHGR,\sFieldUnitObj\) replace_matched begin External(%1.HGR0,FieldUnitObj) External(%1.HGR1,FieldUnitObj) end;
+into definitionblock code_regex . insert begin External(B1B2, MethodObj) end;
+
+into method label _FST code_regex \\_SB\.PCI0\.LPCB\.H_EC\.ECRD\s\(RefOf\s\(\\_SB\.PCI0\.LPCB\.H_EC\.CFSP\)\) replaceall_matched begin B1B2(\\_SB.PCI0.LPCB.H_EC.FSP0,\\_SB.PCI0.LPCB.H_EC.FSP1) end;
+into method label SPPC code_regex \\_SB\.PCI0\.LPCB\.H_EC\.ECWT\s\(Local1,\sRefOf\s\(\\_SB\.PCI0\.LPCB\.H_EC\.CHGR\)\) replaceall_matched
+begin
+Store(Local1, \\_SB.PCI0.LPCB.H_EC.HGR0)
+Store(Local1>>8, \\_SB.PCI0.LPCB.H_EC.HGR1)
+end;
+
+into method label PSOC code_regex \\_SB\.PCI0\.LPCB\.H_EC\.ECRD\s\(RefOf\s\(\\_SB\.PCI0\.LPCB\.H_EC\.B1FC\)\) replaceall_matched begin B1B2(\\_SB.PCI0.LPCB.H_EC.FC10,\\_SB.PCI0.LPCB.H_EC.FC11) end;
+into method label PSOC code_regex \\_SB\.PCI0\.LPCB\.H_EC\.ECRD\s\(RefOf\s\(\\_SB\.PCI0\.LPCB\.H_EC\.B1RC\)\) replaceall_matched begin B1B2(\\_SB.PCI0.LPCB.H_EC.RC10,\\_SB.PCI0.LPCB.H_EC.RC11) end;
+
+into method label APWR code_regex \\_SB\.PCI0\.LPCB\.H_EC\.ECRD\s\(RefOf\s\(\\_SB\.PCI0\.LPCB\.H_EC\.PPWR\)\) replaceall_matched begin B1B2(\\_SB.PCI0.LPCB.H_EC.PPW0,\\_SB.PCI0.LPCB.H_EC.PPW1) end;
 

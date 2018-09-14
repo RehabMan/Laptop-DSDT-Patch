@@ -1,16 +1,11 @@
 #Maintained by: RehabMan for: Laptop Patches
-#battery_Lenovo-Ideapad-Y700.txt
+#battery_Lenovo-Miix-720.txt
 
-# Created by RehabMan 2016-08-10, based on battery_Lenovo_Ideapad-100.txt
+# Created by RehabMan 2017-06-26, based on battery_Lenovo_Ideapad-Y700.txt
+# based on feedback from gongzhen
 
 # Works for
-#   Lenovo Ideapad Y700-15ISK (Skylake)
-#   Lenovo Ideapad Y300-15ISK (Skylake), per Donny895
-#   Lenovo Ideapad Miix 700-12ISK (Skylake), per man0072
-#   Lenovo Ideapad 510-15ISK (Skylake), per tommeck
-#   Lenovo Yoga 700-14isk, per nayeweiyang
-#   Lenovo Ideapad 300-15ISK (Skylake), per NicoM4491
-#   Lenovo Ideapad 510-15IKB (KabyLake), per nastys
+#   Lenovo Ideapad Miix 720, per gongzhen
 
 # Note, offsets for RECB/WECB based on this EC layout:
 #
@@ -41,7 +36,7 @@
 #                SAD1,   8,
 #                Offset (0x8F),
 #                BMN0,   72, //!!0x8F
-#                BDN0,   56, //!!0x98
+#                BDN0,   64, //!!0x98
 
 # If you have different offsets, make appropriate modifications.
 
@@ -95,7 +90,7 @@ into method label GSBI code_regex \(B1DA, replaceall_matched begin (B1B2(B2DA,B3
 into device label EC0 code_regex (FWBT,)\s+(64) replace_matched begin FWBX,%2,//%1%2 end;
 into device label EC0 code_regex (SMDA,)\s+(256) replace_matched begin SMDX,%2,//%1%2 end;
 into device label EC0 code_regex (BMN0,)\s+(72) replace_matched begin BMNX,%2,//%1%2 end;
-into device label EC0 code_regex (BDN0,)\s+(56) replace_matched begin BDNX,%2,//%1%2 end;
+into device label EC0 code_regex (BDN0,)\s+(64) replace_matched begin BDNX,%2,//%1%2 end;
 # utility methods to read/write buffers from/to EC
 into method label RE1B parent_label EC0 remove_entry;
 into method label RECB parent_label EC0 remove_entry;
@@ -158,9 +153,9 @@ into method label GBID code_regex \(FWBT, replaceall_matched begin (RECB(0x14,64
 into method label GSBI code_regex \(FWBT, replaceall_matched begin (RECB(0x14,64), end;
 into method label MHPF code_regex Store\s+\(FB4,\s+SMDA\) replaceall_matched begin WECB(0x64,256,FB4) end;
 into method label GSBI code_regex \(BMN0, replaceall_matched begin (RECB(0x8f,72), end;
-into method label _BIF code_regex \(BMN0, replaceall_matched begin (RECB(0x8f,56), end;
-into method label _BIF code_regex \(BDN0, replaceall_matched begin (RECB(0x98,56), end;
-into method label GSBI code_regex \(BDN0, replaceall_matched begin (RECB(0x98,56), end;
+into method label _BIF code_regex \(BMN0, replaceall_matched begin (RECB(0x8f,72), end;
+into method label _BIF code_regex \(BDN0, replaceall_matched begin (RECB(0x98,64), end;
+into method label GSBI code_regex \(BDN0, replaceall_matched begin (RECB(0x98,64), end;
 
 #RehabMan: added for Lenovo Y700
 into method label BATD code_regex \(\^\^PCI0\.LPCB\.EC0\.FWBT, replaceall_matched begin (^^PCI0.LPCB.EC0.RECB(0x14,64), end;
@@ -168,3 +163,10 @@ into method label BATD code_regex \(\^\^PCI0\.LPCB\.EC0\.B1DA, replaceall_matche
 
 #RehabMan: added for Lenovo B50-50
 into method label MHPF code_regex Store\s+\(SMDA,\s+FB4\) replaceall_matched begin Store(RECB(0x64,256),FB4) end;
+
+#RehabMan: fixing BAT0._STA logic bug
+into method label _STA parent_label BAT0 code_regex ([\s\S]*) replace_matched
+begin
+If(!ECON) { Return(0xf) }\n
+%1
+end;

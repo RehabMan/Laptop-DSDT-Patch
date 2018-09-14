@@ -3,10 +3,11 @@
 
 # created originally by r-miheev 2015-05-14
 # finished by RehabMan 2015-05-14
+# added Acer Aspire 7720g support 2017-08-06
 
 # works for:
 #  Acer Aspire 5741G
-
+#  Acer Aspire 7720g (based on submit by damx)
 
 # utility method B1B2
 into method label B1B2 remove_entry;
@@ -39,6 +40,16 @@ into device label EC0 code_regex BTMA,\s+16 replace_matched begin TMA0,8,TMA1,8 
 into device label EC0 code_regex BDME,\s+16 replace_matched begin DME0,8,DME1,8 end;
 into device label EC0 code_regex BDAD,\s+16 replace_matched begin DAD0,8,DAD1,8 end;
 into device label EC0 code_regex BATM,\s+16 replace_matched begin ATM0,8,ATM1,8 end;
+# added for Acer Aspire 7720g
+into device label EC0 code_regex BDFC,\s+16 replace_matched begin DFC0,8,DFC1,8, end;
+# not accessed, but patched (will cause errors if future DSDT does access)
+into device label EC0 code_regex BTSS,\s+16, replace_matched begin TSS0,8,TSS1,8, end;
+into device label EC0 code_regex BSC1,\s+16, replace_matched begin SC10,8,SC11,8, end;
+into device label EC0 code_regex BSC2,\s+16, replace_matched begin SC20,8,SC21,8, end;
+into device label EC0 code_regex BSC3,\s+16, replace_matched begin SC30,8,SC31,8, end;
+into device label EC0 code_regex BSC4,\s+16, replace_matched begin SC40,8,SC41,8, end;
+into device label EC0 code_regex BSCS,\s+16, replace_matched begin SCS0,8,SCS1,8, end;
+into device label EC0 code_regex BACV,\s+16, replace_matched begin ACV0,8,ACV1,8, end;
 
 # fix methods
 into method label BTIF code_regex \(\^\^LPCB\.EC0\.BDC0, replaceall_matched begin (B1B2(^^LPCB.EC0.DC00,^^LPCB.EC0.DC01), end;
@@ -60,10 +71,28 @@ into method label _BIF code_regex \(\^\^EC0\.BFC0, replaceall_matched begin (B1B
 into method label _BIF code_regex \(\^\^EC0\.BDC0, replaceall_matched begin (B1B2(^^EC0.DC00,^^EC0.DC01), end;
 into method label _BST code_regex \(\^\^EC0\.BPV0, replaceall_matched begin (B1B2(^^EC0.PV00,^^EC0.PV01), end;
 into method label _BST code_regex \(\^\^EC0\.BFC0, replaceall_matched begin (B1B2(^^EC0.FC00,^^EC0.FC01), end;
+# added for Acer Aspire 7720g
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BDFC, replaceall_matched begin (B1B2(^^LPC.EC0.DFC0,^^LPC.EC0.DFC1), end;
+# also added for Acer Aspire 7720g (these are just LPC instead of LPCB)
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BDC0, replaceall_matched begin (B1B2(^^LPC.EC0.DC00,^^LPC.EC0.DC01), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BSN0, replaceall_matched begin (B1B2(^^LPC.EC0.SN00,^^LPC.EC0.SN01), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BDAD, replaceall_matched begin (B1B2(^^LPC.EC0.DAD0,^^LPC.EC0.DAD1), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BDV0, replaceall_matched begin (B1B2(^^LPC.EC0.DV00,^^LPC.EC0.DV01), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BDV0, replaceall_matched begin (B1B2(^^LPC.EC0.DV00,^^LPC.EC0.DV01), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BRC0, replaceall_matched begin (B1B2(^^LPC.EC0.RC00,^^LPC.EC0.RC01), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BSCU, replaceall_matched begin (B1B2(^^LPC.EC0.SCU0,^^LPC.EC0.SCU1), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BPV0, replaceall_matched begin (B1B2(^^LPC.EC0.PV00,^^LPC.EC0.PV01), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BFC0, replaceall_matched begin (B1B2(^^LPC.EC0.FC00,^^LPC.EC0.FC01), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BATM, replaceall_matched begin (B1B2(^^LPC.EC0.ATM0,^^LPC.EC0.ATM1), end;
+into method label BTIF code_regex \(\^\^LPC\.EC0\.BDME, replaceall_matched begin (B1B2(^^LPC.EC0.DME0,^^LPC.EC0.DME1), end;
 
 # translate the Store to BTMA
 into method label BTIF code_regex Store\s\(Local1,\s\^\^LPCB\.EC0\.BTMA\) replace_matched
 begin
 Store(Local1, ^^LPCB.EC0.TMA0) Store(ShiftRight(Local1,8), ^^LPCB.EC0.TMA1)
 end;
-
+# added for Acer Aspire 7720g (LPC instead of LPCB)
+into method label BTIF code_regex Store\s\(Local1,\s\^\^LPC\.EC0\.BTMA\) replace_matched
+begin
+Store(Local1, ^^LPC.EC0.TMA0) Store(ShiftRight(Local1,8), ^^LPC.EC0.TMA1)
+end;

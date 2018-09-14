@@ -11,6 +11,7 @@
 #  HP 2000 2d11DX (per github/bhundven)
 #  HP Pavillion m4-1007tx (per bintangsofyan)
 #  HP 242 G2 (per nayeweiyang)
+#  HP 14 ac132la (per dloprios97)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

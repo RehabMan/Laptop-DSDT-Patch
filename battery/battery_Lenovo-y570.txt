@@ -12,6 +12,7 @@
 #  Lenovo y550 (per Maksibon)
 #  Lenovo z560 (per HoaiNhan)
 #  Lenovo Z460 (per nayeweiyang)
+#  Lenovo G570 (per Kromsator)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 into method label B1B2 remove_entry;

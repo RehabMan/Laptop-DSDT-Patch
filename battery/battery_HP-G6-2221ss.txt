@@ -7,6 +7,7 @@
 
 # works for:
 #  HP G6 2221ss
+#  HP G6-2233sw
 #  HP dv7t-4100
 #  HP Envy 14 Spectre 14t-3000
 #  HP Pavilion dv6-3165sf
@@ -32,8 +33,14 @@
 #  HP Pavilion DV6 2137el (per TheStraing)
 #  HP Pavilion 15 ab035TX (per er.manojsoni)
 #  HP Envy x360 13-y013cl Kaby Lake (per lilryu)
-#  HP HP Pavilion G6-2233sw (per hexplor)
-#  HP Pavallion 15 au009tx, au006tx, au118tx (per SSH@HBTU)
+#  HP Pavilion G6-2233sw (per hexplor)
+#  HP Notebook 15-ab522tx (per AmitKumar123)
+#  HP Pavilion 15 au009tx, au006tx, au118tx (per github/ShubhamElite)
+
+# Note: some may require this patch
+# it is commented out because it is really not the correct fix
+# and is not needed by all
+#into method label INIT parent_label ACEL replace_content begin // code removed\n end;
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 

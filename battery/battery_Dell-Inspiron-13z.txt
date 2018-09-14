@@ -8,6 +8,7 @@
 #  Dell Vostro 3750, per 459below
 #  Dell Inspiron 17 (N7110), per scififan68
 #  Dell Inspiron 17r (per conath)
+#  Dell Insprion 7720 (per gabberZ)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
