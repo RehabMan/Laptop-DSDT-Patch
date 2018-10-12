@@ -41,6 +41,7 @@
 #  ASUS F556UA-AB32 (per Jdazzle44)
 #  ASUS UX306UA (per MaraficeEye)
 #  ASUS N550JV (per Xracer99)
+#  ASUS X540LA (per arg274)
 #  ASUS X540LJ (per palash)
 #  ASUS X550VX (per vualeks)
 #  ASUS UX330UA (per fluxo)
