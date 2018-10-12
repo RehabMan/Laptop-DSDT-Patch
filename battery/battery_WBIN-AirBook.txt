@@ -7,6 +7,7 @@
 
 # works for:
 #  WBIN AirBook (gen6 and gen7)
+#  Compaq Presario 21n121ar (per ndeni))
 
 # Note: Apply to appropriate SSDT (where battery methods live)
 

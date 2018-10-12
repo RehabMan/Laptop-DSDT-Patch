@@ -11,7 +11,8 @@
 #  Lenovo G510
 #  Lenovo Ideapad 510s (per vonian)
 #  Lenovo Yoga 710-15 Kaby Lake (per t_anjan)
-#  Lenovo YOGA 720-15IKB
+#  Lenovo G400S (per ydrean)
+#  Lenovo Yoga 720-15IKB (per nowan)
 
 into definitionblock code_regex External\s+\(\\TNOT\) remove_matched;
 
