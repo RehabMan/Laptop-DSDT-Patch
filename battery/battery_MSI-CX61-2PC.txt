@@ -6,6 +6,7 @@
 
 # works for:
 #  MSI CX61 2PC
+#  MSI GE62 Apache Pro 6QD (per e12350)
 
 # Add B1B2 method
 into definitionblock code_regex . insert
