@@ -1,7 +1,9 @@
-#Maintained by: shiyunjin for: Mojave Patches
+#Maintained by: shiyunjin for: Laptop Patches
 #battery_Lenovo-Z70-80.txt
 
-# created by shiyunjin 2018-10-28
+# created by raff 2015-03-02
+# fixed by RehabMan 2015-09-19 for Lenovo Z50-70
+# fixed by shiyunjin 2018-10-28 for Lenovo Z70-80
 
 # works for:
 #  Lenovo Z70-80
