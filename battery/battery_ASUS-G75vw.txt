@@ -26,6 +26,7 @@
 #  ASUS G502VS (per ahmadsafar)
 #  ASUS F3SV (per conath)
 #  ASUS R510JK (per renardn)
+#  ASUS GX501GI
 
 #Convert 16 bit to 8 bit registers
 into device label EC0 code_regex TAH0,\s+16, replace_matched begin AH00,8,AH01,8, end;

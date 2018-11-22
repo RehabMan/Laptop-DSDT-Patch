@@ -1,0 +1,63 @@
+#battery_Gigabyte-Aero15V8.txt
+
+# created by neocoma504 2018-06-02
+
+# works for:
+#  Gigabyte Aero15 V8
+
+#16-bit Registers
+into device label ECDV code_regex B1DC,\s+16, replace_matched begin ZDC0,8,ZDC1,8, end;
+into device label ECDV code_regex B1FC,\s+16, replace_matched begin ZFC0,8,ZFC1,8, end;
+into device label ECDV code_regex B1RC,\s+16, replace_matched begin ZRC0,8,ZRC1,8, end;
+into device label ECDV code_regex B1FV,\s+16, replace_matched begin ZFV0,8,ZFV1,8, end;
+into device label ECDV code_regex B1DG,\s+16, replace_matched begin ZDG0,8,ZDG1,8, end;
+into device label ECDV code_regex B1CR,\s+16, replace_matched begin ZCR0,8,ZCR1,8, end;
+
+into device label ECDV code_regex RPM1,\s+16, replace_matched begin RPMX,8,RPMY,8, end;
+into device label ECDV code_regex RPM2,\s+16 replace_matched begin RMPX,8,RMPY,8, end;
+into device label ECDV code_regex XFN1,\s+16, replace_matched begin XFNX,8,XFNY,8, end;
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+# fix 16-bit Methods
+into method label _BIF code_regex B1DC replaceall_matched begin B1B2(ZDC0,ZDC1) end;
+into method label _BIF code_regex B1FC replaceall_matched begin B1B2(ZFC0,ZFC1) end;
+into method label _BST code_regex B1FC replaceall_matched begin B1B2(ZFC0,ZFC1) end;
+into method label BATS code_regex B1RC replaceall_matched begin B1B2(ZRC0,ZRC1) end;
+into method label _BST code_regex B1RC replaceall_matched begin B1B2(ZRC0,ZRC1) end;
+into method label _BST code_regex B1FV replaceall_matched begin B1B2(ZFV0,ZFV1) end;
+into method label _BIF code_regex B1DG replaceall_matched begin B1B2(ZDG0,ZDG1) end;
+into method label _BST code_regex B1CR replaceall_matched begin B1B2(ZCR0,ZCR1) end;
+
+#into method label WMBC code_regex RPM1 replaceall_matched begin B1B2(RPMX,RPMY) end;
+#into method label WMBC code_regex RPM2 replaceall_matched begin B1B2(RMPX,RMPY) end;
+#into method label WMBC code_regex XFN1 replaceall_matched begin B1B2(XFNX,XFNY) end;
+
+into method label WMBC code_regex \(\^\^LPCB\.ECDV\.RPM1 replaceall_matched begin (B1B2(\^\^LPCB.ECDV.RPMX,\^\^LPCB.ECDV.RPMY) end;
+into method label WMBC code_regex \(\^\^LPCB\.ECDV\.RPM2 replaceall_matched begin (B1B2(\^\^LPCB.ECDV.RMPX,\^\^LPCB.ECDV.RMPY) end;
+into method label WMBC code_regex \(\^\^LPCB\.ECDV\.XFN1 replaceall_matched begin (B1B2(\^\^LPCB.ECDV.XFNX,\^\^LPCB.ECDV.XFNY) end;
+
+#32-bit Registers
+into device label ECDV code_regex XFNW,\s+24, replace_matched begin FNW0,8,FNW1,8,FNW2,8, end;
+
+into method label B1B4 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B3, 3, NotSerialized)\n
+{\n
+    Store(Arg2, Local0)\n
+    Or(Arg1, ShiftLeft(Local0, 8), Local0)\n
+    Or(Arg0, ShiftLeft(Local0, 8), Local0)\n
+    Return(Local0)\n
+}\n
+end;
+
+#fix 32-bit Methods
+#into method label WMBD code_regex \(XFNW, replaceall_matched begin (B1B3(FNW0,FNW1,FNW2,FNW3), end;
+
+into method label WMBD code_regex \(\^\^LPCB\.ECDV\.XFNW replaceall_matched begin (B1B3(\^\^LPCB.ECDV.FNW0,\^\^LPCB.ECDV.FNW1,\^\^LPCB.ECDV.FNW2) end;
+into method label WMBD code_regex \^\^LPCB\.ECDV\.XFNW replaceall_matched begin B1B3(\^\^LPCB.ECDV.FNW0,\^\^LPCB.ECDV.FNW1,\^\^LPCB.ECDV.FNW2) end;

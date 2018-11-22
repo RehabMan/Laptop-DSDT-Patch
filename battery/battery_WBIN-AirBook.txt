@@ -1,0 +1,70 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_WBIN-AirBook.txt
+
+# submitted by GigiBatt 2018-06-11
+# credits TerminalStrip / Gian Luigi Battistini
+# modifications for completeness by RehabMan 2018-06-11
+
+# works for:
+#  WBIN AirBook (gen6 and gen7)
+#  Compaq Presario 21n121ar (per ndeni))
+
+# Note: Apply to appropriate SSDT (where battery methods live)
+
+into method label B1B2 remove_entry;
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return(Or(Arg0, ShiftLeft(Arg1, 8))) }\n
+end;
+
+into scope label \_SB.PCI0.LPCB.H_EC code_regex BA1T,\s+16, replace_matched begin B1T0,8, B1T1,8, end;
+into scope label \_SB.PCI0.LPCB.H_EC code_regex BA2T,\s+16, replace_matched begin B2T0,8, B2T1,8, end;
+into scope label \_SB.PCI0.LPCB.H_EC code_regex BA3T,\s+16, replace_matched begin B3T0,8, B3T1,8, end;
+into scope label \_SB.PCI0.LPCB.H_EC code_regex BA4T,\s+16, replace_matched begin B4T0,8, B4T1,8, end;
+into scope label \_SB.PCI0.LPCB.H_EC code_regex BA5T,\s+16, replace_matched begin B5T0,8, B5T1,8, end;
+into scope label \_SB.PCI0.LPCB.H_EC code_regex BA6T,\s+16, replace_matched begin B6T0,8, B6T1,8, end;
+
+into method label _BIF code_regex ECR2\s+\(RefOf\s+\(BA1T\)\), replaceall_matched begin B1B2(B1T0,B1T1), end;
+into method label _BIF code_regex ECR2\s+\(RefOf\s+\(BA2T\)\), replaceall_matched begin B1B2(B2T0,B2T1), end;
+into method label _BIF code_regex ECR2\s+\(RefOf\s+\(BA3T\)\), replaceall_matched begin B1B2(B3T0,B3T1), end;
+into method label _BIF code_regex ECR2\s+\(RefOf\s+\(BA4T\)\), replaceall_matched begin B1B2(B4T0,B4T1), end;
+into method label _BIF code_regex ECR2\s+\(RefOf\s+\(BA5T\)\), replaceall_matched begin B1B2(B5T0,B5T1), end;
+into method label _BIF code_regex ECR2\s+\(RefOf\s+\(BA6T\)\), replaceall_matched begin B1B2(B6T0,B6T1), end;
+
+into method label _BST code_regex ECR2\s+\(RefOf\s+\(BA1T\)\), replaceall_matched begin B1B2(B1T0,B1T1), end;
+into method label _BST code_regex ECR2\s+\(RefOf\s+\(BA2T\)\), replaceall_matched begin B1B2(B2T0,B2T1), end;
+into method label _BST code_regex ECR2\s+\(RefOf\s+\(BA3T\)\), replaceall_matched begin B1B2(B3T0,B3T1), end;
+into method label _BST code_regex ECR2\s+\(RefOf\s+\(BA5T\)\), replaceall_matched begin B1B2(B5T0,B5T1), end;
+
+# utility methods to read/write buffers from/to EC by RehabMan
+into method label RE1B parent_label \_SB.PCI0.LPCB.H_EC remove_entry;
+into method label RECB parent_label \_SB.PCI0.LPCB.H_EC remove_entry;
+into scope label \_SB.PCI0.LPCB.H_EC insert
+begin
+Method (RE1B, 1, NotSerialized)\n
+{\n
+    OperationRegion(ERAM, EmbeddedControl, Arg0, 1)\n
+    Field(ERAM, ByteAcc, NoLock, Preserve) { BYTE, 8 }\n
+    Return(BYTE)\n
+}\n
+Method (RECB, 2, Serialized)\n
+{\n
+    ShiftRight(Arg1, 3, Arg1)\n
+    Name(TEMP, Buffer(Arg1) { })\n
+    Add(Arg0, Arg1, Arg1)\n
+    Store(0, Local0)\n
+    While (LLess(Arg0, Arg1))\n
+    {\n
+        Store(RE1B(Arg0), Index(TEMP, Local0))\n
+        Increment(Arg0)\n
+        Increment(Local0)\n
+    }\n
+    Return(TEMP)\n
+}\n
+end;
+
+# patch 256 bit SMBD register (fixes by RehabMan)
+into scope label \_SB.PCI0.LPCB.H_EC code_regex (SMBD,)\s+(256) replace_matched begin SMBX,%2,//%1%2 end;
+into method label SMBR code_regex \(SMBD, replaceall_matched begin (RECB(0x44,256), end;
+
+#EOF

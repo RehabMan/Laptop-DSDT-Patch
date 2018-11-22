@@ -69,6 +69,7 @@
 [bat] Dell XPS L502x	battery/battery_Dell-XPS-L502x.txt
 [bat] Fujitsu Lifebook A555	battery/battery_Fujitsu-Lifebook-A555.txt
 [bat] Gateway ID49C07u	battery/battery_Gateway-ID49C07u.txt
+[bat] Gigabyte Aero 15W V8	battery/battery_Gigabyte-Aero15V8.txt
 [bat] Gigabyte P35Xv3	battery/battery_Gigabyte-P35Xv3.txt
 [bat] Gigabyte u2442N/P34Wv3	battery/battery_Gigabyte-u2442N.txt
 [bat] HP DM4t-1000	battery/battery_HP-DM4T-1000.txt
@@ -106,6 +107,7 @@
 [bat] Lenovo Ux10-Z580	battery/battery_Lenovo-Ux10-Z580.txt
 [bat] Lenovo V510-15IKB	battery/battery_Lenovo-V510-15IKB.txt
 [bat] Lenovo X201	battery/battery_Lenovo-X201.txt
+[bat] Lenovo X210	battery/battery_Lenovo-X210.txt
 [bat] Lenovo X220	battery/battery_Lenovo-X220.txt
 [bat] Lenovo X230i	battery/battery_Lenovo-X230i.txt
 [bat] Lenovo W550s	battery/battery_Lenovo-ThinkPad-W550s.txt
@@ -122,7 +124,8 @@
 [bat] LG N450	battery/battery_LG-N450.txt
 [bat] MECHREVO x6TI	battery/battery_MECHREVO-x6TI.txt
 [bat] Medion Akoya P6630	battery/battery_Medion-Akoya-P6630.txt
-[bat] Microxperts u731ga1	battery/battery_Microxperts-u731ga1.txt
+[bat] Microxperts u731ga1 (Clevo rebrand)	battery/battery_Microxperts-u731ga1.txt
+[bat] MSI CX61 2PC	battery/battery_MSI-CX61-2PC.txt
 [bat] Partaker G3	battery/battery_Partaker_G3.txt
 [bat] Razer Blade (2014)	battery/battery_Razer-Blade-2014.txt
 [bat] Razer Blade Pro	battery/battery_Razer-Blade-Pro.txt
@@ -143,6 +146,7 @@
 [bat] Thunderobot 911	battery/battery_Thunderobot-911.txt
 [bat] Toshiba Satellite A660-16Z	battery/battery_Toshiba-A660-16Z.txt
 [bat] Vizio Ultrabook CT14	battery/battery_Vizio-Ultrabook-CT14.txt
+[bat] WBIN AirBook	battery/battery_WBIN-AirBook.txt
 [wifi] --> Atheros WiFi Patches	NullPatch.txt
 [wifi] AR9285 WiFi RP02-PXSX	wifi/wifi_AR9285-RP02-PXSX.txt
 [wifi] AR9285 WiFi RP02-WLAN	wifi/wifi_AR9285-RP02-WLAN.txt
@@ -156,10 +160,13 @@
 [sys] RTC Fix	system/system_RTC.txt
 [sys] Shutdown Fix	system/system_Shutdown.txt
 [sys] Shutdown Fix v2	system/system_Shutdown2.txt
+[sys] Shutdown restart (XHC.PMEE) Fix	system/system_Shutdown_restart.txt
 [sys] HPET Fix	system/system_HPET.txt
 [sys] OS Check Fix (Windows Vista)	system/system_OSYS.txt
 [sys] OS Check Fix (Windows 7)	system/system_OSYS_win7.txt
 [sys] OS Check Fix (Windows 8)	system/system_OSYS_win8.txt
+[sys] OS Check Fix (Windows 10)	system/system_OSYS_win10.txt
+[sys] OS Check Fix (Linux)	system/system_OSYS_linux.txt
 [sys] AC Adapter Fix	system/system_ADP1.txt
 [sys] Add MCHC	system/system_MCHC.txt
 [sys] Fix _WAK Arg0 v1	system/system_WAK1.txt
@@ -171,5 +178,7 @@
 [sys] Haswell LPC	misc/misc_Haswell-LPC.txt
 [sys] Skylake LPC	misc/misc_Skylake-LPC.txt
 [audio] --> Audio	NullPatch.txt
-[audio] Audio Layout 12	audio/audio_HDEF-layout12.txt
+[audio] Audio Layout 2	audio/audio_HDEF-layout2.txt
+[audio] Audio Layout 14	audio/audio_HDEF-layout14.txt
 [audio] Audio Layout 3	audio/audio_HDEF-layout3.txt
+[audio] Audio Layout 12	audio/audio_HDEF-layout12.txt

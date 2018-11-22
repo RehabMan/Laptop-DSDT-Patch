@@ -10,6 +10,7 @@
 #   Lenovo Ideapad 510-15ISK (Skylake), per tommeck
 #   Lenovo Yoga 700-14isk, per nayeweiyang
 #   Lenovo Ideapad 300-15ISK (Skylake), per NicoM4491
+#   Lenovo Ideapad 510-15IKB (KabyLake), per nastys
 
 # Note, offsets for RECB/WECB based on this EC layout:
 #

@@ -9,6 +9,7 @@
 #  Lenovo U410
 #  Lenovo Z580
 #  Lenovo U430 Touch (probably U330/U530, etc)
+#  Lenovo IdeaPad Flex 15 (per razzvg on tmx, aytic on github)
 #
 # DOES NOT work for:
 #  Lenovo U510

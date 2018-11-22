@@ -8,6 +8,7 @@
 # works for:
 #  Lenovo Yoga 900-13ISK
 #  Lenovo Miix 510-12ISK
+#  Lenovo Yoga Pro 3 (per zohaad@github)
 
 # assumes offsets as follows
 #            Field (ECF2, ByteAcc, Lock, Preserve)

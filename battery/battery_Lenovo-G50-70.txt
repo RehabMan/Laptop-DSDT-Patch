@@ -7,6 +7,7 @@
 # works for:
 #  Lenovo G50-70
 #  Lenovo G40-80 (per andres85)
+#  Lenovo v3000-ISE (per Xc233haha)
 
 # disable BAT1 device
 into method label _STA parent_label BAT1 replace_content begin Return (Zero) end;

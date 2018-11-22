@@ -1,0 +1,120 @@
+#Maintained by: RehabMan for: Laptop Patches
+#battery_MSI-CX61-2PC.txt
+
+# Created by Kali2000 on Jul 3, 2018. Based on RehabMan guide.
+# Bug fixing by RehabMan 2018-07-03
+
+# works for:
+#  MSI CX61 2PC
+#  MSI GE62 Apache Pro 6QD (per e12350)
+
+# Add B1B2 method
+into definitionblock code_regex . insert
+begin
+Method (B1B2, 2, NotSerialized) { Return (Or (Arg0, ShiftLeft (Arg1, 8))) }\n
+end;
+
+# 264-bit Register edit in EC (not accessed but renaming it will bring errors if is in the future)
+into device label EC code_regex (SMD0,)\s+(264) replace_matched begin SMDX,%2,//%1%2 end;
+
+# 16-Bit Register edit in SCN0
+into device label SCM0 code_regex TD38,\s+16 replace_matched begin D380,8,D381,8 end;
+into device label SCM0 code_regex TD3A,\s+16 replace_matched begin D3A0,8,D3A1,8 end;
+into device label SCM0 code_regex TD3C,\s+16 replace_matched begin D3C0,8,D3C1,8 end;
+into device label SCM0 code_regex TD3E,\s+16 replace_matched begin D3E0,8,D3E1,8 end;
+into device label SCM0 code_regex TD40,\s+16 replace_matched begin D400,8,D401,8 end;
+into device label SCM0 code_regex TD42,\s+16 replace_matched begin D420,8,D421,8 end;
+into device label SCM0 code_regex TD44,\s+16 replace_matched begin D440,8,D441,8 end;
+into device label SCM0 code_regex TD46,\s+16 replace_matched begin D460,8,D461,8 end;
+into device label SCM0 code_regex TD48,\s+16 replace_matched begin D480,8,D481,8 end;
+into device label SCM0 code_regex TD4A,\s+16 replace_matched begin D4A0,8,D4A1,8 end;
+into device label SCM0 code_regex TD4C,\s+16 replace_matched begin D4C0,8,D4C1,8 end;
+into device label SCM0 code_regex TD4E,\s+16 replace_matched begin D4E0,8,D4E1,8 end;
+into device label SCM0 code_regex TD50,\s+16 replace_matched begin D500,8,D501,8 end;
+into device label SCM0 code_regex TD52,\s+16 replace_matched begin D520,8,D521,8 end;
+into device label SCM0 code_regex TD54,\s+16 replace_matched begin D540,8,D541,8 end;
+into device label SCM0 code_regex TD56,\s+16 replace_matched begin D560,8,D561,8 end;
+into device label SCM0 code_regex TD58,\s+16 replace_matched begin D580,8,D581,8 end;
+into device label SCM0 code_regex TD5A,\s+16 replace_matched begin D5A0,8,D5A1,8 end;
+into device label SCM0 code_regex TD5C,\s+16 replace_matched begin D5C0,8,D5C1,8 end;
+into device label SCM0 code_regex TD5E,\s+16 replace_matched begin D5E0,8,D5E1,8 end;
+into device label SCM0 code_regex TD60,\s+16 replace_matched begin D600,8,D601,8 end;
+into device label SCM0 code_regex TD62,\s+16 replace_matched begin D620,8,D621,8 end;
+into device label SCM0 code_regex TD64,\s+16 replace_matched begin D640,8,D641,8 end;
+into device label SCM0 code_regex TD66,\s+16 replace_matched begin D660,8,D661,8 end;
+
+# fix 16-bit methods
+into method label WQAD code_regex \(TD38, replaceall_matched begin (B1B2(D380,D381), end;
+into method label WQAD code_regex \(TD3A, replaceall_matched begin (B1B2(D3A0,D3A1), end;
+into method label WQAD code_regex \(TD3C, replaceall_matched begin (B1B2(D3C0,D3C1), end;
+into method label WQAD code_regex \(TD3E, replaceall_matched begin (B1B2(D3E0,D3E1), end;
+into method label WQAD code_regex \(TD40, replaceall_matched begin (B1B2(D400,D401), end;
+into method label WQAD code_regex \(TD42, replaceall_matched begin (B1B2(D420,D421), end;
+into method label WQAD code_regex \(TD44, replaceall_matched begin (B1B2(D440,D441), end;
+into method label WQAD code_regex \(TD46, replaceall_matched begin (B1B2(D460,D461), end;
+into method label WQAD code_regex \(TD48, replaceall_matched begin (B1B2(D480,D481), end;
+into method label WQAD code_regex \(TD4A, replaceall_matched begin (B1B2(D4A0,D4A1), end;
+into method label WQAD code_regex \(TD4C, replaceall_matched begin (B1B2(D4C0,D4C1), end;
+into method label WQAD code_regex \(TD4E, replaceall_matched begin (B1B2(D4E0,D4E1), end;
+into method label WQAE code_regex \(TD50, replaceall_matched begin (B1B2(D500,D501), end;
+into method label WQAE code_regex \(TD52, replaceall_matched begin (B1B2(D520,D521), end;
+into method label WQAE code_regex \(TD54, replaceall_matched begin (B1B2(D540,D541), end;
+into method label WQAE code_regex \(TD56, replaceall_matched begin (B1B2(D560,D561), end;
+into method label WQAE code_regex \(TD58, replaceall_matched begin (B1B2(D580,D581), end;
+into method label WQAE code_regex \(TD5A, replaceall_matched begin (B1B2(D5A0,D5A1), end;
+into method label WQAE code_regex \(TD5C, replaceall_matched begin (B1B2(D5C0,D5C1), end;
+into method label WQAE code_regex \(TD5E, replaceall_matched begin (B1B2(D5E0,D5E1), end;
+into method label WQAE code_regex \(TD60, replaceall_matched begin (B1B2(D600,D601), end;
+into method label WQAE code_regex \(TD62, replaceall_matched begin (B1B2(D620,D621), end;
+into method label WQAE code_regex \(TD64, replaceall_matched begin (B1B2(D640,D641), end;
+into method label WQAE code_regex \(TD66, replaceall_matched begin (B1B2(D660,D661), end;
+
+# fix more 16-bit reads/writes
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD38\) replaceall_matched begin Store(Arg1,D380) Store(Arg1>>8,D381) end;
+into method label WSAD code_regex Return\s+\(TD38\) replaceall_matched begin Return (B1B2(D380,D381)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD3A\) replaceall_matched begin Store(Arg1,D3A0) Store(Arg1>>8,D3A1) end;
+into method label WSAD code_regex Return\s+\(TD3A\) replaceall_matched begin Return (B1B2(D3A0,D3A1)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD3C\) replaceall_matched begin Store(Arg1,D3C0) Store(Arg1>>8,D3C1) end;
+into method label WSAD code_regex Return\s+\(TD3C\) replaceall_matched begin Return (B1B2(D3C0,D3C1)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD3E\) replaceall_matched begin Store(Arg1,D3E0) Store(Arg1>>8,D3E1) end;
+into method label WSAD code_regex Return\s+\(TD3E\) replaceall_matched begin Return (B1B2(D3E0,D3E1)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD40\) replaceall_matched begin Store(Arg1,D400) Store(Arg1>>8,D401) end;
+into method label WSAD code_regex Return\s+\(TD40\) replaceall_matched begin Return (B1B2(D400,D401)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD42\) replaceall_matched begin Store(Arg1,D420) Store(Arg1>>8,D421) end;
+into method label WSAD code_regex Return\s+\(TD42\) replaceall_matched begin Return (B1B2(D420,D421)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD44\) replaceall_matched begin Store(Arg1,D420) Store(Arg1>>8,D441) end;
+into method label WSAD code_regex Return\s+\(TD44\) replaceall_matched begin Return (B1B2(D440,D441)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD46\) replaceall_matched begin Store(Arg1,D460) Store(Arg1>>8,D461) end;
+into method label WSAD code_regex Return\s+\(TD46\) replaceall_matched begin Return (B1B2(D460,D461)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD48\) replaceall_matched begin Store(Arg1,D480) Store(Arg1>>8,D481) end;
+into method label WSAD code_regex Return\s+\(TD48\) replaceall_matched begin Return (B1B2(D480,D481)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD4A\) replaceall_matched begin Store(Arg1,D4A0) Store(Arg1>>8,D4A1) end;
+into method label WSAD code_regex Return\s+\(TD4A\) replaceall_matched begin Return (B1B2(D4A0,D4A1)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD4C\) replaceall_matched begin Store(Arg1,D4C0) Store(Arg1>>8,D4C1) end;
+into method label WSAD code_regex Return\s+\(TD4C\) replaceall_matched begin Return (B1B2(D4C0,D4C1)) end;
+into method label WSAD code_regex Store\s+\(Arg1,\s+TD4E\) replaceall_matched begin Store(Arg1,D4E0) Store(Arg1>>8,D4E1) end;
+into method label WSAD code_regex Return\s+\(TD4E\) replaceall_matched begin Return (B1B2(D4E0,D4E1)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD50\) replaceall_matched begin Store(Arg1,D500) Store(Arg1>>8,D501) end;
+into method label WSAE code_regex Return\s+\(TD50\) replaceall_matched begin Return (B1B2(D500,D501)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD52\) replaceall_matched begin Store(Arg1,D520) Store(Arg1>>8,D521) end;
+into method label WSAE code_regex Return\s+\(TD52\) replaceall_matched begin Return (B1B2(D520,D521)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD54\) replaceall_matched begin Store(Arg1,D540) Store(Arg1>>8,D541) end;
+into method label WSAE code_regex Return\s+\(TD54\) replaceall_matched begin Return (B1B2(D540,D541)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD56\) replaceall_matched begin Store(Arg1,D560) Store(Arg1>>8,D561) end;
+into method label WSAE code_regex Return\s+\(TD56\) replaceall_matched begin Return (B1B2(D560,D561)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD58\) replaceall_matched begin Store(Arg1,D580) Store(Arg1>>8,D581) end;
+into method label WSAE code_regex Return\s+\(TD58\) replaceall_matched begin Return (B1B2(D580,D581)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD5A\) replaceall_matched begin Store(Arg1,D5A0) Store(Arg1>>8,D5A1) end;
+into method label WSAE code_regex Return\s+\(TD5A\) replaceall_matched begin Return (B1B2(D5A0,D5A1)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD5C\) replaceall_matched begin Store(Arg1,D5C0) Store(Arg1>>8,D5C1) end;
+into method label WSAE code_regex Return\s+\(TD5C\) replaceall_matched begin Return (B1B2(D5C0,D5C1)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD5E\) replaceall_matched begin Store(Arg1,D5E0) Store(Arg1>>8,D5E1) end;
+into method label WSAE code_regex Return\s+\(TD5E\) replaceall_matched begin Return (B1B2(D5E0,D5E1)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD60\) replaceall_matched begin Store(Arg1,D600) Store(Arg1>>8,D601) end;
+into method label WSAE code_regex Return\s+\(TD60\) replaceall_matched begin Return (B1B2(D600,D601)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD62\) replaceall_matched begin Store(Arg1,D620) Store(Arg1>>8,D621) end;
+into method label WSAE code_regex Return\s+\(TD62\) replaceall_matched begin Return (B1B2(D620,D621)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD64\) replaceall_matched begin Store(Arg1,D640) Store(Arg1>>8,D641) end;
+into method label WSAE code_regex Return\s+\(TD64\) replaceall_matched begin Return (B1B2(D640,D641)) end;
+into method label WSAE code_regex Store\s+\(Arg1,\s+TD66\) replaceall_matched begin Store(Arg1,D660) Store(Arg1>>8,D661) end;
+into method label WSAE code_regex Return\s+\(TD66\) replaceall_matched begin Return (B1B2(D660,D661)) end;

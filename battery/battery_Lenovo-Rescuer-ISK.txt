@@ -4,8 +4,8 @@
 # created by shiy05 06/28/2017
 # based on: HP Envy dv6 battery patch (by RehabMan)
 # works for:
-#  Lenovo rescuer 14-ISK (tested)
-#  Lenovo rescuer 15-ISK (not tested)
+#  Lenovo rescuer 14-ISK (per shiy05)
+#  Lenovo rescuer 15-ISK (per Xc233haha)
 
 # add method B1B2
 into method label B1B2 remove_entry;
