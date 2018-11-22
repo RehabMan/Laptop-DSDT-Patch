@@ -10,6 +10,7 @@
 #   Lenovo ThinkPad X230i
 #   Lenovo ThinkPad X1 Carbon (5th gen)
 #   Lenovo ThinkPad P50 (6th gen)
+#   Lenovo ThinkPad X270 (per matism)
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
