@@ -11,6 +11,7 @@
 #  Dell Precision M3800
 #  Acer Travelmate T253M (per Simmy)
 #  Acer Aspire V3-571G (per mpckid)
+#  Acer Travelmate P278-M-586U (per doc32)
 
 # create B1B2 Method
 into method label B1B2 remove_entry;

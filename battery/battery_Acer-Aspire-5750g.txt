@@ -6,6 +6,7 @@
 
 # works for:
 #  Acer Aspire 5750g
+#  Acer Aspire 7750G (per TruckerMK)
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert

@@ -13,6 +13,7 @@
 #   Lenovo Thinkpad P51 (KabyLake) (per szclsya)
 #   Lenovo E580 (per jamesst20)
 #   Lenovo Thinkpad X1 Carbon (6th gen) (per jhonizzle)
+#   Lenovo ThinkPad X270 (per matism)
 
 # Note: This DSDT requires "Fix Mutex with non-zero SyncLevel"
 
