@@ -1,8 +1,7 @@
 #Maintained by: RehabMan for: Laptop Patches
 #battery_WBIN-AirBook.txt
 
-# submitted by GigiBatt 2018-06-11
-# credits TerminalStrip / Gian Luigi Battistini
+# submitted by Anonymous 2018-06-11
 # modifications for completeness by RehabMan 2018-06-11
 
 # works for:
