@@ -55,6 +55,7 @@
 #  ASUS Strix FX502VM/GL502VM (per benspoonder)
 #  ASUS X53E (per REvandenBerg)
 #  ASUS UX430 (per starcentral)
+#  ASUS X45C Bios version 208
 # ...
 #  and many others
 
