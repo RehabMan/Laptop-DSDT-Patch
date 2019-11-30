@@ -66,9 +66,10 @@ into method label GBIX code_regex \(SBDC, replaceall_matched begin (B1B2(BD00,BD
 into method label GBIF code_regex \(SBDV, replaceall_matched begin (B1B2(SB00,SB01), end;
 into method label GBIX code_regex \(SBDV, replaceall_matched begin (B1B2(SB00,SB01), end;
 into method label GBIF code_regex SBDV, replaceall_matched begin B1B2(SB00,SB01), end;
+into method label GBIX code_regex SBDV, replaceall_matched begin B1B2(SB00,SB01), end;
+into method label GBIX code_regex SBDV replaceall_matched begin (B1B2(SB00,SB01)), end;
+into method label GBIX code_regex \(SBDV replaceall_matched begin (B1B2(SB00,SB01) end;
 
-into method label GBIF code_regex \(SBSN, replaceall_matched begin (B1B2(BS00,BS01), end;
-into method label GBIX code_regex \(SBSN, replaceall_matched begin (B1B2(BS00,BS01), end;
 
 #Thinkpad T470 specifics
 into method label GBIX code_regex \(SBCC, replaceall_matched begin (B1B2(BCC0,BCC1), end;
@@ -76,6 +77,7 @@ into method label GBIX code_regex \(SBCC, replaceall_matched begin (B1B2(BCC0,BC
 
 into device label EC code_regex SBCH,\s+32 replace_matched begin SH00,8,SH01,8,SH02,8,SH03,8 end;
 into method label GBIF code_regex \(SBCH, replaceall_matched begin (B1B4(SH00,SH01,SH02,SH03), end;
+into method label GBIX code_regex \(SBCH, replaceall_matched begin (B1B4(SH00,SH01,SH02,SH03), end;
 
 into device label EC code_regex (SBMN,)\s+(128) replace_matched begin BMNX,%2,//%1%2 end;
 into device label EC code_regex (SBDN,)\s+(128) replace_matched begin BDNX,%2,//%1%2 end;
@@ -111,27 +113,5 @@ end;
 
 into method label GBIF code_regex \(SBMN, replaceall_matched begin (RECB(0xA0,128), end;
 into method label GBIF code_regex \(SBDN, replaceall_matched begin (RECB(0xA0,128), end;
-
-# added for E470 KabyLake
-# Fix HWAK Read
-into method label \_WAK code_regex \(\\\_SB.PCI0.LPC.EC.HWAK replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.HWK0,\\_SB.PCI0.LPC.EC.HWK1) end;
-into method label _WAK code_regex \(\\\_SB.PCI0.LPC.EC.HWAK replaceall_matched begin (B1B2(\\_SB.PCI0.LPC.EC.HWK0,\\_SB.PCI0.LPC.EC.HWK1) end;
-
-# Fix HWAK Write
-into method label \_WAK code_regex Store\s\(0x00,\s\\\_SB.PCI0.LPC.EC.HWAK\) replaceall_matched
-begin
-Store(Zero,\\_SB.PCI0.LPC.EC.HWK0) Store(Zero,\\_SB.PCI0.LPC.EC.HWK1)
-end;
-into method label _WAK code_regex Store\s\(0x00,\s\\\_SB.PCI0.LPC.EC.HWAK\) replaceall_matched
-begin
-Store(Zero,\\_SB.PCI0.LPC.EC.HWK0) Store(Zero,\\_SB.PCI0.LPC.EC.HWK1)
-end;
-
-into method label \_WAK code_regex Store\s\(Zero,\s\\\_SB.PCI0.LPC.EC.HWAK\) replaceall_matched
-begin
-Store(Zero,\\_SB.PCI0.LPC.EC.HWK0) Store(Zero,\\_SB.PCI0.LPC.EC.HWK1)
-end;
-into method label _WAK code_regex Store\s\(Zero,\s\\\_SB.PCI0.LPC.EC.HWAK\) replaceall_matched
-begin
-Store(Zero,\\_SB.PCI0.LPC.EC.HWK0) Store(Zero,\\_SB.PCI0.LPC.EC.HWK1)
-end;
+into method label GBIX code_regex \(SBMN, replaceall_matched begin (RECB(0xA0,128), end;
+into method label GBIX code_regex \(SBDN, replaceall_matched begin (RECB(0xA0,128), end;
