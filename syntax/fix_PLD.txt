@@ -13,7 +13,12 @@ begin
 %1(Package() { Buffer%2}
 end;
 
-# 
+# ToPLD
+into_all all code_regex (Name\s*\(_PLD,\s*)(ToPLD\s*\([^\)]*\)) replaceall_matched
+begin
+%1Package() { %2 }
+end;
+
 
 # REVIEW: below is causing issues...
 #into_all all code_regex (Name\s*\(_PLD,\s*)Package(\s\([^\)].*\)[^\)]*) replaceall_matched
