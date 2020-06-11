@@ -37,6 +37,7 @@
 #  HP Notebook 15-ab522tx (per AmitKumar123)
 #  HP Pavilion 15 au009tx, au006tx, au118tx (per github/ShubhamElite)
 #  HP Pavilion 14-ce0023nl (per pacut)
+#  HP Pavilion 15-cs2015ur (per HunterKaan)
 
 # Note: some may require this patch
 # it is commented out because it is really not the correct fix
