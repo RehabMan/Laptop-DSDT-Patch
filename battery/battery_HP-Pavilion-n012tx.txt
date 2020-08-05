@@ -12,6 +12,7 @@
 #  HP Pavilion 15-n096ea (per oscarr)
 #  HP Pavilion 17-f078nf (per xdevillived666)
 #  HP Pavilion 15-cb050od (per github/Jahazielg)
+#  HP Pavilion 15-ck069tx
 
 into method label B1B2 remove_entry;
 into definitionblock code_regex . insert
